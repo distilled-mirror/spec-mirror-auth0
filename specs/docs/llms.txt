@@ -1,0 +1,274 @@
+# Auth0 Docs
+
+> Auth0 documentation
+
+- [Get Started (291 pages)](https://auth0.com/_llms/en/get-started.md): Documentation for Get Started.
+- [Authenticate (218 pages)](https://auth0.com/_llms/en/authenticate.md): Documentation for Authenticate.
+- [Manage Users (131 pages)](https://auth0.com/_llms/en/manage-users.md): Documentation for Manage Users.
+- [Customize (279 pages)](https://auth0.com/_llms/en/customize.md): Documentation for Customize.
+- [Secure (163 pages)](https://auth0.com/_llms/en/secure.md): Documentation for Secure.
+- [Dev Tools (1026 pages)](https://auth0.com/_llms/en/dev-tools.md): Documentation for Dev Tools.
+
+## Home
+
+- [Auth0 Documentation](https://auth0.com/docs/index.md)
+
+## Deploy & Monitor
+
+- [Deploy and Monitor](https://auth0.com/docs/deploy-monitor.md): Learn about Auth0 public and private cloud deployment options, as well as deployment checklists and tools.
+
+### Deployment
+
+- [Deployment Options](https://auth0.com/docs/deploy-monitor/deployment-options.md): Compare the Auth0 deployment options available from the multi-tenant public cloud to dedicated and private cloud tenants.
+- [Deployment Checklist](https://auth0.com/docs/deploy-monitor/deploy-checklist.md): Read the Auth0 deployment checklist before promoting a tenant to production so security and branding settings are all confirmed.
+- [Auth0 CLI](https://auth0.com/docs/deploy-monitor/auth0-cli.md): Learn how to use Auth0 CLI to manage your tenant configuration, automate tasks, and integrate Auth0 into your development and deployment workflows.
+- [Auth0 Terraform Provider](https://auth0.com/docs/deploy-monitor/auth0-terraform-provider.md): Learn about the Auth0 Terraform Provider for representing your tenant configurations as code.
+- [Deployment Best Practices](https://auth0.com/docs/deploy-monitor/deployment-best-practices.md): Learn about the Auth0 deployment best practices when promoting a tenant configuration to production.
+
+#### Private Cloud Deployments
+
+- [Private Cloud Deployments](https://auth0.com/docs/deploy-monitor/deploy-private-cloud.md): Compare Auth0 Private Cloud-managed service deployment options on AWS and Azure to choose a dedicated, isolated environment that meets your data-residency, performance, and guaranteed RPS requirements beyond the multi-tenant Public Cloud.
+- [Private Cloud on AWS](https://auth0.com/docs/deploy-monitor/deploy-private-cloud/private-cloud-on-aws.md): Learn about the Auth0 identity platform on AWS deployment option and its capabilities.
+- [Private Cloud on Azure](https://auth0.com/docs/deploy-monitor/deploy-private-cloud/private-cloud-on-azure.md): Learn about the Auth0 identity platform on Azure deployment option and its capabilities.
+- [Private Cloud Add-on Features](https://auth0.com/docs/deploy-monitor/deploy-private-cloud/private-cloud-add-on-features.md): Learn about add-on features that can complement your Auth0 Private Cloud deployment.
+
+#### Pre-Deployment Checks
+
+- [Pre-Deployment Checks](https://auth0.com/docs/deploy-monitor/pre-deployment-checks.md): A reference of helpful pre-deployment checks for your production Auth0 environment.
+- [Run Production Readiness Checks](https://auth0.com/docs/deploy-monitor/pre-deployment-checks/how-to-run-production-checks.md): Learn how to run the Auth0 Production Checks to ensure that your Applications are production-ready.
+- [Production Readiness Checks: Critical Fixes](https://auth0.com/docs/deploy-monitor/pre-deployment-checks/production-check-required-fixes.md): Fixes you must make to your Auth0 Application prior to production deployment
+- [Production Readiness Checks: Non-Critical Fixes](https://auth0.com/docs/deploy-monitor/pre-deployment-checks/production-check-recommended-fixes.md): Recommendations on how you can improve your Auth0 Application prior to production deployment
+- [Production Readiness Checks: Best Practices](https://auth0.com/docs/deploy-monitor/pre-deployment-checks/production-checks-best-practices.md): Checks to ensure that your Applications comply with Auth0 best practices
+- [Run Pre-Deployment Tests](https://auth0.com/docs/deploy-monitor/pre-deployment-checks/predeployment-tests.md): Learn how to test your Auth0 implementation prior to deployment to production environments.
+- [Pre-Launch Tips](https://auth0.com/docs/deploy-monitor/pre-deployment-checks/pre-launch-tips.md): A list of helpful tips for when getting started with Auth0 services based on feedback and experience from others
+
+#### Deploy CLI
+
+- [Auth0 Deploy CLI](https://auth0.com/docs/deploy-monitor/deploy-cli-tool.md): Learn how to use the Auth0 Deploy CLI to manage your tenant configuration and resources and integrate it into your development workflows.
+- [Use as a CLI](https://auth0.com/docs/deploy-monitor/deploy-cli-tool/use-as-a-cli.md): Learn how to the use the Auth0 Deploy CLI as a standalone command-line utility.
+- [Use Deploy CLI as a Node Module](https://auth0.com/docs/deploy-monitor/deploy-cli-tool/use-as-a-node-module.md): Learn how to use the Auth0 Deploy CLI as a node module to use it directly from your own deployment scripts.
+- [Configure the Deploy CLI](https://auth0.com/docs/deploy-monitor/deploy-cli-tool/configure-the-deploy-cli.md): Learn how to configure the Auth0 Deploy CLI to modify the tool for your needs.
+- [Authenticate with your Tenant](https://auth0.com/docs/deploy-monitor/deploy-cli-tool/authenticate-with-your-tenant.md): Learn about the different methods of authenticating the Auth0 Deploy CLI with your tenant.
+- [Keyword Replacement](https://auth0.com/docs/deploy-monitor/deploy-cli-tool/keyword-replacement.md): Learn how to manage a multi-tenant workflow with the Auth0 Deploy CLI using keyword replacement.
+- [Incorporate into Multi-environment Workflows](https://auth0.com/docs/deploy-monitor/deploy-cli-tool/incorporate-into-multi-environment-workflows.md): Learn how to support multi-tenant, multi-environment workflows when using the Auth0 Deploy CLI.
+- [Exclude Resources From Management](https://auth0.com/docs/deploy-monitor/deploy-cli-tool/exclude-resources-from-management.md): Learn how to exclude resources from being managed when using the Auth0 Deploy CLI.
+- [Resource-specific Documentation](https://auth0.com/docs/deploy-monitor/deploy-cli-tool/resource-specific-documentation.md): Learn about the specifics of resource documentation for the Auth0 Deploy CLI.
+- [Available Resource Configuration Formats](https://auth0.com/docs/deploy-monitor/deploy-cli-tool/available-resource-configuration-formats.md): Learn about the available configuration formats when using the Auth0 Deploy CLI.
+
+### Monitoring
+
+- [Metric Streams](https://auth0.com/docs/deploy-monitor/metric-streams.md): Stream Auth0 metrics to monitoring platforms like Datadog, New Relic, and Splunk for real-time observability.
+
+#### Monitor
+
+- [Monitor Auth0](https://auth0.com/docs/deploy-monitor/monitor.md): Describes how to monitor and track your Auth0 usage, as well as how to send tenant logs to external tools.
+- [Check Auth0 Status](https://auth0.com/docs/deploy-monitor/monitor/check-auth0-status.md): Learn how to check Auth0 public cloud service availability, incident reports, and historical uptime reports.
+- [Check External Services Status](https://auth0.com/docs/deploy-monitor/monitor/check-external-services-status.md): Check the status of external services like Social and Enterprise identity providers to diagnose Auth0 login failures from upstream outages.
+- [Monitor Applications](https://auth0.com/docs/deploy-monitor/monitor/monitor-applications.md): Your applications depend on Auth0. Monitoring Auth0's health lets you report errors or reduce user impact in case there's an issue with Auth0. Learn more.
+- [Monitor Auth0 Using System Center Operations Manager](https://auth0.com/docs/deploy-monitor/monitor/monitor-using-scom.md): Describes how to monitor Auth0 as a standard web application using System Center Operations Manager (SCOM) or any tool that supports synthetic transactions.
+
+#### Logs
+
+- [Logs](https://auth0.com/docs/deploy-monitor/logs.md): Auth0 tenant logs capture every authentication event and configuration change so you can audit usage and feed the data into your SIEM.
+- [Personally Identifiable Information in Auth0 Logs](https://auth0.com/docs/deploy-monitor/logs/pii-in-logs.md): Describes the potential personally identifiable information (PII) that Auth0 writes to tenant logs.
+- [Log Data Retention](https://auth0.com/docs/deploy-monitor/logs/log-data-retention.md): Review how long Auth0 retains tenant log data based on your subscription plan so you know when to export logs for longer-term analysis.
+- [View Logs](https://auth0.com/docs/deploy-monitor/logs/view-log-events.md): Learn how to view logs in the Dashboard including user authentication and administrative actions such as adding and updating applications, connections, and rules.
+- [Filter Log Events](https://auth0.com/docs/deploy-monitor/logs/log-event-filters.md): Filter Auth0 logs by event type to surface errors, warnings, and successful operations across your tenant for monitoring and incident response.
+- [Prompt Details in Tenant Logs](https://auth0.com/docs/deploy-monitor/logs/prompt-details-in-tenant-logs.md): Describes attributes and values from user prompts in Auth0 tenant logs.
+- [Retrieve Logs Using the Management API](https://auth0.com/docs/deploy-monitor/logs/retrieve-log-events-using-mgmt-api.md): Learn how to retrieve logs using the Auth0 Management API get_logs endpoint by checkpoint or by search criteria.
+- [Log Type Codes](https://auth0.com/docs/deploy-monitor/logs/log-event-type-codes.md): Lists the event codes associated with log events.
+- [Log Search Query Syntax](https://auth0.com/docs/deploy-monitor/logs/log-search-query-syntax.md): Describes search query syntax using a subset of the Lucene query syntax to refine Auth0 log searches.
+
+## AI Agents & MCP
+
+### Agents as Principal
+
+- [Agents as Principal](https://auth0.com/docs/ai-agents-mcp/agents-as-principal.md): Register AI agents as first-class identities in Auth0 with their own lifecycle, credentials, and audit trail.
+
+#### Get Started
+
+- [Register an Agent](https://auth0.com/docs/ai-agents-mcp/agents-as-principal/register-an-agent.md): Create and register agents using the Auth0 Dashboard or Management API
+- [Associate an Agent with a Client](https://auth0.com/docs/ai-agents-mcp/agents-as-principal/associate-agent-client.md): Associate one or more clients with an agent so that tokens issued to those clients carry the agent's identity for attribution and traceability.
+- [Agent Identity in Tokens](https://auth0.com/docs/ai-agents-mcp/agents-as-principal/agent-identity-in-tokens.md): How Auth0 embeds agent identity in access tokens across client credentials, OBO token exchange, and standard login flows.
+
+#### Reference
+
+- [Agent Context in Actions](https://auth0.com/docs/ai-agents-mcp/agents-as-principal/actions-context.md): Access agent identity and metadata in Auth0 Actions using the `event.agent` object.
+- [Agent ID in Tenant Logs](https://auth0.com/docs/ai-agents-mcp/agents-as-principal/tenant-logs.md): Track agent activity through Auth0 tenant logs using `agent_id` or `external_agent_id`.
+
+### Cross App Access (XAA)
+
+- [Cross App Access (XAA)](https://auth0.com/docs/ai-agents-mcp/cross-app-access.md): Create and manage AI agent-to-app and app-to-app connections using centralized enterprise admin controls, with out-of-the-box support for MCP's Enterprise-Managed Authorization.
+
+#### Set up Auth0 as Resource App
+
+- [Set up Auth0 as Resource App](https://auth0.com/docs/ai-agents-mcp/cross-app-access/resource-app.md): Configure your Auth0 tenant as the Resource App Authorization Server to accept ID-JAG requests and issue access tokens for your API.
+- [XAA Environment Setup](https://auth0.com/docs/ai-agents-mcp/cross-app-access/set-up-xaa-test-environment.md): Configure your Auth0 tenant as the Resource App Authorization Server to accept ID-JAG requests and issue access tokens for your API.
+- [Add Organization Support](https://auth0.com/docs/ai-agents-mcp/cross-app-access/idp/add-organization-support.md): Add Organization support to a Cross App Access (XAA) IdP to associate access tokens with `org_id`.
+- [End-to-end Testing](https://auth0.com/docs/ai-agents-mcp/cross-app-access/end-to-end-testing.md): Learn how to test the end-to-end XAA flow.
+
+##### IdP Integration
+
+- [Okta as OIDC IdP](https://auth0.com/docs/ai-agents-mcp/cross-app-access/idp/okta-as-oidc-idp.md): Learn how to configure Okta as an OIDC identity provider for Cross App Access (XAA).
+- [Okta as SAML IdP](https://auth0.com/docs/ai-agents-mcp/cross-app-access/idp/okta-as-saml-idp.md): Learn how to configure Okta as a SAML identity provider for Cross App Access (XAA).
+
+#### Set up Auth0 as Requesting App
+
+- [Set up Auth0 as Requesting App](https://auth0.com/docs/ai-agents-mcp/cross-app-access/requesting-app.md): Configure your Auth0 tenant as the Requesting App to call third-party APIs on a user's behalf using the Cross App Access flow with tokens stored in Token Vault.
+- [XAA Environment Setup](https://auth0.com/docs/ai-agents-mcp/cross-app-access/requesting-app/set-up-xaa-test-environment.md): Configure a test Resource App and the OIDC connection between your Requesting App tenant and the Resource App tenant for Cross App Access.
+
+##### IdP Integration
+
+- [Okta as OIDC IdP](https://auth0.com/docs/ai-agents-mcp/cross-app-access/requesting-app/idp/okta-as-oidc-idp.md): Configure Okta as the OIDC enterprise identity provider for the XAA Requesting App.
+
+## Platform
+
+- [Auth0 Platform](https://auth0.com/docs/troubleshoot.md): Auth0 policies, plans, and support.
+- [Auth0 Changelog](https://auth0.com/docs/troubleshoot/customer-support/auth0-changelog.md)
+- [Auth0 Community](https://auth0.com/docs/troubleshoot/auth0-community.md)
+- [Auth0 Blog](https://auth0.com/docs/troubleshoot/auth0-blog.md)
+
+### Customer Support
+
+- [Customer Support](https://auth0.com/docs/troubleshoot/customer-support.md): Describes the different types of support options provided by Auth0.
+- [Support Plans](https://auth0.com/docs/troubleshoot/customer-support/support-plans.md): The different levels of Auth0 support
+- [Product Support Matrix](https://auth0.com/docs/troubleshoot/customer-support/product-support-matrix.md): Describes Auth0 features, platforms, and software configurations.
+- [Service Level Agreements](https://auth0.com/docs/troubleshoot/customer-support/services-level-descriptions.md): A summary of key elements of Auth0's Service Level Agreement (SLA) for both Enterprise Public Cloud and Enterprise Private Cloud deployments.
+- [Open and Manage Support Tickets](https://auth0.com/docs/troubleshoot/customer-support/open-and-manage-support-tickets.md): Describes how to open and manage tickets with Support Center.
+- [Responsible Disclosure Program](https://auth0.com/docs/troubleshoot/customer-support/responsible-disclosure-program-security-support-tickets.md): All customers, even those with free subscription plans, can report security concerns in Auth0 Responsible Disclosure Program.
+
+### Account and Plan Management
+
+- [Update Billing Information](https://auth0.com/docs/troubleshoot/customer-support/update-billing-information.md): Update billing information from Auth0 Dashboard
+- [Manage your Auth0 Subscription Plan](https://auth0.com/docs/troubleshoot/customer-support/manage-subscriptions.md): Learn how to upgrade, downgrade, or cancel your Auth0 subscription plan.
+- [Delete or Reset Tenants](https://auth0.com/docs/troubleshoot/customer-support/manage-subscriptions/delete-or-reset-tenant.md): Learn how to delete your tenant or reset it to the default configuration.
+- [Export Data](https://auth0.com/docs/troubleshoot/customer-support/manage-subscriptions/export-data.md): Describes how to export data from Auth0.
+- [Monitor Subscription Usage](https://auth0.com/docs/troubleshoot/customer-support/manage-subscriptions/monitor-subscription-usage.md): Learn how to monitor your Auth0 subscription usage.
+- [Reset Account Passwords](https://auth0.com/docs/troubleshoot/customer-support/reset-account-passwords.md): Describes how to reset Auth0 account passwords.
+
+### Operational Policies
+
+- [Auth0 Operational Policies](https://auth0.com/docs/troubleshoot/customer-support/operational-policies.md): Describes Auth0's established operational policies including billing, data export and transfer, load and penetration testing, rate limits, tenant restoration, and Dashboard authentication.
+- [Billing Policy](https://auth0.com/docs/troubleshoot/customer-support/operational-policies/billing-policy.md): Describes the billing policy which governs requests for billing mechanisms within the Auth0 Dashboard
+- [Auth0 Public Cloud Service Endpoints](https://auth0.com/docs/troubleshoot/customer-support/operational-policies/public-cloud-service-endpoints.md): Lists all the endpoints used by Auth0 public cloud service.
+- [Data Export and Transfer Policy](https://auth0.com/docs/troubleshoot/customer-support/operational-policies/data-export-and-transfer-policy.md): Describes Auth0 policies on exporting and transferring data.
+- [Change Freeze Policy](https://auth0.com/docs/troubleshoot/customer-support/operational-policies/change-freeze-policy.md): Learn about Auth0's change freeze policy, including currently scheduled periods and testing restrictions.
+- [Load Testing Policy](https://auth0.com/docs/troubleshoot/customer-support/operational-policies/load-testing-policy.md): Describes Auth0's Load Testing Policy.
+- [Penetration Testing Policy](https://auth0.com/docs/troubleshoot/customer-support/operational-policies/penetration-testing-policy.md): Describes Auth0's Penetration Testing Policy.
+- [Entity Limit Policy](https://auth0.com/docs/troubleshoot/customer-support/operational-policies/entity-limit-policy.md): Describes Auth0's tenant entity limit policy for subscribers.
+- [Auth0 Versioning Strategy](https://auth0.com/docs/troubleshoot/customer-support/versioning-strategy.md): Understand how Auth0 versioning works.
+
+#### Rate Limit Policy
+
+- [Rate Limit Policy](https://auth0.com/docs/troubleshoot/customer-support/operational-policies/rate-limit-policy.md): Describes Auth0's rate limit policy.
+- [Rate Limit Use Cases](https://auth0.com/docs/troubleshoot/customer-support/operational-policies/rate-limit-policy/rate-limit-use-cases.md): How to determine if you are being rate limited
+- [Custom Rate Limit Policies](https://auth0.com/docs/troubleshoot/customer-support/operational-policies/rate-limit-policy/custom-rate-limit-policies.md): Set per-application rate limit ceilings to protect your tenant from misconfigured or misbehaving applications.
+
+##### Rate Limit Configurations
+
+- [Rate Limit Configurations](https://auth0.com/docs/troubleshoot/customer-support/operational-policies/rate-limit-policy/rate-limit-configurations.md): Learn about Auth0 rate limiting policies that help prevent service interruption and degradation.
+- [Free](https://auth0.com/docs/troubleshoot/customer-support/operational-policies/rate-limit-policy/rate-limit-configurations/free-public.md): Rate limit policies for the Free Public subscription type.
+- [Essentials and Professional](https://auth0.com/docs/troubleshoot/customer-support/operational-policies/rate-limit-policy/rate-limit-configurations/essentials-professional-b2b.md): Rate limits for the Essentials and Professional pricing plans.
+- [Enterprise Rate Limits](https://auth0.com/docs/troubleshoot/customer-support/operational-policies/rate-limit-policy/rate-limit-configurations/enterprise-public.md): Rate limits for the Enterprise subscription type.
+- [Tier Dev Private Cloud](https://auth0.com/docs/troubleshoot/customer-support/operational-policies/rate-limit-policy/rate-limit-configurations/tier-20-development-private-cloud.md): Rate limits for the Tier 20 (Development) Private Cloud subscription type.
+- [Private Cloud Basic 100 RPS (1x)](https://auth0.com/docs/troubleshoot/customer-support/operational-policies/rate-limit-policy/rate-limit-configurations/tier-100-rps-private-cloud.md): Tier 100 RPS Private Cloud rate limits
+- [Private Cloud Performance 500 RPS (5x)](https://auth0.com/docs/troubleshoot/customer-support/operational-policies/rate-limit-policy/rate-limit-configurations/tier-500-rps-private-cloud.md): Tier 500 RPS Private Cloud rate limits
+- [Private Cloud Performance 1500 RPS (15x)](https://auth0.com/docs/troubleshoot/customer-support/operational-policies/rate-limit-policy/rate-limit-configurations/tier-1500-rps-private-cloud.md): Tier 1500 RPS Private Cloud rate limits
+- [Private Cloud Performance 3000 RPS (30x) and 3000 RPS (30x) Burst](https://auth0.com/docs/troubleshoot/customer-support/operational-policies/rate-limit-policy/rate-limit-configurations/tier-3000-rps-private-cloud.md): Tier 3000 RPS Private Cloud rate limits
+- [Private Cloud Performance 6000 RPS (60x) and 6000 RPS (60x) Burst](https://auth0.com/docs/troubleshoot/customer-support/operational-policies/rate-limit-policy/rate-limit-configurations/tier-6000-rps-private-cloud.md): Tier 6000 RPS Private Cloud rate limits
+- [Private Cloud Performance 10,000 RPS (100x)](https://auth0.com/docs/troubleshoot/customer-support/operational-policies/rate-limit-policy/rate-limit-configurations/tier-10000-rps-private-cloud.md): Tier 10000 RPS Private Cloud rate limits
+
+### Product Lifecycle
+
+- [Product Lifecycle](https://auth0.com/docs/troubleshoot/product-lifecycle.md): Learn about the Auth0 product lifecycle, including product release stages, deprecations, end-of-life, the migration process, and active migrations.
+- [Product Release Stages](https://auth0.com/docs/troubleshoot/product-lifecycle/product-release-stages.md): Describes how we stage, release, and retire product functionality.
+- [Migration Process](https://auth0.com/docs/troubleshoot/product-lifecycle/migration-process.md): Describes the migration process at Auth0, including End of Life announcements, migration windows, and migration guides.
+
+#### Deprecations and Migrations
+
+- [Deprecations and Migrations](https://auth0.com/docs/troubleshoot/product-lifecycle/deprecations-and-migrations.md): Lists all deprecations with active migrations that may impact your tenant.
+- [Migrate to Enhanced Security for Third-Party Applications](https://auth0.com/docs/troubleshoot/product-lifecycle/deprecations-and-migrations/migrate-to-enhanced-security-third-party-applications.md): Learn how enhanced security controls affect existing and newly created third-party applications.
+- [Migrate from Node 18 to Node 22](https://auth0.com/docs/troubleshoot/product-lifecycle/deprecations-and-migrations/migrate-nodejs-22.md): Describes Auth0 Actions items affected by the Node.js 18
+- [Migrate to Non-Verifiable Callback URI End-User Confirmation](https://auth0.com/docs/troubleshoot/product-lifecycle/deprecations-and-migrations/migrate-to-non-verifiable-callback-uri-end-user-confirmation.md): Learn how you can enhance security and mitigate risks of application impersonation with HTTPS-based callbacks.
+- [Migrate Enabled Client Management to Dedicated Connection Endpoints](https://auth0.com/docs/troubleshoot/product-lifecycle/deprecations-and-migrations/migrate-dedicated-connection-endpoints.md): Learn how to update your Auth0 connection configuration from using the `enabled_clients` field to dedicated connection endpoints.
+- [Migrate to Management API Connection Options Scopes](https://auth0.com/docs/troubleshoot/product-lifecycle/deprecations-and-migrations/migrate-connection-options-scope.md): Learn how to update your Auth0 integrations to manage connections with options-specific scopes.
+- [Migrate Oversized User Profiles](https://auth0.com/docs/troubleshoot/product-lifecycle/deprecations-and-migrations/migrate-oversized-user-profiles.md): Learn how to identify, review, and migrate away from oversized Auth0 user profiles ahead of the 10KB size limit enforcement.
+
+#### Past Migrations
+
+- [Past Migrations](https://auth0.com/docs/troubleshoot/product-lifecycle/past-migrations.md): List of Auth0 updates that have already been enabled for all customers.
+- [Migrate from Node 12 and 16 to Node 18](https://auth0.com/docs/troubleshoot/product-lifecycle/past-migrations/migrate-nodejs-16-to-nodejs-18.md): Describes Auth0 Actions items affected by the Node.js v12+6 to Node.js v18 migration.
+- [Migrate from edge.js extensibility features](https://auth0.com/docs/troubleshoot/product-lifecycle/past-migrations/migrate-from-edge-js-extensibility-features.md): Get started using Auth0. Implement authentication for any kind of application in minutes.
+- [Migrate from oracledb extensibility features](https://auth0.com/docs/troubleshoot/product-lifecycle/past-migrations/migrate-from-oracledb-extensibility-features.md): Get started using Auth0. Implement authentication for any kind of application in minutes.
+- [Migrate Custom Claims](https://auth0.com/docs/troubleshoot/product-lifecycle/past-migrations/custom-claims-migration.md): Describes migration from Legacy namespaced claims to custom claims.
+- [Migrate from Log Extensions](https://auth0.com/docs/troubleshoot/product-lifecycle/past-migrations/migrate-from-log-extensions.md): Migrate from log extensions to log streams or Auth0 Marketplace integrations.
+- [Migrate Tenant Hostname Validation](https://auth0.com/docs/troubleshoot/product-lifecycle/past-migrations/tenant-hostname-migration.md): Describes how to check tenant logs for deprecation notices so you can migrate your application domain
+- [Migrate to Node.js 16](https://auth0.com/docs/troubleshoot/product-lifecycle/past-migrations/migrate-to-nodejs-16.md): Describes Auth0 features affected by the Node.js v12 to Node.js v16 migration and provides recommendations for migration.
+- [Migrate from Node.js 8 to Node.js 12](https://auth0.com/docs/troubleshoot/product-lifecycle/past-migrations/migrate-to-nodejs-12.md): Describes Auth0 features affected by the Node.js v8 to Node.js v12 migration and provides recommendations for migration.
+- [Migrate to Management API v2 Endpoint Paginated Queries](https://auth0.com/docs/troubleshoot/product-lifecycle/past-migrations/migrate-to-paginated-queries.md): Describes how to use the pagination parameters for specific Management API v2 endpoint queries.
+- [Migrate to New Tenant Member Roles](https://auth0.com/docs/troubleshoot/product-lifecycle/past-migrations/migrate-tenant-member-roles.md): Learn how to migrate to the new Dashboard tenant member roles feature.
+- [Migrate from Search v2 to v3](https://auth0.com/docs/troubleshoot/product-lifecycle/past-migrations/migrate-v2-v3.md): Learn how to migrate from Auth0 Search v2 to v3.
+- [Migrate to Passwordless Endpoint from Confidential Applications](https://auth0.com/docs/troubleshoot/product-lifecycle/past-migrations/migrate-to-passwordless.md): Describes the migration steps you need to take because Auth0 is deprecating the usage of the /passwordless/start endpoint from confidential applications without a client secret in the request.
+- [Clickjacking Protection for Universal Login Change](https://auth0.com/docs/troubleshoot/product-lifecycle/past-migrations/clickjacking-protection-for-universal-login.md): Describes how Auth0 is adding a way to prevent the Universal Login pages from being embedded into an iframe to protect against clickjacking attacks.
+- [Migrate to Management API Endpoints with Access Tokens](https://auth0.com/docs/troubleshoot/product-lifecycle/past-migrations/migrate-to-calling-api-with-access-tokens.md): Describes the deprecation of using ID tokens as credentials for the Management API and how to migrate your configuration to use access tokens.
+- [Migrate to Access Tokens for Account Linking](https://auth0.com/docs/troubleshoot/product-lifecycle/past-migrations/link-user-accounts-with-access-tokens-migration.md): Describes how to migrate from using ID tokens to access tokens when linking user accounts.
+- [Migrate Your Resource Owner Passwordless Credentials Exchange](https://auth0.com/docs/troubleshoot/product-lifecycle/past-migrations/resource-owner-passwordless-credentials-exchange.md): Describes how to migrate your Passwordless API calls and responses from /oauth/ro to /oauth/token.
+- [Migrate Your Resource Owner Password Flow](https://auth0.com/docs/troubleshoot/product-lifecycle/past-migrations/migration-oauthro-oauthtoken.md): Describes how to migrate your password API calls and responses from /oauth/ro to /oauth/token.
+- [Instagram Connection Deprecation](https://auth0.com/docs/troubleshoot/product-lifecycle/past-migrations/instagram-connection-deprecation.md): Describes changes occuring due to Instagram deprecating their Authentication API.
+- [Yahoo API Changes](https://auth0.com/docs/troubleshoot/product-lifecycle/past-migrations/yahoo-api-changes.md): Describes the Yahoo API changes that affect the structure of the user profile.
+- [Migrate from Google to Firebase Cloud Messaging](https://auth0.com/docs/troubleshoot/product-lifecycle/past-migrations/google-firebase-migration.md): Describes how to migrate your applications based on the Guardian Android SDK to Firebase Cloud Messaging
+- [Facebook Social Context Field Deprecation](https://auth0.com/docs/troubleshoot/product-lifecycle/past-migrations/facebook-social-context-field-deprecation.md): Describes changes occuring due to Facebook removing access to the social context field from their profile.
+- [Facebook Graph API Changes](https://auth0.com/docs/troubleshoot/product-lifecycle/past-migrations/facebook-graph-api-changes.md): The latest version of the Facebook Graph API changes what permissions and fields can be requested.
+- [Migrate from Legacy Authentication Flows](https://auth0.com/docs/troubleshoot/product-lifecycle/past-migrations/migrate-from-legacy-auth-flows.md): Describes how to migrate from legacy authentication flows.
+- [Migrate to Tenant Log Search v3](https://auth0.com/docs/troubleshoot/product-lifecycle/past-migrations/migrate-to-tenant-log-search-v3.md): Describes how to migrate from Auth0 Logs Search v2 to v3.
+- [Migrate to 1-Hour Login Flows Expiration](https://auth0.com/docs/troubleshoot/product-lifecycle/past-migrations/migrate-to-1-hour-expiration.md): Describes how to enable 1-hour expiration for interactive login flows.
+
+## Other
+
+- [Java spring security5](https://auth0.com/docs/fr-ca/quickstart/backend/java-spring-security5.md)
+- [Java spring security5](https://auth0.com/docs/ja-jp/quickstart/backend/java-spring-security5.md)
+
+## OpenAPI Specs
+
+- [myaccount-api-oas](/docs/oas/myaccount/myaccount-api-oas.json)
+- [myorganization-api-oas](/docs/oas/myorganization/myorganization-api-oas.json)
+- [management-api-oas](/docs/oas/management/v2/management-api-oas.json)
+- [events-schema](/docs/oas/events/events-schema.json)
+- [logs-schema](/docs/oas/tenant-logs/logs-schema.json)
+- [authentication-api-oas](/docs/oas/authentication/authentication-api-oas.json)
+
+> The links below point to documentation indexes. Follow each `/_llms/` index recursively until you reach documentation pages.
+
+## Indexes
+
+- [English / Get Started (291 pages)](https://auth0.com/_llms/en/get-started.md): Documentation for English / Get Started.
+- [English / Authenticate (218 pages)](https://auth0.com/_llms/en/authenticate.md): Documentation for English / Authenticate.
+- [English / Manage Users (131 pages)](https://auth0.com/_llms/en/manage-users.md): Documentation for English / Manage Users.
+- [English / Customize (279 pages)](https://auth0.com/_llms/en/customize.md): Documentation for English / Customize.
+- [English / Secure (163 pages)](https://auth0.com/_llms/en/secure.md): Documentation for English / Secure.
+- [English / Dev Tools (1026 pages)](https://auth0.com/_llms/en/dev-tools.md): Documentation for English / Dev Tools.
+- [English / Dev Tools / APIs (586 pages)](https://auth0.com/_llms/en/dev-tools/apis.md): Documentation for English / Dev Tools / APIs.
+- [English / Dev Tools / APIs / Management API (473 pages)](https://auth0.com/_llms/en/dev-tools/apis/management-api.md): Documentation for English / Dev Tools / APIs / Management API.
+- [English / Dev Tools / APIs / Management API / Organizations (51 pages)](https://auth0.com/_llms/en/dev-tools/apis/management-api/organizations.md): Documentation for English / Dev Tools / APIs / Management API / Organizations.
+- [English / Dev Tools / SDKs (202 pages)](https://auth0.com/_llms/en/dev-tools/sdks.md): Documentation for English / Dev Tools / SDKs.
+- [French (1971 pages)](https://auth0.com/_llms/fr.md): Documentation for French.
+- [French / Documentation (1128 pages)](https://auth0.com/_llms/fr/documentation.md): Documentation for French / Documentation.
+- [French / Documentation / Premiers pas (230 pages)](https://auth0.com/_llms/fr/documentation/premiers-pas.md): Learn the basics
+- [French / Documentation / S’authentifier (205 pages)](https://auth0.com/_llms/fr/documentation/s-authentifier.md): Auth0 simplifies the use of open industry standards
+- [French / Documentation / Gérer les utilisateurs (128 pages)](https://auth0.com/_llms/fr/documentation/gerer-les-utilisateurs.md): Import, group, and administer users and control their access
+- [French / Documentation / Personnaliser (268 pages)](https://auth0.com/_llms/fr/documentation/personnaliser.md): Seamlessly integrate Auth0 with your own brand
+- [French / Documentation / Sécuriser (151 pages)](https://auth0.com/_llms/fr/documentation/securiser.md): Make sure only the right people can access your applications
+- [French / Documentation / Dépanner (106 pages)](https://auth0.com/_llms/fr/documentation/depanner.md): Explore solutions to common challenges
+- [French / Référence API (578 pages)](https://auth0.com/_llms/fr/reference-api.md): Documentation for French / Référence API.
+- [French / Référence API / Management API (472 pages)](https://auth0.com/_llms/fr/reference-api/management-api.md): Documentation for French / Référence API / Management API.
+- [French / Référence API / Management API / Organizations (51 pages)](https://auth0.com/_llms/fr/reference-api/management-api/organizations.md): Documentation for French / Référence API / Management API / Organizations.
+- [Japanese (1972 pages)](https://auth0.com/_llms/ja.md): Documentation for Japanese.
+- [Japanese / Documentation (1129 pages)](https://auth0.com/_llms/ja/documentation.md): Documentation for Japanese / Documentation.
+- [Japanese / Documentation / はじめに (231 pages)](https://auth0.com/_llms/ja/documentation/dropdown.md): Learn the basics
+- [Japanese / Documentation / 認証 (205 pages)](https://auth0.com/_llms/ja/documentation/dropdown-f535bd9d.md): Auth0 simplifies the use of open industry standards
+- [Japanese / Documentation / ユーザー管理 (128 pages)](https://auth0.com/_llms/ja/documentation/dropdown-b939215a.md): Import, group, and administer users and control their access
+- [Japanese / Documentation / カスタマイズ (268 pages)](https://auth0.com/_llms/ja/documentation/dropdown-7b821de8.md): Seamlessly integrate Auth0 with your own brand
+- [Japanese / Documentation / セキュリティ保護 (151 pages)](https://auth0.com/_llms/ja/documentation/dropdown-71bc57b4.md): Make sure only the right people can access your applications
+- [Japanese / APIリファレンス (578 pages)](https://auth0.com/_llms/ja/api.md): Documentation for Japanese / APIリファレンス.
+- [Japanese / APIリファレンス / Management API (472 pages)](https://auth0.com/_llms/ja/api/management-api.md): Documentation for Japanese / APIリファレンス / Management API.
+- [Japanese / APIリファレンス / Management API / Organizations (51 pages)](https://auth0.com/_llms/ja/api/management-api/organizations.md): Documentation for Japanese / APIリファレンス / Management API / Organizations.
