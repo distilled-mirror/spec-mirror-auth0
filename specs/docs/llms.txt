@@ -81,20 +81,20 @@
 
 ## AI Agents & MCP
 
-### Agents as Principal
+### Agent as Principal
 
-- [Agents as Principal](https://auth0.com/docs/ai-agents-mcp/agents-as-principal.md): Register AI agents as first-class identities in Auth0 with their own lifecycle, credentials, and audit trail.
+- [Agent as Principal](https://auth0.com/docs/ai-agents-mcp/agent-as-principal.md): Register AI agents as first-class identities in Auth0 with their own lifecycle, credentials, and audit trail.
 
 #### Get Started
 
-- [Register an Agent](https://auth0.com/docs/ai-agents-mcp/agents-as-principal/register-an-agent.md): Create and register agents using the Auth0 Dashboard or Management API
-- [Associate an Agent with a Client](https://auth0.com/docs/ai-agents-mcp/agents-as-principal/associate-agent-client.md): Associate one or more clients with an agent so that tokens issued to those clients carry the agent's identity for attribution and traceability.
-- [Agent Identity in Tokens](https://auth0.com/docs/ai-agents-mcp/agents-as-principal/agent-identity-in-tokens.md): How Auth0 embeds agent identity in access tokens across client credentials, OBO token exchange, and standard login flows.
+- [Register an Agent](https://auth0.com/docs/ai-agents-mcp/agent-as-principal/register-an-agent.md): Create and register agents using the Auth0 Dashboard or Management API
+- [Associate an Agent with a Client](https://auth0.com/docs/ai-agents-mcp/agent-as-principal/associate-agent-client.md): Associate one or more clients with an agent so that tokens issued to those clients carry the agent's identity for attribution and traceability.
+- [Agent Identity in Tokens](https://auth0.com/docs/ai-agents-mcp/agent-as-principal/agent-identity-in-tokens.md): How Auth0 embeds agent identity in access tokens across client credentials, OBO token exchange, and standard login flows.
 
 #### Reference
 
-- [Agent Context in Actions](https://auth0.com/docs/ai-agents-mcp/agents-as-principal/actions-context.md): Access agent identity and metadata in Auth0 Actions using the `event.agent` object.
-- [Agent ID in Tenant Logs](https://auth0.com/docs/ai-agents-mcp/agents-as-principal/tenant-logs.md): Track agent activity through Auth0 tenant logs using `agent_id` or `external_agent_id`.
+- [Agent Context in Actions](https://auth0.com/docs/ai-agents-mcp/agent-as-principal/actions-context.md): Access agent identity and metadata in Auth0 Actions using the `event.agent` object.
+- [Agent ID in Tenant Logs](https://auth0.com/docs/ai-agents-mcp/agent-as-principal/tenant-logs.md): Track agent activity through Auth0 tenant logs using `agent_id` or `external_agent_id`.
 
 ### Cross App Access (XAA)
 
