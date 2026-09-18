@@ -3,11 +3,11 @@
 > Auth0 documentation
 
 - [Get Started (295 pages)](https://auth0.com/_llms/en/get-started.md): Documentation for Get Started.
-- [Authenticate (218 pages)](https://auth0.com/_llms/en/authenticate.md): Documentation for Authenticate.
+- [Authenticate (219 pages)](https://auth0.com/_llms/en/authenticate.md): Documentation for Authenticate.
 - [Manage Users (131 pages)](https://auth0.com/_llms/en/manage-users.md): Documentation for Manage Users.
 - [Customize (279 pages)](https://auth0.com/_llms/en/customize.md): Documentation for Customize.
 - [Secure (163 pages)](https://auth0.com/_llms/en/secure.md): Documentation for Secure.
-- [Dev Tools (1034 pages)](https://auth0.com/_llms/en/dev-tools.md): Documentation for Dev Tools.
+- [Dev Tools (1036 pages)](https://auth0.com/_llms/en/dev-tools.md): Documentation for Dev Tools.
 
 ## Home
 
@@ -96,6 +96,97 @@
 - [Agent Context in Actions](https://auth0.com/docs/ai-agents-mcp/agent-as-principal/actions-context.md): Access agent identity and metadata in Auth0 Actions using the `event.agent` object.
 - [Agent ID in Tenant Logs](https://auth0.com/docs/ai-agents-mcp/agent-as-principal/tenant-logs.md): Track agent activity through Auth0 tenant logs using `agent_id` or `external_agent_id`.
 
+### AI Identity for B2B
+
+- [AI Identity for B2B](https://auth0.com/ai/docs/overview.md): Secure your AI agents with user authentication, delegated authorization, human-in-the-loop controls with CIBA, and fine-grained authorization in RAG pipelines.
+
+#### Get Started
+
+##### Concepts
+
+- [Concepts](https://auth0.com/ai/docs/intro/overview.md): Learn the core concepts behind securing AI agents with Auth0, including user authentication, delegated authorization, asynchronous authorization, and authorization for RAG.
+- [User Authentication for AI Agents](https://auth0.com/ai/docs/intro/user-authentication.md): Integrate Auth0 into your AI agents to secure user authentication with social, enterprise, and custom identity providers.
+- [Asynchronous Authorization](https://auth0.com/ai/docs/intro/asynchronous-authorization.md): Enable AI agents to request user consent for sensitive actions via push notification, SMS, or email using CIBA, without interrupting the user's current session.
+- [Authorization for RAG](https://auth0.com/ai/docs/intro/authorization-for-rag.md): Enforce fine-grained, document-level access control in RAG pipelines with Auth0 FGA, ensuring AI agents only retrieve data the current user is authorized to see.
+
+###### Delegated Authorization
+
+- [Delegated Authorization for AI Agents](https://auth0.com/ai/docs/intro/delegated-authorization.md): Enable your AI agents to call APIs on a user's behalf using OAuth 2.0, with access scoped to only what the user has explicitly consented to.
+- [Call First-Party APIs on User's Behalf](https://auth0.com/ai/docs/intro/call-first-party-apis-on-users-behalf.md): Enable your AI agents to securely call first-party APIs on behalf of authenticated users.
+- [Call Third-Party APIs on User's Behalf](https://auth0.com/ai/docs/intro/call-third-party-apis-on-users-behalf.md): Enable your AI agent to call third-party APIs on the user's behalf with Token Vault.
+
+##### Quickstarts
+
+- [Quickstarts](https://auth0.com/ai/docs/get-started/overview.md): Start building with AI Identity for B2B quickstarts.
+- [User Authentication](https://auth0.com/ai/docs/get-started/user-authentication.md): Leverage Auth0's Universal Login to enable AI agents to securely authenticate users.
+- [Call First-Party APIs on Users' Behalf](https://auth0.com/ai/docs/get-started/call-first-party-apis-on-users-behalf.md): Manage tokens to enable AI agents to call first-party APIs on the user's behalf.
+- [Call Third-Party APIs on Users' Behalf](https://auth0.com/ai/docs/get-started/call-third-party-apis-on-users-behalf.md): Connect AI agents to external tools, functions, and services using Token Vault.
+- [Asynchronous Authorization](https://auth0.com/ai/docs/get-started/asynchronous-authorization.md): Add human-in-the-loop controls for critical or delayed actions using secure protocols like Client-Initiated Backchannel Authentication.
+- [Authorization for RAG](https://auth0.com/ai/docs/get-started/authorization-for-rag.md): Use Auth0 Fine-Grained Authorization to enforce document and relationship-level access control in your Retrieval Augmented Generation (RAG) pipelines.
+
+#### Connections
+
+- [Connections](https://auth0.com/ai/docs/connections/overview.md): Use Auth0 connections to enable AI Agents to access and call third-party APIs on the user's behalf through Token Vault.
+
+##### Social Connections
+
+- [Amazon](https://auth0.com/ai/docs/connections/amazon.md): Connect your AI agents to Amazon to manage inventory, update product listings, and track sales performance.
+- [Basecamp](https://auth0.com/ai/docs/connections/basecamp.md): Connect your AI agent to a user's Basecamp account to create projects, add to-do items, post messages, and upload files.
+- [Bitbucket](https://auth0.com/ai/docs/connections/bitbucket.md): Connect your AI agent to Bitbucket to manage repositories and automate pull request creation and management.
+- [Box](https://auth0.com/ai/docs/connections/box.md): Connect your AI Agents to Box for file management and collaboration.
+- [DigitalOcean](https://auth0.com/ai/docs/connections/digitalocean.md): Connect your AI agent to a user's DigitalOcean account to automate the creation and management of servers and storage volumes.
+- [Discord](https://auth0.com/ai/docs/connections/discord.md): Connect your AI agent to a Discord server to welcome new members, play music, manage user roles, and integrate with other services.
+- [Dropbox](https://auth0.com/ai/docs/connections/dropbox.md): Connect your AI agent to a user's Dropbox account to automatically organize files into folders and manage shared links.
+- [Figma](https://auth0.com/ai/docs/connections/figma.md): Connect your AI agent to a user's Figma account to export assets and apply changes to design files programmatically.
+- [Fitbit](https://auth0.com/ai/docs/connections/fitbit.md): Connect your AI agent to a user's Fitbit account to track fitness data and set new fitness goals.
+- [Freshbooks](https://auth0.com/ai/docs/connections/freshbooks.md): Connect your AI agent to a user's FreshBooks account to create invoices, track expenses, and manage client information.
+- [GitHub](https://auth0.com/ai/docs/connections/github.md): Connect your AI Agents to GitHub for repository access, issue management, and developer workflows.
+- [Google](https://auth0.com/ai/docs/connections/google.md): Connect your AI Agents to Google services including Gmail, Google Calendar, Drive, and more.
+- [Hugging Face](https://auth0.com/ai/docs/connections/hugging-face.md): Connect your AI agent to a user's Hugging Face account to manage and upload models and datasets.
+- [Microsoft](https://auth0.com/ai/docs/connections/microsoft.md): Connect your AI Agents to Microsoft services including Outlook, Teams, OneDrive, and more.
+- [OAuth2](https://auth0.com/ai/docs/connections/oauth2.md): Build a custom social connection for any OAuth2 compliant authorization server.
+- [PayPal](https://auth0.com/ai/docs/connections/paypal.md): Connect your AI agent to a user's PayPal account to automate invoice sending and process payments.
+- [Salesforce](https://auth0.com/ai/docs/connections/salesforce.md): Connect your AI agent to a user's Salesforce account to create or update leads, manage contacts, and automate case management.
+- [Slack](https://auth0.com/ai/docs/connections/slack.md): Connect your AI Agents to Slack for team communication and workflow automation.
+- [Snapchat](https://auth0.com/ai/docs/connections/snapchat.md): Connect your AI agent to a user's Snapchat account to share content like photos, videos, and links.
+- [Spotify](https://auth0.com/ai/docs/connections/spotify.md): Connect your AI agent to a user's Spotify account to create and modify playlists.
+- [Stripe Connect](https://auth0.com/ai/docs/connections/stripe-connect.md): Connect your AI agent to Stripe to manage account setup, review payments, and create reports.
+- [Tumblr](https://auth0.com/ai/docs/connections/tumblr.md): Connect your AI agent to a user's Tumblr blog to create and schedule new posts and reblog content.
+- [Twitch](https://auth0.com/ai/docs/connections/twitch.md): Connect your AI agent to a user's Twitch channel to create stream markers and manage channel polls.
+- [X (Twitter)](https://auth0.com/ai/docs/connections/twitter.md): Connect your AI agent to a user's Twitter account to monitor keywords, automatically reply to tweets, and schedule content.
+
+##### Enterprise Connections
+
+- [OpenID Connect (OIDC)](https://auth0.com/ai/docs/connections/oidc.md): Configure a custom OIDC connection to integrate with any OpenID Connect compliant identity provider.
+- [Google Workspace](https://auth0.com/ai/docs/connections/google-workspace.md): Connect your AI agents to Google Workspace services including Gmail, Calendar, Sheets, Drive, and more.
+- [Microsoft Entra (Azure AD)](https://auth0.com/ai/docs/connections/microsoft-azure.md): Connect your AI agents to Microsoft Entra services including Outlook, Teams, OneDrive, and more.
+
+#### SDKs
+
+- [AI Identity for B2B SDKs](https://auth0.com/ai/docs/sdks/overview.md): Start building secure AI agents with the Auth0 AI SDKs.
+- [JavaScript SDKs & Samples](https://auth0.com/ai/docs/sdks/javascript-sdk.md): Auth0 JavaScript SDKs make it easy for developers to integrate with and secure AI agent workflows.
+- [Python SDKs & Samples](https://auth0.com/ai/docs/sdks/python-sdk.md): Auth0 Python SDKs make it easy for developers to integrate with and secure AI agent workflows.
+- [LangChain SDKs & Samples](https://auth0.com/ai/docs/sdks/langchain-sdk.md): AI Identity for B2B LangChain & LangGraph SDKs make it easy for developers to integrate with and secure AI agent workflows using LangChain and LangGraph.
+- [LlamaIndex SDK](https://auth0.com/ai/docs/sdks/llamaindex-sdk.md): AI Identity for B2B LlamaIndex SDKs make it easy for developers to integrate with and secure AI agent workflows using LlamaIndex.
+- [Vercel AI SDKs & Samples](https://auth0.com/ai/docs/sdks/vercel-ai-sdk.md): AI Identity for B2B Vercel AI SDKs make it easy for developers to integrate with and secure AI agent workflows using Vercel AI.
+- [Cloudflare Agents SDKs & Samples](https://auth0.com/ai/docs/sdks/cloudflare-sdk.md): AI Identity for B2B Cloudflare SDK makes it easy for developers to integrate with and secure AI agent workflows using Cloudflare Agents.
+- [Genkit SDK](https://auth0.com/ai/docs/sdks/genkit-sdk.md): AI Identity for B2B Genkit SDK makes it easy for developers to integrate with and secure AI agent workflows using Genkit.
+
+#### Resources
+
+##### Sample Apps
+
+- [Sample Apps](https://auth0.com/ai/docs/sample-apps/sample-apps.md): Explore sample apps built using AI Identity for B2B.
+- [Deploy to Amazon Bedrock with Auth0](https://auth0.com/ai/docs/sample-apps/amazon-bedrock.md): Learn how to secure Amazon Bedrock and AgentCore agents with AI Identity for B2B.
+
+##### How-tos
+
+- [How-Tos](https://auth0.com/ai/docs/how-tos/overview.md): Explore How-Tos of common AI Identity for B2B use cases.
+- [Check Google Calendar Availability](https://auth0.com/ai/docs/how-tos/check-google-calendar-availability.md): Use OpenAI, NextJS, and the Auth0-AI SDKs to check your Google Calendar availability.
+- [List GitHub Repositories](https://auth0.com/ai/docs/how-tos/list-github-repositories.md): Use OpenAI, NextJS, and the Auth0-AI SDKs to list your GitHub repositories
+- [List Slack Channels](https://auth0.com/ai/docs/how-tos/list-slack-channels.md): Use OpenAI, NextJS, and the Auth0-AI SDKs to list your Slack channels
+- [Get Salesforce Opportunities](https://auth0.com/ai/docs/how-tos/get-salesforce-opportunities.md): Use OpenAI, NextJS, and the Auth0-AI SDKs to get Salesforce opportunities
+
 ### Cross App Access (XAA)
 
 - [Cross App Access (XAA)](https://auth0.com/docs/ai-agents-mcp/cross-app-access.md): Create and manage AI agent-to-app and app-to-app connections using centralized enterprise admin controls, with out-of-the-box support for MCP's Enterprise-Managed Authorization.
@@ -120,6 +211,38 @@
 ##### IdP Integration
 
 - [Okta as OIDC IdP](https://auth0.com/docs/ai-agents-mcp/cross-app-access/requesting-app/idp/okta-as-oidc-idp.md): Configure Okta as the OIDC enterprise identity provider for the XAA Requesting App.
+
+### Auth for MCP
+
+- [Auth for MCP](https://auth0.com/ai/docs/mcp/overview.md): Enable MCP clients to securely connect to MCP servers with Auth0.
+
+#### Get Started
+
+- [Why use Auth for MCP](https://auth0.com/ai/docs/mcp/why-auth-for-mcp.md): Benefits of using Auth0 to authenticate users before they or their AI Agents connect to MCP Servers.
+
+##### Quickstarts
+
+- [Get Started](https://auth0.com/ai/docs/mcp/get-started/overview.md): Start building with Auth for MCP quickstarts.
+- [Authorization for Your MCP Server](https://auth0.com/ai/docs/mcp/get-started/authorization-for-your-mcp-server.md): Learn how to protect your MCP server by requiring access tokens from authorized clients.
+- [Call First-Party APIs on a User's Behalf](https://auth0.com/ai/docs/mcp/get-started/call-your-apis-on-users-behalf.md): Learn how to call an Auth0-protected API from your MCP server.
+- [Control Access to MCP Tools with FGA](https://auth0.com/ai/docs/mcp/get-started/secure-mcp-server-with-auth0-fga.md): Learn how to implement fine-grained authorization for your MCP server tools using Auth0 FGA with roles, groups, and temporal access.
+
+#### Guides
+
+- [Enable Resource Parameter Compatibility Profile](https://auth0.com/ai/docs/mcp/guides/resource-param-compatibility-profile.md): Learn how to enable the resource parameter in Auth0.
+- [Test your MCP Server with MCP Inspector](https://auth0.com/ai/docs/mcp/guides/test-your-mcp-server-with-mcp-inspector.md): Learn how to test your MCP server with MCP Inspector.
+
+##### Register your MCP Client Application
+
+- [Register your MCP Client Application](https://auth0.com/ai/docs/mcp/guides/registering-your-mcp-client-application.md): Learn how to register your MCP client application in Auth0.
+- [Manual CIMD Registration](https://auth0.com/ai/docs/mcp/guides/registering-your-mcp-client-application/manual-cimd-registration.md): Learn how to register MCP clients by importing an externally hosted Client ID Metadata Document (CIMD).
+- [Manual Client Registration](https://auth0.com/ai/docs/mcp/guides/registering-your-mcp-client-application/manual-client-registration.md): Learn how to manually register your MCP client in Auth0.
+- [Dynamic Client Registration (DCR)](https://auth0.com/ai/docs/mcp/guides/registering-your-mcp-client-application/dynamic-client-registration.md): Learn how to dynamically register clients in Auth0.
+
+#### Sample Apps
+
+- [Sample Apps](https://auth0.com/ai/docs/mcp/sample-apps.md): Explore sample MCP apps built using Auth for MCP.
+- [Secure MCP Servers with Auth0 and Cloudflare](https://auth0.com/ai/docs/mcp/guides/cloudflare-mcp.md): Learn how to use Auth0 and Cloudflare to secure MCP servers.
 
 ## Platform
 
@@ -189,7 +312,6 @@
 - [Deprecations and Migrations](https://auth0.com/docs/troubleshoot/product-lifecycle/deprecations-and-migrations.md): Lists all deprecations with active migrations that may impact your tenant.
 - [Migrate to Enhanced Security for Third-Party Applications](https://auth0.com/docs/troubleshoot/product-lifecycle/deprecations-and-migrations/migrate-to-enhanced-security-third-party-applications.md): Learn how enhanced security controls affect existing and newly created third-party applications.
 - [Migrate from Node 18 to Node 22](https://auth0.com/docs/troubleshoot/product-lifecycle/deprecations-and-migrations/migrate-nodejs-22.md): Describes Auth0 Actions items affected by the Node.js 18
-- [Migrate to Non-Verifiable Callback URI End-User Confirmation](https://auth0.com/docs/troubleshoot/product-lifecycle/deprecations-and-migrations/migrate-to-non-verifiable-callback-uri-end-user-confirmation.md): Learn how you can enhance security and mitigate risks of application impersonation with HTTPS-based callbacks.
 - [Migrate Enabled Client Management to Dedicated Connection Endpoints](https://auth0.com/docs/troubleshoot/product-lifecycle/deprecations-and-migrations/migrate-dedicated-connection-endpoints.md): Learn how to update your Auth0 connection configuration from using the `enabled_clients` field to dedicated connection endpoints.
 - [Migrate to Management API Connection Options Scopes](https://auth0.com/docs/troubleshoot/product-lifecycle/deprecations-and-migrations/migrate-connection-options-scope.md): Learn how to update your Auth0 integrations to manage connections with options-specific scopes.
 - [Migrate Oversized User Profiles](https://auth0.com/docs/troubleshoot/product-lifecycle/deprecations-and-migrations/migrate-oversized-user-profiles.md): Learn how to identify, review, and migrate away from oversized Auth0 user profiles ahead of the 10KB size limit enforcement.
@@ -197,6 +319,7 @@
 #### Past Migrations
 
 - [Past Migrations](https://auth0.com/docs/troubleshoot/product-lifecycle/past-migrations.md): List of Auth0 updates that have already been enabled for all customers.
+- [Migrate to Non-Verifiable Callback URI End-User Confirmation](https://auth0.com/docs/troubleshoot/product-lifecycle/past-migrations/migrate-to-non-verifiable-callback-uri-end-user-confirmation.md): Learn how you can enhance security and mitigate risks of application impersonation with HTTPS-based callbacks.
 - [Migrate from Node 12 and 16 to Node 18](https://auth0.com/docs/troubleshoot/product-lifecycle/past-migrations/migrate-nodejs-16-to-nodejs-18.md): Describes Auth0 Actions items affected by the Node.js v12+6 to Node.js v18 migration.
 - [Migrate from edge.js extensibility features](https://auth0.com/docs/troubleshoot/product-lifecycle/past-migrations/migrate-from-edge-js-extensibility-features.md): Get started using Auth0. Implement authentication for any kind of application in minutes.
 - [Migrate from oracledb extensibility features](https://auth0.com/docs/troubleshoot/product-lifecycle/past-migrations/migrate-from-oracledb-extensibility-features.md): Get started using Auth0. Implement authentication for any kind of application in minutes.
@@ -239,11 +362,11 @@
 ## Indexes
 
 - [English / Get Started (295 pages)](https://auth0.com/_llms/en/get-started.md): Documentation for English / Get Started.
-- [English / Authenticate (218 pages)](https://auth0.com/_llms/en/authenticate.md): Documentation for English / Authenticate.
+- [English / Authenticate (219 pages)](https://auth0.com/_llms/en/authenticate.md): Documentation for English / Authenticate.
 - [English / Manage Users (131 pages)](https://auth0.com/_llms/en/manage-users.md): Documentation for English / Manage Users.
 - [English / Customize (279 pages)](https://auth0.com/_llms/en/customize.md): Documentation for English / Customize.
 - [English / Secure (163 pages)](https://auth0.com/_llms/en/secure.md): Documentation for English / Secure.
-- [English / Dev Tools (1034 pages)](https://auth0.com/_llms/en/dev-tools.md): Documentation for English / Dev Tools.
+- [English / Dev Tools (1036 pages)](https://auth0.com/_llms/en/dev-tools.md): Documentation for English / Dev Tools.
 - [English / Dev Tools / APIs (594 pages)](https://auth0.com/_llms/en/dev-tools/apis.md): Documentation for English / Dev Tools / APIs.
 - [English / Dev Tools / APIs / Management API (482 pages)](https://auth0.com/_llms/en/dev-tools/apis/management-api.md): Documentation for English / Dev Tools / APIs / Management API.
 - [English / Dev Tools / APIs / Management API / Organizations (52 pages)](https://auth0.com/_llms/en/dev-tools/apis/management-api/organizations.md): Documentation for English / Dev Tools / APIs / Management API / Organizations.
