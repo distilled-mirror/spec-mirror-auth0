@@ -6,7 +6,7 @@
 - [Authenticate (219 pages)](https://auth0.com/_llms/en/authenticate.md): Documentation for Authenticate.
 - [Manage Users (132 pages)](https://auth0.com/_llms/en/manage-users.md): Documentation for Manage Users.
 - [Customize (285 pages)](https://auth0.com/_llms/en/customize.md): Documentation for Customize.
-- [Secure (163 pages)](https://auth0.com/_llms/en/secure.md): Documentation for Secure.
+- [Secure (164 pages)](https://auth0.com/_llms/en/secure.md): Documentation for Secure.
 - [Dev Tools (1036 pages)](https://auth0.com/_llms/en/dev-tools.md): Documentation for Dev Tools.
 
 ## Home
@@ -365,7 +365,7 @@
 - [English / Authenticate (219 pages)](https://auth0.com/_llms/en/authenticate.md): Documentation for English / Authenticate.
 - [English / Manage Users (132 pages)](https://auth0.com/_llms/en/manage-users.md): Documentation for English / Manage Users.
 - [English / Customize (285 pages)](https://auth0.com/_llms/en/customize.md): Documentation for English / Customize.
-- [English / Secure (163 pages)](https://auth0.com/_llms/en/secure.md): Documentation for English / Secure.
+- [English / Secure (164 pages)](https://auth0.com/_llms/en/secure.md): Documentation for English / Secure.
 - [English / Dev Tools (1036 pages)](https://auth0.com/_llms/en/dev-tools.md): Documentation for English / Dev Tools.
 - [English / Dev Tools / APIs (592 pages)](https://auth0.com/_llms/en/dev-tools/apis.md): Documentation for English / Dev Tools / APIs.
 - [English / Dev Tools / APIs / Management API (479 pages)](https://auth0.com/_llms/en/dev-tools/apis/management-api.md): Documentation for English / Dev Tools / APIs / Management API.
