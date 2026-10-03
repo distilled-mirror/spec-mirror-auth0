@@ -2,12 +2,12 @@
 
 > Auth0 documentation
 
-- [Get Started (295 pages)](https://auth0.com/_llms/en/get-started.md): Documentation for Get Started.
+- [Get Started (296 pages)](https://auth0.com/_llms/en/get-started.md): Documentation for Get Started.
 - [Authenticate (219 pages)](https://auth0.com/_llms/en/authenticate.md): Documentation for Authenticate.
-- [Manage Users (128 pages)](https://auth0.com/_llms/en/manage-users.md): Documentation for Manage Users.
+- [Manage Users (123 pages)](https://auth0.com/_llms/en/manage-users.md): Documentation for Manage Users.
 - [Customize (285 pages)](https://auth0.com/_llms/en/customize.md): Documentation for Customize.
-- [Secure (164 pages)](https://auth0.com/_llms/en/secure.md): Documentation for Secure.
-- [Dev Tools (1036 pages)](https://auth0.com/_llms/en/dev-tools.md): Documentation for Dev Tools.
+- [Secure (154 pages)](https://auth0.com/_llms/en/secure.md): Documentation for Secure.
+- [Dev Tools (1038 pages)](https://auth0.com/_llms/en/dev-tools.md): Documentation for Dev Tools.
 
 ## Deploy & Monitor
 
@@ -297,6 +297,22 @@
 - [Private Cloud Performance 6000 RPS (60x) and 6000 RPS (60x) Burst](https://auth0.com/docs/troubleshoot/customer-support/operational-policies/rate-limit-policy/rate-limit-configurations/tier-6000-rps-private-cloud.md): Tier 6000 RPS Private Cloud rate limits
 - [Private Cloud Performance 10,000 RPS (100x)](https://auth0.com/docs/troubleshoot/customer-support/operational-policies/rate-limit-policy/rate-limit-configurations/tier-10000-rps-private-cloud.md): Tier 10000 RPS Private Cloud rate limits
 
+### Data Privacy and Compliance
+
+- [Auth0 Data Privacy and Compliance](https://auth0.com/docs/secure/data-privacy-and-compliance.md)
+- [Auth0 Data Processing](https://auth0.com/docs/secure/data-privacy-and-compliance/data-processing.md): Learn how Auth0 handles tenant data in its possession, including storage regions, retention, encryption, and access controls.
+
+#### GDPR
+
+- [Auth0 General Data Protection Regulation Compliance](https://auth0.com/docs/secure/data-privacy-and-compliance/gdpr.md): Describes how Auth0 complies with the EU's General Data Protection Regulation (GDPR).
+- [GDPR: Conditions for Consent](https://auth0.com/docs/secure/data-privacy-and-compliance/gdpr/gdpr-conditions-for-consent.md): Describes which Auth0 features can help you comply with the Conditions for Consent GDPR requirements.
+- [GDPR: Track Consent with Custom UI](https://auth0.com/docs/secure/data-privacy-and-compliance/gdpr/gdpr-track-consent-with-custom-ui.md): Describes how you can use either auth0.js or the Auth0 APIs to capture consent information when you use your own custom UI for logins.
+- [GDPR: Track Consent with Lock](https://auth0.com/docs/secure/data-privacy-and-compliance/gdpr/gdpr-track-consent-with-lock.md): Customize Auth0 Lock to capture GDPR consent at signup by adding a consent checkbox, recording the choice in user metadata, and persisting it across logins.
+- [GDPR: Right to Access, Correct, and Erase Data](https://auth0.com/docs/secure/data-privacy-and-compliance/gdpr/gdpr-right-to-access-correct-and-erase-data.md): Describes Auth0 features that help you comply with the GDPR requirements on the user's right to access, correct, and erase their personal data.
+- [GDPR: Data Minimization](https://auth0.com/docs/secure/data-privacy-and-compliance/gdpr/gdpr-data-minimization.md): Describes how you can minimize the personal data they collect for processing and ensure their security.
+- [GDPR: Data Portability](https://auth0.com/docs/secure/data-privacy-and-compliance/gdpr/gdpr-data-portability.md): Describes how you can export user data in order to comply with data portability GDPR requirements.
+- [GDPR: Protect and Secure User Data](https://auth0.com/docs/secure/data-privacy-and-compliance/gdpr/gdpr-protect-and-secure-user-data.md): Describes how you can use Auth0 features to protect and secure user's personal data.
+
 ### Product Lifecycle
 
 - [Product Lifecycle](https://auth0.com/docs/troubleshoot/product-lifecycle.md): Learn about the Auth0 product lifecycle, including product release stages, deprecations, end-of-life, the migration process, and active migrations.
@@ -357,12 +373,12 @@
 
 ## Indexes
 
-- [English / Get Started (295 pages)](https://auth0.com/_llms/en/get-started.md): Documentation for English / Get Started.
+- [English / Get Started (296 pages)](https://auth0.com/_llms/en/get-started.md): Documentation for English / Get Started.
 - [English / Authenticate (219 pages)](https://auth0.com/_llms/en/authenticate.md): Documentation for English / Authenticate.
-- [English / Manage Users (128 pages)](https://auth0.com/_llms/en/manage-users.md): Documentation for English / Manage Users.
+- [English / Manage Users (123 pages)](https://auth0.com/_llms/en/manage-users.md): Documentation for English / Manage Users.
 - [English / Customize (285 pages)](https://auth0.com/_llms/en/customize.md): Documentation for English / Customize.
-- [English / Secure (164 pages)](https://auth0.com/_llms/en/secure.md): Documentation for English / Secure.
-- [English / Dev Tools (1036 pages)](https://auth0.com/_llms/en/dev-tools.md): Documentation for English / Dev Tools.
+- [English / Secure (154 pages)](https://auth0.com/_llms/en/secure.md): Documentation for English / Secure.
+- [English / Dev Tools (1038 pages)](https://auth0.com/_llms/en/dev-tools.md): Documentation for English / Dev Tools.
 - [English / Dev Tools / APIs (592 pages)](https://auth0.com/_llms/en/dev-tools/apis.md): Documentation for English / Dev Tools / APIs.
 - [English / Dev Tools / APIs / Management API (479 pages)](https://auth0.com/_llms/en/dev-tools/apis/management-api.md): Documentation for English / Dev Tools / APIs / Management API.
 - [English / Dev Tools / APIs / Management API / Organizations (49 pages)](https://auth0.com/_llms/en/dev-tools/apis/management-api/organizations.md): Documentation for English / Dev Tools / APIs / Management API / Organizations.
