@@ -5,9 +5,9 @@
 - [Get Started (296 pages)](https://auth0.com/_llms/en/get-started.md): Documentation for Get Started.
 - [Authenticate (219 pages)](https://auth0.com/_llms/en/authenticate.md): Documentation for Authenticate.
 - [Manage Users (123 pages)](https://auth0.com/_llms/en/manage-users.md): Documentation for Manage Users.
-- [Customize (285 pages)](https://auth0.com/_llms/en/customize.md): Documentation for Customize.
+- [Customize (286 pages)](https://auth0.com/_llms/en/customize.md): Documentation for Customize.
 - [Secure (154 pages)](https://auth0.com/_llms/en/secure.md): Documentation for Secure.
-- [Dev Tools (1037 pages)](https://auth0.com/_llms/en/dev-tools.md): Documentation for Dev Tools.
+- [Dev Tools (1042 pages)](https://auth0.com/_llms/en/dev-tools.md): Documentation for Dev Tools.
 
 ## Deploy & Monitor
 
@@ -376,32 +376,33 @@
 - [English / Get Started (296 pages)](https://auth0.com/_llms/en/get-started.md): Documentation for English / Get Started.
 - [English / Authenticate (219 pages)](https://auth0.com/_llms/en/authenticate.md): Documentation for English / Authenticate.
 - [English / Manage Users (123 pages)](https://auth0.com/_llms/en/manage-users.md): Documentation for English / Manage Users.
-- [English / Customize (285 pages)](https://auth0.com/_llms/en/customize.md): Documentation for English / Customize.
+- [English / Customize (286 pages)](https://auth0.com/_llms/en/customize.md): Documentation for English / Customize.
 - [English / Secure (154 pages)](https://auth0.com/_llms/en/secure.md): Documentation for English / Secure.
-- [English / Dev Tools (1037 pages)](https://auth0.com/_llms/en/dev-tools.md): Documentation for English / Dev Tools.
-- [English / Dev Tools / APIs (591 pages)](https://auth0.com/_llms/en/dev-tools/apis.md): Documentation for English / Dev Tools / APIs.
+- [English / Dev Tools (1042 pages)](https://auth0.com/_llms/en/dev-tools.md): Documentation for English / Dev Tools.
+- [English / Dev Tools / APIs (596 pages)](https://auth0.com/_llms/en/dev-tools/apis.md): Documentation for English / Dev Tools / APIs.
 - [English / Dev Tools / APIs / Management API (477 pages)](https://auth0.com/_llms/en/dev-tools/apis/management-api.md): Documentation for English / Dev Tools / APIs / Management API.
 - [English / Dev Tools / APIs / Management API / Organizations (49 pages)](https://auth0.com/_llms/en/dev-tools/apis/management-api/organizations.md): Documentation for English / Dev Tools / APIs / Management API / Organizations.
 - [English / Dev Tools / SDKs (202 pages)](https://auth0.com/_llms/en/dev-tools/sdks.md): Documentation for English / Dev Tools / SDKs.
-- [French (2244 pages)](https://auth0.com/_llms/fr.md): Documentation for French.
-- [French / Get Started (291 pages)](https://auth0.com/_llms/fr/get-started.md): Documentation for French / Get Started.
-- [French / Authenticate (218 pages)](https://auth0.com/_llms/fr/authenticate.md): Documentation for French / Authenticate.
-- [French / Manage Users (130 pages)](https://auth0.com/_llms/fr/manage-users.md): Documentation for French / Manage Users.
-- [French / Customize (279 pages)](https://auth0.com/_llms/fr/customize.md): Documentation for French / Customize.
-- [French / Secure (163 pages)](https://auth0.com/_llms/fr/secure.md): Documentation for French / Secure.
-- [French / Dev Tools (1030 pages)](https://auth0.com/_llms/fr/dev-tools.md): Documentation for French / Dev Tools.
-- [French / Dev Tools / APIs (588 pages)](https://auth0.com/_llms/fr/dev-tools/apis.md): Documentation for French / Dev Tools / APIs.
-- [French / Dev Tools / APIs / Management API (479 pages)](https://auth0.com/_llms/fr/dev-tools/apis/management-api.md): Documentation for French / Dev Tools / APIs / Management API.
-- [French / Dev Tools / APIs / Management API / Guardian (42 pages)](https://auth0.com/_llms/fr/dev-tools/apis/management-api/guardian.md): Documentation for French / Dev Tools / APIs / Management API / Guardian.
-- [French / Dev Tools / APIs / Management API / Organizations (49 pages)](https://auth0.com/_llms/fr/dev-tools/apis/management-api/organizations.md): Documentation for French / Dev Tools / APIs / Management API / Organizations.
-- [French / Dev Tools / SDKs (202 pages)](https://auth0.com/_llms/fr/dev-tools/sdks.md): Documentation for French / Dev Tools / SDKs.
-- [Japanese (2244 pages)](https://auth0.com/_llms/ja.md): Documentation for Japanese.
-- [Japanese / Get Started (291 pages)](https://auth0.com/_llms/ja/get-started.md): Documentation for Japanese / Get Started.
-- [Japanese / Authenticate (218 pages)](https://auth0.com/_llms/ja/authenticate.md): Documentation for Japanese / Authenticate.
-- [Japanese / Manage Users (130 pages)](https://auth0.com/_llms/ja/manage-users.md): Documentation for Japanese / Manage Users.
-- [Japanese / Customize (279 pages)](https://auth0.com/_llms/ja/customize.md): Documentation for Japanese / Customize.
-- [Japanese / Secure (163 pages)](https://auth0.com/_llms/ja/secure.md): Documentation for Japanese / Secure.
-- [Japanese / Dev Tools (1030 pages)](https://auth0.com/_llms/ja/dev-tools.md): Documentation for Japanese / Dev Tools.
-- [Japanese / Dev Tools / APIs (588 pages)](https://auth0.com/_llms/ja/dev-tools/apis.md): Documentation for Japanese / Dev Tools / APIs.
-- [Japanese / Dev Tools / APIs / Management API (479 pages)](https://auth0.com/_llms/ja/dev-tools/apis/management-api.md): Documentation for Japanese / Dev Tools / APIs / Management API.
-- [Japanese / Dev Tools / SDKs (202 pages)](https://auth0.com/_llms/ja/dev-tools/sdks.md): Documentation for Japanese / Dev Tools / SDKs.
+- [Canadian French (2334 pages)](https://auth0.com/_llms/fr-ca.md): Documentation for Canadian French.
+- [Canadian French / Pour commencer (296 pages)](https://auth0.com/_llms/fr-ca/pour-commencer.md): Documentation for Canadian French / Pour commencer.
+- [Canadian French / Authentifier (219 pages)](https://auth0.com/_llms/fr-ca/authentifier.md): Documentation for Canadian French / Authentifier.
+- [Canadian French / Gérer les utilisateurs (123 pages)](https://auth0.com/_llms/fr-ca/gerer-les-utilisateurs.md): Documentation for Canadian French / Gérer les utilisateurs.
+- [Canadian French / Personnaliser (286 pages)](https://auth0.com/_llms/fr-ca/personnaliser.md): Documentation for Canadian French / Personnaliser.
+- [Canadian French / Sécuriser (154 pages)](https://auth0.com/_llms/fr-ca/securiser.md): Documentation for Canadian French / Sécuriser.
+- [Canadian French / Plateforme (85 pages)](https://auth0.com/_llms/fr-ca/plateforme.md): Documentation for Canadian French / Plateforme.
+- [Canadian French / Outils de développement (1042 pages)](https://auth0.com/_llms/fr-ca/outils-de-developpement.md): Documentation for Canadian French / Outils de développement.
+- [Canadian French / Outils de développement / API (596 pages)](https://auth0.com/_llms/fr-ca/outils-de-developpement/api.md): Documentation for Canadian French / Outils de développement / API.
+- [Canadian French / Outils de développement / API / Management API (477 pages)](https://auth0.com/_llms/fr-ca/outils-de-developpement/api/management-api.md): Documentation for Canadian French / Outils de développement / API / Management API.
+- [Canadian French / Outils de développement / API / Management API / Guardian (42 pages)](https://auth0.com/_llms/fr-ca/outils-de-developpement/api/management-api/guardian.md): Documentation for Canadian French / Outils de développement / API / Management API / Guardian.
+- [Canadian French / Outils de développement / API / Management API / Organizations (49 pages)](https://auth0.com/_llms/fr-ca/outils-de-developpement/api/management-api/organizations.md): Documentation for Canadian French / Outils de développement / API / Management API / Organizations.
+- [Canadian French / Outils de développement / SDK (202 pages)](https://auth0.com/_llms/fr-ca/outils-de-developpement/sdk.md): Documentation for Canadian French / Outils de développement / SDK.
+- [Japanese (2334 pages)](https://auth0.com/_llms/ja-jp.md): Documentation for Japanese.
+- [Japanese / はじめに (296 pages)](https://auth0.com/_llms/ja-jp/tab.md): Documentation for Japanese / はじめに.
+- [Japanese / 認証 (219 pages)](https://auth0.com/_llms/ja-jp/tab-e7325d8b.md): Documentation for Japanese / 認証.
+- [Japanese / ユーザーを管理 (123 pages)](https://auth0.com/_llms/ja-jp/tab-b619e176.md): Documentation for Japanese / ユーザーを管理.
+- [Japanese / カスタマイズ (286 pages)](https://auth0.com/_llms/ja-jp/tab-4480a033.md): Documentation for Japanese / カスタマイズ.
+- [Japanese / セキュリティ (154 pages)](https://auth0.com/_llms/ja-jp/tab-7305b6a2.md): Documentation for Japanese / セキュリティ.
+- [Japanese / 開発ツール (1042 pages)](https://auth0.com/_llms/ja-jp/tab-ad395c98.md): Documentation for Japanese / 開発ツール.
+- [Japanese / 開発ツール / API (596 pages)](https://auth0.com/_llms/ja-jp/tab-ad395c98/api.md): Documentation for Japanese / 開発ツール / API.
+- [Japanese / 開発ツール / API / Management API (477 pages)](https://auth0.com/_llms/ja-jp/tab-ad395c98/api/management-api.md): Documentation for Japanese / 開発ツール / API / Management API.
+- [Japanese / 開発ツール / SDK (202 pages)](https://auth0.com/_llms/ja-jp/tab-ad395c98/sdk.md): Documentation for Japanese / 開発ツール / SDK.
