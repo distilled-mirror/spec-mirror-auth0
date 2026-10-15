@@ -3992,6 +3992,164 @@
         "x-codeSamples": []
       }
     },
+    "/attack-protection/captcha/policies/{id}": {
+      "get": {
+        "summary": "Get a CAPTCHA attack protection policy",
+        "description": "Retrieve a single CAPTCHA attack protection policy for the tenant by ID.",
+        "tags": [
+          "attack-protection"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/CaptchaPolicyIdParameter"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/GetAttackProtectionCaptchaPolicyResponse"
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          }
+        },
+        "operationId": "get_attack_protection_captcha_policy",
+        "x-release-lifecycle": "EA",
+        "x-operation-name": "get",
+        "x-operation-group": [
+          "attackProtection",
+          "captchaPolicies"
+        ],
+        "security": [
+          {
+            "bearerAuth": []
+          },
+          {
+            "oAuth2ClientCredentials": [
+              "read:attack_protection"
+            ]
+          }
+        ],
+        "x-codeSamples": []
+      },
+      "delete": {
+        "summary": "Delete a CAPTCHA attack protection policy",
+        "description": "Delete a CAPTCHA attack protection policy for the tenant.",
+        "tags": [
+          "attack-protection"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/CaptchaPolicyIdParameter"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "The CAPTCHA attack protection policy was successfully deleted."
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          }
+        },
+        "operationId": "delete_attack_protection_captcha_policy",
+        "x-release-lifecycle": "EA",
+        "x-operation-name": "delete",
+        "x-operation-group": [
+          "attackProtection",
+          "captchaPolicies"
+        ],
+        "security": [
+          {
+            "bearerAuth": []
+          },
+          {
+            "oAuth2ClientCredentials": [
+              "update:attack_protection"
+            ]
+          }
+        ],
+        "x-codeSamples": []
+      },
+      "patch": {
+        "summary": "Update a CAPTCHA attack protection policy",
+        "description": "Partially update a CAPTCHA attack protection policy. Only the provided fields are modified. A provided match or action replaces the stored value in full rather than merging with it; within action, a provider secret or API key that is omitted from a provided provider block keeps its stored value.",
+        "tags": [
+          "attack-protection"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/CaptchaPolicyIdParameter"
+          }
+        ],
+        "requestBody": {
+          "$ref": "#/components/requestBodies/UpdateAttackProtectionCaptchaPolicyRequest"
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/UpdateAttackProtectionCaptchaPolicyResponse"
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          },
+          "409": {
+            "$ref": "#/components/responses/Conflict"
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          }
+        },
+        "operationId": "update_attack_protection_captcha_policy",
+        "x-release-lifecycle": "EA",
+        "x-operation-name": "update",
+        "x-operation-group": [
+          "attackProtection",
+          "captchaPolicies"
+        ],
+        "security": [
+          {
+            "bearerAuth": []
+          },
+          {
+            "oAuth2ClientCredentials": [
+              "update:attack_protection"
+            ]
+          }
+        ],
+        "x-codeSamples": []
+      }
+    },
     "/attack-protection/phone-provider-protection": {
       "get": {
         "summary": "Get Phone Provider Protection settings",
@@ -7703,6 +7861,245 @@
             "source": "import { ManagementClient } from \"auth0\";\n\nasync function main() {\n    const client = new ManagementClient({\n        domain: \"{YOUR_DOMAIN}\",\n        token: \"<token>\",\n    });\n    await client.clientGrants.organizations.list(\"id\", {\n        from: \"from\",\n        take: 1,\n    });\n}\nmain();\n"
           }
         ]
+      }
+    },
+    "/client-profiles": {
+      "get": {
+        "summary": "List client profiles",
+        "description": "Retrieve a paginated list of client profiles for the tenant. Uses checkpoint pagination: pass the <code>next</code> cursor from a previous response as the <code>from</code> query parameter to retrieve the following page.",
+        "tags": [
+          "client-profiles"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/FromParameter"
+          },
+          {
+            "$ref": "#/components/parameters/ClientProfilesTakeParameter"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ListClientProfiles"
+          },
+          "400": {
+            "description": "Invalid request query string. The message will vary depending on the cause."
+          },
+          "401": {
+            "description": "Invalid token."
+          },
+          "403": {
+            "description": "Insufficient scope; expected any of: read:client_profiles"
+          },
+          "429": {
+            "description": "Too many requests. Check the X-RateLimit-Limit, X-RateLimit-Remaining and X-RateLimit-Reset headers."
+          }
+        },
+        "operationId": "get_client_profiles",
+        "x-release-lifecycle": "EA",
+        "x-operation-name": "list",
+        "x-operation-group": "clientProfiles",
+        "x-operation-request-parameters-name": "ListClientProfilesRequestParameters",
+        "security": [
+          {
+            "bearerAuth": []
+          },
+          {
+            "oAuth2ClientCredentials": [
+              "read:client_profiles"
+            ]
+          }
+        ],
+        "x-codeSamples": []
+      },
+      "post": {
+        "summary": "Create a client profile",
+        "description": "Create a client profile. At most one profile is allowed per tenant in this release; attempting to create a second returns <code>409 Conflict</code>. The profile governs Dynamic CIMD clients matched by its <code>apply_policy</code> at runtime.",
+        "tags": [
+          "client-profiles"
+        ],
+        "requestBody": {
+          "$ref": "#/components/requestBodies/CreateClientProfile"
+        },
+        "responses": {
+          "201": {
+            "$ref": "#/components/responses/CreateClientProfile"
+          },
+          "400": {
+            "description": "Invalid request body. The message will vary depending on the cause."
+          },
+          "401": {
+            "description": "Invalid token."
+          },
+          "403": {
+            "description": "Insufficient scope; expected any of: create:client_profiles"
+          },
+          "409": {
+            "description": "A client profile already exists for this tenant."
+          },
+          "429": {
+            "description": "Too many requests. Check the X-RateLimit-Limit, X-RateLimit-Remaining and X-RateLimit-Reset headers."
+          }
+        },
+        "operationId": "post_client_profile",
+        "x-release-lifecycle": "EA",
+        "x-operation-name": "create",
+        "x-operation-group": "clientProfiles",
+        "security": [
+          {
+            "bearerAuth": []
+          },
+          {
+            "oAuth2ClientCredentials": [
+              "create:client_profiles"
+            ]
+          }
+        ],
+        "x-codeSamples": []
+      }
+    },
+    "/client-profiles/{id}": {
+      "get": {
+        "summary": "Get a client profile",
+        "description": "Retrieve a single client profile by its identifier. Returns <code>404</code> if no profile with the given ID exists for the tenant.",
+        "tags": [
+          "client-profiles"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/ClientProfileIdParameter"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/GetClientProfile"
+          },
+          "400": {
+            "description": "Invalid request query string. The message will vary depending on the cause."
+          },
+          "401": {
+            "description": "Invalid token."
+          },
+          "403": {
+            "description": "Insufficient scope; expected any of: read:client_profiles"
+          },
+          "404": {
+            "description": "Client profile not found."
+          },
+          "429": {
+            "description": "Too many requests. Check the X-RateLimit-Limit, X-RateLimit-Remaining and X-RateLimit-Reset headers."
+          }
+        },
+        "operationId": "get_client_profile",
+        "x-release-lifecycle": "EA",
+        "x-operation-name": "get",
+        "x-operation-group": "clientProfiles",
+        "x-operation-request-parameters-name": "GetClientProfileRequestParameters",
+        "security": [
+          {
+            "bearerAuth": []
+          },
+          {
+            "oAuth2ClientCredentials": [
+              "read:client_profiles"
+            ]
+          }
+        ],
+        "x-codeSamples": []
+      },
+      "delete": {
+        "summary": "Delete a client profile",
+        "description": "Delete a client profile. Idempotent: returns <code>204 No Content</code> whether or not a profile with the given ID existed. Deleting the profile removes fleet governance for matched clients immediately.",
+        "tags": [
+          "client-profiles"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/ClientProfileIdParameter"
+          }
+        ],
+        "responses": {
+          "204": {
+            "$ref": "#/components/responses/DeleteClientProfile"
+          },
+          "400": {
+            "description": "Invalid request query string. The message will vary depending on the cause."
+          },
+          "401": {
+            "description": "Invalid token."
+          },
+          "403": {
+            "description": "Insufficient scope; expected any of: delete:client_profiles"
+          },
+          "429": {
+            "description": "Too many requests. Check the X-RateLimit-Limit, X-RateLimit-Remaining and X-RateLimit-Reset headers."
+          }
+        },
+        "operationId": "delete_client_profile",
+        "x-release-lifecycle": "EA",
+        "x-operation-name": "delete",
+        "x-operation-group": "clientProfiles",
+        "security": [
+          {
+            "bearerAuth": []
+          },
+          {
+            "oAuth2ClientCredentials": [
+              "delete:client_profiles"
+            ]
+          }
+        ],
+        "x-codeSamples": []
+      },
+      "patch": {
+        "summary": "Update a client profile",
+        "description": "Update a client profile. Supports partial updates at the top level (JSON Merge Patch); omitted top-level fields remain unchanged. Nested objects such as <code>client_configuration</code> must be supplied in full.",
+        "tags": [
+          "client-profiles"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/ClientProfileIdParameter"
+          }
+        ],
+        "requestBody": {
+          "$ref": "#/components/requestBodies/UpdateClientProfile"
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/UpdateClientProfile"
+          },
+          "400": {
+            "description": "Invalid request body. The message will vary depending on the cause."
+          },
+          "401": {
+            "description": "Invalid token."
+          },
+          "403": {
+            "description": "Insufficient scope; expected any of: update:client_profiles"
+          },
+          "404": {
+            "description": "Client profile not found."
+          },
+          "429": {
+            "description": "Too many requests. Check the X-RateLimit-Limit, X-RateLimit-Remaining and X-RateLimit-Reset headers."
+          }
+        },
+        "operationId": "patch_client_profile",
+        "x-release-lifecycle": "EA",
+        "x-operation-name": "update",
+        "x-operation-group": "clientProfiles",
+        "security": [
+          {
+            "bearerAuth": []
+          },
+          {
+            "oAuth2ClientCredentials": [
+              "update:client_profiles"
+            ]
+          }
+        ],
+        "x-codeSamples": []
       }
     },
     "/clients": {
@@ -25989,7 +26386,7 @@
           {
             "name": "name",
             "in": "path",
-            "description": "Factor name. Can be `sms`, `push-notification`, `email`, `duo` `otp` `webauthn-roaming`, `webauthn-platform`, or `recovery-code`.",
+            "description": "Factor name. Can be `sms`, `push-notification`, `email`, `duo`, `otp`, `webauthn-roaming`, `webauthn-platform`, `recovery-code`, or `passkey`.",
             "required": true,
             "schema": {
               "$ref": "#/components/schemas/GuardianFactorNameEnum"
@@ -26028,7 +26425,8 @@
             "description": "Token has expired or signature is invalid."
           },
           "403": {
-            "description": "Insufficient scope."
+            "description": "Passkey as a second factor is not enabled for this tenant. Contact Auth0 Support to enable this feature.",
+            "x-description-1": "Insufficient scope."
           }
         },
         "operationId": "put_factors_by_name",
@@ -51872,6 +52270,37 @@
   },
   "components": {
     "parameters": {
+      "CaptchaPolicyIdParameter": {
+        "name": "id",
+        "in": "path",
+        "description": "ID of the CAPTCHA attack protection policy.",
+        "required": true,
+        "schema": {
+          "type": "string",
+          "pattern": "^pol_[1-9A-HJ-NP-Za-km-z]{22}$"
+        }
+      },
+      "ClientProfileIdParameter": {
+        "name": "id",
+        "in": "path",
+        "description": "ID of the client profile.",
+        "required": true,
+        "schema": {
+          "$ref": "#/components/schemas/ClientProfileId"
+        }
+      },
+      "ClientProfilesTakeParameter": {
+        "name": "take",
+        "in": "query",
+        "description": "Number of results per page. Defaults to 50.",
+        "schema": {
+          "type": "integer",
+          "description": "Number of results per page. Defaults to 50.",
+          "minimum": 1,
+          "default": 50
+        },
+        "x-merge-priority": 5
+      },
       "FromParameter": {
         "name": "from",
         "in": "query",
@@ -51940,12 +52369,41 @@
           }
         }
       },
+      "CreateClientProfile": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/CreateClientProfileRequestContent"
+            }
+          }
+        }
+      },
       "CreateKeysNetworkAclsRequest": {
         "description": "The Network ACL key to create.",
         "content": {
           "application/json": {
             "schema": {
               "$ref": "#/components/schemas/CreateKeysNetworkAclsRequestContent"
+            }
+          }
+        }
+      },
+      "UpdateAttackProtectionCaptchaPolicyRequest": {
+        "description": "The fields of the CAPTCHA attack protection policy to update.",
+        "required": true,
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/UpdateAttackProtectionCaptchaPolicyRequestContent"
+            }
+          }
+        }
+      },
+      "UpdateClientProfile": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/UpdateClientProfileRequestContent"
             }
           }
         }
@@ -51978,6 +52436,16 @@
           "application/json": {
             "schema": {
               "$ref": "#/components/schemas/AttackProtectionCaptchaPolicy"
+            }
+          }
+        }
+      },
+      "CreateClientProfile": {
+        "description": "Client profile successfully created.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ClientProfile"
             }
           }
         }
@@ -52035,6 +52503,9 @@
           }
         }
       },
+      "DeleteClientProfile": {
+        "description": "Client profile successfully deleted."
+      },
       "DeleteOrganizationClientsForbidden": {
         "description": "Insufficient scope; expected any of: delete:organization_clients.",
         "content": {
@@ -52082,6 +52553,26 @@
           "application/json": {
             "schema": {
               "$ref": "#/components/schemas/GetAllKeysNetworkAclsResponseContent"
+            }
+          }
+        }
+      },
+      "GetAttackProtectionCaptchaPolicyResponse": {
+        "description": "The CAPTCHA attack protection policy was successfully retrieved.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/AttackProtectionCaptchaPolicy"
+            }
+          }
+        }
+      },
+      "GetClientProfile": {
+        "description": "Record for existing client profile.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ClientProfile"
             }
           }
         }
@@ -52177,6 +52668,16 @@
           "application/json": {
             "schema": {
               "$ref": "#/components/schemas/ListAttackProtectionCaptchaPoliciesResponseContent"
+            }
+          }
+        }
+      },
+      "ListClientProfiles": {
+        "description": "Client profiles successfully retrieved.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ListClientProfilesPaginatedResponseContent"
             }
           }
         }
@@ -52280,6 +52781,26 @@
           "application/json": {
             "schema": {
               "$ref": "#/components/schemas/UnauthorizedSchema"
+            }
+          }
+        }
+      },
+      "UpdateAttackProtectionCaptchaPolicyResponse": {
+        "description": "The CAPTCHA attack protection policy was successfully updated.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/AttackProtectionCaptchaPolicy"
+            }
+          }
+        }
+      },
+      "UpdateClientProfile": {
+        "description": "Client profile successfully updated.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ClientProfile"
             }
           }
         }
@@ -55606,6 +56127,14 @@
           }
         }
       },
+      "CimdExternalMetadataCreatedByEnum": {
+        "type": "string",
+        "description": "Indicates who created the client. The value <code>admin</code> indicates the client was registered via the Management API. The value <code>client</code> indicates the client was registered dynamically.",
+        "enum": [
+          "admin",
+          "client"
+        ]
+      },
       "CimdMappedClientAuthenticationMethods": {
         "type": "object",
         "description": "Client authentication methods derived from the JWKS document",
@@ -56063,6 +56592,10 @@
           },
           "external_metadata_created_by": {
             "$ref": "#/components/schemas/ClientExternalMetadataCreatedByEnum"
+          },
+          "external_metadata_status": {
+            "$ref": "#/components/schemas/ClientExternalMetadataStatusEnum",
+            "x-release-lifecycle": "EA"
           },
           "external_client_id": {
             "type": "string",
@@ -57075,6 +57608,15 @@
           "client"
         ]
       },
+      "ClientExternalMetadataStatusEnum": {
+        "type": "string",
+        "description": "Indicates whether the Client ID Metadata Document at <code>external_client_id</code> is currently reachable. For clients with <code>external_metadata_created_by</code> set to <code>client</code> the status is calculated from the document; for <code>admin</code> it is always <code>available</code>. When absent, the status is assumed to be <code>available</code>. ",
+        "enum": [
+          "available",
+          "unavailable"
+        ],
+        "x-release-lifecycle": "EA"
+      },
       "ClientExternalMetadataTypeEnum": {
         "type": "string",
         "description": "Indicates the type of external metadata used to register the client. This field is omitted for regular clients. The value <code>cimd</code> identifies clients registered via a Client ID Metadata Document. The value <code>dcr</code> identifies clients registered via Dynamic Client Registration.",
@@ -57685,6 +58227,237 @@
           null
         ]
       },
+      "ClientProfile": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "name",
+          "client_configuration",
+          "apply_policy"
+        ],
+        "properties": {
+          "id": {
+            "$ref": "#/components/schemas/ClientProfileId"
+          },
+          "name": {
+            "$ref": "#/components/schemas/ClientProfileName"
+          },
+          "description": {
+            "$ref": "#/components/schemas/ClientProfileDescription"
+          },
+          "client_configuration": {
+            "$ref": "#/components/schemas/ClientProfileClientConfiguration"
+          },
+          "apply_policy": {
+            "$ref": "#/components/schemas/ClientProfileApplyPolicy"
+          },
+          "created_at": {
+            "type": "string",
+            "description": "Timestamp of creation.",
+            "format": "date-time"
+          },
+          "updated_at": {
+            "type": "string",
+            "description": "Timestamp of last update.",
+            "format": "date-time"
+          }
+        }
+      },
+      "ClientProfileApplyPolicy": {
+        "type": "object",
+        "description": "Runtime matching rules that determine which clients this profile governs.",
+        "additionalProperties": false,
+        "required": [
+          "external_metadata_type",
+          "external_metadata_created_by"
+        ],
+        "properties": {
+          "external_metadata_type": {
+            "$ref": "#/components/schemas/ClientProfileApplyPolicyExternalMetadataTypeEnum"
+          },
+          "external_metadata_created_by": {
+            "$ref": "#/components/schemas/ClientProfileApplyPolicyExternalMetadataCreatedByEnum"
+          }
+        }
+      },
+      "ClientProfileApplyPolicyExternalMetadataCreatedByEnum": {
+        "type": "string",
+        "description": "The external metadata client's creator to match. The value <code>client</code> indicates the client was registered dynamically.",
+        "enum": [
+          "client"
+        ]
+      },
+      "ClientProfileApplyPolicyExternalMetadataTypeEnum": {
+        "type": "string",
+        "description": "The client's type of external metadata to match. The value <code>cimd</code> identifies clients registered via a Client ID Metadata Document.",
+        "enum": [
+          "cimd"
+        ]
+      },
+      "ClientProfileClientConfiguration": {
+        "type": "object",
+        "description": "Runtime policy applied to matched clients. Omitted fields fall back to each client's own setting.",
+        "additionalProperties": false,
+        "properties": {
+          "refresh_token": {
+            "$ref": "#/components/schemas/ClientProfileClientConfigurationRefreshToken"
+          },
+          "organization_usage": {
+            "$ref": "#/components/schemas/ClientProfileClientConfigurationOrganizationUsage"
+          },
+          "organization_require_behavior": {
+            "$ref": "#/components/schemas/ClientProfileClientConfigurationOrganizationRequireBehavior"
+          },
+          "organization_discovery_methods": {
+            "$ref": "#/components/schemas/ClientProfileClientConfigurationOrganizationDiscoveryMethods"
+          },
+          "require_proof_of_possession": {
+            "$ref": "#/components/schemas/ClientProfileClientConfigurationRequireProofOfPossession"
+          }
+        }
+      },
+      "ClientProfileClientConfigurationOrganizationDiscoveryMethodEnum": {
+        "type": "string",
+        "description": "A method used to discover a user's organization.",
+        "enum": [
+          "email",
+          "organization_name"
+        ]
+      },
+      "ClientProfileClientConfigurationOrganizationDiscoveryMethods": {
+        "type": "object",
+        "description": "Default organization discovery methods applied to matched clients.",
+        "additionalProperties": false,
+        "properties": {
+          "default_value": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ClientProfileClientConfigurationOrganizationDiscoveryMethodEnum"
+            }
+          }
+        }
+      },
+      "ClientProfileClientConfigurationOrganizationRequireBehavior": {
+        "type": "object",
+        "description": "Default organization prompt behavior applied to matched clients.",
+        "additionalProperties": false,
+        "properties": {
+          "default_value": {
+            "$ref": "#/components/schemas/ClientProfileClientConfigurationOrganizationRequireBehaviorEnum"
+          }
+        }
+      },
+      "ClientProfileClientConfigurationOrganizationRequireBehaviorEnum": {
+        "type": "string",
+        "description": "When an organization is required, how matched clients prompt for it.",
+        "enum": [
+          "no_prompt",
+          "pre_login_prompt",
+          "post_login_prompt"
+        ]
+      },
+      "ClientProfileClientConfigurationOrganizationUsage": {
+        "type": "object",
+        "description": "Default organization usage applied to matched clients.",
+        "additionalProperties": false,
+        "properties": {
+          "default_value": {
+            "$ref": "#/components/schemas/ClientProfileClientConfigurationOrganizationUsageEnum"
+          }
+        }
+      },
+      "ClientProfileClientConfigurationOrganizationUsageEnum": {
+        "type": "string",
+        "description": "How matched clients handle organizations.",
+        "enum": [
+          "deny",
+          "allow",
+          "require"
+        ]
+      },
+      "ClientProfileClientConfigurationRefreshToken": {
+        "type": "object",
+        "description": "Refresh token settings. Omit any sub-field to use the client's own value.",
+        "additionalProperties": false,
+        "properties": {
+          "token_lifetime": {
+            "$ref": "#/components/schemas/ClientProfileRefreshTokenTokenLifetime"
+          },
+          "idle_token_lifetime": {
+            "$ref": "#/components/schemas/ClientProfileRefreshTokenIdleTokenLifetime"
+          },
+          "leeway": {
+            "$ref": "#/components/schemas/ClientProfileRefreshTokenLeeway"
+          }
+        }
+      },
+      "ClientProfileClientConfigurationRequireProofOfPossession": {
+        "type": "object",
+        "description": "Whether matched clients default to requiring proof of possession.",
+        "additionalProperties": false,
+        "properties": {
+          "default_value": {
+            "type": "boolean"
+          }
+        }
+      },
+      "ClientProfileDescription": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "Optional description of the client profile.",
+        "maxLength": 256,
+        "pattern": "^[^\\u0000]*$"
+      },
+      "ClientProfileId": {
+        "type": "string",
+        "description": "Client Profile identifier.",
+        "format": "client-profile-id"
+      },
+      "ClientProfileName": {
+        "type": "string",
+        "description": "Display name of the client profile.",
+        "minLength": 1,
+        "maxLength": 128,
+        "pattern": "^[^\\u0000]*$"
+      },
+      "ClientProfileRefreshTokenIdleTokenLifetime": {
+        "type": "object",
+        "description": "Default idle refresh token lifetime, in seconds, applied to matched clients.",
+        "additionalProperties": false,
+        "properties": {
+          "default_value": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 31557600
+          }
+        }
+      },
+      "ClientProfileRefreshTokenLeeway": {
+        "type": "object",
+        "description": "Default refresh token rotation leeway, in seconds, applied to matched clients.",
+        "additionalProperties": false,
+        "properties": {
+          "default_value": {
+            "type": "integer",
+            "minimum": 0
+          }
+        }
+      },
+      "ClientProfileRefreshTokenTokenLifetime": {
+        "type": "object",
+        "description": "Default refresh token lifetime, in seconds, applied to matched clients.",
+        "additionalProperties": false,
+        "properties": {
+          "default_value": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 31557600
+          }
+        }
+      },
       "ClientRedirectionPolicyEnum": {
         "type": "string",
         "description": "Controls whether Auth0 redirects users to the application's callback URL on authentication errors or in email verification flows. `open_redirect_protection` shows an error page instead of redirecting, and hides the callback domain from email templates. `allow_always` enables standard redirect behavior. Defaults to `open_redirect_protection` for third-party clients. Only applies when `is_first_party` is `false` and `third_party_security_mode` is `strict`. To learn more, read <a href=\"https://auth0.com/docs/get-started/applications/third-party-applications/security-controls#redirect-protection\">Redirect protection</a>.",
@@ -58063,6 +58836,10 @@
           },
           "external_metadata_created_by": {
             "$ref": "#/components/schemas/ClientExternalMetadataCreatedByEnum"
+          },
+          "external_metadata_status": {
+            "$ref": "#/components/schemas/ClientExternalMetadataStatusEnum",
+            "x-release-lifecycle": "EA"
           },
           "external_client_id": {
             "type": "string",
@@ -68131,6 +68908,29 @@
           }
         }
       },
+      "CreateClientProfileRequestContent": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "name",
+          "client_configuration",
+          "apply_policy"
+        ],
+        "properties": {
+          "name": {
+            "$ref": "#/components/schemas/ClientProfileName"
+          },
+          "description": {
+            "$ref": "#/components/schemas/ClientProfileDescription"
+          },
+          "client_configuration": {
+            "$ref": "#/components/schemas/ClientProfileClientConfiguration"
+          },
+          "apply_policy": {
+            "$ref": "#/components/schemas/ClientProfileApplyPolicy"
+          }
+        }
+      },
       "CreateClientRequestContent": {
         "type": "object",
         "additionalProperties": false,
@@ -68714,6 +69514,10 @@
           },
           "external_metadata_created_by": {
             "$ref": "#/components/schemas/ClientExternalMetadataCreatedByEnum"
+          },
+          "external_metadata_status": {
+            "$ref": "#/components/schemas/ClientExternalMetadataStatusEnum",
+            "x-release-lifecycle": "EA"
           },
           "external_client_id": {
             "type": "string",
@@ -122216,6 +123020,10 @@
           "external_metadata_created_by": {
             "$ref": "#/components/schemas/ClientExternalMetadataCreatedByEnum"
           },
+          "external_metadata_status": {
+            "$ref": "#/components/schemas/ClientExternalMetadataStatusEnum",
+            "x-release-lifecycle": "EA"
+          },
           "external_client_id": {
             "type": "string",
             "description": "An alternate client identifier to be used during authorization flows. Only supports CIMD-based client identifiers.",
@@ -125294,6 +126102,12 @@
             "default": false,
             "x-release-lifecycle": "EA"
           },
+          "client_id_metadata_document_dynamic_registration_supported": {
+            "type": "boolean",
+            "description": "Whether the authorization server supports registering clients dynamically from a client_id URL. Requires client_id_metadata_document_supported to be enabled.",
+            "default": false,
+            "x-release-lifecycle": "EA"
+          },
           "phone_consolidated_experience": {
             "type": "boolean",
             "description": "Whether Phone Consolidated Experience is enabled for this tenant."
@@ -125923,7 +126737,7 @@
       },
       "GuardianFactorNameEnum": {
         "type": "string",
-        "description": "Factor name. Can be `sms`, `push-notification`, `email`, `duo` `otp` `webauthn-roaming`, `webauthn-platform`, or `recovery-code`.",
+        "description": "Factor name. Can be `sms`, `push-notification`, `email`, `duo`, `otp`, `webauthn-roaming`, `webauthn-platform`, `recovery-code`, or `passkey`.",
         "default": "sms",
         "minLength": 1,
         "enum": [
@@ -125934,7 +126748,8 @@
           "otp",
           "webauthn-roaming",
           "webauthn-platform",
-          "recovery-code"
+          "recovery-code",
+          "passkey"
         ]
       },
       "GuardianFactorPhoneFactorMessageTypeEnum": {
@@ -126812,6 +127627,26 @@
             "$ref": "#/components/schemas/ListClientGrantPaginatedResponseContent"
           }
         ]
+      },
+      "ListClientProfilesPaginatedResponseContent": {
+        "type": "object",
+        "description": "Checkpoint paginated list of client profiles.",
+        "additionalProperties": false,
+        "required": [
+          "client_profiles"
+        ],
+        "properties": {
+          "next": {
+            "type": "string",
+            "description": "A cursor to be used as the \"from\" query parameter for the next page of results."
+          },
+          "client_profiles": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ClientProfile"
+            }
+          }
+        }
       },
       "ListClientsOffsetPaginatedResponseContent": {
         "type": "object",
@@ -131722,6 +132557,9 @@
             "type": "string",
             "description": "The client_id of an existing client registered with this external_client_id, if one exists."
           },
+          "external_metadata_created_by": {
+            "$ref": "#/components/schemas/CimdExternalMetadataCreatedByEnum"
+          },
           "errors": {
             "type": "array",
             "description": "Array of retrieval errors (populated when the metadata document could not be fetched). When present, validation is omitted.",
@@ -133490,6 +134328,10 @@
           },
           "external_metadata_created_by": {
             "$ref": "#/components/schemas/ClientExternalMetadataCreatedByEnum"
+          },
+          "external_metadata_status": {
+            "$ref": "#/components/schemas/ClientExternalMetadataStatusEnum",
+            "x-release-lifecycle": "EA"
           },
           "external_client_id": {
             "type": "string",
@@ -137661,6 +138503,35 @@
           }
         }
       },
+      "UpdateAttackProtectionCaptchaPolicyRequestContent": {
+        "type": "object",
+        "description": "Request body for updating a CAPTCHA attack protection policy. All fields are optional, but at least one must be provided. A provided match or action replaces the stored value in full rather than merging with it.",
+        "additionalProperties": false,
+        "minProperties": 1,
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Human-readable policy name.",
+            "minLength": 1,
+            "maxLength": 255
+          },
+          "description": {
+            "type": "string",
+            "description": "Description of the policy's purpose."
+          },
+          "priority": {
+            "type": "integer",
+            "description": "Conflict resolution order. Lower number takes higher precedence. Must be unique per tenant.",
+            "minimum": 1
+          },
+          "match": {
+            "$ref": "#/components/schemas/AttackProtectionCaptchaPolicyMatch"
+          },
+          "action": {
+            "$ref": "#/components/schemas/AttackProtectionCaptchaPolicyActionInput"
+          }
+        }
+      },
       "UpdateAttackProtectionCaptchaRequestContent": {
         "type": "object",
         "additionalProperties": false,
@@ -138310,6 +139181,25 @@
           }
         }
       },
+      "UpdateClientProfileRequestContent": {
+        "type": "object",
+        "description": "Top-level JSON Merge Patch (RFC 7386): omitted top-level fields remain unchanged. Nested objects such as client_configuration must be supplied in full.",
+        "additionalProperties": false,
+        "properties": {
+          "name": {
+            "$ref": "#/components/schemas/ClientProfileName"
+          },
+          "description": {
+            "$ref": "#/components/schemas/ClientProfileDescription"
+          },
+          "client_configuration": {
+            "$ref": "#/components/schemas/ClientProfileClientConfiguration"
+          },
+          "apply_policy": {
+            "$ref": "#/components/schemas/ClientProfileApplyPolicy"
+          }
+        }
+      },
       "UpdateClientRequestContent": {
         "type": "object",
         "additionalProperties": false,
@@ -138897,6 +139787,10 @@
           },
           "external_metadata_created_by": {
             "$ref": "#/components/schemas/ClientExternalMetadataCreatedByEnum"
+          },
+          "external_metadata_status": {
+            "$ref": "#/components/schemas/ClientExternalMetadataStatusEnum",
+            "x-release-lifecycle": "EA"
           },
           "external_client_id": {
             "type": "string",
@@ -143187,6 +144081,12 @@
             "default": false,
             "x-release-lifecycle": "EA"
           },
+          "client_id_metadata_document_dynamic_registration_supported": {
+            "type": "boolean",
+            "description": "Whether the authorization server supports registering clients dynamically from a client_id URL. Requires client_id_metadata_document_supported to be enabled.",
+            "default": false,
+            "x-release-lifecycle": "EA"
+          },
           "enable_ai_guide": {
             "type": "boolean",
             "description": "Whether Auth0 Guide (AI-powered assistance) is enabled for this tenant."
@@ -143400,6 +144300,12 @@
           "client_id_metadata_document_supported": {
             "type": "boolean",
             "description": "Whether the authorization server supports retrieving client metadata from a client_id URL.",
+            "default": false,
+            "x-release-lifecycle": "EA"
+          },
+          "client_id_metadata_document_dynamic_registration_supported": {
+            "type": "boolean",
+            "description": "Whether the authorization server supports registering clients dynamically from a client_id URL. Requires client_id_metadata_document_supported to be enabled.",
             "default": false,
             "x-release-lifecycle": "EA"
           },
@@ -145759,6 +146665,10 @@
               "read:vdcs_templates": "Read Vdcs Templates",
               "update:vdcs_templates": "Update Vdcs Templates",
               "delete:vdcs_templates": "Delete Vdcs Templates",
+              "create:client_profiles": "Create Client Profiles",
+              "read:client_profiles": "Read Client Profiles",
+              "update:client_profiles": "Update Client Profiles",
+              "delete:client_profiles": "Delete Client Profiles",
               "create:organization_clients": "Create Organization Client Associations",
               "read:organization_clients": "Read Organization Client Associations",
               "update:organization_clients": "Update Organization Client Associations",
