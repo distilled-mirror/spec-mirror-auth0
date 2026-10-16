@@ -7,7 +7,7 @@
 - [Manage Users (123 pages)](https://auth0.com/_llms/en/manage-users.txt): Documentation for Manage Users.
 - [Customize (286 pages)](https://auth0.com/_llms/en/customize.txt): Documentation for Customize.
 - [Secure (154 pages)](https://auth0.com/_llms/en/secure.txt): Documentation for Secure.
-- [Dev Tools (1053 pages)](https://auth0.com/_llms/en/dev-tools.txt): Documentation for Dev Tools.
+- [Dev Tools (1059 pages)](https://auth0.com/_llms/en/dev-tools.txt): Documentation for Dev Tools.
 
 ## Deploy & Monitor
 
@@ -378,9 +378,9 @@
 - [English / Manage Users (123 pages)](https://auth0.com/_llms/en/manage-users.txt): Documentation for English / Manage Users.
 - [English / Customize (286 pages)](https://auth0.com/_llms/en/customize.txt): Documentation for English / Customize.
 - [English / Secure (154 pages)](https://auth0.com/_llms/en/secure.txt): Documentation for English / Secure.
-- [English / Dev Tools (1053 pages)](https://auth0.com/_llms/en/dev-tools.txt): Documentation for English / Dev Tools.
-- [English / Dev Tools / APIs (607 pages)](https://auth0.com/_llms/en/dev-tools/apis.txt): Documentation for English / Dev Tools / APIs.
-- [English / Dev Tools / APIs / Management API (488 pages)](https://auth0.com/_llms/en/dev-tools/apis/management-api.txt): Documentation for English / Dev Tools / APIs / Management API.
+- [English / Dev Tools (1059 pages)](https://auth0.com/_llms/en/dev-tools.txt): Documentation for English / Dev Tools.
+- [English / Dev Tools / APIs (613 pages)](https://auth0.com/_llms/en/dev-tools/apis.txt): Documentation for English / Dev Tools / APIs.
+- [English / Dev Tools / APIs / Management API (490 pages)](https://auth0.com/_llms/en/dev-tools/apis/management-api.txt): Documentation for English / Dev Tools / APIs / Management API.
 - [English / Dev Tools / APIs / Management API / Organizations (49 pages)](https://auth0.com/_llms/en/dev-tools/apis/management-api/organizations.txt): Documentation for English / Dev Tools / APIs / Management API / Organizations.
 - [English / Dev Tools / SDKs (202 pages)](https://auth0.com/_llms/en/dev-tools/sdks.txt): Documentation for English / Dev Tools / SDKs.
 - [Canadian French (2345 pages)](https://auth0.com/_llms/fr-ca.txt): Documentation for Canadian French.

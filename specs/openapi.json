@@ -4517,6 +4517,104 @@
         ]
       }
     },
+    "/attack-protection/suspicious-ip-throttling/policies": {
+      "get": {
+        "summary": "Get Suspicious IP Throttling attack protection policies",
+        "description": "Retrieve all Suspicious IP Throttling attack protection policies for the tenant, sorted by priority ascending.",
+        "tags": [
+          "attack-protection"
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ListAttackProtectionSuspiciousIpThrottlingPoliciesResponse"
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          }
+        },
+        "operationId": "list_attack_protection_suspicious_ip_throttling_policies",
+        "x-release-lifecycle": "EA",
+        "x-operation-name": "list",
+        "x-operation-group": [
+          "attackProtection",
+          "suspiciousIpThrottlingPolicies"
+        ],
+        "security": [
+          {
+            "bearerAuth": []
+          },
+          {
+            "oAuth2ClientCredentials": [
+              "read:attack_protection"
+            ]
+          }
+        ],
+        "x-codeSamples": []
+      },
+      "post": {
+        "summary": "Create a Suspicious IP Throttling attack protection policy",
+        "description": "Create a new Suspicious IP Throttling attack protection policy for the tenant. The maximum number of policies per tenant is determined by the tenant's subscription.",
+        "tags": [
+          "attack-protection"
+        ],
+        "requestBody": {
+          "$ref": "#/components/requestBodies/CreateAttackProtectionSuspiciousIpThrottlingPolicyRequest"
+        },
+        "responses": {
+          "201": {
+            "$ref": "#/components/responses/CreateAttackProtectionSuspiciousIpThrottlingPolicyResponse"
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          },
+          "409": {
+            "$ref": "#/components/responses/Conflict"
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          }
+        },
+        "operationId": "create_attack_protection_suspicious_ip_throttling_policy",
+        "x-release-lifecycle": "EA",
+        "x-operation-name": "create",
+        "x-operation-group": [
+          "attackProtection",
+          "suspiciousIpThrottlingPolicies"
+        ],
+        "security": [
+          {
+            "bearerAuth": []
+          },
+          {
+            "oAuth2ClientCredentials": [
+              "update:attack_protection"
+            ]
+          }
+        ],
+        "x-codeSamples": []
+      }
+    },
     "/branding": {
       "get": {
         "summary": "Get branding settings",
@@ -17684,11 +17782,10 @@
             "description": "Invalid request body.",
             "x-description-1": "Variation does not belong to the referenced feature flag.",
             "x-description-2": "Segment not found.",
-            "x-description-3": "allocation_strategy and allocations are required.",
-            "x-description-4": "Allocations require an allocation_strategy.",
-            "x-description-5": "Experiment draft limit exceeded. A tenant may hold at most 100 experiments in draft status; archive or activate an existing draft to create another.",
-            "x-description-6": "Ramp experiments require allocation_strategy: \"percentage\". Other strategies are incompatible with the levels schedule.",
-            "x-description-7": "Payload validation error: 'Additional properties not allowed: levels'."
+            "x-description-3": "allocations are required.",
+            "x-description-4": "Experiment draft limit exceeded. A tenant may hold at most 100 experiments in draft status; archive or activate an existing draft to create another.",
+            "x-description-5": "Ramp experiments require allocation_strategy: \"percentage\". Other strategies are incompatible with the levels schedule.",
+            "x-description-6": "Payload validation error: 'Additional properties not allowed: levels'."
           },
           "401": {
             "description": "Invalid token."
@@ -17706,10 +17803,13 @@
           },
           "422": {
             "description": "Exactly one allocation must be designated as the control.",
-            "x-description-1": "Allocation weights must sum to 100.",
-            "x-description-2": "Exactly one allocation must be designated as the default (is_fallback: true).",
-            "x-description-3": "Each non-fallback allocation must specify a segment_id.",
-            "x-description-4": "default_config can only be set on an Auth0-managed feature flag. Omit it for customer-defined flags."
+            "x-description-1": "is_fallback is only used by the segment strategy; remove it from percentage allocations.",
+            "x-description-2": "segment_id and priority are only used by the segment strategy; remove them from percentage allocations.",
+            "x-description-3": "Allocation weights are only used by the percentage strategy; remove the weight field from segment allocations.",
+            "x-description-4": "Allocation weights must sum to 100.",
+            "x-description-5": "Exactly one allocation must be designated as the default (is_fallback: true).",
+            "x-description-6": "Each non-fallback allocation must specify a segment_id.",
+            "x-description-7": "default_config can only be set on an Auth0-managed feature flag. Omit it for customer-defined flags."
           },
           "429": {
             "description": "Too many requests."
@@ -17972,16 +18072,17 @@
           },
           "400": {
             "description": "Allocations cannot be modified while the experiment is active.",
-            "x-description-1": "Authentication flow cannot be modified once an experiment has been activated.",
-            "x-description-2": "Levels can only be modified on draft experiments.",
-            "x-description-3": "default_config can only be modified on draft experiments.",
-            "x-description-4": "Name and description cannot be modified on completed or archived experiments.",
-            "x-description-5": "Variation does not belong to the referenced feature flag.",
-            "x-description-6": "Segment not found.",
-            "x-description-7": "Status transition is not allowed.",
-            "x-description-8": "Completed experiments cannot be reactivated.",
-            "x-description-9": "Per-status experiment limit exceeded.",
-            "x-description-10": "Experiment cannot be activated: validation failed.",
+            "x-description-1": "Allocations require an allocation_strategy.",
+            "x-description-2": "Authentication flow cannot be modified once an experiment has been activated.",
+            "x-description-3": "Levels can only be modified on draft experiments.",
+            "x-description-4": "default_config can only be modified on draft experiments.",
+            "x-description-5": "Name and description cannot be modified on completed or archived experiments.",
+            "x-description-6": "Variation does not belong to the referenced feature flag.",
+            "x-description-7": "Segment not found.",
+            "x-description-8": "Status transition is not allowed.",
+            "x-description-9": "Completed experiments cannot be reactivated.",
+            "x-description-10": "Per-status experiment limit exceeded.",
+            "x-description-11": "Experiment cannot be activated: validation failed.",
             "x-description-0": "Invalid request body. The message will vary depending on the cause."
           },
           "401": {
@@ -17999,12 +18100,17 @@
           "409": {
             "description": "An experiment with this name already exists.",
             "x-description-1": "Another experiment is already active on this authentication flow.",
-            "x-description-2": "This experiment already has a frozen configuration snapshot and cannot be modified; clone it to make changes.",
+            "x-description-2": "This experiment already has a frozen configuration snapshot and cannot be modified; create a new experiment to make changes.",
             "x-description-3": "Segment is archived and cannot be modified."
           },
           "422": {
-            "description": "default_config can only be set on an Auth0-managed feature flag. Omit it for customer-defined flags.",
-            "x-description-1": "Experiment configuration exceeds the maximum size of 256KB."
+            "description": "Exactly one allocation must be designated as the control.",
+            "x-description-1": "Exactly one allocation must be designated as the default (is_fallback: true).",
+            "x-description-2": "is_fallback is only used by the segment strategy; remove it from percentage allocations.",
+            "x-description-3": "segment_id and priority are only used by the segment strategy; remove them from percentage allocations.",
+            "x-description-4": "Allocation weights are only used by the percentage strategy; remove the weight field from segment allocations.",
+            "x-description-5": "default_config can only be set on an Auth0-managed feature flag. Omit it for customer-defined flags.",
+            "x-description-6": "Experiment configuration exceeds the maximum size of 256KB."
           },
           "429": {
             "description": "Too many requests. Check the X-RateLimit-Limit, X-RateLimit-Remaining and X-RateLimit-Reset headers."
@@ -39648,7 +39754,7 @@
           },
           "409": {
             "description": "A resource server with the same identifier already exists.",
-            "x-description-1": "Another resource server is already configured with type universal_commerce_protocol_server. Only 1 resource server per tenant can have this type."
+            "x-description-1": "A resource server is already configured with type universal_commerce_protocol_server. Only 1 resource server per tenant can have this type."
           },
           "429": {
             "description": "Too many requests. Check the X-RateLimit-Limit, X-RateLimit-Remaining and X-RateLimit-Reset headers."
@@ -40102,7 +40208,7 @@
           },
           "409": {
             "description": "A resource server with the same identifier already exists.",
-            "x-description-1": "Another resource server is already configured with type universal_commerce_protocol_server. Only 1 resource server per tenant can have this type."
+            "x-description-1": "A resource server is already configured with type universal_commerce_protocol_server. Only 1 resource server per tenant can have this type."
           },
           "429": {
             "description": "Too many requests. Check the X-RateLimit-Limit, X-RateLimit-Remaining and X-RateLimit-Reset headers."
@@ -52369,6 +52475,17 @@
           }
         }
       },
+      "CreateAttackProtectionSuspiciousIpThrottlingPolicyRequest": {
+        "description": "The Suspicious IP Throttling attack protection policy to create.",
+        "required": true,
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/CreateAttackProtectionSuspiciousIpThrottlingPolicyRequestContent"
+            }
+          }
+        }
+      },
       "CreateClientProfile": {
         "content": {
           "application/json": {
@@ -52436,6 +52553,16 @@
           "application/json": {
             "schema": {
               "$ref": "#/components/schemas/AttackProtectionCaptchaPolicy"
+            }
+          }
+        }
+      },
+      "CreateAttackProtectionSuspiciousIpThrottlingPolicyResponse": {
+        "description": "The Suspicious IP Throttling attack protection policy was successfully created.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/AttackProtectionSuspiciousIpThrottlingPolicy"
             }
           }
         }
@@ -52668,6 +52795,16 @@
           "application/json": {
             "schema": {
               "$ref": "#/components/schemas/ListAttackProtectionCaptchaPoliciesResponseContent"
+            }
+          }
+        }
+      },
+      "ListAttackProtectionSuspiciousIpThrottlingPoliciesResponse": {
+        "description": "The tenant's Suspicious IP Throttling attack protection policies were successfully retrieved.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ListAttackProtectionSuspiciousIpThrottlingPoliciesResponseContent"
             }
           }
         }
@@ -54705,7 +54842,7 @@
       },
       "AttackProtectionCaptchaPolicyMatch": {
         "type": "object",
-        "description": "Traffic matching criteria for the policy. Exactly one of auth0_managed or geo_country_codes must be specified.",
+        "description": "Traffic matching criteria for the policy.",
         "additionalProperties": false,
         "properties": {
           "auth0_managed": {
@@ -54723,12 +54860,15 @@
             "type": "array",
             "description": "Match by ISO 3166-1 alpha-2 country codes.",
             "items": {
-              "type": "string"
+              "type": "string",
+              "pattern": "^[A-Z]{2}$"
             },
-            "minItems": 1
+            "uniqueItems": true,
+            "minItems": 1,
+            "maxItems": 20
           }
         },
-        "oneOf": [
+        "anyOf": [
           {
             "required": [
               "auth0_managed"
@@ -54783,6 +54923,227 @@
         "type": "object",
         "additionalProperties": true,
         "properties": {}
+      },
+      "AttackProtectionSuspiciousIpThrottlingPolicy": {
+        "type": "object",
+        "description": "An attack protection policy override for Suspicious IP Throttling.",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "name",
+          "priority",
+          "match",
+          "action",
+          "created_at",
+          "updated_at"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "System-generated identifier for the policy."
+          },
+          "name": {
+            "type": "string",
+            "description": "Human-readable policy name.",
+            "minLength": 1,
+            "maxLength": 255
+          },
+          "description": {
+            "type": "string",
+            "description": "Description of the policy's purpose."
+          },
+          "priority": {
+            "type": "integer",
+            "description": "Conflict resolution order. Lower number takes higher precedence.",
+            "minimum": 1
+          },
+          "match": {
+            "$ref": "#/components/schemas/AttackProtectionSuspiciousIpThrottlingPolicyMatch"
+          },
+          "action": {
+            "$ref": "#/components/schemas/AttackProtectionSuspiciousIpThrottlingPolicyAction"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time",
+            "description": "ISO 8601 timestamp when the policy was created."
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time",
+            "description": "ISO 8601 timestamp when the policy was last updated."
+          }
+        }
+      },
+      "AttackProtectionSuspiciousIpThrottlingPolicyAction": {
+        "type": "object",
+        "description": "Suspicious IP Throttling settings to override for traffic matching the policy. Any omitted setting falls back to the tenant's Suspicious IP Throttling configuration.",
+        "additionalProperties": false,
+        "properties": {
+          "enabled": {
+            "type": "boolean",
+            "description": "Whether or not suspicious IP throttling attack protections are active."
+          },
+          "shields": {
+            "type": "array",
+            "description": "Action to take when a suspicious IP throttling threshold is violated. Possible values: block, admin_notification.",
+            "items": {
+              "$ref": "#/components/schemas/AttackProtectionSuspiciousIpThrottlingPolicyShieldEnum"
+            }
+          },
+          "allowlist": {
+            "type": "array",
+            "description": "List of trusted IP addresses that will not have attack protection enforced against them.",
+            "items": {
+              "$ref": "#/components/schemas/AttackProtectionSuspiciousIpThrottlingPolicyAllowlistItem"
+            },
+            "uniqueItems": true,
+            "maxItems": 100
+          },
+          "stage": {
+            "$ref": "#/components/schemas/AttackProtectionSuspiciousIpThrottlingPolicyStage"
+          }
+        }
+      },
+      "AttackProtectionSuspiciousIpThrottlingPolicyAllowlistItem": {
+        "type": "string",
+        "anyOf": [
+          {
+            "format": "ipv4"
+          },
+          {
+            "format": "cidr"
+          },
+          {
+            "format": "ipv6"
+          },
+          {
+            "format": "ipv6_cidr"
+          }
+        ],
+        "description": "An IPv4 address, IPv4 CIDR block, IPv6 address, or IPv6 CIDR block."
+      },
+      "AttackProtectionSuspiciousIpThrottlingPolicyMatch": {
+        "type": "object",
+        "description": "Traffic matching criteria for the policy.",
+        "additionalProperties": false,
+        "properties": {
+          "auth0_managed": {
+            "type": "array",
+            "description": "Match by Auth0-managed traffic identifiers.",
+            "items": {
+              "type": "string",
+              "pattern": "^auth0\\.[^\\.\\s]+$"
+            },
+            "uniqueItems": true,
+            "minItems": 1,
+            "maxItems": 20
+          },
+          "geo_country_codes": {
+            "type": "array",
+            "description": "Match by ISO 3166-1 alpha-2 country codes.",
+            "items": {
+              "type": "string",
+              "pattern": "^[A-Z]{2}$"
+            },
+            "uniqueItems": true,
+            "minItems": 1,
+            "maxItems": 20
+          }
+        },
+        "anyOf": [
+          {
+            "required": [
+              "auth0_managed"
+            ]
+          },
+          {
+            "required": [
+              "geo_country_codes"
+            ]
+          }
+        ]
+      },
+      "AttackProtectionSuspiciousIpThrottlingPolicyPreCustomTokenExchangeStage": {
+        "type": "object",
+        "description": "Configuration options that apply before every custom token exchange attempt.",
+        "additionalProperties": false,
+        "properties": {
+          "max_attempts": {
+            "type": "integer",
+            "description": "Total number of attempts allowed.",
+            "minimum": 1,
+            "maximum": 2500
+          },
+          "rate": {
+            "type": "integer",
+            "description": "Interval of time, given in milliseconds, at which new attempts are granted.",
+            "minimum": 34560,
+            "maximum": 86400000
+          }
+        }
+      },
+      "AttackProtectionSuspiciousIpThrottlingPolicyPreLoginStage": {
+        "type": "object",
+        "description": "Configuration options that apply before every login attempt.",
+        "additionalProperties": false,
+        "properties": {
+          "max_attempts": {
+            "type": "integer",
+            "description": "Total number of attempts allowed per day.",
+            "minimum": 1,
+            "maximum": 2500
+          },
+          "rate": {
+            "type": "integer",
+            "description": "Interval of time, given in milliseconds, at which new attempts are granted.",
+            "minimum": 34560,
+            "maximum": 86400000
+          }
+        }
+      },
+      "AttackProtectionSuspiciousIpThrottlingPolicyPreUserRegistrationStage": {
+        "type": "object",
+        "description": "Configuration options that apply before every user registration attempt.",
+        "additionalProperties": false,
+        "properties": {
+          "max_attempts": {
+            "type": "integer",
+            "description": "Total number of attempts allowed.",
+            "minimum": 1,
+            "maximum": 72000
+          },
+          "rate": {
+            "type": "integer",
+            "description": "Interval of time, given in milliseconds, at which new attempts are granted.",
+            "minimum": 1200,
+            "maximum": 86400000
+          }
+        }
+      },
+      "AttackProtectionSuspiciousIpThrottlingPolicyShieldEnum": {
+        "type": "string",
+        "enum": [
+          "block",
+          "admin_notification"
+        ],
+        "description": "Action taken when a suspicious IP throttling threshold is violated."
+      },
+      "AttackProtectionSuspiciousIpThrottlingPolicyStage": {
+        "type": "object",
+        "description": "Holds per-stage configuration options (max_attempts and rate).",
+        "additionalProperties": false,
+        "properties": {
+          "pre-login": {
+            "$ref": "#/components/schemas/AttackProtectionSuspiciousIpThrottlingPolicyPreLoginStage"
+          },
+          "pre-user-registration": {
+            "$ref": "#/components/schemas/AttackProtectionSuspiciousIpThrottlingPolicyPreUserRegistrationStage"
+          },
+          "pre-custom-token-exchange": {
+            "$ref": "#/components/schemas/AttackProtectionSuspiciousIpThrottlingPolicyPreCustomTokenExchangeStage"
+          }
+        }
       },
       "AttackProtectionUpdateCaptchaArkose": {
         "type": "object",
@@ -68617,6 +68978,41 @@
           }
         }
       },
+      "CreateAttackProtectionSuspiciousIpThrottlingPolicyRequestContent": {
+        "type": "object",
+        "description": "Request body for creating a Suspicious IP Throttling attack protection policy.",
+        "additionalProperties": false,
+        "required": [
+          "name",
+          "priority",
+          "match",
+          "action"
+        ],
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Human-readable policy name.",
+            "minLength": 1,
+            "maxLength": 255
+          },
+          "description": {
+            "type": "string",
+            "description": "Description of the attack protection policy."
+          },
+          "priority": {
+            "type": "integer",
+            "description": "Conflict resolution order. Lower number takes higher precedence. Must be unique per tenant.",
+            "minimum": 1,
+            "maximum": 100
+          },
+          "match": {
+            "$ref": "#/components/schemas/AttackProtectionSuspiciousIpThrottlingPolicyMatch"
+          },
+          "action": {
+            "$ref": "#/components/schemas/AttackProtectionSuspiciousIpThrottlingPolicyAction"
+          }
+        }
+      },
       "CreateBrandingPhoneProviderRequestContent": {
         "type": "object",
         "description": "Phone provider configuration schema",
@@ -71798,7 +72194,8 @@
         "required": [
           "name",
           "feature_flag_id",
-          "authentication_flow"
+          "authentication_flow",
+          "allocation_strategy"
         ],
         "properties": {
           "name": {
@@ -71894,7 +72291,8 @@
             "$ref": "#/components/schemas/ExperimentStatusEnum"
           },
           "is_valid": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Whether the experiment is valid and ready to activate, as of its last update. It can lag changes made later to related entities. Call POST /experiments/{id}/validate for the current result."
           },
           "default_config": {
             "$ref": "#/components/schemas/DefaultConfigEnum"
@@ -113029,7 +113427,8 @@
             "$ref": "#/components/schemas/ExperimentStatusEnum"
           },
           "is_valid": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Whether the experiment is valid and ready to activate, as of its last update. It can lag changes made later to related entities. Call POST /experiments/{id}/validate for the current result."
           },
           "default_config": {
             "$ref": "#/components/schemas/DefaultConfigEnum"
@@ -123702,7 +124101,8 @@
             "$ref": "#/components/schemas/ExperimentStatusEnum"
           },
           "is_valid": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Whether the experiment is valid and ready to activate, as of its last update. It can lag changes made later to related entities. Call POST /experiments/{id}/validate for the current result."
           },
           "default_config": {
             "$ref": "#/components/schemas/DefaultConfigEnum"
@@ -127489,6 +127889,13 @@
         "description": "List of CAPTCHA attack protection policies for the tenant, sorted by priority ascending.",
         "items": {
           "$ref": "#/components/schemas/AttackProtectionCaptchaPolicy"
+        }
+      },
+      "ListAttackProtectionSuspiciousIpThrottlingPoliciesResponseContent": {
+        "type": "array",
+        "description": "List of Suspicious IP Throttling attack protection policies for the tenant, sorted by priority ascending.",
+        "items": {
+          "$ref": "#/components/schemas/AttackProtectionSuspiciousIpThrottlingPolicy"
         }
       },
       "ListBrandingPhoneProvidersResponseContent": {
@@ -141749,7 +142156,8 @@
             "$ref": "#/components/schemas/ExperimentStatusEnum"
           },
           "is_valid": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Whether the experiment is valid and ready to activate, as of its last update. It can lag changes made later to related entities. Call POST /experiments/{id}/validate for the current result."
           },
           "default_config": {
             "$ref": "#/components/schemas/DefaultConfigEnum"
@@ -144759,8 +145167,11 @@
         }
       },
       "UpdateVariationOverridesMap": {
-        "type": "object",
-        "description": "Configuration overrides for this variation; keys must exist in the parent flag parameters. Empty {} is the baseline (control) variation that overrides nothing.",
+        "type": [
+          "object",
+          "null"
+        ],
+        "description": "Top-level keys merge into the stored overrides. Set a key to `null` to remove it. Set `overrides` to `null` or `{}` to clear all. Keys must exist in the parent flag parameters.",
         "additionalProperties": {
           "description": "Override value for this configuration parameter"
         }
