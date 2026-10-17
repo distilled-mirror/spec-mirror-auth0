@@ -3894,262 +3894,6 @@
         ]
       }
     },
-    "/attack-protection/captcha/policies": {
-      "get": {
-        "summary": "Get CAPTCHA attack protection policies",
-        "description": "Retrieve all CAPTCHA attack protection policies for the tenant, sorted by priority ascending.",
-        "tags": [
-          "attack-protection"
-        ],
-        "responses": {
-          "200": {
-            "$ref": "#/components/responses/ListAttackProtectionCaptchaPoliciesResponse"
-          },
-          "400": {
-            "$ref": "#/components/responses/BadRequest"
-          },
-          "401": {
-            "$ref": "#/components/responses/Unauthorized"
-          },
-          "403": {
-            "$ref": "#/components/responses/Forbidden"
-          },
-          "404": {
-            "$ref": "#/components/responses/NotFound"
-          },
-          "429": {
-            "$ref": "#/components/responses/TooManyRequests"
-          }
-        },
-        "operationId": "list_attack_protection_captcha_policies",
-        "x-release-lifecycle": "EA",
-        "x-operation-name": "list",
-        "x-operation-group": [
-          "attackProtection",
-          "captchaPolicies"
-        ],
-        "security": [
-          {
-            "bearerAuth": []
-          },
-          {
-            "oAuth2ClientCredentials": [
-              "read:attack_protection"
-            ]
-          }
-        ],
-        "x-codeSamples": []
-      },
-      "post": {
-        "summary": "Create a CAPTCHA attack protection policy",
-        "description": "Create a new CAPTCHA attack protection policy for the tenant. The maximum number of policies per tenant is determined by the tenant's subscription.",
-        "tags": [
-          "attack-protection"
-        ],
-        "requestBody": {
-          "$ref": "#/components/requestBodies/CreateAttackProtectionCaptchaPolicyRequest"
-        },
-        "responses": {
-          "201": {
-            "$ref": "#/components/responses/CreateAttackProtectionCaptchaPolicyResponse"
-          },
-          "400": {
-            "$ref": "#/components/responses/BadRequest"
-          },
-          "401": {
-            "$ref": "#/components/responses/Unauthorized"
-          },
-          "403": {
-            "$ref": "#/components/responses/Forbidden"
-          },
-          "404": {
-            "$ref": "#/components/responses/NotFound"
-          },
-          "409": {
-            "$ref": "#/components/responses/Conflict"
-          },
-          "429": {
-            "$ref": "#/components/responses/TooManyRequests"
-          }
-        },
-        "operationId": "create_attack_protection_captcha_policy",
-        "x-release-lifecycle": "EA",
-        "x-operation-name": "create",
-        "x-operation-group": [
-          "attackProtection",
-          "captchaPolicies"
-        ],
-        "security": [
-          {
-            "bearerAuth": []
-          },
-          {
-            "oAuth2ClientCredentials": [
-              "update:attack_protection"
-            ]
-          }
-        ],
-        "x-codeSamples": []
-      }
-    },
-    "/attack-protection/captcha/policies/{id}": {
-      "get": {
-        "summary": "Get a CAPTCHA attack protection policy",
-        "description": "Retrieve a single CAPTCHA attack protection policy for the tenant by ID.",
-        "tags": [
-          "attack-protection"
-        ],
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/CaptchaPolicyIdParameter"
-          }
-        ],
-        "responses": {
-          "200": {
-            "$ref": "#/components/responses/GetAttackProtectionCaptchaPolicyResponse"
-          },
-          "400": {
-            "$ref": "#/components/responses/BadRequest"
-          },
-          "401": {
-            "$ref": "#/components/responses/Unauthorized"
-          },
-          "403": {
-            "$ref": "#/components/responses/Forbidden"
-          },
-          "404": {
-            "$ref": "#/components/responses/NotFound"
-          },
-          "429": {
-            "$ref": "#/components/responses/TooManyRequests"
-          }
-        },
-        "operationId": "get_attack_protection_captcha_policy",
-        "x-release-lifecycle": "EA",
-        "x-operation-name": "get",
-        "x-operation-group": [
-          "attackProtection",
-          "captchaPolicies"
-        ],
-        "security": [
-          {
-            "bearerAuth": []
-          },
-          {
-            "oAuth2ClientCredentials": [
-              "read:attack_protection"
-            ]
-          }
-        ],
-        "x-codeSamples": []
-      },
-      "delete": {
-        "summary": "Delete a CAPTCHA attack protection policy",
-        "description": "Delete a CAPTCHA attack protection policy for the tenant.",
-        "tags": [
-          "attack-protection"
-        ],
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/CaptchaPolicyIdParameter"
-          }
-        ],
-        "responses": {
-          "204": {
-            "description": "The CAPTCHA attack protection policy was successfully deleted."
-          },
-          "400": {
-            "$ref": "#/components/responses/BadRequest"
-          },
-          "401": {
-            "$ref": "#/components/responses/Unauthorized"
-          },
-          "403": {
-            "$ref": "#/components/responses/Forbidden"
-          },
-          "404": {
-            "$ref": "#/components/responses/NotFound"
-          },
-          "429": {
-            "$ref": "#/components/responses/TooManyRequests"
-          }
-        },
-        "operationId": "delete_attack_protection_captcha_policy",
-        "x-release-lifecycle": "EA",
-        "x-operation-name": "delete",
-        "x-operation-group": [
-          "attackProtection",
-          "captchaPolicies"
-        ],
-        "security": [
-          {
-            "bearerAuth": []
-          },
-          {
-            "oAuth2ClientCredentials": [
-              "update:attack_protection"
-            ]
-          }
-        ],
-        "x-codeSamples": []
-      },
-      "patch": {
-        "summary": "Update a CAPTCHA attack protection policy",
-        "description": "Partially update a CAPTCHA attack protection policy. Only the provided fields are modified. A provided match or action replaces the stored value in full rather than merging with it; within action, a provider secret or API key that is omitted from a provided provider block keeps its stored value.",
-        "tags": [
-          "attack-protection"
-        ],
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/CaptchaPolicyIdParameter"
-          }
-        ],
-        "requestBody": {
-          "$ref": "#/components/requestBodies/UpdateAttackProtectionCaptchaPolicyRequest"
-        },
-        "responses": {
-          "200": {
-            "$ref": "#/components/responses/UpdateAttackProtectionCaptchaPolicyResponse"
-          },
-          "400": {
-            "$ref": "#/components/responses/BadRequest"
-          },
-          "401": {
-            "$ref": "#/components/responses/Unauthorized"
-          },
-          "403": {
-            "$ref": "#/components/responses/Forbidden"
-          },
-          "404": {
-            "$ref": "#/components/responses/NotFound"
-          },
-          "409": {
-            "$ref": "#/components/responses/Conflict"
-          },
-          "429": {
-            "$ref": "#/components/responses/TooManyRequests"
-          }
-        },
-        "operationId": "update_attack_protection_captcha_policy",
-        "x-release-lifecycle": "EA",
-        "x-operation-name": "update",
-        "x-operation-group": [
-          "attackProtection",
-          "captchaPolicies"
-        ],
-        "security": [
-          {
-            "bearerAuth": []
-          },
-          {
-            "oAuth2ClientCredentials": [
-              "update:attack_protection"
-            ]
-          }
-        ],
-        "x-codeSamples": []
-      }
-    },
     "/attack-protection/phone-provider-protection": {
       "get": {
         "summary": "Get Phone Provider Protection settings",
@@ -4515,104 +4259,6 @@
             "source": "import { ManagementClient } from \"auth0\";\n\nasync function main() {\n    const client = new ManagementClient({\n        domain: \"{YOUR_DOMAIN}\",\n        token: \"<token>\",\n    });\n    await client.attackProtection.suspiciousIpThrottling.update({});\n}\nmain();\n"
           }
         ]
-      }
-    },
-    "/attack-protection/suspicious-ip-throttling/policies": {
-      "get": {
-        "summary": "Get Suspicious IP Throttling attack protection policies",
-        "description": "Retrieve all Suspicious IP Throttling attack protection policies for the tenant, sorted by priority ascending.",
-        "tags": [
-          "attack-protection"
-        ],
-        "responses": {
-          "200": {
-            "$ref": "#/components/responses/ListAttackProtectionSuspiciousIpThrottlingPoliciesResponse"
-          },
-          "400": {
-            "$ref": "#/components/responses/BadRequest"
-          },
-          "401": {
-            "$ref": "#/components/responses/Unauthorized"
-          },
-          "403": {
-            "$ref": "#/components/responses/Forbidden"
-          },
-          "404": {
-            "$ref": "#/components/responses/NotFound"
-          },
-          "429": {
-            "$ref": "#/components/responses/TooManyRequests"
-          }
-        },
-        "operationId": "list_attack_protection_suspicious_ip_throttling_policies",
-        "x-release-lifecycle": "EA",
-        "x-operation-name": "list",
-        "x-operation-group": [
-          "attackProtection",
-          "suspiciousIpThrottlingPolicies"
-        ],
-        "security": [
-          {
-            "bearerAuth": []
-          },
-          {
-            "oAuth2ClientCredentials": [
-              "read:attack_protection"
-            ]
-          }
-        ],
-        "x-codeSamples": []
-      },
-      "post": {
-        "summary": "Create a Suspicious IP Throttling attack protection policy",
-        "description": "Create a new Suspicious IP Throttling attack protection policy for the tenant. The maximum number of policies per tenant is determined by the tenant's subscription.",
-        "tags": [
-          "attack-protection"
-        ],
-        "requestBody": {
-          "$ref": "#/components/requestBodies/CreateAttackProtectionSuspiciousIpThrottlingPolicyRequest"
-        },
-        "responses": {
-          "201": {
-            "$ref": "#/components/responses/CreateAttackProtectionSuspiciousIpThrottlingPolicyResponse"
-          },
-          "400": {
-            "$ref": "#/components/responses/BadRequest"
-          },
-          "401": {
-            "$ref": "#/components/responses/Unauthorized"
-          },
-          "403": {
-            "$ref": "#/components/responses/Forbidden"
-          },
-          "404": {
-            "$ref": "#/components/responses/NotFound"
-          },
-          "409": {
-            "$ref": "#/components/responses/Conflict"
-          },
-          "429": {
-            "$ref": "#/components/responses/TooManyRequests"
-          }
-        },
-        "operationId": "create_attack_protection_suspicious_ip_throttling_policy",
-        "x-release-lifecycle": "EA",
-        "x-operation-name": "create",
-        "x-operation-group": [
-          "attackProtection",
-          "suspiciousIpThrottlingPolicies"
-        ],
-        "security": [
-          {
-            "bearerAuth": []
-          },
-          {
-            "oAuth2ClientCredentials": [
-              "update:attack_protection"
-            ]
-          }
-        ],
-        "x-codeSamples": []
       }
     },
     "/branding": {
@@ -12541,9 +12187,8 @@
           },
           "403": {
             "description": "Group synchronization is not enabled for this tenant",
-            "x-description-1": "This feature is not generally available for this tenant",
-            "x-description-2": "The inbound directory provisioning feature is not enabled for this tenant",
-            "x-description-3": "Insufficient scope; expected any of: update:directory_provisionings."
+            "x-description-1": "The inbound directory provisioning feature is not enabled for this tenant",
+            "x-description-2": "Insufficient scope; expected any of: update:directory_provisionings."
           },
           "404": {
             "description": "The connection does not exist",
@@ -12620,9 +12265,8 @@
           },
           "403": {
             "description": "Group synchronization is not enabled for this tenant",
-            "x-description-1": "The extended synchronized group attributes (name, email, direct_members_count) are not enabled for this tenant",
-            "x-description-2": "The inbound directory provisioning feature is not enabled for this tenant",
-            "x-description-3": "Insufficient scope; expected any of: update:directory_provisionings."
+            "x-description-1": "The inbound directory provisioning feature is not enabled for this tenant",
+            "x-description-2": "Insufficient scope; expected any of: update:directory_provisionings."
           },
           "404": {
             "description": "The connection does not exist",
@@ -12699,9 +12343,8 @@
           },
           "403": {
             "description": "Group synchronization is not enabled for this tenant",
-            "x-description-1": "The extended synchronized group attributes (name, email, direct_members_count) are not enabled for this tenant",
-            "x-description-2": "The inbound directory provisioning feature is not enabled for this tenant",
-            "x-description-3": "Insufficient scope; expected any of: update:directory_provisionings."
+            "x-description-1": "The inbound directory provisioning feature is not enabled for this tenant",
+            "x-description-2": "Insufficient scope; expected any of: update:directory_provisionings."
           },
           "404": {
             "description": "The connection does not exist",
@@ -52376,16 +52019,6 @@
   },
   "components": {
     "parameters": {
-      "CaptchaPolicyIdParameter": {
-        "name": "id",
-        "in": "path",
-        "description": "ID of the CAPTCHA attack protection policy.",
-        "required": true,
-        "schema": {
-          "type": "string",
-          "pattern": "^pol_[1-9A-HJ-NP-Za-km-z]{22}$"
-        }
-      },
       "ClientProfileIdParameter": {
         "name": "id",
         "in": "path",
@@ -52464,28 +52097,6 @@
       }
     },
     "requestBodies": {
-      "CreateAttackProtectionCaptchaPolicyRequest": {
-        "description": "The CAPTCHA attack protection policy to create.",
-        "required": true,
-        "content": {
-          "application/json": {
-            "schema": {
-              "$ref": "#/components/schemas/CreateAttackProtectionCaptchaPolicyRequestContent"
-            }
-          }
-        }
-      },
-      "CreateAttackProtectionSuspiciousIpThrottlingPolicyRequest": {
-        "description": "The Suspicious IP Throttling attack protection policy to create.",
-        "required": true,
-        "content": {
-          "application/json": {
-            "schema": {
-              "$ref": "#/components/schemas/CreateAttackProtectionSuspiciousIpThrottlingPolicyRequestContent"
-            }
-          }
-        }
-      },
       "CreateClientProfile": {
         "content": {
           "application/json": {
@@ -52501,17 +52112,6 @@
           "application/json": {
             "schema": {
               "$ref": "#/components/schemas/CreateKeysNetworkAclsRequestContent"
-            }
-          }
-        }
-      },
-      "UpdateAttackProtectionCaptchaPolicyRequest": {
-        "description": "The fields of the CAPTCHA attack protection policy to update.",
-        "required": true,
-        "content": {
-          "application/json": {
-            "schema": {
-              "$ref": "#/components/schemas/UpdateAttackProtectionCaptchaPolicyRequestContent"
             }
           }
         }
@@ -52543,26 +52143,6 @@
           "application/json": {
             "schema": {
               "$ref": "#/components/schemas/ConflictSchema"
-            }
-          }
-        }
-      },
-      "CreateAttackProtectionCaptchaPolicyResponse": {
-        "description": "The CAPTCHA attack protection policy was successfully created.",
-        "content": {
-          "application/json": {
-            "schema": {
-              "$ref": "#/components/schemas/AttackProtectionCaptchaPolicy"
-            }
-          }
-        }
-      },
-      "CreateAttackProtectionSuspiciousIpThrottlingPolicyResponse": {
-        "description": "The Suspicious IP Throttling attack protection policy was successfully created.",
-        "content": {
-          "application/json": {
-            "schema": {
-              "$ref": "#/components/schemas/AttackProtectionSuspiciousIpThrottlingPolicy"
             }
           }
         }
@@ -52684,16 +52264,6 @@
           }
         }
       },
-      "GetAttackProtectionCaptchaPolicyResponse": {
-        "description": "The CAPTCHA attack protection policy was successfully retrieved.",
-        "content": {
-          "application/json": {
-            "schema": {
-              "$ref": "#/components/schemas/AttackProtectionCaptchaPolicy"
-            }
-          }
-        }
-      },
       "GetClientProfile": {
         "description": "Record for existing client profile.",
         "content": {
@@ -52785,26 +52355,6 @@
           "application/json": {
             "schema": {
               "$ref": "#/components/schemas/UnauthorizedSchema"
-            }
-          }
-        }
-      },
-      "ListAttackProtectionCaptchaPoliciesResponse": {
-        "description": "The tenant's CAPTCHA attack protection policies were successfully retrieved.",
-        "content": {
-          "application/json": {
-            "schema": {
-              "$ref": "#/components/schemas/ListAttackProtectionCaptchaPoliciesResponseContent"
-            }
-          }
-        }
-      },
-      "ListAttackProtectionSuspiciousIpThrottlingPoliciesResponse": {
-        "description": "The tenant's Suspicious IP Throttling attack protection policies were successfully retrieved.",
-        "content": {
-          "application/json": {
-            "schema": {
-              "$ref": "#/components/schemas/ListAttackProtectionSuspiciousIpThrottlingPoliciesResponseContent"
             }
           }
         }
@@ -52918,16 +52468,6 @@
           "application/json": {
             "schema": {
               "$ref": "#/components/schemas/UnauthorizedSchema"
-            }
-          }
-        }
-      },
-      "UpdateAttackProtectionCaptchaPolicyResponse": {
-        "description": "The CAPTCHA attack protection policy was successfully updated.",
-        "content": {
-          "application/json": {
-            "schema": {
-              "$ref": "#/components/schemas/AttackProtectionCaptchaPolicy"
             }
           }
         }
@@ -54727,160 +54267,6 @@
           }
         }
       },
-      "AttackProtectionCaptchaPolicy": {
-        "type": "object",
-        "description": "An attack protection policy override for CAPTCHA.",
-        "additionalProperties": false,
-        "required": [
-          "id",
-          "name",
-          "priority",
-          "match",
-          "action",
-          "created_at",
-          "updated_at"
-        ],
-        "properties": {
-          "id": {
-            "type": "string",
-            "description": "System-generated identifier for the policy."
-          },
-          "name": {
-            "type": "string",
-            "description": "Human-readable policy name.",
-            "minLength": 1,
-            "maxLength": 255
-          },
-          "description": {
-            "type": "string",
-            "description": "Description of the policy's purpose."
-          },
-          "priority": {
-            "type": "integer",
-            "description": "Conflict resolution order. Lower number takes higher precedence.",
-            "minimum": 1
-          },
-          "match": {
-            "$ref": "#/components/schemas/AttackProtectionCaptchaPolicyMatch"
-          },
-          "action": {
-            "$ref": "#/components/schemas/AttackProtectionCaptchaPolicyAction"
-          },
-          "created_at": {
-            "type": "string",
-            "format": "date-time",
-            "description": "ISO 8601 timestamp when the policy was created."
-          },
-          "updated_at": {
-            "type": "string",
-            "format": "date-time",
-            "description": "ISO 8601 timestamp when the policy was last updated."
-          }
-        }
-      },
-      "AttackProtectionCaptchaPolicyAction": {
-        "type": "object",
-        "description": "CAPTCHA configuration override stored for this policy.",
-        "additionalProperties": false,
-        "properties": {
-          "active_provider_id": {
-            "$ref": "#/components/schemas/CaptchaActiveProviderEnum"
-          },
-          "simple_captcha": {
-            "$ref": "#/components/schemas/CaptchaPolicyActionSimpleCaptcha"
-          },
-          "auth_challenge": {
-            "$ref": "#/components/schemas/CaptchaPolicyActionAuthChallenge"
-          },
-          "recaptcha_v2": {
-            "$ref": "#/components/schemas/CaptchaPolicyActionRecaptchaV2"
-          },
-          "recaptcha_enterprise": {
-            "$ref": "#/components/schemas/CaptchaPolicyActionRecaptchaEnterprise"
-          },
-          "hcaptcha": {
-            "$ref": "#/components/schemas/CaptchaPolicyActionHcaptcha"
-          },
-          "friendly_captcha": {
-            "$ref": "#/components/schemas/CaptchaPolicyActionFriendlyCaptcha"
-          },
-          "arkose": {
-            "$ref": "#/components/schemas/CaptchaPolicyActionArkose"
-          }
-        }
-      },
-      "AttackProtectionCaptchaPolicyActionInput": {
-        "type": "object",
-        "description": "CAPTCHA configuration override for this policy.",
-        "additionalProperties": false,
-        "properties": {
-          "active_provider_id": {
-            "$ref": "#/components/schemas/CaptchaActiveProviderEnum"
-          },
-          "simple_captcha": {
-            "$ref": "#/components/schemas/CaptchaPolicyActionSimpleCaptcha"
-          },
-          "auth_challenge": {
-            "$ref": "#/components/schemas/CaptchaPolicyActionAuthChallenge"
-          },
-          "recaptcha_v2": {
-            "$ref": "#/components/schemas/CaptchaPolicyActionRecaptchaV2Input"
-          },
-          "recaptcha_enterprise": {
-            "$ref": "#/components/schemas/CaptchaPolicyActionRecaptchaEnterpriseInput"
-          },
-          "hcaptcha": {
-            "$ref": "#/components/schemas/CaptchaPolicyActionHcaptchaInput"
-          },
-          "friendly_captcha": {
-            "$ref": "#/components/schemas/CaptchaPolicyActionFriendlyCaptchaInput"
-          },
-          "arkose": {
-            "$ref": "#/components/schemas/CaptchaPolicyActionArkoseInput"
-          }
-        }
-      },
-      "AttackProtectionCaptchaPolicyMatch": {
-        "type": "object",
-        "description": "Traffic matching criteria for the policy.",
-        "additionalProperties": false,
-        "properties": {
-          "auth0_managed": {
-            "type": "array",
-            "description": "Match by Auth0-managed traffic identifiers.",
-            "items": {
-              "type": "string",
-              "pattern": "^auth0\\.[^\\.\\s]+$"
-            },
-            "uniqueItems": true,
-            "minItems": 1,
-            "maxItems": 20
-          },
-          "geo_country_codes": {
-            "type": "array",
-            "description": "Match by ISO 3166-1 alpha-2 country codes.",
-            "items": {
-              "type": "string",
-              "pattern": "^[A-Z]{2}$"
-            },
-            "uniqueItems": true,
-            "minItems": 1,
-            "maxItems": 20
-          }
-        },
-        "anyOf": [
-          {
-            "required": [
-              "auth0_managed"
-            ]
-          },
-          {
-            "required": [
-              "geo_country_codes"
-            ]
-          }
-        ]
-      },
       "AttackProtectionCaptchaProviderId": {
         "type": "string",
         "description": "The id of the active provider for the CAPTCHA.",
@@ -54923,227 +54309,6 @@
         "type": "object",
         "additionalProperties": true,
         "properties": {}
-      },
-      "AttackProtectionSuspiciousIpThrottlingPolicy": {
-        "type": "object",
-        "description": "An attack protection policy override for Suspicious IP Throttling.",
-        "additionalProperties": false,
-        "required": [
-          "id",
-          "name",
-          "priority",
-          "match",
-          "action",
-          "created_at",
-          "updated_at"
-        ],
-        "properties": {
-          "id": {
-            "type": "string",
-            "description": "System-generated identifier for the policy."
-          },
-          "name": {
-            "type": "string",
-            "description": "Human-readable policy name.",
-            "minLength": 1,
-            "maxLength": 255
-          },
-          "description": {
-            "type": "string",
-            "description": "Description of the policy's purpose."
-          },
-          "priority": {
-            "type": "integer",
-            "description": "Conflict resolution order. Lower number takes higher precedence.",
-            "minimum": 1
-          },
-          "match": {
-            "$ref": "#/components/schemas/AttackProtectionSuspiciousIpThrottlingPolicyMatch"
-          },
-          "action": {
-            "$ref": "#/components/schemas/AttackProtectionSuspiciousIpThrottlingPolicyAction"
-          },
-          "created_at": {
-            "type": "string",
-            "format": "date-time",
-            "description": "ISO 8601 timestamp when the policy was created."
-          },
-          "updated_at": {
-            "type": "string",
-            "format": "date-time",
-            "description": "ISO 8601 timestamp when the policy was last updated."
-          }
-        }
-      },
-      "AttackProtectionSuspiciousIpThrottlingPolicyAction": {
-        "type": "object",
-        "description": "Suspicious IP Throttling settings to override for traffic matching the policy. Any omitted setting falls back to the tenant's Suspicious IP Throttling configuration.",
-        "additionalProperties": false,
-        "properties": {
-          "enabled": {
-            "type": "boolean",
-            "description": "Whether or not suspicious IP throttling attack protections are active."
-          },
-          "shields": {
-            "type": "array",
-            "description": "Action to take when a suspicious IP throttling threshold is violated. Possible values: block, admin_notification.",
-            "items": {
-              "$ref": "#/components/schemas/AttackProtectionSuspiciousIpThrottlingPolicyShieldEnum"
-            }
-          },
-          "allowlist": {
-            "type": "array",
-            "description": "List of trusted IP addresses that will not have attack protection enforced against them.",
-            "items": {
-              "$ref": "#/components/schemas/AttackProtectionSuspiciousIpThrottlingPolicyAllowlistItem"
-            },
-            "uniqueItems": true,
-            "maxItems": 100
-          },
-          "stage": {
-            "$ref": "#/components/schemas/AttackProtectionSuspiciousIpThrottlingPolicyStage"
-          }
-        }
-      },
-      "AttackProtectionSuspiciousIpThrottlingPolicyAllowlistItem": {
-        "type": "string",
-        "anyOf": [
-          {
-            "format": "ipv4"
-          },
-          {
-            "format": "cidr"
-          },
-          {
-            "format": "ipv6"
-          },
-          {
-            "format": "ipv6_cidr"
-          }
-        ],
-        "description": "An IPv4 address, IPv4 CIDR block, IPv6 address, or IPv6 CIDR block."
-      },
-      "AttackProtectionSuspiciousIpThrottlingPolicyMatch": {
-        "type": "object",
-        "description": "Traffic matching criteria for the policy.",
-        "additionalProperties": false,
-        "properties": {
-          "auth0_managed": {
-            "type": "array",
-            "description": "Match by Auth0-managed traffic identifiers.",
-            "items": {
-              "type": "string",
-              "pattern": "^auth0\\.[^\\.\\s]+$"
-            },
-            "uniqueItems": true,
-            "minItems": 1,
-            "maxItems": 20
-          },
-          "geo_country_codes": {
-            "type": "array",
-            "description": "Match by ISO 3166-1 alpha-2 country codes.",
-            "items": {
-              "type": "string",
-              "pattern": "^[A-Z]{2}$"
-            },
-            "uniqueItems": true,
-            "minItems": 1,
-            "maxItems": 20
-          }
-        },
-        "anyOf": [
-          {
-            "required": [
-              "auth0_managed"
-            ]
-          },
-          {
-            "required": [
-              "geo_country_codes"
-            ]
-          }
-        ]
-      },
-      "AttackProtectionSuspiciousIpThrottlingPolicyPreCustomTokenExchangeStage": {
-        "type": "object",
-        "description": "Configuration options that apply before every custom token exchange attempt.",
-        "additionalProperties": false,
-        "properties": {
-          "max_attempts": {
-            "type": "integer",
-            "description": "Total number of attempts allowed.",
-            "minimum": 1,
-            "maximum": 2500
-          },
-          "rate": {
-            "type": "integer",
-            "description": "Interval of time, given in milliseconds, at which new attempts are granted.",
-            "minimum": 34560,
-            "maximum": 86400000
-          }
-        }
-      },
-      "AttackProtectionSuspiciousIpThrottlingPolicyPreLoginStage": {
-        "type": "object",
-        "description": "Configuration options that apply before every login attempt.",
-        "additionalProperties": false,
-        "properties": {
-          "max_attempts": {
-            "type": "integer",
-            "description": "Total number of attempts allowed per day.",
-            "minimum": 1,
-            "maximum": 2500
-          },
-          "rate": {
-            "type": "integer",
-            "description": "Interval of time, given in milliseconds, at which new attempts are granted.",
-            "minimum": 34560,
-            "maximum": 86400000
-          }
-        }
-      },
-      "AttackProtectionSuspiciousIpThrottlingPolicyPreUserRegistrationStage": {
-        "type": "object",
-        "description": "Configuration options that apply before every user registration attempt.",
-        "additionalProperties": false,
-        "properties": {
-          "max_attempts": {
-            "type": "integer",
-            "description": "Total number of attempts allowed.",
-            "minimum": 1,
-            "maximum": 72000
-          },
-          "rate": {
-            "type": "integer",
-            "description": "Interval of time, given in milliseconds, at which new attempts are granted.",
-            "minimum": 1200,
-            "maximum": 86400000
-          }
-        }
-      },
-      "AttackProtectionSuspiciousIpThrottlingPolicyShieldEnum": {
-        "type": "string",
-        "enum": [
-          "block",
-          "admin_notification"
-        ],
-        "description": "Action taken when a suspicious IP throttling threshold is violated."
-      },
-      "AttackProtectionSuspiciousIpThrottlingPolicyStage": {
-        "type": "object",
-        "description": "Holds per-stage configuration options (max_attempts and rate).",
-        "additionalProperties": false,
-        "properties": {
-          "pre-login": {
-            "$ref": "#/components/schemas/AttackProtectionSuspiciousIpThrottlingPolicyPreLoginStage"
-          },
-          "pre-user-registration": {
-            "$ref": "#/components/schemas/AttackProtectionSuspiciousIpThrottlingPolicyPreUserRegistrationStage"
-          },
-          "pre-custom-token-exchange": {
-            "$ref": "#/components/schemas/AttackProtectionSuspiciousIpThrottlingPolicyPreCustomTokenExchangeStage"
-          }
-        }
       },
       "AttackProtectionUpdateCaptchaArkose": {
         "type": "object",
@@ -56160,198 +55325,6 @@
             "$ref": "#/components/schemas/AculConfigs"
           }
         }
-      },
-      "CaptchaActiveProviderEnum": {
-        "type": "string",
-        "description": "The CAPTCHA provider type.",
-        "enum": [
-          "simple_captcha",
-          "auth_challenge",
-          "recaptcha_v2",
-          "recaptcha_enterprise",
-          "hcaptcha",
-          "friendly_captcha",
-          "arkose"
-        ]
-      },
-      "CaptchaPolicyActionArkose": {
-        "type": "object",
-        "description": "Arkose Labs provider configuration.",
-        "additionalProperties": false,
-        "properties": {
-          "site_key": {
-            "type": "string",
-            "description": "The Arkose Labs site key."
-          },
-          "client_subdomain": {
-            "type": "string",
-            "description": "The Arkose Labs client subdomain."
-          },
-          "verify_subdomain": {
-            "type": "string",
-            "description": "The Arkose Labs verify subdomain."
-          },
-          "fail_open": {
-            "type": "boolean",
-            "description": "Whether to allow access when Arkose Labs is unavailable."
-          }
-        }
-      },
-      "CaptchaPolicyActionArkoseInput": {
-        "type": "object",
-        "description": "Arkose Labs provider configuration.",
-        "additionalProperties": false,
-        "properties": {
-          "site_key": {
-            "type": "string",
-            "description": "The Arkose Labs site key."
-          },
-          "secret": {
-            "type": "string",
-            "description": "The Arkose Labs private key. Encrypted at rest."
-          },
-          "client_subdomain": {
-            "type": "string",
-            "description": "The Arkose Labs client subdomain."
-          },
-          "verify_subdomain": {
-            "type": "string",
-            "description": "The Arkose Labs verify subdomain."
-          },
-          "fail_open": {
-            "type": "boolean",
-            "description": "Whether to allow access when Arkose Labs is unavailable."
-          }
-        }
-      },
-      "CaptchaPolicyActionAuthChallenge": {
-        "type": "object",
-        "description": "Auth Challenge CAPTCHA provider configuration.",
-        "additionalProperties": false,
-        "properties": {
-          "fail_open": {
-            "type": "boolean",
-            "description": "Whether to allow access when the challenge provider is unavailable."
-          }
-        }
-      },
-      "CaptchaPolicyActionFriendlyCaptcha": {
-        "type": "object",
-        "description": "Friendly Captcha provider configuration.",
-        "additionalProperties": false,
-        "properties": {
-          "site_key": {
-            "type": "string",
-            "description": "The Friendly Captcha site key."
-          }
-        }
-      },
-      "CaptchaPolicyActionFriendlyCaptchaInput": {
-        "type": "object",
-        "description": "Friendly Captcha provider configuration.",
-        "additionalProperties": false,
-        "properties": {
-          "site_key": {
-            "type": "string",
-            "description": "The Friendly Captcha site key."
-          },
-          "secret": {
-            "type": "string",
-            "description": "The Friendly Captcha secret key. Encrypted at rest."
-          }
-        }
-      },
-      "CaptchaPolicyActionHcaptcha": {
-        "type": "object",
-        "description": "hCaptcha provider configuration.",
-        "additionalProperties": false,
-        "properties": {
-          "site_key": {
-            "type": "string",
-            "description": "The hCaptcha site key."
-          }
-        }
-      },
-      "CaptchaPolicyActionHcaptchaInput": {
-        "type": "object",
-        "description": "hCaptcha provider configuration.",
-        "additionalProperties": false,
-        "properties": {
-          "site_key": {
-            "type": "string",
-            "description": "The hCaptcha site key."
-          },
-          "secret": {
-            "type": "string",
-            "description": "The hCaptcha secret key. Encrypted at rest."
-          }
-        }
-      },
-      "CaptchaPolicyActionRecaptchaEnterprise": {
-        "type": "object",
-        "description": "reCAPTCHA Enterprise provider configuration.",
-        "additionalProperties": false,
-        "properties": {
-          "site_key": {
-            "type": "string",
-            "description": "The reCAPTCHA Enterprise site key."
-          },
-          "project_id": {
-            "type": "string",
-            "description": "The Google Cloud project ID."
-          }
-        }
-      },
-      "CaptchaPolicyActionRecaptchaEnterpriseInput": {
-        "type": "object",
-        "description": "reCAPTCHA Enterprise provider configuration.",
-        "additionalProperties": false,
-        "properties": {
-          "site_key": {
-            "type": "string",
-            "description": "The reCAPTCHA Enterprise site key."
-          },
-          "project_id": {
-            "type": "string",
-            "description": "The Google Cloud project ID."
-          },
-          "api_key": {
-            "type": "string",
-            "description": "The reCAPTCHA Enterprise API key. Encrypted at rest."
-          }
-        }
-      },
-      "CaptchaPolicyActionRecaptchaV2": {
-        "type": "object",
-        "description": "reCAPTCHA v2 provider configuration.",
-        "additionalProperties": false,
-        "properties": {
-          "site_key": {
-            "type": "string",
-            "description": "The reCAPTCHA v2 site key."
-          }
-        }
-      },
-      "CaptchaPolicyActionRecaptchaV2Input": {
-        "type": "object",
-        "description": "reCAPTCHA v2 provider configuration.",
-        "additionalProperties": false,
-        "properties": {
-          "site_key": {
-            "type": "string",
-            "description": "The reCAPTCHA v2 site key."
-          },
-          "secret": {
-            "type": "string",
-            "description": "The reCAPTCHA v2 secret key. Encrypted at rest."
-          }
-        }
-      },
-      "CaptchaPolicyActionSimpleCaptcha": {
-        "type": "object",
-        "description": "Simple CAPTCHA provider configuration.",
-        "additionalProperties": false,
-        "properties": {}
       },
       "CertificateSubjectDNCredential": {
         "type": "object",
@@ -68941,75 +67914,6 @@
             "type": "boolean",
             "description": "If set to true, this client is allowed to create anonymous sessions.",
             "default": false
-          }
-        }
-      },
-      "CreateAttackProtectionCaptchaPolicyRequestContent": {
-        "type": "object",
-        "description": "Request body for creating a CAPTCHA attack protection policy.",
-        "additionalProperties": false,
-        "required": [
-          "name",
-          "priority",
-          "match",
-          "action"
-        ],
-        "properties": {
-          "name": {
-            "type": "string",
-            "description": "Human-readable policy name.",
-            "minLength": 1,
-            "maxLength": 255
-          },
-          "description": {
-            "type": "string",
-            "description": "Description of the attack protection policy."
-          },
-          "priority": {
-            "type": "integer",
-            "description": "Conflict resolution order. Lower number takes higher precedence. Must be unique per tenant.",
-            "minimum": 1
-          },
-          "match": {
-            "$ref": "#/components/schemas/AttackProtectionCaptchaPolicyMatch"
-          },
-          "action": {
-            "$ref": "#/components/schemas/AttackProtectionCaptchaPolicyActionInput"
-          }
-        }
-      },
-      "CreateAttackProtectionSuspiciousIpThrottlingPolicyRequestContent": {
-        "type": "object",
-        "description": "Request body for creating a Suspicious IP Throttling attack protection policy.",
-        "additionalProperties": false,
-        "required": [
-          "name",
-          "priority",
-          "match",
-          "action"
-        ],
-        "properties": {
-          "name": {
-            "type": "string",
-            "description": "Human-readable policy name.",
-            "minLength": 1,
-            "maxLength": 255
-          },
-          "description": {
-            "type": "string",
-            "description": "Description of the attack protection policy."
-          },
-          "priority": {
-            "type": "integer",
-            "description": "Conflict resolution order. Lower number takes higher precedence. Must be unique per tenant.",
-            "minimum": 1,
-            "maximum": 100
-          },
-          "match": {
-            "$ref": "#/components/schemas/AttackProtectionSuspiciousIpThrottlingPolicyMatch"
-          },
-          "action": {
-            "$ref": "#/components/schemas/AttackProtectionSuspiciousIpThrottlingPolicyAction"
           }
         }
       },
@@ -101026,6 +99930,9 @@
           },
           "tenant": {
             "$ref": "#/components/schemas/EventStreamCloudEventContextTenant"
+          },
+          "transaction": {
+            "$ref": "#/components/schemas/EventStreamCloudEventContextTransaction"
           }
         }
       },
@@ -101182,6 +100089,115 @@
             "pattern": "[a-z0-9][-a-z0-9]{1,62}[a-z0-9]"
           }
         }
+      },
+      "EventStreamCloudEventContextTransaction": {
+        "type": "object",
+        "description": "An auth transaction.",
+        "additionalProperties": false,
+        "required": [
+          "acr_values",
+          "locale",
+          "requested_scopes",
+          "ui_locales"
+        ],
+        "properties": {
+          "acr_values": {
+            "type": "array",
+            "description": "acr_values in the request.",
+            "items": {
+              "type": "string"
+            }
+          },
+          "locale": {
+            "type": "string",
+            "description": "The locale used for this transaction."
+          },
+          "login_hint": {
+            "type": "string",
+            "description": "Hint about the login identifier the user might use in this transaction."
+          },
+          "prompt": {
+            "type": "array",
+            "description": "Instructions indicating whether the user may be prompted for re-authentication and consent.",
+            "items": {
+              "type": "string"
+            }
+          },
+          "protocol": {
+            "$ref": "#/components/schemas/EventStreamCloudEventContextTransactionProtocolEnum"
+          },
+          "redirect_uri": {
+            "type": "string",
+            "description": "The URL to which the client will be redirected when the transaction completes."
+          },
+          "requested_scopes": {
+            "type": "array",
+            "description": "The scopes requested.",
+            "items": {
+              "type": "string"
+            }
+          },
+          "response_mode": {
+            "$ref": "#/components/schemas/EventStreamCloudEventContextTransactionResponseModeEnum"
+          },
+          "response_type": {
+            "type": "array",
+            "description": "The kind of credential issued by this transaction.",
+            "items": {
+              "$ref": "#/components/schemas/EventStreamCloudEventContextTransactionResponseTypeItemEnum"
+            }
+          },
+          "state": {
+            "type": "string",
+            "description": "The OAuth state parameter for this transaction."
+          },
+          "ui_locales": {
+            "type": "array",
+            "description": "The ui_locales requested for this transaction.",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "EventStreamCloudEventContextTransactionProtocolEnum": {
+        "type": "string",
+        "description": "The protocol used for this transaction.",
+        "enum": [
+          "oidc-basic-profile",
+          "oidc-implicit-profile",
+          "oauth2-device-code",
+          "oauth2-resource-owner",
+          "oauth2-resource-owner-jwt-bearer",
+          "oauth2-password",
+          "oauth2-webauthn",
+          "oauth2-access-token",
+          "oauth2-refresh-token",
+          "oauth2-token-exchange",
+          "oidc-hybrid-profile",
+          "samlp",
+          "wsfed",
+          "wstrust-usernamemixed"
+        ]
+      },
+      "EventStreamCloudEventContextTransactionResponseModeEnum": {
+        "type": "string",
+        "description": "This transaction's method for returning parameters from the Authorization Endpoint.",
+        "enum": [
+          "query",
+          "fragment",
+          "form_post",
+          "web_message"
+        ]
+      },
+      "EventStreamCloudEventContextTransactionResponseTypeItemEnum": {
+        "type": "string",
+        "description": "OAuth/OIDC response types.",
+        "enum": [
+          "code",
+          "token",
+          "id_token"
+        ]
       },
       "EventStreamCloudEventData": {
         "type": "object",
@@ -127884,20 +126900,6 @@
           }
         }
       },
-      "ListAttackProtectionCaptchaPoliciesResponseContent": {
-        "type": "array",
-        "description": "List of CAPTCHA attack protection policies for the tenant, sorted by priority ascending.",
-        "items": {
-          "$ref": "#/components/schemas/AttackProtectionCaptchaPolicy"
-        }
-      },
-      "ListAttackProtectionSuspiciousIpThrottlingPoliciesResponseContent": {
-        "type": "array",
-        "description": "List of Suspicious IP Throttling attack protection policies for the tenant, sorted by priority ascending.",
-        "items": {
-          "$ref": "#/components/schemas/AttackProtectionSuspiciousIpThrottlingPolicy"
-        }
-      },
       "ListBrandingPhoneProvidersResponseContent": {
         "type": "object",
         "additionalProperties": false,
@@ -138907,35 +137909,6 @@
             "type": "boolean",
             "description": "If set to true, this client is allowed to create anonymous sessions.",
             "default": false
-          }
-        }
-      },
-      "UpdateAttackProtectionCaptchaPolicyRequestContent": {
-        "type": "object",
-        "description": "Request body for updating a CAPTCHA attack protection policy. All fields are optional, but at least one must be provided. A provided match or action replaces the stored value in full rather than merging with it.",
-        "additionalProperties": false,
-        "minProperties": 1,
-        "properties": {
-          "name": {
-            "type": "string",
-            "description": "Human-readable policy name.",
-            "minLength": 1,
-            "maxLength": 255
-          },
-          "description": {
-            "type": "string",
-            "description": "Description of the policy's purpose."
-          },
-          "priority": {
-            "type": "integer",
-            "description": "Conflict resolution order. Lower number takes higher precedence. Must be unique per tenant.",
-            "minimum": 1
-          },
-          "match": {
-            "$ref": "#/components/schemas/AttackProtectionCaptchaPolicyMatch"
-          },
-          "action": {
-            "$ref": "#/components/schemas/AttackProtectionCaptchaPolicyActionInput"
           }
         }
       },
