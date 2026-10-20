@@ -33,7 +33,7 @@ You can [configure the token lifetime](/docs/secure/tokens/access-tokens/update-
 Token quotas are determined by subscription tier. You can [review your current quota](https://support.auth0.com/reports/quota) in the Auth0 Support Center. If you have questions about pricing or quotas, please [contact our sales team](https://auth0.com/contact-us).
 
 * Tokens issued for [internal Auth0 audiences](/docs/secure/tokens/access-tokens/get-access-tokens#control-access-token-audience) do not count toward your quota.
-* Tokens issued for custom audiences count toward your quota and are subject to [Auth0 Management API Rate Limits](/docs/troubleshoot/customer-support/operational-policies/rate-limit-policy/management-api-endpoint-rate-limits).
+* Tokens issued for custom audiences count toward your quota and are subject to [Auth0 Management API Rate Limits](/docs/troubleshoot/customer-support/operational-policies/rate-limit-policy).
 
 ## Learn more
 
