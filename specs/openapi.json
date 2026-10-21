@@ -55910,6 +55910,9 @@
             "$ref": "#/components/schemas/ClientThirdPartySecurityModeEnum",
             "x-release-lifecycle": "GA"
           },
+          "oidc_support": {
+            "$ref": "#/components/schemas/ClientOidcSupport"
+          },
           "redirection_policy": {
             "$ref": "#/components/schemas/ClientRedirectionPolicyEnum",
             "x-release-lifecycle": "GA"
@@ -57449,6 +57452,25 @@
           }
         }
       },
+      "ClientOidcSupport": {
+        "type": "object",
+        "description": "OIDC support configuration for this client.",
+        "additionalProperties": true,
+        "properties": {
+          "is_allowed": {
+            "type": "boolean"
+          },
+          "allow_all_scopes": {
+            "type": "boolean"
+          },
+          "allowed_scopes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ClientOidcSupportAllowedScopesEnum"
+            }
+          }
+        }
+      },
       "ClientOidcSupportAllowedScopesEnum": {
         "type": "string",
         "enum": [
@@ -58153,6 +58175,9 @@
           "third_party_security_mode": {
             "$ref": "#/components/schemas/ClientThirdPartySecurityModeEnum",
             "x-release-lifecycle": "GA"
+          },
+          "oidc_support": {
+            "$ref": "#/components/schemas/ClientOidcSupport"
           },
           "redirection_policy": {
             "$ref": "#/components/schemas/ClientRedirectionPolicyEnum",
@@ -68797,6 +68822,9 @@
           "third_party_security_mode": {
             "$ref": "#/components/schemas/ClientThirdPartySecurityModeEnum",
             "x-release-lifecycle": "GA"
+          },
+          "oidc_support": {
+            "$ref": "#/components/schemas/ClientOidcSupport"
           },
           "redirection_policy": {
             "$ref": "#/components/schemas/ClientRedirectionPolicyEnum",
@@ -122418,6 +122446,9 @@
             "$ref": "#/components/schemas/ClientThirdPartySecurityModeEnum",
             "x-release-lifecycle": "GA"
           },
+          "oidc_support": {
+            "$ref": "#/components/schemas/ClientOidcSupport"
+          },
           "redirection_policy": {
             "$ref": "#/components/schemas/ClientRedirectionPolicyEnum",
             "x-release-lifecycle": "GA"
@@ -133721,6 +133752,9 @@
             "$ref": "#/components/schemas/ClientThirdPartySecurityModeEnum",
             "x-release-lifecycle": "GA"
           },
+          "oidc_support": {
+            "$ref": "#/components/schemas/ClientOidcSupport"
+          },
           "redirection_policy": {
             "$ref": "#/components/schemas/ClientRedirectionPolicyEnum",
             "x-release-lifecycle": "GA"
@@ -139150,6 +139184,9 @@
           "third_party_security_mode": {
             "$ref": "#/components/schemas/ClientThirdPartySecurityModeEnum",
             "x-release-lifecycle": "GA"
+          },
+          "oidc_support": {
+            "$ref": "#/components/schemas/ClientOidcSupport"
           },
           "redirection_policy": {
             "$ref": "#/components/schemas/ClientRedirectionPolicyEnum",

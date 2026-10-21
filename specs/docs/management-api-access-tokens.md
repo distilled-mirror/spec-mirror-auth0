@@ -6,15 +6,15 @@
 
 # Management API Access Tokens
 
-To call the [Auth0 Management API](https://auth0.com/docs/api/management/v2), you must provide an <Tooltip tip="Access Token: Authorization credential, in the form of an opaque string or JWT, used to access an API." cta="View Glossary" href="/docs/glossary?term=access+token">access token</Tooltip> that contains the appropriate <Tooltip tip="Access Token: Authorization credential, in the form of an opaque string or JWT, used to access an API." cta="View Glossary" href="/docs/glossary?term=audience">audience</Tooltip> and scopes.
+To call the [Auth0 Management API](/docs/api/management/v2), you must provide an access token (Access Token: Authorization credential, in the form of an opaque string or JWT, used to access an API.) that contains the appropriate audience (Access Token: Authorization credential, in the form of an opaque string or JWT, used to access an API.) and scopes.
 
 ## Audience
 
-The audience value for the <Tooltip tip="Management API: A product to allow customers to perform administrative tasks." cta="View Glossary" href="/docs/glossary?term=Management+API">Management API</Tooltip> is `https://{yourDomain}/api/v2/`.
+The audience value for the Management API (Management API: A product to allow customers to perform administrative tasks.) is `https://{yourDomain}/api/v2/`.
 
 ## Scopes
 
-Each Management API endpoint requires a specific set of scopes. Refer to the [Management API Explorer](https://auth0.com/docs/api/management/v2/) for more information.
+Each Management API endpoint requires a specific set of scopes. Refer to the [Management API Explorer](/docs/api/management/v2/) for more information.
 
 ## Lifetime
 
@@ -25,8 +25,8 @@ You can [configure the token lifetime](/docs/secure/tokens/access-tokens/update-
 ## Security
 
 * **Access token**: Once issued, an access token cannot be revoked. Auth0 recommends that you restrict the lifetime of your access tokens to the shortest value possible allowed by your use case.
-* **<Tooltip tip="Refresh Token: Token used to obtain a renewed Access Token without forcing users to log in again." cta="View Glossary" href="/docs/glossary?term=Refresh+token">Refresh token</Tooltip>**: You can [revoke a refresh token](/docs/secure/tokens/refresh-tokens/revoke-refresh-tokens) using the Dashboard, the Authentication API, or the Management API.
-* **<Tooltip tip="Client Secret: Secret used by a client (application) to authenticate with the Authorization Server; it should be known to only the client and the Authorization Server and must be sufficiently random to not be guessable." cta="View Glossary" href="/docs/glossary?term=Client+secret">Client secret</Tooltip>**: You can [rotate an application's client secret](/docs/get-started/applications/rotate-client-secret) using the Dashboard or the Management API.
+* **Refresh token (Refresh Token: Token used to obtain a renewed Access Token without forcing users to log in again.)**: You can [revoke a refresh token](/docs/secure/tokens/refresh-tokens/revoke-refresh-tokens) using the Dashboard, the Authentication API, or the Management API.
+* **Client secret (Client Secret: Secret used by a client (application) to authenticate with the Authorization Server; it should be known to only the client and the Authorization Server and must be sufficiently random to not be guessable.)**: You can [rotate an application's client secret](/docs/get-started/applications/rotate-client-secret) using the Dashboard or the Management API.
 
 ## Quota
 

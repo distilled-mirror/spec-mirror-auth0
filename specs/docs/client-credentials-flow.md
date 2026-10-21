@@ -6,15 +6,13 @@
 
 # Client Credentials Flow
 
-The Client Credentials Flow (defined in [OAuth 2.0 RFC 6749, section 4.4](https://tools.ietf.org/html/rfc6749#section-4.4)) involves an application exchanging its application credentials, such as <Tooltip tip="Client ID: Identification value given to your registered resource from Auth0." cta="View Glossary" href="/docs/glossary?term=client+ID">client ID</Tooltip> and <Tooltip tip="Client ID: Identification value given to your registered resource from Auth0." cta="View Glossary" href="/docs/glossary?term=client+secret">client secret</Tooltip>, for an <Tooltip tip="Client Secret: Secret used by a client (application) to authenticate with the Authorization Server; it should be known to only the client and the Authorization Server and must be sufficiently random to not be guessable." cta="View Glossary" href="/docs/glossary?term=access+token">access token</Tooltip>.
+The Client Credentials Flow (defined in [OAuth 2.0 RFC 6749, section 4.4](https://tools.ietf.org/html/rfc6749#section-4.4)) involves an application exchanging its application credentials, such as client ID (Client ID: Identification value given to your registered resource from Auth0.) and client secret (Client ID: Identification value given to your registered resource from Auth0.), for an access token (Client Secret: Secret used by a client (application) to authenticate with the Authorization Server; it should be known to only the client and the Authorization Server and must be sufficiently random to not be guessable.).
 
 This flow is best suited for Machine-to-Machine (M2M) applications, such as CLIs, daemons, or backend services, because the system must authenticate and authorize the application instead of a user.
 
 ## How it works
 
-<Frame>
-  <img src="https://mintlify.s3.us-west-1.amazonaws.com/auth0/docs/images/cdy7uua7fh8z/4Ph562CAccmCUkKNXuEIlQ/47581872e40e87b2cca95aecf7f42c5b/diagram.png" alt="Flows - Client Credentials - Authorization sequence diagram(w/Border)" />
-</Frame>
+![Flows - Client Credentials - Authorization sequence diagram(w/Border)](https://mintlify.s3.us-west-1.amazonaws.com/auth0/docs/images/cdy7uua7fh8z/4Ph562CAccmCUkKNXuEIlQ/47581872e40e87b2cca95aecf7f42c5b/diagram.png)
 
 1. Application sends application's credentials to the Auth0 Authorization Server. To learn more about client authentication methods, read [Application Credentials](/docs/secure/application-credentials).
 2. Auth0 Authorization Server validates application's credentials.

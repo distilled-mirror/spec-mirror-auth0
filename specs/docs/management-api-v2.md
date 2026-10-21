@@ -6,7 +6,7 @@
 
 > Documentation for Auth0's Management API
 
-<Badge>Version: 2.0 (Current)</Badge>
+Version: 2.0 (Current)
 
 **The Auth0 Management API** is a collection of endpoints to complete administrative tasks programmatically and should be used by back-end servers or trusted parties. Generally speaking, anything that can be done through the Auth0 Dashboard can also be done through this API.
 
@@ -37,21 +37,19 @@ The Auth0 Management API uses JSON Web Tokens (JWTs) to authenticate requests. T
 
 To make calls to the API, send the API token in the Authorization HTTP header using the [Bearer authentication scheme](https://tools.ietf.org/html/draft-ietf-oauth-v2-bearer-20#section-2.1).
 
-<Tabs>
-  <Tab title="Auth0 CLI">
-    <Callout icon="file-lines" color="#0EA5E9" iconType="regular">Using the Auth0 CLI? If you haven't already, [set up and authenticate your CLI session](/docs/deploy-monitor/auth0-cli) before running this command.</Callout>
+**Auth0 CLI**
 
-    ```bash theme={null}
-    auth0 api get "users"
-    ```
-  </Tab>
+Using the Auth0 CLI? If you haven't already, [set up and authenticate your CLI session](/docs/deploy-monitor/auth0-cli) before running this command.
 
-  <Tab title="cURL">
-    ```bash lines theme={null}
-    curl -H "Authorization: Bearer eyJhb..." https://@@TENANT@@/api/v2/users
-    ```
-  </Tab>
-</Tabs>
+```bash theme={null}
+auth0 api get "users"
+```
+
+**cURL**
+
+```bash lines theme={null}
+curl -H "Authorization: Bearer eyJhb..." https://@@TENANT@@/api/v2/users
+```
 
 ## Request Correlation
 
@@ -59,19 +57,17 @@ A Correlation ID is a unique identifier (up to 64 characters) of a single Manage
 
 The API accepts a client-provided Correlation ID if sent with the `X-Correlation-ID` HTTP header within `POST`, `PUT`, `PATCH`, and `DELETE` methods.
 
-<Tabs>
-  <Tab title="Auth0 CLI">
-    ```bash theme={null}
-    auth0 api get "users"
-    ```
-  </Tab>
+**Auth0 CLI**
 
-  <Tab title="cURL">
-    ```bash lines theme={null}
-    curl -H "Authorization: Bearer eyJhb..." -H "x-correlation-id: client1_xyz" https://@@TENANT@@/api/v2/users
-    ```
-  </Tab>
-</Tabs>
+```bash theme={null}
+auth0 api get "users"
+```
+
+**cURL**
+
+```bash lines theme={null}
+curl -H "Authorization: Bearer eyJhb..." -H "x-correlation-id: client1_xyz" https://@@TENANT@@/api/v2/users
+```
 
 If an `X-Correlation-ID` header value longer than 64 characters is provided, only the first 64 characters will be shown in the logs.
 
@@ -97,23 +93,21 @@ Offset-based pagination is a simple, widely-used method for paginating datasets 
 
 **Example Offset-Based Pagination Request:**
 
-<Tabs>
-  <Tab title="Auth0 CLI">
-    ```bash theme={null}
-    auth0 api get "clients" \
-      -q "per_page=10" \
-      -q "page=2"
-    ```
-  </Tab>
+**Auth0 CLI**
 
-  <Tab title="cURL">
-    ```bash lines theme={null}
-    curl -L "https://@@TENANT@@/api/v2/clients?per_page=10&page=2" \
-    -H 'Authorization: Bearer {ACCESS_TOKEN}' \
-    -H 'Accept: application/json'
-    ```
-  </Tab>
-</Tabs>
+```bash theme={null}
+auth0 api get "clients" \
+  -q "per_page=10" \
+  -q "page=2"
+```
+
+**cURL**
+
+```bash lines theme={null}
+curl -L "https://@@TENANT@@/api/v2/clients?per_page=10&page=2" \
+-H 'Authorization: Bearer {ACCESS_TOKEN}' \
+-H 'Accept: application/json'
+```
 
 In offset pagination:
 
@@ -132,33 +126,31 @@ To continue pagination, use the `next` checkpoint ID in the `from` query paramet
 
 **Example Checkpoint-Based Pagination Request:**
 
-<Tabs>
-  <Tab title="Auth0 CLI">
-    ```bash theme={null}
-    auth0 api get "clients" \
-      -q "take=10" \
-      -q "from=Cg1HRUY3NEszUERFME40GgAiAQgCEj..."
-    ```
-  </Tab>
+**Auth0 CLI**
 
-  <Tab title="cURL">
-    ```bash lines theme={null}
-    curl -L "https://@@TENANT@@/api/v2/clients?take=10&from=Cg1HRUY3NEszUERFME40GgAiAQgCEj..." \
-    -H 'Authorization: Bearer {ACCESS_TOKEN}' \
-    -H 'Accept: application/json'
-    ```
-  </Tab>
-</Tabs>
+```bash theme={null}
+auth0 api get "clients" \
+  -q "take=10" \
+  -q "from=Cg1HRUY3NEszUERFME40GgAiAQgCEj..."
+```
+
+**cURL**
+
+```bash lines theme={null}
+curl -L "https://@@TENANT@@/api/v2/clients?take=10&from=Cg1HRUY3NEszUERFME40GgAiAQgCEj..." \
+-H 'Authorization: Bearer {ACCESS_TOKEN}' \
+-H 'Accept: application/json'
+```
 
 #### Checkpoint ID Expiry
 
 When using checkpoint-based pagination, it’s important to be aware of the lifespan of each `next` checkpoint ID. The checkpoint ID is designed to be used in a sequential manner, with each ID valid for a limited duration to ensure data consistency.
 
-<Note>
-  <p class="uppercase font-bold">Note</p>
-
-  The `next` checkpoint ID is valid for **24 hours** from issuance. If it expires, a fresh request is required to restart from the beginning of the dataset. Consider caching results if extended time may elapse between requests.
-</Note>
+> [!NOTE]
+>
+> Note
+>
+> The `next` checkpoint ID is valid for **24 hours** from issuance. If it expires, a fresh request is required to restart from the beginning of the dataset. Consider caching results if extended time may elapse between requests.
 
 #### Forward-Only Constraints
 

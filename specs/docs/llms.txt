@@ -389,6 +389,7 @@
 - [Canadian French / Gérer les utilisateurs (123 pages)](https://auth0.com/_llms/fr-ca/gerer-les-utilisateurs.txt): Documentation for Canadian French / Gérer les utilisateurs.
 - [Canadian French / Personnaliser (286 pages)](https://auth0.com/_llms/fr-ca/personnaliser.txt): Documentation for Canadian French / Personnaliser.
 - [Canadian French / Sécuriser (155 pages)](https://auth0.com/_llms/fr-ca/securiser.txt): Documentation for Canadian French / Sécuriser.
+- [Canadian French / Agents d’IA et MCP (87 pages)](https://auth0.com/_llms/fr-ca/agents-d-ia-et-mcp.txt): Documentation for Canadian French / Agents d’IA et MCP.
 - [Canadian French / Plateforme (85 pages)](https://auth0.com/_llms/fr-ca/plateforme.txt): Documentation for Canadian French / Plateforme.
 - [Canadian French / Outils de développement (1043 pages)](https://auth0.com/_llms/fr-ca/outils-de-developpement.txt): Documentation for Canadian French / Outils de développement.
 - [Canadian French / Outils de développement / API (597 pages)](https://auth0.com/_llms/fr-ca/outils-de-developpement/api.txt): Documentation for Canadian French / Outils de développement / API.
