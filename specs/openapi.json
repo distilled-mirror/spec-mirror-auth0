@@ -17744,7 +17744,8 @@
             "description": "An experiment with this name already exists.",
             "x-description-1": "Another experiment is already active on this authentication flow.",
             "x-description-2": "This experiment already has a frozen configuration snapshot and cannot be modified; create a new experiment to make changes.",
-            "x-description-3": "Segment is archived and cannot be modified."
+            "x-description-3": "Segment is archived and cannot be modified.",
+            "x-description-4": "An allocation was changed or removed while the experiment was being activated. No changes were applied; re-read the experiment and retry."
           },
           "422": {
             "description": "Exactly one allocation must be designated as the control.",
@@ -59087,6 +59088,14 @@
           }
         ]
       },
+      "ConnectionClientIdSAMLXAARequestingApp": {
+        "description": "OIDC client identifier issued by the identity provider during application registration. Used to authenticate your Auth0 connection when exchanging SAML Assertions for Refresh Tokens.",
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/ConnectionClientIdOIDC"
+          }
+        ]
+      },
       "ConnectionClientIdSalesforce": {
         "description": "The OAuth 2.0 client identifier",
         "type": "string",
@@ -59243,6 +59252,17 @@
           },
           {
             "maxLength": 255
+          }
+        ]
+      },
+      "ConnectionClientSecretSAMLXAARequestingApp": {
+        "description": "OIDC client secret issued by the identity provider during application registration. Used to authenticate your Auth0 connection when exchanging SAML Assertions for Refresh Tokens.",
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/ConnectionClientSecret"
+          },
+          {
+            "maxLength": 700
           }
         ]
       },
@@ -63092,6 +63112,12 @@
           {
             "type": "object",
             "properties": {
+              "client_id": {
+                "$ref": "#/components/schemas/ConnectionClientIdSAMLXAARequestingApp"
+              },
+              "client_secret": {
+                "$ref": "#/components/schemas/ConnectionClientSecretSAMLXAARequestingApp"
+              },
               "debug": {
                 "$ref": "#/components/schemas/ConnectionDebugSAML"
               },
@@ -65779,6 +65805,9 @@
             "properties": {
               "strategy": {
                 "const": "samlp"
+              },
+              "cross_app_access_requesting_app": {
+                "$ref": "#/components/schemas/CrossAppAccessRequestingApp"
               },
               "cross_app_access_resource_app": {
                 "$ref": "#/components/schemas/ConnectionCrossAppAccessResourceApp"
@@ -69907,6 +69936,10 @@
             "properties": {
               "strategy": {
                 "const": "samlp"
+              },
+              "cross_app_access_requesting_app": {
+                "$ref": "#/components/schemas/CrossAppAccessRequestingApp",
+                "x-release-lifecycle": "EA"
               },
               "cross_app_access_resource_app": {
                 "$ref": "#/components/schemas/ConnectionCrossAppAccessResourceApp"
@@ -140175,6 +140208,10 @@
             "properties": {
               "options": {
                 "$ref": "#/components/schemas/ConnectionOptionsSAML"
+              },
+              "cross_app_access_requesting_app": {
+                "$ref": "#/components/schemas/CrossAppAccessRequestingApp",
+                "x-release-lifecycle": "EA"
               },
               "cross_app_access_resource_app": {
                 "$ref": "#/components/schemas/ConnectionCrossAppAccessResourceApp"

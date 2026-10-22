@@ -2,7 +2,7 @@
 
 > Auth0 documentation
 
-- [Get Started (296 pages)](https://auth0.com/_llms/en/get-started.txt): Documentation for Get Started.
+- [Get Started (299 pages)](https://auth0.com/_llms/en/get-started.txt): Documentation for Get Started.
 - [Authenticate (219 pages)](https://auth0.com/_llms/en/authenticate.txt): Documentation for Authenticate.
 - [Manage Users (123 pages)](https://auth0.com/_llms/en/manage-users.txt): Documentation for Manage Users.
 - [Customize (286 pages)](https://auth0.com/_llms/en/customize.txt): Documentation for Customize.
@@ -231,8 +231,6 @@
 ##### Register your MCP Client Application
 
 - [Register your MCP Client Application](https://auth0.com/ai/docs/mcp/guides/registering-your-mcp-client-application.md): Learn how to register your MCP client application in Auth0.
-- [Manual CIMD Registration](https://auth0.com/ai/docs/mcp/guides/registering-your-mcp-client-application/manual-cimd-registration.md): Learn how to register MCP clients by importing an externally hosted Client ID Metadata Document (CIMD).
-- [Manual Client Registration](https://auth0.com/ai/docs/mcp/guides/registering-your-mcp-client-application/manual-client-registration.md): Learn how to manually register your MCP client in Auth0.
 - [Dynamic Client Registration (DCR)](https://auth0.com/ai/docs/mcp/guides/registering-your-mcp-client-application/dynamic-client-registration.md): Learn how to dynamically register clients in Auth0.
 
 #### Sample Apps
@@ -373,7 +371,7 @@
 
 ## Indexes
 
-- [English / Get Started (296 pages)](https://auth0.com/_llms/en/get-started.txt): Documentation for English / Get Started.
+- [English / Get Started (299 pages)](https://auth0.com/_llms/en/get-started.txt): Documentation for English / Get Started.
 - [English / Authenticate (219 pages)](https://auth0.com/_llms/en/authenticate.txt): Documentation for English / Authenticate.
 - [English / Manage Users (123 pages)](https://auth0.com/_llms/en/manage-users.txt): Documentation for English / Manage Users.
 - [English / Customize (286 pages)](https://auth0.com/_llms/en/customize.txt): Documentation for English / Customize.
@@ -383,13 +381,13 @@
 - [English / Dev Tools / APIs / Management API (483 pages)](https://auth0.com/_llms/en/dev-tools/apis/management-api.txt): Documentation for English / Dev Tools / APIs / Management API.
 - [English / Dev Tools / APIs / Management API / Organizations (49 pages)](https://auth0.com/_llms/en/dev-tools/apis/management-api/organizations.txt): Documentation for English / Dev Tools / APIs / Management API / Organizations.
 - [English / Dev Tools / SDKs (202 pages)](https://auth0.com/_llms/en/dev-tools/sdks.txt): Documentation for English / Dev Tools / SDKs.
-- [Canadian French (2336 pages)](https://auth0.com/_llms/fr-ca.txt): Documentation for Canadian French.
-- [Canadian French / Pour commencer (296 pages)](https://auth0.com/_llms/fr-ca/pour-commencer.txt): Documentation for Canadian French / Pour commencer.
+- [Canadian French (2337 pages)](https://auth0.com/_llms/fr-ca.txt): Documentation for Canadian French.
+- [Canadian French / Pour commencer (299 pages)](https://auth0.com/_llms/fr-ca/pour-commencer.txt): Documentation for Canadian French / Pour commencer.
 - [Canadian French / Authentifier (219 pages)](https://auth0.com/_llms/fr-ca/authentifier.txt): Documentation for Canadian French / Authentifier.
 - [Canadian French / Gérer les utilisateurs (123 pages)](https://auth0.com/_llms/fr-ca/gerer-les-utilisateurs.txt): Documentation for Canadian French / Gérer les utilisateurs.
 - [Canadian French / Personnaliser (286 pages)](https://auth0.com/_llms/fr-ca/personnaliser.txt): Documentation for Canadian French / Personnaliser.
 - [Canadian French / Sécuriser (155 pages)](https://auth0.com/_llms/fr-ca/securiser.txt): Documentation for Canadian French / Sécuriser.
-- [Canadian French / Agents d’IA et MCP (87 pages)](https://auth0.com/_llms/fr-ca/agents-d-ia-et-mcp.txt): Documentation for Canadian French / Agents d’IA et MCP.
+- [Canadian French / Agents d’IA et MCP (85 pages)](https://auth0.com/_llms/fr-ca/agents-d-ia-et-mcp.txt): Documentation for Canadian French / Agents d’IA et MCP.
 - [Canadian French / Plateforme (85 pages)](https://auth0.com/_llms/fr-ca/plateforme.txt): Documentation for Canadian French / Plateforme.
 - [Canadian French / Outils de développement (1043 pages)](https://auth0.com/_llms/fr-ca/outils-de-developpement.txt): Documentation for Canadian French / Outils de développement.
 - [Canadian French / Outils de développement / API (597 pages)](https://auth0.com/_llms/fr-ca/outils-de-developpement/api.txt): Documentation for Canadian French / Outils de développement / API.
@@ -397,8 +395,8 @@
 - [Canadian French / Outils de développement / API / Management API / Guardian (42 pages)](https://auth0.com/_llms/fr-ca/outils-de-developpement/api/management-api/guardian.txt): Documentation for Canadian French / Outils de développement / API / Management API / Guardian.
 - [Canadian French / Outils de développement / API / Management API / Organisations (49 pages)](https://auth0.com/_llms/fr-ca/outils-de-developpement/api/management-api/organisations.txt): Documentation for Canadian French / Outils de développement / API / Management API / Organisations.
 - [Canadian French / Outils de développement / SDK (202 pages)](https://auth0.com/_llms/fr-ca/outils-de-developpement/sdk.txt): Documentation for Canadian French / Outils de développement / SDK.
-- [Japanese (2336 pages)](https://auth0.com/_llms/ja-jp.txt): Documentation for Japanese.
-- [Japanese / はじめに (296 pages)](https://auth0.com/_llms/ja-jp/tab.txt): Documentation for Japanese / はじめに.
+- [Japanese (2337 pages)](https://auth0.com/_llms/ja-jp.txt): Documentation for Japanese.
+- [Japanese / はじめに (299 pages)](https://auth0.com/_llms/ja-jp/tab.txt): Documentation for Japanese / はじめに.
 - [Japanese / 認証 (219 pages)](https://auth0.com/_llms/ja-jp/tab-e7325d8b.txt): Documentation for Japanese / 認証.
 - [Japanese / ユーザーを管理 (123 pages)](https://auth0.com/_llms/ja-jp/tab-b619e176.txt): Documentation for Japanese / ユーザーを管理.
 - [Japanese / カスタマイズ (286 pages)](https://auth0.com/_llms/ja-jp/tab-4480a033.txt): Documentation for Japanese / カスタマイズ.
