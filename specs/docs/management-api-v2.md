@@ -10,7 +10,7 @@ Version: 2.0 (Current)
 
 **The Auth0 Management API** is a collection of endpoints to complete administrative tasks programmatically and should be used by back-end servers or trusted parties. Generally speaking, anything that can be done through the Auth0 Dashboard can also be done through this API.
 
-This API is separate from the [publicly accessible Auth0 Authentication API](https://auth0.com/docs/api/authentication), which is meant to be used by front-ends and untrusted parties.
+This API is separate from the [publicly accessible Auth0 Authentication API](https://auth0.com/docs/api/authentication.md), which is meant to be used by front-ends and untrusted parties.
 
 When using the code samples included in this API documentation, requests should be sent with a Content-Type of `application/json`. All endpoints accept a maximum payload size of 1 megabyte.
 
@@ -18,7 +18,7 @@ The Auth0 Management API documentation follows the [Auth0 Management API OpenAPI
 
 ## Authentication
 
-Use of the Auth0 Management API requires a Management API access token. To learn how to request this token, read [Management API Access Tokens](https://auth0.com/docs/secure/tokens/access-tokens/management-api-access-tokens).
+Use of the Auth0 Management API requires a Management API access token. To learn how to request this token, read [Management API Access Tokens](https://auth0.com/docs/secure/tokens/access-tokens/management-api-access-tokens.md).
 
 The Auth0 Management API uses JSON Web Tokens (JWTs) to authenticate requests. The Management API access token’s scopes claim indicates which request methods can be performed when calling this API. The deserialized example token on this page grants read-only access to users and read/write access to connections. Trying to perform any request method not permitted within the set scopes will result in a **403 Forbidden** response.
 
@@ -39,7 +39,7 @@ To make calls to the API, send the API token in the Authorization HTTP header us
 
 **Auth0 CLI**
 
-Using the Auth0 CLI? If you haven't already, [set up and authenticate your CLI session](/docs/deploy-monitor/auth0-cli) before running this command.
+Using the Auth0 CLI? If you haven't already, [set up and authenticate your CLI session](/docs/deploy-monitor/auth0-cli.md) before running this command.
 
 ```bash theme={null}
 auth0 api get "users"
@@ -53,7 +53,7 @@ curl -H "Authorization: Bearer eyJhb..." https://@@TENANT@@/api/v2/users
 
 ## Request Correlation
 
-A Correlation ID is a unique identifier (up to 64 characters) of a single Management API operation and allows for tracking such operations in tenant logs. To learn more, read [Logs](https://auth0.com/docs/deploy-monitor/logs).
+A Correlation ID is a unique identifier (up to 64 characters) of a single Management API operation and allows for tracking such operations in tenant logs. To learn more, read [Logs](https://auth0.com/docs/deploy-monitor/logs.md).
 
 The API accepts a client-provided Correlation ID if sent with the `X-Correlation-ID` HTTP header within `POST`, `PUT`, `PATCH`, and `DELETE` methods.
 

@@ -17449,10 +17449,11 @@
             "x-description-1": "is_fallback is only used by the segment strategy; remove it from percentage allocations.",
             "x-description-2": "segment_id and priority are only used by the segment strategy; remove them from percentage allocations.",
             "x-description-3": "Allocation weights are only used by the percentage strategy; remove the weight field from segment allocations.",
-            "x-description-4": "Allocation weights must sum to 100.",
-            "x-description-5": "Exactly one allocation must be designated as the default (is_fallback: true).",
-            "x-description-6": "Each non-fallback allocation must specify a segment_id.",
-            "x-description-7": "default_config can only be set on an Auth0-managed feature flag. Omit it for customer-defined flags."
+            "x-description-4": "Each percentage allocation must use a different variation.",
+            "x-description-5": "Allocation weights must sum to 100.",
+            "x-description-6": "Exactly one allocation must be designated as the default (is_fallback: true).",
+            "x-description-7": "Each non-fallback allocation must specify a segment_id.",
+            "x-description-8": "default_config can only be set on an Auth0-managed feature flag. Omit it for customer-defined flags."
           },
           "429": {
             "description": "Too many requests."
@@ -17753,8 +17754,9 @@
             "x-description-2": "is_fallback is only used by the segment strategy; remove it from percentage allocations.",
             "x-description-3": "segment_id and priority are only used by the segment strategy; remove them from percentage allocations.",
             "x-description-4": "Allocation weights are only used by the percentage strategy; remove the weight field from segment allocations.",
-            "x-description-5": "default_config can only be set on an Auth0-managed feature flag. Omit it for customer-defined flags.",
-            "x-description-6": "Experiment configuration exceeds the maximum size of 256KB."
+            "x-description-5": "Each percentage allocation must use a different variation.",
+            "x-description-6": "default_config can only be set on an Auth0-managed feature flag. Omit it for customer-defined flags.",
+            "x-description-7": "Experiment configuration exceeds the maximum size of 256KB."
           },
           "429": {
             "description": "Too many requests. Check the X-RateLimit-Limit, X-RateLimit-Remaining and X-RateLimit-Reset headers."
@@ -48436,6 +48438,104 @@
         ]
       }
     },
+    "/users/{id}/consent-signing-keys": {
+      "get": {
+        "summary": "Get consent signing keys for a user",
+        "description": "Retrieve all consent signing keys registered for a user. Returns an empty array when the user has no keys registered.",
+        "tags": [
+          "users"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/UsersId"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ListUserConsentSigningKeysResponse"
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          }
+        },
+        "operationId": "get_user_consent_signing_keys",
+        "x-release-lifecycle": "EA",
+        "x-operation-name": "listConsentSigningKeys",
+        "x-operation-group": "users",
+        "security": [
+          {
+            "bearerAuth": []
+          },
+          {
+            "oAuth2ClientCredentials": [
+              "read:users"
+            ]
+          }
+        ],
+        "x-codeSamples": []
+      }
+    },
+    "/users/{id}/consent-signing-keys/{kid}": {
+      "get": {
+        "summary": "Get a consent signing key by key ID",
+        "description": "Retrieve a single consent signing key for a user by its key identifier (kid). Returns 404 if the key does not exist.",
+        "tags": [
+          "users"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/UsersId"
+          },
+          {
+            "$ref": "#/components/parameters/Kid"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/GetUserConsentSigningKeyResponse"
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          }
+        },
+        "operationId": "get_user_consent_signing_key_by_kid",
+        "x-release-lifecycle": "EA",
+        "x-operation-name": "getConsentSigningKey",
+        "x-operation-group": "users",
+        "security": [
+          {
+            "bearerAuth": []
+          },
+          {
+            "oAuth2ClientCredentials": [
+              "read:users"
+            ]
+          }
+        ],
+        "x-codeSamples": []
+      }
+    },
     "/users/{id}/effective-permissions": {
       "get": {
         "summary": "List the permissions assigned to a user directly or through roles or groups.",
@@ -52051,6 +52151,15 @@
         },
         "x-merge-priority": 5
       },
+      "Kid": {
+        "name": "kid",
+        "in": "path",
+        "description": "The key identifier of the consent signing key.",
+        "required": true,
+        "schema": {
+          "type": "string"
+        }
+      },
       "OrganizationClientsTakeParameter": {
         "name": "take",
         "in": "query",
@@ -52095,6 +52204,16 @@
           "default": 50
         },
         "x-merge-priority": 5
+      },
+      "UsersId": {
+        "name": "id",
+        "in": "path",
+        "description": "The ID of the user.",
+        "required": true,
+        "schema": {
+          "type": "string",
+          "format": "user-id"
+        }
       }
     },
     "requestBodies": {
@@ -52360,6 +52479,16 @@
           }
         }
       },
+      "GetUserConsentSigningKeyResponse": {
+        "description": "The consent signing key was returned.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ConsentSigningKey"
+            }
+          }
+        }
+      },
       "ListClientProfiles": {
         "description": "Client profiles successfully retrieved.",
         "content": {
@@ -52407,6 +52536,16 @@
           "application/json": {
             "schema": {
               "$ref": "#/components/schemas/ListOrganizationRoleMembersResponseContent"
+            }
+          }
+        }
+      },
+      "ListUserConsentSigningKeysResponse": {
+        "description": "The user's consent signing keys were returned.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ListUserConsentSigningKeysResponseContent"
             }
           }
         }
@@ -55280,6 +55419,7 @@
       "BruteForceProtectionFormSubmissionModeEnum": {
         "type": "string",
         "description": "Controls whether the unblock form is submitted automatically when the link is opened or must be submitted manually by the user.",
+        "default": "auto",
         "enum": [
           "auto",
           "manual"
@@ -67599,6 +67739,36 @@
               "type": "string",
               "maxLength": 14
             }
+          }
+        }
+      },
+      "ConsentSigningKey": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "kid",
+          "device_identifier",
+          "created_at",
+          "expires_at"
+        ],
+        "properties": {
+          "kid": {
+            "type": "string",
+            "description": "The key identifier of the consent signing key."
+          },
+          "device_identifier": {
+            "type": "string",
+            "description": "A human-readable label for the device holding the corresponding private key."
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time",
+            "description": "The ISO 8601 timestamp at which the key was registered."
+          },
+          "expires_at": {
+            "type": "string",
+            "format": "date-time",
+            "description": "The ISO 8601 timestamp at which the key expires and can no longer be used to verify consent decisions."
           }
         }
       },
@@ -122074,16 +122244,16 @@
           "mode": {
             "$ref": "#/components/schemas/BruteForceProtectionModeEnum"
           },
+          "form_submission_mode": {
+            "$ref": "#/components/schemas/BruteForceProtectionFormSubmissionModeEnum",
+            "x-release-lifecycle": "EA"
+          },
           "max_attempts": {
             "type": "integer",
             "description": "Maximum number of unsuccessful attempts.",
             "default": 10,
             "minimum": 1,
             "maximum": 100
-          },
-          "form_submission_mode": {
-            "$ref": "#/components/schemas/BruteForceProtectionFormSubmissionModeEnum",
-            "x-release-lifecycle": "EA"
           }
         }
       },
@@ -128688,6 +128858,12 @@
             "type": "string",
             "description": "The token to retrieve the next page of connected accounts (if there is one)"
           }
+        }
+      },
+      "ListUserConsentSigningKeysResponseContent": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/ConsentSigningKey"
         }
       },
       "ListUserEffectivePermissionRoleSourcesResponseContent": {
@@ -138456,16 +138632,16 @@
           "mode": {
             "$ref": "#/components/schemas/BruteForceProtectionModeEnum"
           },
+          "form_submission_mode": {
+            "$ref": "#/components/schemas/BruteForceProtectionFormSubmissionModeEnum",
+            "x-release-lifecycle": "EA"
+          },
           "max_attempts": {
             "type": "integer",
             "description": "Maximum number of unsuccessful attempts.",
             "default": 10,
             "minimum": 1,
             "maximum": 100
-          },
-          "form_submission_mode": {
-            "$ref": "#/components/schemas/BruteForceProtectionFormSubmissionModeEnum",
-            "x-release-lifecycle": "EA"
           }
         }
       },
@@ -138512,16 +138688,16 @@
           "mode": {
             "$ref": "#/components/schemas/BruteForceProtectionModeEnum"
           },
+          "form_submission_mode": {
+            "$ref": "#/components/schemas/BruteForceProtectionFormSubmissionModeEnum",
+            "x-release-lifecycle": "EA"
+          },
           "max_attempts": {
             "type": "integer",
             "description": "Maximum number of unsuccessful attempts.",
             "default": 10,
             "minimum": 1,
             "maximum": 100
-          },
-          "form_submission_mode": {
-            "$ref": "#/components/schemas/BruteForceProtectionFormSubmissionModeEnum",
-            "x-release-lifecycle": "EA"
           }
         }
       },

@@ -10,13 +10,13 @@ An [API](https://auth0.com/features/machine-to-machine) is an entity that repres
 
 ## Authorize access to your APIs
 
-At some point, your custom APIs will need to allow limited access to their protected resources on behalf of users. Authorization refers to the process of verifying what a user has access to. While often used interchangeably with [authentication](/docs/authenticate), authorization represents a fundamentally different function. To learn more, read [Authentication and Authorization](/docs/get-started/identity-fundamentals/authentication-and-authorization).
+At some point, your custom APIs will need to allow limited access to their protected resources on behalf of users. Authorization refers to the process of verifying what a user has access to. While often used interchangeably with [authentication](/docs/authenticate.md), authorization represents a fundamentally different function. To learn more, read [Authentication and Authorization](/docs/get-started/identity-fundamentals/authentication-and-authorization.md).
 
 In authorization, a user or application is granted access to an API after the API determines the extent of the permissions that it should assign. Usually, authorization occurs after identity is successfully validated through authentication so that the API has some idea of what sort of access it should grant.
 
 ## Determine authorization through access control
 
-Authorization can be determined through the use of [policies](/docs/manage-users/access-control/authorization-policies) and [rules](/docs/manage-users/access-control/rules-for-authorization-policies), which can be used with [role-based access control (RBAC)](/docs/manage-users/access-control/rbac). Regardless of whether RBAC is used, requested access is transmitted to the API via scopes and granted access is returned in issued Access Tokens (Access Token: Authorization credential, in the form of an opaque string or JWT, used to access an API.).
+Authorization can be determined through the use of [policies](/docs/manage-users/access-control/authorization-policies.md) and [rules](/docs/manage-users/access-control/rules-for-authorization-policies.md), which can be used with [role-based access control (RBAC)](/docs/manage-users/access-control/rbac.md). Regardless of whether RBAC is used, requested access is transmitted to the API via scopes and granted access is returned in issued Access Tokens (Access Token: Authorization credential, in the form of an opaque string or JWT, used to access an API.).
 
 The application can then use the Access Token to access the API's protected resources. The same Access Token can be used to access the API's resources without having to authenticate again until it expires.
 
@@ -26,14 +26,14 @@ Since only the API can know all of the possible actions that it can handle, it s
 
 ## Configure an API
 
-To protect an API, you must register an API using the Auth0 Dashboard (Auth0 Dashboard: Auth0's main product to configure your services.). To learn more, see [Register APIs](/docs/get-started/auth0-overview/set-up-apis).
+To protect an API, you must register an API using the Auth0 Dashboard (Auth0 Dashboard: Auth0's main product to configure your services.). To learn more, see [Register APIs](/docs/get-started/auth0-overview/set-up-apis.md).
 
-Before you register any APIs in the Auth0 Dashboard, one API will already exist: the **Auth0 Management API**. To learn more about the features of the Management API and its available endpoints, see [Management API](/docs/api/management/v2).
+Before you register any APIs in the Auth0 Dashboard, one API will already exist: the **Auth0 Management API**. To learn more about the features of the Management API and its available endpoints, see [Management API](/docs/api/management/v2.md).
 
 ## Learn more
 
-* [API Scopes](/docs/get-started/apis/scopes/api-scopes)
-* [Which OAuth 2.0 Flow Should I Use?](/docs/get-started/authentication-and-authorization-flow/which-oauth-2-0-flow-should-i-use)
-* [Tokens](/docs/secure/tokens)
-* [Register APIs](/docs/get-started/auth0-overview/set-up-apis)
-* [API Settings](/docs/get-started/apis/api-settings)
+* [API Scopes](/docs/get-started/apis/scopes/api-scopes.md)
+* [Which OAuth 2.0 Flow Should I Use?](/docs/get-started/authentication-and-authorization-flow/which-oauth-2-0-flow-should-i-use.md)
+* [Tokens](/docs/secure/tokens.md)
+* [Register APIs](/docs/get-started/auth0-overview/set-up-apis.md)
+* [API Settings](/docs/get-started/apis/api-settings.md)
