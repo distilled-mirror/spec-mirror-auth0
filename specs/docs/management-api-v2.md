@@ -39,7 +39,7 @@ To make calls to the API, send the API token in the Authorization HTTP header us
 
 **Auth0 CLI**
 
-Using the Auth0 CLI? If you haven't already, [set up and authenticate your CLI session](/docs/deploy-monitor/auth0-cli.md) before running this command.
+Using the Auth0 CLI? If you haven't already, [set up and authenticate your CLI session](https://auth0.com/docs/deploy-monitor/auth0-cli.md) before running this command.
 
 ```bash theme={null}
 auth0 api get "users"
@@ -172,4 +172,4 @@ This approach provides efficient and stable data retrieval for large datasets, a
 
 ### Test with an Access Token
 
-You can get an Access Token for testing purposes. To learn more, read [Get Management API Access Tokens for testing](/docs/secure/tokens/access-tokens/management-api-access-tokens/get-management-api-access-tokens-for-testing).
+You can get an Access Token for testing purposes. To learn more, read [Get Management API Access Tokens for testing](https://auth0.com/docs/secure/tokens/access-tokens/management-api-access-tokens/get-management-api-access-tokens-for-testing).

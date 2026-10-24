@@ -14,22 +14,22 @@ This flow is best suited for Machine-to-Machine (M2M) applications, such as CLIs
 
 ![Flows - Client Credentials - Authorization sequence diagram(w/Border)](https://mintlify.s3.us-west-1.amazonaws.com/auth0/docs/images/cdy7uua7fh8z/4Ph562CAccmCUkKNXuEIlQ/47581872e40e87b2cca95aecf7f42c5b/diagram.png)
 
-1. Application sends application's credentials to the Auth0 Authorization Server. To learn more about client authentication methods, read [Application Credentials](/docs/secure/application-credentials.md).
+1. Application sends application's credentials to the Auth0 Authorization Server. To learn more about client authentication methods, read [Application Credentials](https://auth0.com/docs/secure/application-credentials.md).
 2. Auth0 Authorization Server validates application's credentials.
 3. Auth0 Authorization Server responds with an access token.
-4. Application can use the access token to call an API on behalf of itself. For more information on this process, see [Validate JSON Web Tokens](/docs/secure/tokens/json-web-tokens/validate-json-web-tokens.md).
+4. Application can use the access token to call an API on behalf of itself. For more information on this process, see [Validate JSON Web Tokens](https://auth0.com/docs/secure/tokens/json-web-tokens/validate-json-web-tokens.md).
 5. API responds with requested data.
 
 ## How to implement it
 
-The easiest way to implement the Client Credentials Flow is to follow our [Backend Quickstarts](/docs/quickstart/backend).
+The easiest way to implement the Client Credentials Flow is to follow our [Backend Quickstarts](https://auth0.com/docs/quickstart/backend).
 
-Alternatively, you can use the Auth0 Authentication API to implement the Client Credentials Flow. For more information, read [Call Your API Using the Client Credentials Flow](/docs/get-started/authentication-and-authorization-flow/client-credentials-flow/call-your-api-using-the-client-credentials-flow.md).
+Alternatively, you can use the Auth0 Authentication API to implement the Client Credentials Flow. For more information, read [Call Your API Using the Client Credentials Flow](https://auth0.com/docs/get-started/authentication-and-authorization-flow/client-credentials-flow/call-your-api-using-the-client-credentials-flow.md).
 
 ## Learn more
 
-* [Auth0 Rules](/docs/customize/rules.md)
-* [Auth0 Hooks](/docs/customize/hooks.md)
-* [Tokens](/docs/secure/tokens.md)
-* [Token Best Practices](/docs/secure/tokens/token-best-practices.md)
-* [Which OAuth 2.0 Flow Should I Use?](/docs/get-started/authentication-and-authorization-flow/which-oauth-2-0-flow-should-i-use.md)
+* [Auth0 Rules](https://auth0.com/docs/customize/rules.md)
+* [Auth0 Hooks](https://auth0.com/docs/customize/hooks.md)
+* [Tokens](https://auth0.com/docs/secure/tokens.md)
+* [Token Best Practices](https://auth0.com/docs/secure/tokens/token-best-practices.md)
+* [Which OAuth 2.0 Flow Should I Use?](https://auth0.com/docs/get-started/authentication-and-authorization-flow/which-oauth-2-0-flow-should-i-use.md)
