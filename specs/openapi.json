@@ -21404,6 +21404,14 @@
             "schema": {
               "$ref": "#/components/schemas/SegmentTypeFilterEnum"
             }
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "description": "Filter by status. Exact match.",
+            "schema": {
+              "$ref": "#/components/schemas/SegmentStatusEnum"
+            }
           }
         ],
         "responses": {
@@ -53868,6 +53876,53 @@
             "source": "require \"auth0\"\n\nclient = Auth0::Management.new(token: \"<token>\", base_url: \"https://{YOUR_DOMAIN}/api/v2\")\n\nclient.users.get_consent_signing_key(\n  id: \"id\",\n  kid: \"kid\"\n)\n"
           }
         ]
+      },
+      "delete": {
+        "summary": "Delete a consent signing key by key ID",
+        "description": "Remove a single consent signing key for a user by its key identifier (kid). The operation is idempotent and returns 204 whether or not the key existed.",
+        "tags": [
+          "users"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/UsersId"
+          },
+          {
+            "$ref": "#/components/parameters/Kid"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "The consent signing key no longer exists."
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          }
+        },
+        "operationId": "delete_user_consent_signing_key_by_kid",
+        "x-release-lifecycle": "EA",
+        "x-operation-name": "deleteConsentSigningKey",
+        "x-operation-group": "users",
+        "security": [
+          {
+            "bearerAuth": []
+          },
+          {
+            "oAuth2ClientCredentials": [
+              "update:users"
+            ]
+          }
+        ],
+        "x-codeSamples": []
       }
     },
     "/users/{id}/effective-permissions": {
@@ -80347,6 +80402,10 @@
           "authorization_policy": {
             "$ref": "#/components/schemas/ResourceServerAuthorizationPolicy",
             "x-release-lifecycle": "EA"
+          },
+          "type": {
+            "$ref": "#/components/schemas/ResourceServerTypeEnum",
+            "x-release-lifecycle": "EA"
           }
         }
       },
@@ -80457,6 +80516,10 @@
             "type": "string",
             "description": "The client ID of the client that this resource server is linked to",
             "format": "client-id"
+          },
+          "type": {
+            "$ref": "#/components/schemas/ResourceServerTypeEnum",
+            "x-release-lifecycle": "EA"
           }
         }
       },
@@ -130699,6 +130762,10 @@
             "type": "string",
             "description": "The client ID of the client that this resource server is linked to",
             "format": "client-id"
+          },
+          "type": {
+            "$ref": "#/components/schemas/ResourceServerTypeEnum",
+            "x-release-lifecycle": "EA"
           }
         }
       },
@@ -138484,6 +138551,10 @@
             "type": "string",
             "description": "The client ID of the client that this resource server is linked to",
             "format": "client-id"
+          },
+          "type": {
+            "$ref": "#/components/schemas/ResourceServerTypeEnum",
+            "x-release-lifecycle": "EA"
           }
         }
       },
@@ -138737,6 +138808,10 @@
             "type": "string",
             "description": "The client ID of the client that this resource server is linked to",
             "format": "client-id"
+          },
+          "type": {
+            "$ref": "#/components/schemas/ResourceServerTypeEnum",
+            "x-release-lifecycle": "EA"
           }
         }
       },
@@ -138907,6 +138982,18 @@
             "maxLength": 4096
           }
         }
+      },
+      "ResourceServerTypeEnum": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "The type of the resource server.",
+        "enum": [
+          "universal_commerce_protocol_server",
+          null
+        ],
+        "x-release-lifecycle": "EA"
       },
       "ResourceServerVerificationKeyPemCertificate": {
         "type": "string",
@@ -140289,7 +140376,8 @@
         "enum": [
           "active",
           "archived"
-        ]
+        ],
+        "description": "Filter by status. Exact match."
       },
       "SegmentTypeEnum": {
         "type": "string",
@@ -148373,6 +148461,10 @@
           "authorization_policy": {
             "$ref": "#/components/schemas/ResourceServerAuthorizationPolicy",
             "x-release-lifecycle": "EA"
+          },
+          "type": {
+            "$ref": "#/components/schemas/ResourceServerTypeEnum",
+            "x-release-lifecycle": "EA"
           }
         }
       },
@@ -148483,6 +148575,10 @@
             "type": "string",
             "description": "The client ID of the client that this resource server is linked to",
             "format": "client-id"
+          },
+          "type": {
+            "$ref": "#/components/schemas/ResourceServerTypeEnum",
+            "x-release-lifecycle": "EA"
           }
         }
       },
