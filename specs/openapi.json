@@ -66697,6 +66697,9 @@
               "mfa": {
                 "$ref": "#/components/schemas/ConnectionMfa"
               },
+              "otp_settings": {
+                "$ref": "#/components/schemas/ConnectionOtpSettings"
+              },
               "passkey_options": {
                 "$ref": "#/components/schemas/ConnectionPasskeyOptions"
               },
@@ -69568,6 +69571,39 @@
           }
         ]
       },
+      "ConnectionOtpChannelSettings": {
+        "type": "object",
+        "description": "OTP settings for a delivery channel.",
+        "additionalProperties": false,
+        "properties": {
+          "otp_length": {
+            "type": "integer",
+            "description": "Number of digits in the generated one-time password.",
+            "minimum": 4,
+            "maximum": 48
+          },
+          "otp_expiry": {
+            "type": "integer",
+            "description": "Number of seconds before the one-time password expires.",
+            "minimum": 60,
+            "maximum": 86400
+          }
+        }
+      },
+      "ConnectionOtpSettings": {
+        "type": "object",
+        "description": "One-time password settings, configurable per delivery channel.",
+        "additionalProperties": false,
+        "x-release-lifecycle": "EA",
+        "properties": {
+          "email": {
+            "$ref": "#/components/schemas/ConnectionOtpChannelSettings"
+          },
+          "phone": {
+            "$ref": "#/components/schemas/ConnectionOtpChannelSettings"
+          }
+        }
+      },
       "ConnectionPasskeyAuthenticationMethod": {
         "type": "object",
         "description": "Passkey authentication enablement",
@@ -70284,6 +70320,10 @@
           },
           "customScripts": {
             "$ref": "#/components/schemas/ConnectionCustomScripts"
+          },
+          "otp_settings": {
+            "$ref": "#/components/schemas/ConnectionOtpSettings",
+            "x-release-lifecycle": "EA"
           },
           "authentication_methods": {
             "$ref": "#/components/schemas/ConnectionAuthenticationMethods"
@@ -145152,6 +145192,10 @@
           },
           "customScripts": {
             "$ref": "#/components/schemas/ConnectionCustomScripts"
+          },
+          "otp_settings": {
+            "$ref": "#/components/schemas/ConnectionOtpSettings",
+            "x-release-lifecycle": "EA"
           },
           "authentication_methods": {
             "$ref": "#/components/schemas/ConnectionAuthenticationMethods"
