@@ -2,9 +2,9 @@
 > Fetch the complete documentation index at: https://auth0.com/llms.txt
 > Use this file to discover all available pages before exploring further.
 
-> Learn how Auth0 Management API access tokens work and how to use them.
-
 # Management API Access Tokens
+
+> Learn how Auth0 Management API access tokens work and how to use them.
 
 To call the [Auth0 Management API](https://auth0.com/docs/api/management/v2.md), you must provide an access token (Access Token: Authorization credential, in the form of an opaque string or JWT, used to access an API.) that contains the appropriate audience (Access Token: Authorization credential, in the form of an opaque string or JWT, used to access an API.) and scopes.
 

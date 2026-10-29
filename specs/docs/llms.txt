@@ -2,84 +2,20 @@
 
 > Auth0 documentation
 
-- [Get Started (298 pages)](https://auth0.com/_llms/en/get-started.txt): Documentation for Get Started.
+- [Get Started (312 pages)](https://auth0.com/_llms/en/get-started.txt): Documentation for Get Started.
 - [Authenticate (219 pages)](https://auth0.com/_llms/en/authenticate.txt): Documentation for Authenticate.
 - [Manage Users (123 pages)](https://auth0.com/_llms/en/manage-users.txt): Documentation for Manage Users.
-- [Customize (292 pages)](https://auth0.com/_llms/en/customize.txt): Documentation for Customize.
+- [Brand (104 pages)](https://auth0.com/_llms/en/brand.txt): Documentation for Brand.
+- [Extend (231 pages)](https://auth0.com/_llms/en/extend.txt): Documentation for Extend.
 - [Secure (156 pages)](https://auth0.com/_llms/en/secure.txt): Documentation for Secure.
-- [Dev Tools (1046 pages)](https://auth0.com/_llms/en/dev-tools.txt): Documentation for Dev Tools.
-
-## Deploy & Monitor
-
-- [Deploy and Monitor](https://auth0.com/docs/deploy-monitor.md): Learn about Auth0 public and private cloud deployment options, as well as deployment checklists and tools.
-
-### Deployment
-
-- [Deployment Options](https://auth0.com/docs/deploy-monitor/deployment-options.md): Compare the Auth0 deployment options available from the multi-tenant public cloud to dedicated and private cloud tenants.
-- [Deployment Checklist](https://auth0.com/docs/deploy-monitor/deploy-checklist.md): Read the Auth0 deployment checklist before promoting a tenant to production so security and branding settings are all confirmed.
-- [Auth0 CLI](https://auth0.com/docs/deploy-monitor/auth0-cli.md): Learn how to use Auth0 CLI to manage your tenant configuration, automate tasks, and integrate Auth0 into your development and deployment workflows.
-- [Auth0 Terraform Provider](https://auth0.com/docs/deploy-monitor/auth0-terraform-provider.md): Learn about the Auth0 Terraform Provider for representing your tenant configurations as code.
-- [Deployment Best Practices](https://auth0.com/docs/deploy-monitor/deployment-best-practices.md): Learn about the Auth0 deployment best practices when promoting a tenant configuration to production.
-
-#### Private Cloud Deployments
-
-- [Private Cloud Deployments](https://auth0.com/docs/deploy-monitor/deploy-private-cloud.md): Compare Auth0 Private Cloud-managed service deployment options on AWS and Azure to choose a dedicated, isolated environment that meets your data-residency, performance, and guaranteed RPS requirements beyond the multi-tenant Public Cloud.
-- [Private Cloud on AWS](https://auth0.com/docs/deploy-monitor/deploy-private-cloud/private-cloud-on-aws.md): Learn about the Auth0 identity platform on AWS deployment option and its capabilities.
-- [Private Cloud on Azure](https://auth0.com/docs/deploy-monitor/deploy-private-cloud/private-cloud-on-azure.md): Learn about the Auth0 identity platform on Azure deployment option and its capabilities.
-- [Private Cloud Add-on Features](https://auth0.com/docs/deploy-monitor/deploy-private-cloud/private-cloud-add-on-features.md): Learn about add-on features that can complement your Auth0 Private Cloud deployment.
-
-#### Pre-Deployment Checks
-
-- [Pre-Deployment Checks](https://auth0.com/docs/deploy-monitor/pre-deployment-checks.md): A reference of helpful pre-deployment checks for your production Auth0 environment.
-- [Run Production Readiness Checks](https://auth0.com/docs/deploy-monitor/pre-deployment-checks/how-to-run-production-checks.md): Learn how to run the Auth0 Production Checks to ensure that your Applications are production-ready.
-- [Production Readiness Checks: Critical Fixes](https://auth0.com/docs/deploy-monitor/pre-deployment-checks/production-check-required-fixes.md): Fixes you must make to your Auth0 Application prior to production deployment
-- [Production Readiness Checks: Non-Critical Fixes](https://auth0.com/docs/deploy-monitor/pre-deployment-checks/production-check-recommended-fixes.md): Recommendations on how you can improve your Auth0 Application prior to production deployment
-- [Production Readiness Checks: Best Practices](https://auth0.com/docs/deploy-monitor/pre-deployment-checks/production-checks-best-practices.md): Checks to ensure that your Applications comply with Auth0 best practices
-- [Run Pre-Deployment Tests](https://auth0.com/docs/deploy-monitor/pre-deployment-checks/predeployment-tests.md): Learn how to test your Auth0 implementation prior to deployment to production environments.
-- [Pre-Launch Tips](https://auth0.com/docs/deploy-monitor/pre-deployment-checks/pre-launch-tips.md): A list of helpful tips for when getting started with Auth0 services based on feedback and experience from others
-
-#### Deploy CLI
-
-- [Auth0 Deploy CLI](https://auth0.com/docs/deploy-monitor/deploy-cli-tool.md): Learn how to use the Auth0 Deploy CLI to manage your tenant configuration and resources and integrate it into your development workflows.
-- [Use as a CLI](https://auth0.com/docs/deploy-monitor/deploy-cli-tool/use-as-a-cli.md): Learn how to the use the Auth0 Deploy CLI as a standalone command-line utility.
-- [Use Deploy CLI as a Node Module](https://auth0.com/docs/deploy-monitor/deploy-cli-tool/use-as-a-node-module.md): Learn how to use the Auth0 Deploy CLI as a node module to use it directly from your own deployment scripts.
-- [Configure the Deploy CLI](https://auth0.com/docs/deploy-monitor/deploy-cli-tool/configure-the-deploy-cli.md): Learn how to configure the Auth0 Deploy CLI to modify the tool for your needs.
-- [Authenticate with your Tenant](https://auth0.com/docs/deploy-monitor/deploy-cli-tool/authenticate-with-your-tenant.md): Learn about the different methods of authenticating the Auth0 Deploy CLI with your tenant.
-- [Keyword Replacement](https://auth0.com/docs/deploy-monitor/deploy-cli-tool/keyword-replacement.md): Learn how to manage a multi-tenant workflow with the Auth0 Deploy CLI using keyword replacement.
-- [Incorporate into Multi-environment Workflows](https://auth0.com/docs/deploy-monitor/deploy-cli-tool/incorporate-into-multi-environment-workflows.md): Learn how to support multi-tenant, multi-environment workflows when using the Auth0 Deploy CLI.
-- [Exclude Resources From Management](https://auth0.com/docs/deploy-monitor/deploy-cli-tool/exclude-resources-from-management.md): Learn how to exclude resources from being managed when using the Auth0 Deploy CLI.
-- [Resource-specific Documentation](https://auth0.com/docs/deploy-monitor/deploy-cli-tool/resource-specific-documentation.md): Learn about the specifics of resource documentation for the Auth0 Deploy CLI.
-- [Available Resource Configuration Formats](https://auth0.com/docs/deploy-monitor/deploy-cli-tool/available-resource-configuration-formats.md): Learn about the available configuration formats when using the Auth0 Deploy CLI.
-
-### Monitoring
-
-- [Metric Streams](https://auth0.com/docs/deploy-monitor/metric-streams.md): Stream Auth0 metrics to monitoring platforms like Datadog, New Relic, and Splunk for real-time observability.
-
-#### Monitor
-
-- [Monitor Auth0](https://auth0.com/docs/deploy-monitor/monitor.md): Describes how to monitor and track your Auth0 usage, as well as how to send tenant logs to external tools.
-- [Check Auth0 Status](https://auth0.com/docs/deploy-monitor/monitor/check-auth0-status.md): Learn how to check Auth0 public cloud service availability, incident reports, and historical uptime reports.
-- [Check External Services Status](https://auth0.com/docs/deploy-monitor/monitor/check-external-services-status.md): Check the status of external services like Social and Enterprise identity providers to diagnose Auth0 login failures from upstream outages.
-- [Monitor Applications](https://auth0.com/docs/deploy-monitor/monitor/monitor-applications.md): Your applications depend on Auth0. Monitoring Auth0's health lets you report errors or reduce user impact in case there's an issue with Auth0. Learn more.
-- [Monitor Auth0 Using System Center Operations Manager](https://auth0.com/docs/deploy-monitor/monitor/monitor-using-scom.md): Describes how to monitor Auth0 as a standard web application using System Center Operations Manager (SCOM) or any tool that supports synthetic transactions.
-
-#### Logs
-
-- [Logs](https://auth0.com/docs/deploy-monitor/logs.md): Auth0 tenant logs capture every authentication event and configuration change so you can audit usage and feed the data into your SIEM.
-- [Personally Identifiable Information in Auth0 Logs](https://auth0.com/docs/deploy-monitor/logs/pii-in-logs.md): Describes the potential personally identifiable information (PII) that Auth0 writes to tenant logs.
-- [Log Data Retention](https://auth0.com/docs/deploy-monitor/logs/log-data-retention.md): Review how long Auth0 retains tenant log data based on your subscription plan so you know when to export logs for longer-term analysis.
-- [View Logs](https://auth0.com/docs/deploy-monitor/logs/view-log-events.md): Learn how to view logs in the Dashboard including user authentication and administrative actions such as adding and updating applications, connections, and rules.
-- [Filter Log Events](https://auth0.com/docs/deploy-monitor/logs/log-event-filters.md): Filter Auth0 logs by event type to surface errors, warnings, and successful operations across your tenant for monitoring and incident response.
-- [Prompt Details in Tenant Logs](https://auth0.com/docs/deploy-monitor/logs/prompt-details-in-tenant-logs.md): Describes attributes and values from user prompts in Auth0 tenant logs.
-- [Retrieve Logs Using the Management API](https://auth0.com/docs/deploy-monitor/logs/retrieve-log-events-using-mgmt-api.md): Learn how to retrieve logs using the Auth0 Management API get_logs endpoint by checkpoint or by search criteria.
-- [Log Type Codes](https://auth0.com/docs/deploy-monitor/logs/log-event-type-codes.md): Lists the event codes associated with log events.
-- [Log Search Query Syntax](https://auth0.com/docs/deploy-monitor/logs/log-search-query-syntax.md): Describes search query syntax using a subset of the Lucene query syntax to refine Auth0 log searches.
+- [Monitor (195 pages)](https://auth0.com/_llms/en/monitor.txt): Documentation for Monitor.
+- [Dev Tools (843 pages)](https://auth0.com/_llms/en/dev-tools.txt): Documentation for Dev Tools.
 
 ## AI Agents & MCP
 
 ### Overview
 
-- [Secure AI Agents & MCP Servers](https://auth0.com/docs/ai-agents-mcp.md): Secure AI agents and MCP servers with Auth0 for your B2B, B2C, and Agentic Commerce use cases.
+- [Secure AI Agents & MCP Servers](https://auth0.com/docs/ai-agents-mcp.md): Auth0 provides authentication and authorization for AI agents and MCP servers across B2B, B2C, and Agentic Commerce use cases.
 
 ### Agent as Principal
 
@@ -245,6 +181,19 @@
 - [Sample Apps](https://auth0.com/ai/docs/mcp/sample-apps.md): Explore sample MCP apps built using Auth for MCP.
 - [Secure MCP Servers with Auth0 and Cloudflare](https://auth0.com/ai/docs/mcp/guides/cloudflare-mcp.md): Learn how to use Auth0 and Cloudflare to secure MCP servers.
 
+### Auth for UCP
+
+- [Auth for UCP](https://auth0.com/docs/ai-agents-mcp/auth-for-ucp.md): Secure Universal Commerce Protocol (UCP) servers with Auth0, enabling AI agents like Google Gemini to discover, link accounts, and check out on behalf of verified shoppers.
+
+#### Get Started
+
+- [Configure Your UCP Resource Server](https://auth0.com/docs/ai-agents-mcp/auth-for-ucp/configure-ucp-resource-server.md): Configure an API as your UCP server and publish its scopes to your tenant's discovery metadata.
+- [Set Up Standard Account Linking](https://auth0.com/docs/ai-agents-mcp/auth-for-ucp/set-up-standard-account-linking.md): Let shoppers link or create a merchant account from an agent platform such as Gemini using the authorization code flow with public or confidential clients.
+
+#### Reference
+
+- [Scope Discovery Metadata](https://auth0.com/docs/ai-agents-mcp/auth-for-ucp/scope-discovery-metadata.md): How Auth0 publishes your UCP resource server's scopes in the scopes_supported field of your tenant's discovery documents.
+
 ## Platform
 
 - [Auth0 Platform](https://auth0.com/docs/troubleshoot.md): Auth0 policies, plans, and support.
@@ -365,11 +314,11 @@
 
 ## OpenAPI Specs
 
+- [events-schema](/docs/oas/events/events-schema.json)
+- [logs-schema](/docs/oas/tenant-logs/logs-schema.json)
 - [myaccount-api-oas](/docs/oas/myaccount/myaccount-api-oas.json)
 - [myorganization-api-oas](/docs/oas/myorganization/myorganization-api-oas.json)
 - [management-api-oas](/docs/oas/management/v2/management-api-oas.json)
-- [events-schema](/docs/oas/events/events-schema.json)
-- [logs-schema](/docs/oas/tenant-logs/logs-schema.json)
 - [authentication-api-oas](/docs/fr-ca/oas/authentication/authentication-api-oas.json)
 - [authentication-api-oas](/docs/ja-jp/oas/authentication/authentication-api-oas.json)
 - [authentication-api-oas](/docs/oas/authentication/authentication-api-oas.json)
@@ -378,14 +327,16 @@
 
 ## Indexes
 
-- [English / Get Started (298 pages)](https://auth0.com/_llms/en/get-started.txt): Documentation for English / Get Started.
+- [English / Get Started (312 pages)](https://auth0.com/_llms/en/get-started.txt): Documentation for English / Get Started.
 - [English / Authenticate (219 pages)](https://auth0.com/_llms/en/authenticate.txt): Documentation for English / Authenticate.
 - [English / Manage Users (123 pages)](https://auth0.com/_llms/en/manage-users.txt): Documentation for English / Manage Users.
-- [English / Customize (292 pages)](https://auth0.com/_llms/en/customize.txt): Documentation for English / Customize.
+- [English / Brand (104 pages)](https://auth0.com/_llms/en/brand.txt): Documentation for English / Brand.
+- [English / Extend (231 pages)](https://auth0.com/_llms/en/extend.txt): Documentation for English / Extend.
 - [English / Secure (156 pages)](https://auth0.com/_llms/en/secure.txt): Documentation for English / Secure.
-- [English / Dev Tools (1046 pages)](https://auth0.com/_llms/en/dev-tools.txt): Documentation for English / Dev Tools.
-- [English / Dev Tools / APIs (599 pages)](https://auth0.com/_llms/en/dev-tools/apis.txt): Documentation for English / Dev Tools / APIs.
-- [English / Dev Tools / APIs / Management API (486 pages)](https://auth0.com/_llms/en/dev-tools/apis/management-api.txt): Documentation for English / Dev Tools / APIs / Management API.
+- [English / Monitor (195 pages)](https://auth0.com/_llms/en/monitor.txt): Documentation for English / Monitor.
+- [English / Dev Tools (843 pages)](https://auth0.com/_llms/en/dev-tools.txt): Documentation for English / Dev Tools.
+- [English / Dev Tools / APIs (604 pages)](https://auth0.com/_llms/en/dev-tools/apis.txt): Documentation for English / Dev Tools / APIs.
+- [English / Dev Tools / APIs / Management API (491 pages)](https://auth0.com/_llms/en/dev-tools/apis/management-api.txt): Documentation for English / Dev Tools / APIs / Management API.
 - [English / Dev Tools / APIs / Management API / Organizations (49 pages)](https://auth0.com/_llms/en/dev-tools/apis/management-api/organizations.txt): Documentation for English / Dev Tools / APIs / Management API / Organizations.
 - [English / Dev Tools / SDKs (202 pages)](https://auth0.com/_llms/en/dev-tools/sdks.txt): Documentation for English / Dev Tools / SDKs.
 - [English / Dev Tools / SDKs / auth0-acul-js (93 pages)](https://auth0.com/_llms/en/dev-tools/sdks/auth0-acul-js.txt): Documentation for English / Dev Tools / SDKs / auth0-acul-js.

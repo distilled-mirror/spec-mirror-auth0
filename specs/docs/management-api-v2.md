@@ -53,7 +53,7 @@ curl -H "Authorization: Bearer eyJhb..." https://@@TENANT@@/api/v2/users
 
 ## Request Correlation
 
-A Correlation ID is a unique identifier (up to 64 characters) of a single Management API operation and allows for tracking such operations in tenant logs. To learn more, read [Logs](https://auth0.com/docs/deploy-monitor/logs.md).
+A Correlation ID is a unique identifier (up to 64 characters) of a single Management API operation and allows for tracking such operations in tenant logs. To learn more, read [Logs](https://auth0.com/docs/deploy-monitor/logs).
 
 The API accepts a client-provided Correlation ID if sent with the `X-Correlation-ID` HTTP header within `POST`, `PUT`, `PATCH`, and `DELETE` methods.
 

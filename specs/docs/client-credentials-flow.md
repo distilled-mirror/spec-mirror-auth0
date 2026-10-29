@@ -2,9 +2,9 @@
 > Fetch the complete documentation index at: https://auth0.com/llms.txt
 > Use this file to discover all available pages before exploring further.
 
-> Learn how the Client Credentials flow works and why you should use it for machine-to-machine (M2M) applications.
-
 # Client Credentials Flow
+
+> Learn how the Client Credentials flow works and why you should use it for machine-to-machine (M2M) applications.
 
 The Client Credentials Flow (defined in [OAuth 2.0 RFC 6749, section 4.4](https://tools.ietf.org/html/rfc6749#section-4.4)) involves an application exchanging its application credentials, such as client ID (Client ID: Identification value given to your registered resource from Auth0.) and client secret (Client ID: Identification value given to your registered resource from Auth0.), for an access token (Client Secret: Secret used by a client (application) to authenticate with the Authorization Server; it should be known to only the client and the Authorization Server and must be sufficiently random to not be guessable.).
 

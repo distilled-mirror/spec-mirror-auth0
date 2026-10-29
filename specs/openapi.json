@@ -14115,7 +14115,7 @@
     "/connections/{id}/keys": {
       "get": {
         "summary": "Get connection keys",
-        "description": "Gets the connection keys for the Okta or OIDC connection strategy.\n",
+        "description": "Gets the connection keys for the Okta, OIDC, or SAML (samlp) connection strategy.\n",
         "tags": [
           "connections"
         ],
@@ -14230,7 +14230,7 @@
       },
       "post": {
         "summary": "Create connection keys",
-        "description": "Provision initial connection keys for Okta or OIDC connection strategies. This endpoint allows you to create keys before configuring the connection to use Private Key JWT authentication, enabling zero-downtime transitions.\n",
+        "description": "Provision initial connection keys for Okta, OIDC, or SAML (samlp) connection strategies. This endpoint allows you to create keys before configuring the connection to use Private Key JWT authentication, enabling zero-downtime transitions.\n",
         "tags": [
           "connections"
         ],
@@ -14361,7 +14361,7 @@
     "/connections/{id}/keys/rotate": {
       "post": {
         "summary": "Rotate connection keys",
-        "description": "Rotates the connection keys for the Okta or OIDC connection strategies.\n",
+        "description": "Rotates the connection keys for the Okta, OIDC, or SAML (samlp) connection strategies.\n",
         "tags": [
           "connections"
         ],
@@ -41364,6 +41364,264 @@
         ]
       }
     },
+    "/portals": {
+      "get": {
+        "operationId": "list_portals",
+        "tags": [
+          "portals"
+        ],
+        "summary": "Retrieve all portals",
+        "x-release-lifecycle": "EA",
+        "x-operation-name": "list",
+        "x-operation-group": [
+          "portals"
+        ],
+        "security": [
+          {
+            "bearerAuth": []
+          },
+          {
+            "oAuth2ClientCredentials": [
+              "read:portals"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ListPortalsResponse"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          },
+          "500": {
+            "$ref": "#/components/responses/InternalServerError"
+          }
+        },
+        "x-codeSamples": []
+      },
+      "post": {
+        "operationId": "create_portal",
+        "tags": [
+          "portals"
+        ],
+        "summary": "Create a portal",
+        "x-release-lifecycle": "EA",
+        "x-operation-name": "create",
+        "x-operation-group": [
+          "portals"
+        ],
+        "security": [
+          {
+            "bearerAuth": []
+          },
+          {
+            "oAuth2ClientCredentials": [
+              "create:portals"
+            ]
+          }
+        ],
+        "requestBody": {
+          "$ref": "#/components/requestBodies/CreatePortalRequest"
+        },
+        "responses": {
+          "201": {
+            "$ref": "#/components/responses/CreatePortalResponse"
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          },
+          "409": {
+            "$ref": "#/components/responses/Conflict"
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          },
+          "500": {
+            "$ref": "#/components/responses/InternalServerError"
+          }
+        },
+        "x-codeSamples": []
+      }
+    },
+    "/portals/{id}": {
+      "get": {
+        "operationId": "get_portal",
+        "tags": [
+          "portals"
+        ],
+        "summary": "Get a portal",
+        "x-release-lifecycle": "EA",
+        "x-operation-name": "get",
+        "x-operation-group": [
+          "portals"
+        ],
+        "security": [
+          {
+            "bearerAuth": []
+          },
+          {
+            "oAuth2ClientCredentials": [
+              "read:portals"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/PortalIdParameter"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/GetPortalResponse"
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          },
+          "500": {
+            "$ref": "#/components/responses/InternalServerError"
+          }
+        },
+        "x-codeSamples": []
+      },
+      "delete": {
+        "operationId": "delete_portal",
+        "tags": [
+          "portals"
+        ],
+        "summary": "Delete a portal",
+        "x-release-lifecycle": "EA",
+        "x-operation-name": "delete",
+        "x-operation-group": [
+          "portals"
+        ],
+        "security": [
+          {
+            "bearerAuth": []
+          },
+          {
+            "oAuth2ClientCredentials": [
+              "delete:portals"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/PortalIdParameter"
+          }
+        ],
+        "responses": {
+          "204": {
+            "$ref": "#/components/responses/DeletePortalResponse"
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          },
+          "500": {
+            "$ref": "#/components/responses/InternalServerError"
+          }
+        },
+        "x-codeSamples": []
+      },
+      "patch": {
+        "operationId": "update_portal",
+        "tags": [
+          "portals"
+        ],
+        "summary": "Update a portal",
+        "x-release-lifecycle": "EA",
+        "x-operation-name": "update",
+        "x-operation-group": [
+          "portals"
+        ],
+        "security": [
+          {
+            "bearerAuth": []
+          },
+          {
+            "oAuth2ClientCredentials": [
+              "update:portals"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/PortalIdParameter"
+          }
+        ],
+        "requestBody": {
+          "$ref": "#/components/requestBodies/UpdatePortalRequest"
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/UpdatePortalResponse"
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          },
+          "409": {
+            "$ref": "#/components/responses/Conflict"
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          },
+          "500": {
+            "$ref": "#/components/responses/InternalServerError"
+          }
+        },
+        "x-codeSamples": []
+      }
+    },
     "/prompts": {
       "get": {
         "summary": "Get prompt settings",
@@ -57811,6 +58069,14 @@
           "format": "organization-id"
         }
       },
+      "PortalIdParameter": {
+        "name": "id",
+        "in": "path",
+        "required": true,
+        "schema": {
+          "$ref": "#/components/schemas/PortalId"
+        }
+      },
       "RoleId": {
         "name": "role_id",
         "in": "path",
@@ -57865,11 +58131,31 @@
           }
         }
       },
+      "CreatePortalRequest": {
+        "required": true,
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/CreatePortalRequestContent"
+            }
+          }
+        }
+      },
       "UpdateClientProfile": {
         "content": {
           "application/json": {
             "schema": {
               "$ref": "#/components/schemas/UpdateClientProfileRequestContent"
+            }
+          }
+        }
+      },
+      "UpdatePortalRequest": {
+        "required": true,
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/UpdatePortalRequestContent"
             }
           }
         }
@@ -57959,6 +58245,16 @@
           }
         }
       },
+      "CreatePortalResponse": {
+        "description": "The portal was successfully created.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/Portal"
+            }
+          }
+        }
+      },
       "DeleteClientProfile": {
         "description": "Client profile successfully deleted."
       },
@@ -57992,6 +58288,9 @@
             }
           }
         }
+      },
+      "DeletePortalResponse": {
+        "description": "The portal was successfully deleted."
       },
       "Forbidden": {
         "description": "Forbidden. The message will vary depending on the cause.",
@@ -58065,6 +58364,16 @@
           }
         }
       },
+      "GetPortalResponse": {
+        "description": "The portal was successfully retrieved.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/Portal"
+            }
+          }
+        }
+      },
       "GetStatsDailyBadRequest": {
         "description": "Invalid request query. The message will vary depending on the cause.",
         "x-description-1": "'from' date cannot be greater than 'to' date.",
@@ -58118,6 +58427,32 @@
           }
         }
       },
+      "InternalServerError": {
+        "description": "Internal Server Error. The server encountered an unexpected condition and could not fulfill the request.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "string"
+                },
+                "statusCode": {
+                  "const": 500
+                },
+                "error": {
+                  "const": "Internal Server Error"
+                }
+              },
+              "required": [
+                "message",
+                "statusCode",
+                "error"
+              ]
+            }
+          }
+        }
+      },
       "ListClientProfiles": {
         "description": "Client profiles successfully retrieved.",
         "content": {
@@ -58165,6 +58500,16 @@
           "application/json": {
             "schema": {
               "$ref": "#/components/schemas/ListOrganizationRoleMembersResponseContent"
+            }
+          }
+        }
+      },
+      "ListPortalsResponse": {
+        "description": "All portals were successfully retrieved.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ListPortalsResponseContent"
             }
           }
         }
@@ -58278,6 +58623,16 @@
           "application/json": {
             "schema": {
               "$ref": "#/components/schemas/UnauthorizedSchema"
+            }
+          }
+        }
+      },
+      "UpdatePortalResponse": {
+        "description": "The portal was successfully updated.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/Portal"
             }
           }
         }
@@ -68939,6 +69294,18 @@
               "signOutEndpoint": {
                 "$ref": "#/components/schemas/ConnectionSignOutEndpointSAML"
               },
+              "token_endpoint_auth_method": {
+                "$ref": "#/components/schemas/ConnectionTokenEndpointAuthMethodEnum",
+                "x-release-lifecycle": "EA"
+              },
+              "token_endpoint_auth_signing_alg": {
+                "$ref": "#/components/schemas/ConnectionTokenEndpointAuthSigningAlgEnum",
+                "x-release-lifecycle": "EA"
+              },
+              "token_endpoint_jwtca_aud_format": {
+                "$ref": "#/components/schemas/ConnectionTokenEndpointJwtcaAudFormatEnumOIDC",
+                "x-release-lifecycle": "EA"
+              },
               "user_id_attribute": {
                 "$ref": "#/components/schemas/ConnectionUserIdAttributeSAML"
               }
@@ -72739,7 +73106,7 @@
       },
       "ConnectionTokenEndpointJwtcaAudFormatEnumOIDC": {
         "type": "string",
-        "description": "Specifies the format of the aud (audience) claim included in the JWT used for client authentication at the token endpoint. Accepted values are: 'issuer' (the aud claim is set to the OIDC issuer URL) or 'token_endpoint' (the aud claim is set to the token endpoint URL).",
+        "description": "Specifies the format of the aud (audience) claim included in the JWT used for client authentication at the token endpoint. Accepted values are: 'issuer' (the aud claim is set to the identity provider's issuer URL) or 'token_endpoint' (the aud claim is set to the token endpoint URL).",
         "enum": [
           "issuer",
           "token_endpoint"
@@ -80218,6 +80585,35 @@
             "type": "string"
           }
         }
+      },
+      "CreatePortalRequestContent": {
+        "type": "object",
+        "properties": {
+          "slug": {
+            "$ref": "#/components/schemas/PortalSlug"
+          },
+          "name": {
+            "$ref": "#/components/schemas/PortalName"
+          },
+          "client": {
+            "$ref": "#/components/schemas/PortalClientRequest"
+          },
+          "navigation": {
+            "$ref": "#/components/schemas/PortalNavigation"
+          },
+          "pages": {
+            "$ref": "#/components/schemas/PortalPagesByType"
+          },
+          "custom_code": {
+            "$ref": "#/components/schemas/PortalCustomCode"
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "slug",
+          "name",
+          "client"
+        ]
       },
       "CreatePublicKeyDeviceCredentialRequestContent": {
         "type": "object",
@@ -134049,6 +134445,21 @@
           }
         }
       },
+      "ListPortalsResponseContent": {
+        "type": "object",
+        "properties": {
+          "portals": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PortalSummary"
+            }
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "portals"
+        ]
+      },
       "ListRateLimitPoliciesPaginatedResponseContent": {
         "type": "object",
         "additionalProperties": false,
@@ -137134,6 +137545,467 @@
           "require"
         ]
       },
+      "PageComponent": {
+        "type": "object",
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/PageComponentAuth0Form"
+          },
+          {
+            "$ref": "#/components/schemas/PageComponentAuth0TypographyHeading"
+          },
+          {
+            "$ref": "#/components/schemas/PageComponentAuth0MediaImage"
+          },
+          {
+            "$ref": "#/components/schemas/PageComponentAuth0TypographyRichText"
+          },
+          {
+            "$ref": "#/components/schemas/PageComponentAuth0StructureSection"
+          },
+          {
+            "$ref": "#/components/schemas/PageComponentAuth0StructureSeparator"
+          },
+          {
+            "$ref": "#/components/schemas/PageComponentAuth0MyOrganizationDomainTable"
+          },
+          {
+            "$ref": "#/components/schemas/PageComponentAuth0MyOrganizationMemberManagement"
+          },
+          {
+            "$ref": "#/components/schemas/PageComponentAuth0MyOrganizationDetailsEdit"
+          },
+          {
+            "$ref": "#/components/schemas/PageComponentAuth0MyAccountPasskeyManagement"
+          },
+          {
+            "$ref": "#/components/schemas/PageComponentAuth0MyAccountMfaManagement"
+          }
+        ]
+      },
+      "PageComponentAuth0Form": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "const": "page:component:auth0:form"
+          },
+          "config": {
+            "$ref": "#/components/schemas/PageComponentAuth0FormConfig"
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "type",
+          "config"
+        ]
+      },
+      "PageComponentAuth0FormConfig": {
+        "type": "object",
+        "properties": {
+          "form_id": {
+            "type": "string",
+            "title": "Form ID",
+            "description": "The identifier of the form you want to render.",
+            "minLength": 1,
+            "maxLength": 50
+          },
+          "completion_message": {
+            "type": "string",
+            "title": "Completion message",
+            "description": "Toast message displayed after successful form submission.",
+            "minLength": 1,
+            "maxLength": 200
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "form_id",
+          "completion_message"
+        ]
+      },
+      "PageComponentAuth0MediaImage": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "const": "page:component:auth0:media:image"
+          },
+          "config": {
+            "$ref": "#/components/schemas/PageComponentAuth0MediaImageConfig"
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "type",
+          "config"
+        ]
+      },
+      "PageComponentAuth0MediaImageConfig": {
+        "type": "object",
+        "properties": {
+          "src": {
+            "type": "string",
+            "title": "Source",
+            "description": "URL of the image to display.",
+            "format": "url",
+            "minLength": 1,
+            "maxLength": 500
+          },
+          "position": {
+            "$ref": "#/components/schemas/PageComponentAuth0MediaImagePositionEnum"
+          },
+          "height": {
+            "type": "integer",
+            "title": "Height",
+            "description": "Height of the image in pixels. Width scales automatically to preserve aspect ratio.",
+            "minimum": 1,
+            "maximum": 500
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "src"
+        ]
+      },
+      "PageComponentAuth0MediaImagePositionEnum": {
+        "type": "string",
+        "title": "Position",
+        "description": "Horizontal alignment of the image within its container.",
+        "enum": [
+          "left",
+          "center",
+          "right"
+        ]
+      },
+      "PageComponentAuth0MyAccountMfaManagement": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "const": "page:component:auth0:my_account:mfa_management"
+          },
+          "config": {
+            "$ref": "#/components/schemas/PageComponentAuth0MyAccountMfaManagementConfig"
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "type"
+        ]
+      },
+      "PageComponentAuth0MyAccountMfaManagementConfig": {
+        "type": "object",
+        "properties": {},
+        "additionalProperties": false,
+        "required": []
+      },
+      "PageComponentAuth0MyAccountPasskeyManagement": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "const": "page:component:auth0:my_account:passkey_management"
+          },
+          "config": {
+            "$ref": "#/components/schemas/PageComponentAuth0MyAccountPasskeyManagementConfig"
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "type"
+        ]
+      },
+      "PageComponentAuth0MyAccountPasskeyManagementConfig": {
+        "type": "object",
+        "properties": {},
+        "additionalProperties": false,
+        "required": []
+      },
+      "PageComponentAuth0MyOrganizationDetailsEdit": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "const": "page:component:auth0:my_organization:details_edit"
+          },
+          "config": {
+            "$ref": "#/components/schemas/PageComponentAuth0MyOrganizationDetailsEditConfig"
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "type"
+        ]
+      },
+      "PageComponentAuth0MyOrganizationDetailsEditConfig": {
+        "type": "object",
+        "properties": {},
+        "additionalProperties": false,
+        "required": []
+      },
+      "PageComponentAuth0MyOrganizationDomainTable": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "const": "page:component:auth0:my_organization:domain_table"
+          },
+          "config": {
+            "$ref": "#/components/schemas/PageComponentAuth0MyOrganizationDomainTableConfig"
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "type"
+        ]
+      },
+      "PageComponentAuth0MyOrganizationDomainTableConfig": {
+        "type": "object",
+        "properties": {},
+        "additionalProperties": false,
+        "required": []
+      },
+      "PageComponentAuth0MyOrganizationMemberManagement": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "const": "page:component:auth0:my_organization:member_management"
+          },
+          "config": {
+            "$ref": "#/components/schemas/PageComponentAuth0MyOrganizationMemberManagementConfig"
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "type"
+        ]
+      },
+      "PageComponentAuth0MyOrganizationMemberManagementConfig": {
+        "type": "object",
+        "properties": {},
+        "additionalProperties": false,
+        "required": []
+      },
+      "PageComponentAuth0StructureSection": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "const": "page:component:auth0:structure:section"
+          },
+          "config": {
+            "$ref": "#/components/schemas/PageComponentAuth0StructureSectionConfig"
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "type",
+          "config"
+        ]
+      },
+      "PageComponentAuth0StructureSectionConfig": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string",
+            "title": "Title",
+            "description": "Heading displayed at the top of the section.",
+            "minLength": 1,
+            "maxLength": 50
+          },
+          "description": {
+            "type": "string",
+            "title": "Description",
+            "description": "Optional description displayed below the title.",
+            "minLength": 1,
+            "maxLength": 200
+          },
+          "variant": {
+            "$ref": "#/components/schemas/PageComponentAuth0StructureSectionVariantEnum"
+          },
+          "children": {
+            "type": "array",
+            "title": "Children",
+            "description": "Components to render inside the section.",
+            "minItems": 0,
+            "maxItems": 20,
+            "items": {
+              "$ref": "#/components/schemas/PageComponentNoChildren"
+            }
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "variant",
+          "children"
+        ]
+      },
+      "PageComponentAuth0StructureSectionVariantEnum": {
+        "type": "string",
+        "title": "Section variant",
+        "description": "Controls the section container style.",
+        "enum": [
+          "card",
+          "none"
+        ]
+      },
+      "PageComponentAuth0StructureSeparator": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "const": "page:component:auth0:structure:separator"
+          },
+          "config": {
+            "$ref": "#/components/schemas/PageComponentAuth0StructureSeparatorConfig"
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "type"
+        ]
+      },
+      "PageComponentAuth0StructureSeparatorConfig": {
+        "type": "object",
+        "properties": {
+          "variant": {
+            "$ref": "#/components/schemas/PageComponentAuth0StructureSeparatorVariantEnum"
+          },
+          "text": {
+            "type": "string",
+            "title": "Text",
+            "description": "Optional label centered within the separator line (ignored when variant is \"none\").",
+            "minLength": 1,
+            "maxLength": 50
+          }
+        },
+        "additionalProperties": false,
+        "required": []
+      },
+      "PageComponentAuth0StructureSeparatorVariantEnum": {
+        "type": "string",
+        "title": "Separator variant",
+        "description": "Controls the line style. Defaults to \"solid\".",
+        "enum": [
+          "dashed",
+          "none",
+          "solid"
+        ]
+      },
+      "PageComponentAuth0TypographyHeading": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "const": "page:component:auth0:typography:heading"
+          },
+          "config": {
+            "$ref": "#/components/schemas/PageComponentAuth0TypographyHeadingConfig"
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "type",
+          "config"
+        ]
+      },
+      "PageComponentAuth0TypographyHeadingConfig": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string",
+            "title": "Title",
+            "description": "Heading displayed.",
+            "minLength": 1,
+            "maxLength": 50
+          },
+          "description": {
+            "type": "string",
+            "title": "Description",
+            "description": "Optional description displayed below the title. Supports basic HTML formatting: links, bold, italic, and underline.",
+            "minLength": 1,
+            "maxLength": 200
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "title"
+        ]
+      },
+      "PageComponentAuth0TypographyRichText": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "const": "page:component:auth0:typography:rich_text"
+          },
+          "config": {
+            "$ref": "#/components/schemas/PageComponentAuth0TypographyRichTextConfig"
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "type",
+          "config"
+        ]
+      },
+      "PageComponentAuth0TypographyRichTextConfig": {
+        "type": "object",
+        "properties": {
+          "content": {
+            "type": "string",
+            "title": "Content",
+            "description": "HTML content to render. Supports headings, bold, italic, underline, links, text alignment, and lists.",
+            "minLength": 1,
+            "maxLength": 10000
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "content"
+        ]
+      },
+      "PageComponentNoChildren": {
+        "type": "object",
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/PageComponentAuth0Form"
+          },
+          {
+            "$ref": "#/components/schemas/PageComponentAuth0TypographyHeading"
+          },
+          {
+            "$ref": "#/components/schemas/PageComponentAuth0MediaImage"
+          },
+          {
+            "$ref": "#/components/schemas/PageComponentAuth0TypographyRichText"
+          },
+          {
+            "$ref": "#/components/schemas/PageComponentAuth0StructureSeparator"
+          },
+          {
+            "$ref": "#/components/schemas/PageComponentAuth0MyOrganizationDomainTable"
+          },
+          {
+            "$ref": "#/components/schemas/PageComponentAuth0MyOrganizationMemberManagement"
+          },
+          {
+            "$ref": "#/components/schemas/PageComponentAuth0MyOrganizationDetailsEdit"
+          },
+          {
+            "$ref": "#/components/schemas/PageComponentAuth0MyAccountPasskeyManagement"
+          },
+          {
+            "$ref": "#/components/schemas/PageComponentAuth0MyAccountMfaManagement"
+          }
+        ]
+      },
+      "PageSlug": {
+        "type": "string",
+        "format": "portal-slug"
+      },
       "PartialGroupsEnum": {
         "type": "string",
         "enum": [
@@ -137661,6 +138533,239 @@
           "change_password",
           "blocked_account",
           "password_breach"
+        ]
+      },
+      "Portal": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "$ref": "#/components/schemas/PortalId"
+          },
+          "name": {
+            "$ref": "#/components/schemas/PortalName"
+          },
+          "navigation": {
+            "$ref": "#/components/schemas/PortalNavigation"
+          },
+          "pages": {
+            "$ref": "#/components/schemas/PortalPagesByType"
+          },
+          "slug": {
+            "$ref": "#/components/schemas/PortalSlug"
+          },
+          "client": {
+            "$ref": "#/components/schemas/PortalClient"
+          },
+          "custom_code": {
+            "$ref": "#/components/schemas/PortalCustomCode"
+          },
+          "created_at": {
+            "$ref": "#/components/schemas/PortalDateTime"
+          },
+          "updated_at": {
+            "$ref": "#/components/schemas/PortalDateTime"
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "name",
+          "slug",
+          "created_at",
+          "updated_at"
+        ]
+      },
+      "PortalClient": {
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/PortalClientSecretPost"
+          }
+        ]
+      },
+      "PortalClientRequest": {
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/PortalClientSecretPostRequest"
+          }
+        ]
+      },
+      "PortalClientSecretPost": {
+        "type": "object",
+        "properties": {
+          "token_endpoint_auth_method": {
+            "const": "client_secret_post"
+          },
+          "client_id": {
+            "type": "string",
+            "format": "client-id"
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "token_endpoint_auth_method",
+          "client_id"
+        ]
+      },
+      "PortalClientSecretPostRequest": {
+        "type": "object",
+        "properties": {
+          "token_endpoint_auth_method": {
+            "const": "client_secret_post"
+          },
+          "client_id": {
+            "type": "string",
+            "format": "client-id"
+          },
+          "client_secret": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 256
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "token_endpoint_auth_method",
+          "client_id",
+          "client_secret"
+        ]
+      },
+      "PortalCustomCode": {
+        "type": "object",
+        "properties": {
+          "head": {
+            "type": "string",
+            "title": "Head",
+            "description": "Custom code injected into the <head> of the portal. Only injected when the portal is accessed via a custom domain; it is not injected on canonical domains.",
+            "minLength": 1,
+            "maxLength": 10000
+          }
+        },
+        "additionalProperties": false,
+        "required": []
+      },
+      "PortalCustomCodeNullable": {
+        "oneOf": [
+          {
+            "type": "null"
+          },
+          {
+            "$ref": "#/components/schemas/PortalCustomCode"
+          }
+        ]
+      },
+      "PortalDateTime": {
+        "type": "string",
+        "format": "date-time"
+      },
+      "PortalId": {
+        "type": "string",
+        "format": "portal-id"
+      },
+      "PortalName": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 150
+      },
+      "PortalNavigation": {
+        "type": "object",
+        "properties": {
+          "sidebar": {
+            "$ref": "#/components/schemas/Sidebar"
+          }
+        },
+        "additionalProperties": false,
+        "required": []
+      },
+      "PortalNavigationNullable": {
+        "oneOf": [
+          {
+            "type": "null"
+          },
+          {
+            "$ref": "#/components/schemas/PortalNavigation"
+          }
+        ]
+      },
+      "PortalPage": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 150
+          },
+          "slug": {
+            "$ref": "#/components/schemas/PageSlug"
+          },
+          "components": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PageComponent"
+            }
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "title",
+          "slug"
+        ]
+      },
+      "PortalPagesByType": {
+        "type": "object",
+        "properties": {
+          "default": {
+            "$ref": "#/components/schemas/PageSlug"
+          },
+          "standard": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PortalPage"
+            }
+          }
+        },
+        "additionalProperties": false,
+        "required": []
+      },
+      "PortalPagesByTypeNullable": {
+        "oneOf": [
+          {
+            "type": "null"
+          },
+          {
+            "$ref": "#/components/schemas/PortalPagesByType"
+          }
+        ]
+      },
+      "PortalSlug": {
+        "type": "string",
+        "format": "portal-slug"
+      },
+      "PortalSummary": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "$ref": "#/components/schemas/PortalId"
+          },
+          "name": {
+            "$ref": "#/components/schemas/PortalName"
+          },
+          "slug": {
+            "$ref": "#/components/schemas/PortalSlug"
+          },
+          "created_at": {
+            "$ref": "#/components/schemas/PortalDateTime"
+          },
+          "updated_at": {
+            "$ref": "#/components/schemas/PortalDateTime"
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "name",
+          "slug",
+          "created_at",
+          "updated_at"
         ]
       },
       "PostClientCredentialRequestContent": {
@@ -142286,6 +143391,236 @@
         "type": "object",
         "description": "An object containing custom dictionaries for a group of screens.",
         "additionalProperties": true
+      },
+      "Sidebar": {
+        "type": "object",
+        "properties": {
+          "components": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SidebarComponent"
+            }
+          }
+        },
+        "additionalProperties": false,
+        "required": []
+      },
+      "SidebarComponent": {
+        "type": "object",
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/SidebarComponentAuth0ExternalLink"
+          },
+          {
+            "$ref": "#/components/schemas/SidebarComponentAuth0InternalLink"
+          },
+          {
+            "$ref": "#/components/schemas/SidebarComponentAuth0ExternalLinkV2"
+          },
+          {
+            "$ref": "#/components/schemas/SidebarComponentAuth0InternalLinkV2"
+          }
+        ]
+      },
+      "SidebarComponentAuth0ExternalLink": {
+        "deprecated": true,
+        "x-release-lifecycle": "deprecated",
+        "description": "Deprecated. Use \"sidebar:component:auth0:external_link:v2\" instead.",
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "const": "sidebar:component:auth0:external_link"
+          },
+          "config": {
+            "$ref": "#/components/schemas/SidebarComponentAuth0ExternalLinkConfig"
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "type",
+          "config"
+        ]
+      },
+      "SidebarComponentAuth0ExternalLinkConfig": {
+        "type": "object",
+        "properties": {
+          "label": {
+            "type": "string",
+            "title": "Label",
+            "description": "Text shown for the link.",
+            "minLength": 1,
+            "maxLength": 50
+          },
+          "url": {
+            "type": "string",
+            "title": "URL",
+            "description": "External URL to navigate to.",
+            "format": "url",
+            "minLength": 1,
+            "maxLength": 200
+          },
+          "icon": {
+            "type": "string",
+            "title": "Icon",
+            "description": "Name of the icon displayed next to the link label.",
+            "minLength": 1,
+            "maxLength": 50
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "label",
+          "url"
+        ]
+      },
+      "SidebarComponentAuth0ExternalLinkV2": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "const": "sidebar:component:auth0:external_link:v2"
+          },
+          "config": {
+            "$ref": "#/components/schemas/SidebarComponentAuth0ExternalLinkV2Config"
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "type",
+          "config"
+        ]
+      },
+      "SidebarComponentAuth0ExternalLinkV2Config": {
+        "type": "object",
+        "properties": {
+          "label": {
+            "type": "string",
+            "title": "Label",
+            "description": "Text shown for the link.",
+            "minLength": 1,
+            "maxLength": 50
+          },
+          "href": {
+            "type": "string",
+            "title": "URL",
+            "description": "External URL to navigate to.",
+            "format": "url",
+            "minLength": 1,
+            "maxLength": 200
+          },
+          "icon": {
+            "type": "string",
+            "title": "Icon",
+            "description": "Name of the icon displayed next to the link label.",
+            "minLength": 1,
+            "maxLength": 50
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "label",
+          "href"
+        ]
+      },
+      "SidebarComponentAuth0InternalLink": {
+        "deprecated": true,
+        "x-release-lifecycle": "deprecated",
+        "description": "Deprecated. Use \"sidebar:component:auth0:internal_link:v2\" instead.",
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "const": "sidebar:component:auth0:internal_link"
+          },
+          "config": {
+            "$ref": "#/components/schemas/SidebarComponentAuth0InternalLinkConfig"
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "type",
+          "config"
+        ]
+      },
+      "SidebarComponentAuth0InternalLinkConfig": {
+        "type": "object",
+        "properties": {
+          "label": {
+            "type": "string",
+            "title": "Label",
+            "description": "Text shown for the link.",
+            "minLength": 1,
+            "maxLength": 50
+          },
+          "to": {
+            "type": "string",
+            "title": "Page slug",
+            "description": "Slug of the internal portal page to navigate to.",
+            "minLength": 1,
+            "maxLength": 50
+          },
+          "icon": {
+            "type": "string",
+            "title": "Icon",
+            "description": "Name of the icon displayed next to the link label.",
+            "minLength": 1,
+            "maxLength": 50
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "label",
+          "to"
+        ]
+      },
+      "SidebarComponentAuth0InternalLinkV2": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "const": "sidebar:component:auth0:internal_link:v2"
+          },
+          "config": {
+            "$ref": "#/components/schemas/SidebarComponentAuth0InternalLinkV2Config"
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "type",
+          "config"
+        ]
+      },
+      "SidebarComponentAuth0InternalLinkV2Config": {
+        "type": "object",
+        "properties": {
+          "label": {
+            "type": "string",
+            "title": "Label",
+            "description": "Text shown for the link.",
+            "minLength": 1,
+            "maxLength": 50
+          },
+          "page_slug": {
+            "type": "string",
+            "title": "Page slug",
+            "description": "Slug of the internal portal page to navigate to.",
+            "minLength": 1,
+            "maxLength": 50
+          },
+          "icon": {
+            "type": "string",
+            "title": "Icon",
+            "description": "Name of the icon displayed next to the link label.",
+            "minLength": 1,
+            "maxLength": 50
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "label",
+          "page_slug"
+        ]
       },
       "SigningAlgorithmEnum": {
         "type": "string",
@@ -148305,6 +149640,31 @@
           }
         }
       },
+      "UpdatePortalRequestContent": {
+        "type": "object",
+        "properties": {
+          "slug": {
+            "$ref": "#/components/schemas/PortalSlug"
+          },
+          "name": {
+            "$ref": "#/components/schemas/PortalName"
+          },
+          "client": {
+            "$ref": "#/components/schemas/PortalClientRequest"
+          },
+          "navigation": {
+            "$ref": "#/components/schemas/PortalNavigationNullable"
+          },
+          "pages": {
+            "$ref": "#/components/schemas/PortalPagesByTypeNullable"
+          },
+          "custom_code": {
+            "$ref": "#/components/schemas/PortalCustomCodeNullable"
+          }
+        },
+        "additionalProperties": false,
+        "required": []
+      },
       "UpdateRateLimitPolicyResponseContent": {
         "type": "object",
         "additionalProperties": false,
@@ -152022,6 +153382,10 @@
               "read:organization_clients": "Read Organization Client Associations",
               "update:organization_clients": "Update Organization Client Associations",
               "delete:organization_clients": "Delete Organization Client Associations",
+              "create:portals": "Create Universal Portals",
+              "read:portals": "Read Universal Portals",
+              "update:portals": "Update Universal Portals",
+              "delete:portals": "Delete Universal Portals",
               "create:network_acl_keys": "Create Network ACL Keys",
               "read:network_acl_keys": "Read Network ACL Keys",
               "delete:network_acl_keys": "Delete Network ACL Keys"
