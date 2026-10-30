@@ -21463,47 +21463,47 @@
           {
             "lang": "typescript",
             "label": "List segments for the tenant.",
-            "source": "import { ManagementClient } from \"auth0\";\n\nasync function main() {\n    const client = new ManagementClient({\n        domain: \"{YOUR_DOMAIN}\",\n        token: \"<token>\",\n    });\n    await client.experimentation.segments.list({\n        from: \"from\",\n        take: 1,\n        type: \"auth0\",\n    });\n}\nmain();\n"
+            "source": "import { ManagementClient } from \"auth0\";\n\nasync function main() {\n    const client = new ManagementClient({\n        domain: \"{YOUR_DOMAIN}\",\n        token: \"<token>\",\n    });\n    await client.experimentation.segments.list({\n        from: \"from\",\n        take: 1,\n        type: \"auth0\",\n        status: \"active\",\n    });\n}\nmain();\n"
           },
           {
             "lang": "javascript",
             "label": "List segments for the tenant.",
-            "source": "import { ManagementClient } from \"auth0\";\n\nasync function main() {\n    const client = new ManagementClient({\n        domain: \"{YOUR_DOMAIN}\",\n        token: \"<token>\",\n    });\n    await client.experimentation.segments.list({\n        from: \"from\",\n        take: 1,\n        type: \"auth0\",\n    });\n}\nmain();\n"
+            "source": "import { ManagementClient } from \"auth0\";\n\nasync function main() {\n    const client = new ManagementClient({\n        domain: \"{YOUR_DOMAIN}\",\n        token: \"<token>\",\n    });\n    await client.experimentation.segments.list({\n        from: \"from\",\n        take: 1,\n        type: \"auth0\",\n        status: \"active\",\n    });\n}\nmain();\n"
           },
           {
             "lang": "go",
             "label": "List segments for the tenant.",
-            "source": "package example\n\nimport (\n    context \"context\"\n\n    management \"github.com/auth0/go-auth0/v3/management\"\n    client \"github.com/auth0/go-auth0/v3/management/client\"\n    option \"github.com/auth0/go-auth0/v3/management/option\"\n)\n\nfunc do() {\n    mgmt, err := client.New(\n        \"{YOUR_DOMAIN}\",\n        option.WithToken(\n            \"<token>\",\n        ),\n    )\n    if err != nil {\n        return\n    }\n    request := &management.ListSegmentsRequestParameters{\n        From: management.String(\n            \"from\",\n        ),\n        Take: management.Int(\n            1,\n        ),\n        Type: management.SegmentTypeFilterEnumAuth0.Ptr(),\n    }\n    mgmt.Experimentation.Segments.List(\n        context.TODO(),\n        request,\n    )\n}\n"
+            "source": "package example\n\nimport (\n    context \"context\"\n\n    management \"github.com/auth0/go-auth0/v3/management\"\n    client \"github.com/auth0/go-auth0/v3/management/client\"\n    option \"github.com/auth0/go-auth0/v3/management/option\"\n)\n\nfunc do() {\n    mgmt, err := client.New(\n        \"{YOUR_DOMAIN}\",\n        option.WithToken(\n            \"<token>\",\n        ),\n    )\n    if err != nil {\n        return\n    }\n    request := &management.ListSegmentsRequestParameters{\n        From: management.String(\n            \"from\",\n        ),\n        Take: management.Int(\n            1,\n        ),\n        Type: management.SegmentTypeFilterEnumAuth0.Ptr(),\n        Status: management.SegmentStatusEnumActive.Ptr(),\n    }\n    mgmt.Experimentation.Segments.List(\n        context.TODO(),\n        request,\n    )\n}\n"
           },
           {
             "lang": "zsh",
             "label": "List segments for the tenant.",
-            "source": "# Ensure you're logged in: auth0 login\nauth0 api get \"experimentation/segments\" --query \"from=from\" --query \"take=1\" --query \"type=auth0\""
+            "source": "# Ensure you're logged in: auth0 login\nauth0 api get \"experimentation/segments\" --query \"from=from\" --query \"take=1\" --query \"type=auth0\" --query \"status=active\""
           },
           {
             "lang": "csharp",
             "label": "List segments for the tenant.",
-            "source": "using Auth0.ManagementApi;\nusing System.Threading.Tasks;\nusing Auth0.ManagementApi.Experimentation;\n\npublic partial class Examples\n{\n    public async Task Example() {\n        var client = new ManagementApiClient(\n            token: \"<token>\",\n            clientOptions: new ClientOptions { BaseUrl = \"https://{YOUR_DOMAIN}/api/v2\" }\n        );\n\n        await client.Experimentation.Segments.ListAsync(\n            new ListSegmentsRequestParameters {\n                From = \"from\",\n                Take = 1,\n                Type = SegmentTypeFilterEnum.Auth0\n            }\n        );\n    }\n\n}\n"
+            "source": "using Auth0.ManagementApi;\nusing System.Threading.Tasks;\nusing Auth0.ManagementApi.Experimentation;\n\npublic partial class Examples\n{\n    public async Task Example() {\n        var client = new ManagementApiClient(\n            token: \"<token>\",\n            clientOptions: new ClientOptions { BaseUrl = \"https://{YOUR_DOMAIN}/api/v2\" }\n        );\n\n        await client.Experimentation.Segments.ListAsync(\n            new ListSegmentsRequestParameters {\n                From = \"from\",\n                Take = 1,\n                Type = SegmentTypeFilterEnum.Auth0,\n                Status = SegmentStatusEnum.Active\n            }\n        );\n    }\n\n}\n"
           },
           {
             "lang": "java",
             "label": "List segments for the tenant.",
-            "source": "package com.example.usage;\n\nimport com.auth0.client.mgmt.ManagementApi;\nimport com.auth0.client.mgmt.experimentation.types.ListSegmentsRequestParameters;\nimport com.auth0.client.mgmt.types.SegmentTypeFilterEnum;\n\npublic class Example {\n    public static void main(String[] args) {\n        ManagementApi client = ManagementApi\n            .builder()\n            .domain(\"{YOUR_DOMAIN}\")\n            .token(\"<token>\")\n            .build();\n\n        client.experimentation().segments().list(\n            ListSegmentsRequestParameters\n                .builder()\n                .from(\"from\")\n                .take(1)\n                .type(SegmentTypeFilterEnum.AUTH0)\n                .build()\n        );\n    }\n}"
+            "source": "package com.example.usage;\n\nimport com.auth0.client.mgmt.ManagementApi;\nimport com.auth0.client.mgmt.experimentation.types.ListSegmentsRequestParameters;\nimport com.auth0.client.mgmt.types.SegmentStatusEnum;\nimport com.auth0.client.mgmt.types.SegmentTypeFilterEnum;\n\npublic class Example {\n    public static void main(String[] args) {\n        ManagementApi client = ManagementApi\n            .builder()\n            .domain(\"{YOUR_DOMAIN}\")\n            .token(\"<token>\")\n            .build();\n\n        client.experimentation().segments().list(\n            ListSegmentsRequestParameters\n                .builder()\n                .from(\"from\")\n                .take(1)\n                .type(SegmentTypeFilterEnum.AUTH0)\n                .status(SegmentStatusEnum.ACTIVE)\n                .build()\n        );\n    }\n}"
           },
           {
             "lang": "php",
             "label": "List segments for the tenant.",
-            "source": "<?php\n\nnamespace Example;\n\nuse Auth0\\SDK\\API\\Management\\Wrapper\\ManagementClient;\nuse Auth0\\SDK\\API\\Management\\Wrapper\\ManagementClientOptions;\nuse Auth0\\SDK\\API\\Management\\Experimentation\\Segments\\Requests\\ListSegmentsRequestParameters;\nuse Auth0\\SDK\\API\\Management\\Types\\SegmentTypeFilterEnum;\n\n$client = new ManagementClient(new ManagementClientOptions(\n    domain: '{YOUR_DOMAIN}',\n    token: '<token>',\n));\n$client->experimentation->segments->list(\n    new ListSegmentsRequestParameters([\n        'from' => 'from',\n        'take' => 1,\n        'type' => SegmentTypeFilterEnum::Auth0->value,\n    ]),\n);\n"
+            "source": "<?php\n\nnamespace Example;\n\nuse Auth0\\SDK\\API\\Management\\Wrapper\\ManagementClient;\nuse Auth0\\SDK\\API\\Management\\Wrapper\\ManagementClientOptions;\nuse Auth0\\SDK\\API\\Management\\Experimentation\\Segments\\Requests\\ListSegmentsRequestParameters;\nuse Auth0\\SDK\\API\\Management\\Types\\SegmentTypeFilterEnum;\nuse Auth0\\SDK\\API\\Management\\Types\\SegmentStatusEnum;\n\n$client = new ManagementClient(new ManagementClientOptions(\n    domain: '{YOUR_DOMAIN}',\n    token: '<token>',\n));\n$client->experimentation->segments->list(\n    new ListSegmentsRequestParameters([\n        'from' => 'from',\n        'take' => 1,\n        'type' => SegmentTypeFilterEnum::Auth0->value,\n        'status' => SegmentStatusEnum::Active->value,\n    ]),\n);\n"
           },
           {
             "lang": "python",
             "label": "List segments for the tenant.",
-            "source": "from auth0.management import ManagementClient\n\nclient = ManagementClient(\n    domain=\"{YOUR_DOMAIN}\",\n    token=\"<token>\",\n)\n\nclient.experimentation.segments.list(\n    from_=\"from\",\n    take=1,\n    type=\"auth0\",\n)\n"
+            "source": "from auth0.management import ManagementClient\n\nclient = ManagementClient(\n    domain=\"{YOUR_DOMAIN}\",\n    token=\"<token>\",\n)\n\nclient.experimentation.segments.list(\n    from_=\"from\",\n    take=1,\n    type=\"auth0\",\n    status=\"active\",\n)\n"
           },
           {
             "lang": "ruby",
             "label": "List segments for the tenant.",
-            "source": "require \"auth0\"\n\nclient = Auth0::Management.new(token: \"<token>\", base_url: \"https://{YOUR_DOMAIN}/api/v2\")\n\nclient.experimentation.segments.list(\n  from: \"from\",\n  take: 1,\n  type: \"auth0\"\n)\n"
+            "source": "require \"auth0\"\n\nclient = Auth0::Management.new(token: \"<token>\", base_url: \"https://{YOUR_DOMAIN}/api/v2\")\n\nclient.experimentation.segments.list(\n  from: \"from\",\n  take: 1,\n  type: \"auth0\",\n  status: \"active\"\n)\n"
           }
         ]
       },
@@ -41406,7 +41406,53 @@
             "$ref": "#/components/responses/InternalServerError"
           }
         },
-        "x-codeSamples": []
+        "x-codeSamples": [
+          {
+            "lang": "typescript",
+            "label": "Retrieve all portals",
+            "source": "import { ManagementClient } from \"auth0\";\n\nasync function main() {\n    const client = new ManagementClient({\n        domain: \"{YOUR_DOMAIN}\",\n        token: \"<token>\",\n    });\n    await client.portals.list();\n}\nmain();\n"
+          },
+          {
+            "lang": "javascript",
+            "label": "Retrieve all portals",
+            "source": "import { ManagementClient } from \"auth0\";\n\nasync function main() {\n    const client = new ManagementClient({\n        domain: \"{YOUR_DOMAIN}\",\n        token: \"<token>\",\n    });\n    await client.portals.list();\n}\nmain();\n"
+          },
+          {
+            "lang": "go",
+            "label": "Retrieve all portals",
+            "source": "package example\n\nimport (\n    context \"context\"\n\n    client \"github.com/auth0/go-auth0/v3/management/client\"\n    option \"github.com/auth0/go-auth0/v3/management/option\"\n)\n\nfunc do() {\n    mgmt, err := client.New(\n        \"{YOUR_DOMAIN}\",\n        option.WithToken(\n            \"<token>\",\n        ),\n    )\n    if err != nil {\n        return\n    }\n    mgmt.Portals.List(\n        context.TODO(),\n    )\n}\n"
+          },
+          {
+            "lang": "zsh",
+            "label": "Retrieve all portals",
+            "source": "# Ensure you're logged in: auth0 login\nauth0 api get \"portals\""
+          },
+          {
+            "lang": "csharp",
+            "label": "Retrieve all portals",
+            "source": "using Auth0.ManagementApi;\nusing System.Threading.Tasks;\n\npublic partial class Examples\n{\n    public async Task Example() {\n        var client = new ManagementApiClient(\n            token: \"<token>\",\n            clientOptions: new ClientOptions { BaseUrl = \"https://{YOUR_DOMAIN}/api/v2\" }\n        );\n\n        await client.Portals.ListAsync();\n    }\n\n}\n"
+          },
+          {
+            "lang": "java",
+            "label": "Retrieve all portals",
+            "source": "package com.example.usage;\n\nimport com.auth0.client.mgmt.ManagementApi;\n\npublic class Example {\n    public static void main(String[] args) {\n        ManagementApi client = ManagementApi\n            .builder()\n            .domain(\"{YOUR_DOMAIN}\")\n            .token(\"<token>\")\n            .build();\n\n        client.portals().list();\n    }\n}"
+          },
+          {
+            "lang": "php",
+            "label": "Retrieve all portals",
+            "source": "<?php\n\nnamespace Example;\n\nuse Auth0\\SDK\\API\\Management\\Wrapper\\ManagementClient;\nuse Auth0\\SDK\\API\\Management\\Wrapper\\ManagementClientOptions;\n\n$client = new ManagementClient(new ManagementClientOptions(\n    domain: '{YOUR_DOMAIN}',\n    token: '<token>',\n));\n$client->portals->list();\n"
+          },
+          {
+            "lang": "python",
+            "label": "Retrieve all portals",
+            "source": "from auth0.management import ManagementClient\n\nclient = ManagementClient(\n    domain=\"{YOUR_DOMAIN}\",\n    token=\"<token>\",\n)\n\nclient.portals.list()\n"
+          },
+          {
+            "lang": "ruby",
+            "label": "Retrieve all portals",
+            "source": "require \"auth0\"\n\nclient = Auth0::Management.new(token: \"<token>\", base_url: \"https://{YOUR_DOMAIN}/api/v2\")\n\nclient.portals.list\n"
+          }
+        ]
       },
       "post": {
         "operationId": "create_portal",
@@ -41458,7 +41504,53 @@
             "$ref": "#/components/responses/InternalServerError"
           }
         },
-        "x-codeSamples": []
+        "x-codeSamples": [
+          {
+            "lang": "typescript",
+            "label": "Create a portal",
+            "source": "import { ManagementClient } from \"auth0\";\n\nasync function main() {\n    const client = new ManagementClient({\n        domain: \"{YOUR_DOMAIN}\",\n        token: \"<token>\",\n    });\n    await client.portals.create({\n        slug: \"slug\",\n        name: \"name\",\n        client: {\n            token_endpoint_auth_method: \"client_secret_post\",\n            client_id: \"client_id\",\n            client_secret: \"client_secret\",\n        },\n    });\n}\nmain();\n"
+          },
+          {
+            "lang": "javascript",
+            "label": "Create a portal",
+            "source": "import { ManagementClient } from \"auth0\";\n\nasync function main() {\n    const client = new ManagementClient({\n        domain: \"{YOUR_DOMAIN}\",\n        token: \"<token>\",\n    });\n    await client.portals.create({\n        slug: \"slug\",\n        name: \"name\",\n        client: {\n            token_endpoint_auth_method: \"client_secret_post\",\n            client_id: \"client_id\",\n            client_secret: \"client_secret\",\n        },\n    });\n}\nmain();\n"
+          },
+          {
+            "lang": "go",
+            "label": "Create a portal",
+            "source": "package example\n\nimport (\n    context \"context\"\n\n    management \"github.com/auth0/go-auth0/v3/management\"\n    client \"github.com/auth0/go-auth0/v3/management/client\"\n    option \"github.com/auth0/go-auth0/v3/management/option\"\n)\n\nfunc do() {\n    mgmt, err := client.New(\n        \"{YOUR_DOMAIN}\",\n        option.WithToken(\n            \"<token>\",\n        ),\n    )\n    if err != nil {\n        return\n    }\n    request := &management.CreatePortalRequestContent{\n        Slug: \"slug\",\n        Name: \"name\",\n        Client: &management.PortalClientSecretPostRequest{\n            TokenEndpointAuthMethod: management.PortalClientSecretPostRequestTokenEndpointAuthMethodClientSecretPost,\n            ClientID: \"client_id\",\n            ClientSecret: \"client_secret\",\n        },\n    }\n    mgmt.Portals.Create(\n        context.TODO(),\n        request,\n    )\n}\n"
+          },
+          {
+            "lang": "zsh",
+            "label": "Create a portal",
+            "source": "# Ensure you're logged in: auth0 login\nauth0 api post \"portals\" --data '{\n  \"slug\": \"slug\",\n  \"name\": \"name\",\n  \"client\": {\n    \"token_endpoint_auth_method\": \"client_secret_post\",\n    \"client_id\": \"client_id\",\n    \"client_secret\": \"client_secret\"\n  }\n}'"
+          },
+          {
+            "lang": "csharp",
+            "label": "Create a portal",
+            "source": "using Auth0.ManagementApi;\nusing System.Threading.Tasks;\n\npublic partial class Examples\n{\n    public async Task Example() {\n        var client = new ManagementApiClient(\n            token: \"<token>\",\n            clientOptions: new ClientOptions { BaseUrl = \"https://{YOUR_DOMAIN}/api/v2\" }\n        );\n\n        await client.Portals.CreateAsync(\n            new CreatePortalRequestContent {\n                Slug = \"slug\",\n                Name = \"name\",\n                Client = new PortalClientSecretPostRequest {\n                    TokenEndpointAuthMethod = PortalClientSecretPostRequestTokenEndpointAuthMethod.ClientSecretPost,\n                    ClientId = \"client_id\",\n                    ClientSecret = \"client_secret\"\n                }\n            }\n        );\n    }\n\n}\n"
+          },
+          {
+            "lang": "java",
+            "label": "Create a portal",
+            "source": "package com.example.usage;\n\nimport com.auth0.client.mgmt.ManagementApi;\nimport com.auth0.client.mgmt.types.CreatePortalRequestContent;\nimport com.auth0.client.mgmt.types.PortalClientSecretPostRequest;\nimport com.auth0.client.mgmt.types.PortalClientSecretPostRequestTokenEndpointAuthMethod;\n\npublic class Example {\n    public static void main(String[] args) {\n        ManagementApi client = ManagementApi\n            .builder()\n            .domain(\"{YOUR_DOMAIN}\")\n            .token(\"<token>\")\n            .build();\n\n        client.portals().create(\n            CreatePortalRequestContent\n                .builder()\n                .slug(\"slug\")\n                .name(\"name\")\n                .client(\n                    PortalClientSecretPostRequest\n                        .builder()\n                        .tokenEndpointAuthMethod(PortalClientSecretPostRequestTokenEndpointAuthMethod.CLIENT_SECRET_POST)\n                        .clientId(\"client_id\")\n                        .clientSecret(\"client_secret\")\n                        .build()\n                )\n                .build()\n        );\n    }\n}"
+          },
+          {
+            "lang": "php",
+            "label": "Create a portal",
+            "source": "<?php\n\nnamespace Example;\n\nuse Auth0\\SDK\\API\\Management\\Wrapper\\ManagementClient;\nuse Auth0\\SDK\\API\\Management\\Wrapper\\ManagementClientOptions;\nuse Auth0\\SDK\\API\\Management\\Portals\\Requests\\CreatePortalRequestContent;\nuse Auth0\\SDK\\API\\Management\\Types\\PortalClientSecretPostRequest;\nuse Auth0\\SDK\\API\\Management\\Types\\PortalClientSecretPostRequestTokenEndpointAuthMethod;\n\n$client = new ManagementClient(new ManagementClientOptions(\n    domain: '{YOUR_DOMAIN}',\n    token: '<token>',\n));\n$client->portals->create(\n    new CreatePortalRequestContent([\n        'slug' => 'slug',\n        'name' => 'name',\n        'client' => new PortalClientSecretPostRequest([\n            'tokenEndpointAuthMethod' => PortalClientSecretPostRequestTokenEndpointAuthMethod::ClientSecretPost->value,\n            'clientId' => 'client_id',\n            'clientSecret' => 'client_secret',\n        ]),\n    ]),\n);\n"
+          },
+          {
+            "lang": "python",
+            "label": "Create a portal",
+            "source": "from auth0.management import ManagementClient, PortalClientSecretPostRequest\n\nclient = ManagementClient(\n    domain=\"{YOUR_DOMAIN}\",\n    token=\"<token>\",\n)\n\nclient.portals.create(\n    slug=\"slug\",\n    name=\"name\",\n    client=PortalClientSecretPostRequest(\n        token_endpoint_auth_method=\"client_secret_post\",\n        client_id=\"client_id\",\n        client_secret=\"client_secret\",\n    ),\n)\n"
+          },
+          {
+            "lang": "ruby",
+            "label": "Create a portal",
+            "source": "require \"auth0\"\n\nclient = Auth0::Management.new(token: \"<token>\", base_url: \"https://{YOUR_DOMAIN}/api/v2\")\n\nclient.portals.create(\n  slug: \"slug\",\n  name: \"name\",\n  client: {\n    token_endpoint_auth_method: \"client_secret_post\",\n    client_id: \"client_id\",\n    client_secret: \"client_secret\"\n  }\n)\n"
+          }
+        ]
       }
     },
     "/portals/{id}": {
@@ -41511,7 +41603,53 @@
             "$ref": "#/components/responses/InternalServerError"
           }
         },
-        "x-codeSamples": []
+        "x-codeSamples": [
+          {
+            "lang": "typescript",
+            "label": "Get a portal",
+            "source": "import { ManagementClient } from \"auth0\";\n\nasync function main() {\n    const client = new ManagementClient({\n        domain: \"{YOUR_DOMAIN}\",\n        token: \"<token>\",\n    });\n    await client.portals.get(\"id\");\n}\nmain();\n"
+          },
+          {
+            "lang": "javascript",
+            "label": "Get a portal",
+            "source": "import { ManagementClient } from \"auth0\";\n\nasync function main() {\n    const client = new ManagementClient({\n        domain: \"{YOUR_DOMAIN}\",\n        token: \"<token>\",\n    });\n    await client.portals.get(\"id\");\n}\nmain();\n"
+          },
+          {
+            "lang": "go",
+            "label": "Get a portal",
+            "source": "package example\n\nimport (\n    context \"context\"\n\n    client \"github.com/auth0/go-auth0/v3/management/client\"\n    option \"github.com/auth0/go-auth0/v3/management/option\"\n)\n\nfunc do() {\n    mgmt, err := client.New(\n        \"{YOUR_DOMAIN}\",\n        option.WithToken(\n            \"<token>\",\n        ),\n    )\n    if err != nil {\n        return\n    }\n    mgmt.Portals.Get(\n        context.TODO(),\n        \"id\",\n    )\n}\n"
+          },
+          {
+            "lang": "zsh",
+            "label": "Get a portal",
+            "source": "# Ensure you're logged in: auth0 login\nauth0 api get \"portals/id\""
+          },
+          {
+            "lang": "csharp",
+            "label": "Get a portal",
+            "source": "using Auth0.ManagementApi;\nusing System.Threading.Tasks;\n\npublic partial class Examples\n{\n    public async Task Example() {\n        var client = new ManagementApiClient(\n            token: \"<token>\",\n            clientOptions: new ClientOptions { BaseUrl = \"https://{YOUR_DOMAIN}/api/v2\" }\n        );\n\n        await client.Portals.GetAsync(\n            \"id\"\n        );\n    }\n\n}\n"
+          },
+          {
+            "lang": "java",
+            "label": "Get a portal",
+            "source": "package com.example.usage;\n\nimport com.auth0.client.mgmt.ManagementApi;\n\npublic class Example {\n    public static void main(String[] args) {\n        ManagementApi client = ManagementApi\n            .builder()\n            .domain(\"{YOUR_DOMAIN}\")\n            .token(\"<token>\")\n            .build();\n\n        client.portals().get(\"id\");\n    }\n}"
+          },
+          {
+            "lang": "php",
+            "label": "Get a portal",
+            "source": "<?php\n\nnamespace Example;\n\nuse Auth0\\SDK\\API\\Management\\Wrapper\\ManagementClient;\nuse Auth0\\SDK\\API\\Management\\Wrapper\\ManagementClientOptions;\n\n$client = new ManagementClient(new ManagementClientOptions(\n    domain: '{YOUR_DOMAIN}',\n    token: '<token>',\n));\n$client->portals->get(\n    'id',\n);\n"
+          },
+          {
+            "lang": "python",
+            "label": "Get a portal",
+            "source": "from auth0.management import ManagementClient\n\nclient = ManagementClient(\n    domain=\"{YOUR_DOMAIN}\",\n    token=\"<token>\",\n)\n\nclient.portals.get(\n    id=\"id\",\n)\n"
+          },
+          {
+            "lang": "ruby",
+            "label": "Get a portal",
+            "source": "require \"auth0\"\n\nclient = Auth0::Management.new(token: \"<token>\", base_url: \"https://{YOUR_DOMAIN}/api/v2\")\n\nclient.portals.get(id: \"id\")\n"
+          }
+        ]
       },
       "delete": {
         "operationId": "delete_portal",
@@ -41562,7 +41700,53 @@
             "$ref": "#/components/responses/InternalServerError"
           }
         },
-        "x-codeSamples": []
+        "x-codeSamples": [
+          {
+            "lang": "typescript",
+            "label": "Delete a portal",
+            "source": "import { ManagementClient } from \"auth0\";\n\nasync function main() {\n    const client = new ManagementClient({\n        domain: \"{YOUR_DOMAIN}\",\n        token: \"<token>\",\n    });\n    await client.portals.delete(\"id\");\n}\nmain();\n"
+          },
+          {
+            "lang": "javascript",
+            "label": "Delete a portal",
+            "source": "import { ManagementClient } from \"auth0\";\n\nasync function main() {\n    const client = new ManagementClient({\n        domain: \"{YOUR_DOMAIN}\",\n        token: \"<token>\",\n    });\n    await client.portals.delete(\"id\");\n}\nmain();\n"
+          },
+          {
+            "lang": "go",
+            "label": "Delete a portal",
+            "source": "package example\n\nimport (\n    context \"context\"\n\n    client \"github.com/auth0/go-auth0/v3/management/client\"\n    option \"github.com/auth0/go-auth0/v3/management/option\"\n)\n\nfunc do() {\n    mgmt, err := client.New(\n        \"{YOUR_DOMAIN}\",\n        option.WithToken(\n            \"<token>\",\n        ),\n    )\n    if err != nil {\n        return\n    }\n    mgmt.Portals.Delete(\n        context.TODO(),\n        \"id\",\n    )\n}\n"
+          },
+          {
+            "lang": "zsh",
+            "label": "Delete a portal",
+            "source": "# Ensure you're logged in: auth0 login\nauth0 api delete \"portals/id\" --force"
+          },
+          {
+            "lang": "csharp",
+            "label": "Delete a portal",
+            "source": "using Auth0.ManagementApi;\nusing System.Threading.Tasks;\n\npublic partial class Examples\n{\n    public async Task Example() {\n        var client = new ManagementApiClient(\n            token: \"<token>\",\n            clientOptions: new ClientOptions { BaseUrl = \"https://{YOUR_DOMAIN}/api/v2\" }\n        );\n\n        await client.Portals.DeleteAsync(\n            \"id\"\n        );\n    }\n\n}\n"
+          },
+          {
+            "lang": "java",
+            "label": "Delete a portal",
+            "source": "package com.example.usage;\n\nimport com.auth0.client.mgmt.ManagementApi;\n\npublic class Example {\n    public static void main(String[] args) {\n        ManagementApi client = ManagementApi\n            .builder()\n            .domain(\"{YOUR_DOMAIN}\")\n            .token(\"<token>\")\n            .build();\n\n        client.portals().delete(\"id\");\n    }\n}"
+          },
+          {
+            "lang": "php",
+            "label": "Delete a portal",
+            "source": "<?php\n\nnamespace Example;\n\nuse Auth0\\SDK\\API\\Management\\Wrapper\\ManagementClient;\nuse Auth0\\SDK\\API\\Management\\Wrapper\\ManagementClientOptions;\n\n$client = new ManagementClient(new ManagementClientOptions(\n    domain: '{YOUR_DOMAIN}',\n    token: '<token>',\n));\n$client->portals->delete(\n    'id',\n);\n"
+          },
+          {
+            "lang": "python",
+            "label": "Delete a portal",
+            "source": "from auth0.management import ManagementClient\n\nclient = ManagementClient(\n    domain=\"{YOUR_DOMAIN}\",\n    token=\"<token>\",\n)\n\nclient.portals.delete(\n    id=\"id\",\n)\n"
+          },
+          {
+            "lang": "ruby",
+            "label": "Delete a portal",
+            "source": "require \"auth0\"\n\nclient = Auth0::Management.new(token: \"<token>\", base_url: \"https://{YOUR_DOMAIN}/api/v2\")\n\nclient.portals.delete(id: \"id\")\n"
+          }
+        ]
       },
       "patch": {
         "operationId": "update_portal",
@@ -41619,7 +41803,53 @@
             "$ref": "#/components/responses/InternalServerError"
           }
         },
-        "x-codeSamples": []
+        "x-codeSamples": [
+          {
+            "lang": "typescript",
+            "label": "Update a portal",
+            "source": "import { ManagementClient } from \"auth0\";\n\nasync function main() {\n    const client = new ManagementClient({\n        domain: \"{YOUR_DOMAIN}\",\n        token: \"<token>\",\n    });\n    await client.portals.update(\"id\", {});\n}\nmain();\n"
+          },
+          {
+            "lang": "javascript",
+            "label": "Update a portal",
+            "source": "import { ManagementClient } from \"auth0\";\n\nasync function main() {\n    const client = new ManagementClient({\n        domain: \"{YOUR_DOMAIN}\",\n        token: \"<token>\",\n    });\n    await client.portals.update(\"id\", {});\n}\nmain();\n"
+          },
+          {
+            "lang": "go",
+            "label": "Update a portal",
+            "source": "package example\n\nimport (\n    context \"context\"\n\n    management \"github.com/auth0/go-auth0/v3/management\"\n    client \"github.com/auth0/go-auth0/v3/management/client\"\n    option \"github.com/auth0/go-auth0/v3/management/option\"\n)\n\nfunc do() {\n    mgmt, err := client.New(\n        \"{YOUR_DOMAIN}\",\n        option.WithToken(\n            \"<token>\",\n        ),\n    )\n    if err != nil {\n        return\n    }\n    request := &management.UpdatePortalRequestContent{}\n    mgmt.Portals.Update(\n        context.TODO(),\n        \"id\",\n        request,\n    )\n}\n"
+          },
+          {
+            "lang": "zsh",
+            "label": "Update a portal",
+            "source": "# Ensure you're logged in: auth0 login\nauth0 api patch \"portals/id\" --data '{}'"
+          },
+          {
+            "lang": "csharp",
+            "label": "Update a portal",
+            "source": "using Auth0.ManagementApi;\nusing System.Threading.Tasks;\n\npublic partial class Examples\n{\n    public async Task Example() {\n        var client = new ManagementApiClient(\n            token: \"<token>\",\n            clientOptions: new ClientOptions { BaseUrl = \"https://{YOUR_DOMAIN}/api/v2\" }\n        );\n\n        await client.Portals.UpdateAsync(\n            id: \"id\",\n            request: new UpdatePortalRequestContent()\n        );\n    }\n\n}\n"
+          },
+          {
+            "lang": "java",
+            "label": "Update a portal",
+            "source": "package com.example.usage;\n\nimport com.auth0.client.mgmt.ManagementApi;\nimport com.auth0.client.mgmt.types.UpdatePortalRequestContent;\n\npublic class Example {\n    public static void main(String[] args) {\n        ManagementApi client = ManagementApi\n            .builder()\n            .domain(\"{YOUR_DOMAIN}\")\n            .token(\"<token>\")\n            .build();\n\n        client.portals().update(\n            \"id\",\n            UpdatePortalRequestContent\n                .builder()\n                .build()\n        );\n    }\n}"
+          },
+          {
+            "lang": "php",
+            "label": "Update a portal",
+            "source": "<?php\n\nnamespace Example;\n\nuse Auth0\\SDK\\API\\Management\\Wrapper\\ManagementClient;\nuse Auth0\\SDK\\API\\Management\\Wrapper\\ManagementClientOptions;\nuse Auth0\\SDK\\API\\Management\\Portals\\Requests\\UpdatePortalRequestContent;\n\n$client = new ManagementClient(new ManagementClientOptions(\n    domain: '{YOUR_DOMAIN}',\n    token: '<token>',\n));\n$client->portals->update(\n    'id',\n    new UpdatePortalRequestContent([]),\n);\n"
+          },
+          {
+            "lang": "python",
+            "label": "Update a portal",
+            "source": "from auth0.management import ManagementClient\n\nclient = ManagementClient(\n    domain=\"{YOUR_DOMAIN}\",\n    token=\"<token>\",\n)\n\nclient.portals.update(\n    id=\"id\",\n)\n"
+          },
+          {
+            "lang": "ruby",
+            "label": "Update a portal",
+            "source": "require \"auth0\"\n\nclient = Auth0::Management.new(token: \"<token>\", base_url: \"https://{YOUR_DOMAIN}/api/v2\")\n\nclient.portals.update(id: \"id\")\n"
+          }
+        ]
       }
     },
     "/prompts": {
@@ -54180,7 +54410,53 @@
             ]
           }
         ],
-        "x-codeSamples": []
+        "x-codeSamples": [
+          {
+            "lang": "typescript",
+            "label": "Delete a consent signing key by key ID",
+            "source": "import { ManagementClient } from \"auth0\";\n\nasync function main() {\n    const client = new ManagementClient({\n        domain: \"{YOUR_DOMAIN}\",\n        token: \"<token>\",\n    });\n    await client.users.deleteConsentSigningKey(\"id\", \"kid\");\n}\nmain();\n"
+          },
+          {
+            "lang": "javascript",
+            "label": "Delete a consent signing key by key ID",
+            "source": "import { ManagementClient } from \"auth0\";\n\nasync function main() {\n    const client = new ManagementClient({\n        domain: \"{YOUR_DOMAIN}\",\n        token: \"<token>\",\n    });\n    await client.users.deleteConsentSigningKey(\"id\", \"kid\");\n}\nmain();\n"
+          },
+          {
+            "lang": "go",
+            "label": "Delete a consent signing key by key ID",
+            "source": "package example\n\nimport (\n    context \"context\"\n\n    client \"github.com/auth0/go-auth0/v3/management/client\"\n    option \"github.com/auth0/go-auth0/v3/management/option\"\n)\n\nfunc do() {\n    mgmt, err := client.New(\n        \"{YOUR_DOMAIN}\",\n        option.WithToken(\n            \"<token>\",\n        ),\n    )\n    if err != nil {\n        return\n    }\n    mgmt.Users.DeleteConsentSigningKey(\n        context.TODO(),\n        \"id\",\n        \"kid\",\n    )\n}\n"
+          },
+          {
+            "lang": "zsh",
+            "label": "Delete a consent signing key by key ID",
+            "source": "# Ensure you're logged in: auth0 login\nauth0 api delete \"users/id/consent-signing-keys/kid\" --force"
+          },
+          {
+            "lang": "csharp",
+            "label": "Delete a consent signing key by key ID",
+            "source": "using Auth0.ManagementApi;\nusing System.Threading.Tasks;\n\npublic partial class Examples\n{\n    public async Task Example() {\n        var client = new ManagementApiClient(\n            token: \"<token>\",\n            clientOptions: new ClientOptions { BaseUrl = \"https://{YOUR_DOMAIN}/api/v2\" }\n        );\n\n        await client.Users.DeleteConsentSigningKeyAsync(\n            \"id\",\n            \"kid\"\n        );\n    }\n\n}\n"
+          },
+          {
+            "lang": "java",
+            "label": "Delete a consent signing key by key ID",
+            "source": "package com.example.usage;\n\nimport com.auth0.client.mgmt.ManagementApi;\n\npublic class Example {\n    public static void main(String[] args) {\n        ManagementApi client = ManagementApi\n            .builder()\n            .domain(\"{YOUR_DOMAIN}\")\n            .token(\"<token>\")\n            .build();\n\n        client.users().deleteConsentSigningKey(\"id\", \"kid\");\n    }\n}"
+          },
+          {
+            "lang": "php",
+            "label": "Delete a consent signing key by key ID",
+            "source": "<?php\n\nnamespace Example;\n\nuse Auth0\\SDK\\API\\Management\\Wrapper\\ManagementClient;\nuse Auth0\\SDK\\API\\Management\\Wrapper\\ManagementClientOptions;\n\n$client = new ManagementClient(new ManagementClientOptions(\n    domain: '{YOUR_DOMAIN}',\n    token: '<token>',\n));\n$client->users->deleteConsentSigningKey(\n    'id',\n    'kid',\n);\n"
+          },
+          {
+            "lang": "python",
+            "label": "Delete a consent signing key by key ID",
+            "source": "from auth0.management import ManagementClient\n\nclient = ManagementClient(\n    domain=\"{YOUR_DOMAIN}\",\n    token=\"<token>\",\n)\n\nclient.users.delete_consent_signing_key(\n    id=\"id\",\n    kid=\"kid\",\n)\n"
+          },
+          {
+            "lang": "ruby",
+            "label": "Delete a consent signing key by key ID",
+            "source": "require \"auth0\"\n\nclient = Auth0::Management.new(token: \"<token>\", base_url: \"https://{YOUR_DOMAIN}/api/v2\")\n\nclient.users.delete_consent_signing_key(\n  id: \"id\",\n  kid: \"kid\"\n)\n"
+          }
+        ]
       }
     },
     "/users/{id}/effective-permissions": {
