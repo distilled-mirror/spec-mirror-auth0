@@ -37,37 +37,37 @@ The Auth0 Management API uses JSON Web Tokens (JWTs) to authenticate requests. T
 
 To make calls to the API, send the API token in the Authorization HTTP header using the [Bearer authentication scheme](https://tools.ietf.org/html/draft-ietf-oauth-v2-bearer-20#section-2.1).
 
-**Auth0 CLI**
+> [tab] Auth0 CLI
+>
+> Using the Auth0 CLI? If you haven't already, [set up and authenticate your CLI session](https://auth0.com/docs/deploy-monitor/auth0-cli.md) before running this command.
+>
+> ```bash theme={null}
+> auth0 api get "users"
+> ```
 
-Using the Auth0 CLI? If you haven't already, [set up and authenticate your CLI session](https://auth0.com/docs/deploy-monitor/auth0-cli.md) before running this command.
-
-```bash theme={null}
-auth0 api get "users"
-```
-
-**cURL**
-
-```bash lines theme={null}
-curl -H "Authorization: Bearer eyJhb..." https://@@TENANT@@/api/v2/users
-```
+> [tab] cURL
+>
+> ```bash lines theme={null}
+> curl -H "Authorization: Bearer eyJhb..." https://@@TENANT@@/api/v2/users
+> ```
 
 ## Request Correlation
 
-A Correlation ID is a unique identifier (up to 64 characters) of a single Management API operation and allows for tracking such operations in tenant logs. To learn more, read [Logs](https://auth0.com/docs/deploy-monitor/logs).
+A Correlation ID is a unique identifier (up to 64 characters) of a single Management API operation and allows for tracking such operations in tenant logs. To learn more, read [Logs](https://auth0.com/docs/deploy-monitor/logs.md).
 
 The API accepts a client-provided Correlation ID if sent with the `X-Correlation-ID` HTTP header within `POST`, `PUT`, `PATCH`, and `DELETE` methods.
 
-**Auth0 CLI**
+> [tab] Auth0 CLI
+>
+> ```bash theme={null}
+> auth0 api get "users"
+> ```
 
-```bash theme={null}
-auth0 api get "users"
-```
-
-**cURL**
-
-```bash lines theme={null}
-curl -H "Authorization: Bearer eyJhb..." -H "x-correlation-id: client1_xyz" https://@@TENANT@@/api/v2/users
-```
+> [tab] cURL
+>
+> ```bash lines theme={null}
+> curl -H "Authorization: Bearer eyJhb..." -H "x-correlation-id: client1_xyz" https://@@TENANT@@/api/v2/users
+> ```
 
 If an `X-Correlation-ID` header value longer than 64 characters is provided, only the first 64 characters will be shown in the logs.
 
@@ -93,21 +93,21 @@ Offset-based pagination is a simple, widely-used method for paginating datasets 
 
 **Example Offset-Based Pagination Request:**
 
-**Auth0 CLI**
+> [tab] Auth0 CLI
+>
+> ```bash theme={null}
+> auth0 api get "clients" \
+>   -q "per_page=10" \
+>   -q "page=2"
+> ```
 
-```bash theme={null}
-auth0 api get "clients" \
-  -q "per_page=10" \
-  -q "page=2"
-```
-
-**cURL**
-
-```bash lines theme={null}
-curl -L "https://@@TENANT@@/api/v2/clients?per_page=10&page=2" \
--H 'Authorization: Bearer {ACCESS_TOKEN}' \
--H 'Accept: application/json'
-```
+> [tab] cURL
+>
+> ```bash lines theme={null}
+> curl -L "https://@@TENANT@@/api/v2/clients?per_page=10&page=2" \
+> -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+> -H 'Accept: application/json'
+> ```
 
 In offset pagination:
 
@@ -126,21 +126,21 @@ To continue pagination, use the `next` checkpoint ID in the `from` query paramet
 
 **Example Checkpoint-Based Pagination Request:**
 
-**Auth0 CLI**
+> [tab] Auth0 CLI
+>
+> ```bash theme={null}
+> auth0 api get "clients" \
+>   -q "take=10" \
+>   -q "from=Cg1HRUY3NEszUERFME40GgAiAQgCEj..."
+> ```
 
-```bash theme={null}
-auth0 api get "clients" \
-  -q "take=10" \
-  -q "from=Cg1HRUY3NEszUERFME40GgAiAQgCEj..."
-```
-
-**cURL**
-
-```bash lines theme={null}
-curl -L "https://@@TENANT@@/api/v2/clients?take=10&from=Cg1HRUY3NEszUERFME40GgAiAQgCEj..." \
--H 'Authorization: Bearer {ACCESS_TOKEN}' \
--H 'Accept: application/json'
-```
+> [tab] cURL
+>
+> ```bash lines theme={null}
+> curl -L "https://@@TENANT@@/api/v2/clients?take=10&from=Cg1HRUY3NEszUERFME40GgAiAQgCEj..." \
+> -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+> -H 'Accept: application/json'
+> ```
 
 #### Checkpoint ID Expiry
 

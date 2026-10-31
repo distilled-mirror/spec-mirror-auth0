@@ -5,8 +5,8 @@
 - [Get Started (312 pages)](https://auth0.com/_llms/en/get-started.txt): Documentation for Get Started.
 - [Authenticate (219 pages)](https://auth0.com/_llms/en/authenticate.txt): Documentation for Authenticate.
 - [Manage Users (123 pages)](https://auth0.com/_llms/en/manage-users.txt): Documentation for Manage Users.
-- [Brand (104 pages)](https://auth0.com/_llms/en/brand.txt): Documentation for Brand.
-- [Extend (231 pages)](https://auth0.com/_llms/en/extend.txt): Documentation for Extend.
+- [Brand (108 pages)](https://auth0.com/_llms/en/brand.txt): Documentation for Brand.
+- [Extend (225 pages)](https://auth0.com/_llms/en/extend.txt): Documentation for Extend.
 - [Secure (156 pages)](https://auth0.com/_llms/en/secure.txt): Documentation for Secure.
 - [Monitor (195 pages)](https://auth0.com/_llms/en/monitor.txt): Documentation for Monitor.
 - [Dev Tools (843 pages)](https://auth0.com/_llms/en/dev-tools.txt): Documentation for Dev Tools.
@@ -330,8 +330,8 @@
 - [English / Get Started (312 pages)](https://auth0.com/_llms/en/get-started.txt): Documentation for English / Get Started.
 - [English / Authenticate (219 pages)](https://auth0.com/_llms/en/authenticate.txt): Documentation for English / Authenticate.
 - [English / Manage Users (123 pages)](https://auth0.com/_llms/en/manage-users.txt): Documentation for English / Manage Users.
-- [English / Brand (104 pages)](https://auth0.com/_llms/en/brand.txt): Documentation for English / Brand.
-- [English / Extend (231 pages)](https://auth0.com/_llms/en/extend.txt): Documentation for English / Extend.
+- [English / Brand (108 pages)](https://auth0.com/_llms/en/brand.txt): Documentation for English / Brand.
+- [English / Extend (225 pages)](https://auth0.com/_llms/en/extend.txt): Documentation for English / Extend.
 - [English / Secure (156 pages)](https://auth0.com/_llms/en/secure.txt): Documentation for English / Secure.
 - [English / Monitor (195 pages)](https://auth0.com/_llms/en/monitor.txt): Documentation for English / Monitor.
 - [English / Dev Tools (843 pages)](https://auth0.com/_llms/en/dev-tools.txt): Documentation for English / Dev Tools.
