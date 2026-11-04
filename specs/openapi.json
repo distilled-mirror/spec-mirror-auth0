@@ -9046,6 +9046,16 @@
             }
           },
           {
+            "name": "agent_id",
+            "in": "query",
+            "description": "Optional filter by the agent associated with the client.<br /><b>Additional Restrictions</b>:<br /><ul><li>Cannot be used in combination with other filters</li><li>Only <i>fields</i>, <i>include_fields</i>, <i>page</i>, <i>per_page</i>, and <i>include_totals</i> are supported alongside it</li><li>Checkpoint pagination (<i>from</i>, <i>take</i>) is not supported</li></ul>",
+            "schema": {
+              "type": "string",
+              "x-release-lifecycle": "EA"
+            },
+            "x-release-lifecycle": "EA"
+          },
+          {
             "name": "q",
             "in": "query",
             "description": "Advanced Query in <a href=\"https://lucene.apache.org/core/2_9_4/queryparsersyntax.html\">Lucene</a> syntax.<br /><b>Permitted Queries</b>:<br /><ul><li><i>client_grant.organization_id:{organization_id}</i></li><li><i>client_grant.allow_any_organization:true</i></li></ul><b>Additional Restrictions</b>:<br /><ul><li>Cannot be used in combination with other filters</li><li>Requires use of the <i>from</i> and <i>take</i> paging parameters (checkpoint paginatinon)</li><li>Reduced rate limits apply. See <a href=\"https://auth0.com/docs/troubleshoot/customer-support/operational-policies/rate-limit-policy/rate-limit-configurations/enterprise-public\">Rate Limit Configurations</a></li></ul><i><b>Note</b>: Recent updates may not be immediately reflected in query results</i>",
@@ -62335,6 +62345,12 @@
             "$ref": "#/components/schemas/ClientExternalMetadataStatusEnum",
             "x-release-lifecycle": "EA"
           },
+          "agent_id": {
+            "type": "string",
+            "description": "ID of the agent associated with this client.",
+            "format": "agent-id",
+            "x-release-lifecycle": "EA"
+          },
           "external_client_id": {
             "type": "string",
             "description": "An alternate client identifier to be used during authorization flows. Only supports CIMD-based client identifiers.",
@@ -64071,6 +64087,58 @@
           },
           "require_proof_of_possession": {
             "$ref": "#/components/schemas/ClientProfileClientConfigurationRequireProofOfPossession"
+          },
+          "oidc_support": {
+            "$ref": "#/components/schemas/ClientProfileClientConfigurationOidcSupport"
+          }
+        }
+      },
+      "ClientProfileClientConfigurationOidcSupport": {
+        "type": "object",
+        "description": "Default OIDC support applied to matched clients.",
+        "additionalProperties": false,
+        "required": [
+          "default_value"
+        ],
+        "properties": {
+          "default_value": {
+            "$ref": "#/components/schemas/ClientProfileClientConfigurationOidcSupportDefaultValue"
+          }
+        }
+      },
+      "ClientProfileClientConfigurationOidcSupportAllowedScopesEnum": {
+        "type": "string",
+        "description": "Optional OIDC scope that matched clients may be granted.",
+        "enum": [
+          "profile",
+          "email",
+          "address",
+          "phone"
+        ]
+      },
+      "ClientProfileClientConfigurationOidcSupportDefaultValue": {
+        "type": "object",
+        "description": "OIDC support settings applied to matched clients.",
+        "additionalProperties": false,
+        "required": [
+          "is_allowed"
+        ],
+        "properties": {
+          "is_allowed": {
+            "type": "boolean",
+            "description": "Whether matched clients may use OIDC."
+          },
+          "allow_all_scopes": {
+            "type": "boolean",
+            "description": "Whether matched clients may request all optional OIDC scopes. Cannot be combined with allowed_scopes."
+          },
+          "allowed_scopes": {
+            "type": "array",
+            "description": "Optional OIDC scopes that matched clients may request.",
+            "uniqueItems": true,
+            "items": {
+              "$ref": "#/components/schemas/ClientProfileClientConfigurationOidcSupportAllowedScopesEnum"
+            }
           }
         }
       },
@@ -64599,6 +64667,12 @@
           },
           "external_metadata_status": {
             "$ref": "#/components/schemas/ClientExternalMetadataStatusEnum",
+            "x-release-lifecycle": "EA"
+          },
+          "agent_id": {
+            "type": "string",
+            "description": "ID of the agent associated with this client.",
+            "format": "agent-id",
             "x-release-lifecycle": "EA"
           },
           "external_client_id": {
@@ -75045,6 +75119,15 @@
           "async_approval_notification_channels": {
             "$ref": "#/components/schemas/ClientAsyncApprovalNotificationsChannelsAPIPostConfiguration"
           },
+          "agent_id": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "ID of the agent to associate with this client.",
+            "format": "agent-id-or-null",
+            "x-release-lifecycle": "EA"
+          },
           "oidc_support": {
             "$ref": "#/components/schemas/ClientOidcSupportPost"
           }
@@ -75356,6 +75439,12 @@
           },
           "external_metadata_status": {
             "$ref": "#/components/schemas/ClientExternalMetadataStatusEnum",
+            "x-release-lifecycle": "EA"
+          },
+          "agent_id": {
+            "type": "string",
+            "description": "ID of the agent associated with this client.",
+            "format": "agent-id",
             "x-release-lifecycle": "EA"
           },
           "external_client_id": {
@@ -81115,6 +81204,10 @@
             "$ref": "#/components/schemas/ResourceServerAuthorizationPolicy",
             "x-release-lifecycle": "EA"
           },
+          "agent_subject_claims": {
+            "$ref": "#/components/schemas/ResourceServerAgentSubjectClaimsSchemaEnum",
+            "x-release-lifecycle": "EA"
+          },
           "type": {
             "$ref": "#/components/schemas/ResourceServerTypeEnum",
             "x-release-lifecycle": "EA"
@@ -81228,6 +81321,10 @@
             "type": "string",
             "description": "The client ID of the client that this resource server is linked to",
             "format": "client-id"
+          },
+          "agent_subject_claims": {
+            "$ref": "#/components/schemas/ResourceServerAgentSubjectClaimsResponseEnum",
+            "x-release-lifecycle": "EA"
           },
           "type": {
             "$ref": "#/components/schemas/ResourceServerTypeEnum",
@@ -129022,6 +129119,12 @@
             "$ref": "#/components/schemas/ClientExternalMetadataStatusEnum",
             "x-release-lifecycle": "EA"
           },
+          "agent_id": {
+            "type": "string",
+            "description": "ID of the agent associated with this client.",
+            "format": "agent-id",
+            "x-release-lifecycle": "EA"
+          },
           "external_client_id": {
             "type": "string",
             "description": "An alternate client identifier to be used during authorization flows. Only supports CIMD-based client identifiers.",
@@ -131474,6 +131577,10 @@
             "type": "string",
             "description": "The client ID of the client that this resource server is linked to",
             "format": "client-id"
+          },
+          "agent_subject_claims": {
+            "$ref": "#/components/schemas/ResourceServerAgentSubjectClaimsResponseEnum",
+            "x-release-lifecycle": "EA"
           },
           "type": {
             "$ref": "#/components/schemas/ResourceServerTypeEnum",
@@ -137833,6 +137940,22 @@
       },
       "PageComponent": {
         "type": "object",
+        "discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "page:component:auth0:form": "#/components/schemas/PageComponentAuth0Form",
+            "page:component:auth0:typography:heading": "#/components/schemas/PageComponentAuth0TypographyHeading",
+            "page:component:auth0:media:image": "#/components/schemas/PageComponentAuth0MediaImage",
+            "page:component:auth0:typography:rich_text": "#/components/schemas/PageComponentAuth0TypographyRichText",
+            "page:component:auth0:structure:section": "#/components/schemas/PageComponentAuth0StructureSection",
+            "page:component:auth0:structure:separator": "#/components/schemas/PageComponentAuth0StructureSeparator",
+            "page:component:auth0:my_organization:domain_table": "#/components/schemas/PageComponentAuth0MyOrganizationDomainTable",
+            "page:component:auth0:my_organization:member_management": "#/components/schemas/PageComponentAuth0MyOrganizationMemberManagement",
+            "page:component:auth0:my_organization:details_edit": "#/components/schemas/PageComponentAuth0MyOrganizationDetailsEdit",
+            "page:component:auth0:my_account:passkey_management": "#/components/schemas/PageComponentAuth0MyAccountPasskeyManagement",
+            "page:component:auth0:my_account:mfa_management": "#/components/schemas/PageComponentAuth0MyAccountMfaManagement"
+          }
+        },
         "oneOf": [
           {
             "$ref": "#/components/schemas/PageComponentAuth0Form"
@@ -137867,6 +137990,9 @@
           {
             "$ref": "#/components/schemas/PageComponentAuth0MyAccountMfaManagement"
           }
+        ],
+        "required": [
+          "type"
         ]
       },
       "PageComponentAuth0Form": {
@@ -138255,6 +138381,21 @@
       },
       "PageComponentNoChildren": {
         "type": "object",
+        "discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "page:component:auth0:form": "#/components/schemas/PageComponentAuth0Form",
+            "page:component:auth0:typography:heading": "#/components/schemas/PageComponentAuth0TypographyHeading",
+            "page:component:auth0:media:image": "#/components/schemas/PageComponentAuth0MediaImage",
+            "page:component:auth0:typography:rich_text": "#/components/schemas/PageComponentAuth0TypographyRichText",
+            "page:component:auth0:structure:separator": "#/components/schemas/PageComponentAuth0StructureSeparator",
+            "page:component:auth0:my_organization:domain_table": "#/components/schemas/PageComponentAuth0MyOrganizationDomainTable",
+            "page:component:auth0:my_organization:member_management": "#/components/schemas/PageComponentAuth0MyOrganizationMemberManagement",
+            "page:component:auth0:my_organization:details_edit": "#/components/schemas/PageComponentAuth0MyOrganizationDetailsEdit",
+            "page:component:auth0:my_account:passkey_management": "#/components/schemas/PageComponentAuth0MyAccountPasskeyManagement",
+            "page:component:auth0:my_account:mfa_management": "#/components/schemas/PageComponentAuth0MyAccountMfaManagement"
+          }
+        },
         "oneOf": [
           {
             "$ref": "#/components/schemas/PageComponentAuth0Form"
@@ -138286,6 +138427,9 @@
           {
             "$ref": "#/components/schemas/PageComponentAuth0MyAccountMfaManagement"
           }
+        ],
+        "required": [
+          "type"
         ]
       },
       "PageSlug": {
@@ -139983,6 +140127,10 @@
             "description": "The client ID of the client that this resource server is linked to",
             "format": "client-id"
           },
+          "agent_subject_claims": {
+            "$ref": "#/components/schemas/ResourceServerAgentSubjectClaimsResponseEnum",
+            "x-release-lifecycle": "EA"
+          },
           "type": {
             "$ref": "#/components/schemas/ResourceServerTypeEnum",
             "x-release-lifecycle": "EA"
@@ -140046,6 +140194,24 @@
             "pattern": "^[A-Za-z_][A-Za-z0-9_]*(?:-[A-Za-z0-9_]+)*(?:\\.[A-Za-z_][A-Za-z0-9_]*(?:-[A-Za-z0-9_]+)*)+$"
           }
         }
+      },
+      "ResourceServerAgentSubjectClaimsResponseEnum": {
+        "type": "string",
+        "description": "Controls whether access tokens issued for this API include agent subject claims. With <code>auth0-v1</code>, access tokens include additional claims that identify whether the subject is a <code>user</code>, <code>service</code>, or <code>ai_agent</code>. The <code>sub</code> claim can reference an agent ID, and the <code>@clients</code> suffix is no longer appended to client IDs. With <code>off</code>, these claims are not included and the <code>@clients</code> suffix is still appended. When not set, the API behaves as <code>off</code>.",
+        "enum": [
+          "off",
+          "auth0-v1"
+        ],
+        "x-release-lifecycle": "EA"
+      },
+      "ResourceServerAgentSubjectClaimsSchemaEnum": {
+        "type": "string",
+        "description": "Controls whether access tokens issued for this API include agent subject claims. With <code>auth0-v1</code>, access tokens include additional claims that identify whether the subject is a <code>user</code>, <code>service</code>, or <code>ai_agent</code>. The <code>sub</code> claim can reference an agent ID, and the <code>@clients</code> suffix is no longer appended to client IDs. With <code>off</code>, these claims are not included and the <code>@clients</code> suffix is still appended. When not set, the API behaves as <code>off</code>.",
+        "enum": [
+          "off",
+          "auth0-v1"
+        ],
+        "x-release-lifecycle": "EA"
       },
       "ResourceServerAuthorizationPolicy": {
         "type": [
@@ -140239,6 +140405,10 @@
             "type": "string",
             "description": "The client ID of the client that this resource server is linked to",
             "format": "client-id"
+          },
+          "agent_subject_claims": {
+            "$ref": "#/components/schemas/ResourceServerAgentSubjectClaimsResponseEnum",
+            "x-release-lifecycle": "EA"
           },
           "type": {
             "$ref": "#/components/schemas/ResourceServerTypeEnum",
@@ -141075,6 +141245,12 @@
           },
           "external_metadata_status": {
             "$ref": "#/components/schemas/ClientExternalMetadataStatusEnum",
+            "x-release-lifecycle": "EA"
+          },
+          "agent_id": {
+            "type": "string",
+            "description": "ID of the agent associated with this client.",
+            "format": "agent-id",
             "x-release-lifecycle": "EA"
           },
           "external_client_id": {
@@ -143693,6 +143869,15 @@
       },
       "SidebarComponent": {
         "type": "object",
+        "discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "sidebar:component:auth0:external_link": "#/components/schemas/SidebarComponentAuth0ExternalLink",
+            "sidebar:component:auth0:internal_link": "#/components/schemas/SidebarComponentAuth0InternalLink",
+            "sidebar:component:auth0:external_link:v2": "#/components/schemas/SidebarComponentAuth0ExternalLinkV2",
+            "sidebar:component:auth0:internal_link:v2": "#/components/schemas/SidebarComponentAuth0InternalLinkV2"
+          }
+        },
         "oneOf": [
           {
             "$ref": "#/components/schemas/SidebarComponentAuth0ExternalLink"
@@ -143706,6 +143891,9 @@
           {
             "$ref": "#/components/schemas/SidebarComponentAuth0InternalLinkV2"
           }
+        ],
+        "required": [
+          "type"
         ]
       },
       "SidebarComponentAuth0ExternalLink": {
@@ -146429,6 +146617,15 @@
             "$ref": "#/components/schemas/ClientRedirectionPolicyEnum",
             "x-release-lifecycle": "GA"
           },
+          "agent_id": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "ID of the agent to associate with this client, or null to remove the association.",
+            "format": "agent-id-or-null",
+            "x-release-lifecycle": "EA"
+          },
           "oidc_support": {
             "$ref": "#/components/schemas/ClientOidcSupportPatch"
           }
@@ -146740,6 +146937,12 @@
           },
           "external_metadata_status": {
             "$ref": "#/components/schemas/ClientExternalMetadataStatusEnum",
+            "x-release-lifecycle": "EA"
+          },
+          "agent_id": {
+            "type": "string",
+            "description": "ID of the agent associated with this client.",
+            "format": "agent-id",
             "x-release-lifecycle": "EA"
           },
           "external_client_id": {
@@ -150152,6 +150355,10 @@
             "$ref": "#/components/schemas/ResourceServerAuthorizationPolicy",
             "x-release-lifecycle": "EA"
           },
+          "agent_subject_claims": {
+            "$ref": "#/components/schemas/ResourceServerAgentSubjectClaimsSchemaEnum",
+            "x-release-lifecycle": "EA"
+          },
           "type": {
             "$ref": "#/components/schemas/ResourceServerTypeEnum",
             "x-release-lifecycle": "EA"
@@ -150265,6 +150472,10 @@
             "type": "string",
             "description": "The client ID of the client that this resource server is linked to",
             "format": "client-id"
+          },
+          "agent_subject_claims": {
+            "$ref": "#/components/schemas/ResourceServerAgentSubjectClaimsResponseEnum",
+            "x-release-lifecycle": "EA"
           },
           "type": {
             "$ref": "#/components/schemas/ResourceServerTypeEnum",
