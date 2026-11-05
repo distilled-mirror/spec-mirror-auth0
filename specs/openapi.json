@@ -9214,7 +9214,8 @@
             "x-description-1": "The account is not allowed to perform this operation.",
             "x-description-2": "Please upgrade your subscription to use identity_assertion_authorization_grant.",
             "x-description-3": "You reached the limit of entities of this type for this tenant.",
-            "x-description-4": "Organizations are only available to first party clients on user-based flows. Properties organization_usage and organization_require_behavior must be unset for third party clients."
+            "x-description-4": "You can only create N B2B integration(s) for this tenant.",
+            "x-description-5": "Organizations are only available to first party clients on user-based flows. Properties organization_usage and organization_require_behavior must be unset for third party clients."
           },
           "404": {
             "description": "The Client ID for Invitations could not be found."
@@ -141546,6 +141547,7 @@
           "custom-form",
           "consent",
           "consent-tenant-scopes",
+          "pending-consent",
           "customized-consent",
           "logout",
           "logout-complete",
