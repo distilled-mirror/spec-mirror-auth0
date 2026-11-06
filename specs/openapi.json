@@ -82683,7 +82683,8 @@
           "type": "array",
           "items": {
             "type": "string",
-            "maxLength": 2048
+            "maxLength": 2048,
+            "pattern": "^[^;\\s]+$"
           }
         },
         "maxProperties": 30
@@ -82746,11 +82747,12 @@
         "properties": {
           "report_uri": {
             "type": "string",
-            "description": "HTTPS endpoint for CSP violation reports."
+            "description": "HTTPS endpoint for CSP violation reports.",
+            "pattern": "^https://[^;\\s\"\\\\]+$"
           },
           "report_to_group": {
             "type": "string",
-            "description": "Report-To group name for modern reporting."
+            "description": "Report-To group name for modern reporting. Letters, digits, underscores and hyphens only; enforced on write by the request validator."
           }
         }
       },
@@ -82782,7 +82784,8 @@
         "properties": {
           "url": {
             "type": "string",
-            "description": "HTTPS URL for the reporting endpoint."
+            "description": "HTTPS URL for the reporting endpoint.",
+            "pattern": "^https://[^;\\s\"\\\\]+$"
           }
         }
       },
@@ -82797,7 +82800,9 @@
         "type": "object",
         "description": "Reporting-Endpoints header configuration (key-value pairs).",
         "additionalProperties": {
-          "type": "string"
+          "type": "string",
+          "description": "HTTPS URL for the Reporting-Endpoints header entry.",
+          "pattern": "^https://[^;\\s\"\\\\]+$"
         }
       },
       "CspReportingInfrastructure": {
@@ -153602,7 +153607,8 @@
           },
           "report_uri": {
             "type": "string",
-            "description": "HTTPS endpoint for X-XSS-Protection violation reports."
+            "description": "HTTPS endpoint for X-XSS-Protection violation reports.",
+            "pattern": "^https://[^;\\s\"\\\\]+$"
           }
         }
       },
