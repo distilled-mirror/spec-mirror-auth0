@@ -279,12 +279,12 @@
 - [Migrate to Enhanced Security for Third-Party Applications](https://auth0.com/docs/troubleshoot/product-lifecycle/deprecations-and-migrations/migrate-to-enhanced-security-third-party-applications.md): Learn how enhanced security controls affect existing and newly created third-party applications.
 - [Migrate from Node 18 to Node 22](https://auth0.com/docs/troubleshoot/product-lifecycle/deprecations-and-migrations/migrate-nodejs-22.md): Describes Auth0 Actions items affected by the Node.js 18
 - [Migrate Enabled Client Management to Dedicated Connection Endpoints](https://auth0.com/docs/troubleshoot/product-lifecycle/deprecations-and-migrations/migrate-dedicated-connection-endpoints.md): Learn how to update your Auth0 connection configuration from using the `enabled_clients` field to dedicated connection endpoints.
-- [Migrate to Management API Connection Options Scopes](https://auth0.com/docs/troubleshoot/product-lifecycle/deprecations-and-migrations/migrate-connection-options-scope.md): Learn how to update your Auth0 integrations to manage connections with options-specific scopes.
 - [Migrate Oversized User Profiles](https://auth0.com/docs/troubleshoot/product-lifecycle/deprecations-and-migrations/migrate-oversized-user-profiles.md): Learn how to identify, review, and migrate away from oversized Auth0 user profiles ahead of the 50KB size limit enforcement.
 
 #### Past Migrations
 
 - [Past Migrations](https://auth0.com/docs/troubleshoot/product-lifecycle/past-migrations.md): List of Auth0 updates that have already been enabled for all customers.
+- [Migrate to Management API Connection Options Scopes](https://auth0.com/docs/troubleshoot/product-lifecycle/past-migrations/migrate-connection-options-scope.md): Learn how to update your Auth0 integrations to manage connections with options-specific scopes.
 - [Migrate to Non-Verifiable Callback URI End-User Confirmation](https://auth0.com/docs/troubleshoot/product-lifecycle/past-migrations/migrate-to-non-verifiable-callback-uri-end-user-confirmation.md): Learn how you can enhance security and mitigate risks of application impersonation with HTTPS-based callbacks.
 - [Migrate from Node 12 and 16 to Node 18](https://auth0.com/docs/troubleshoot/product-lifecycle/past-migrations/migrate-nodejs-16-to-nodejs-18.md): Describes Auth0 Actions items affected by the Node.js v12+6 to Node.js v18 migration.
 - [Migrate from edge.js extensibility features](https://auth0.com/docs/troubleshoot/product-lifecycle/past-migrations/migrate-from-edge-js-extensibility-features.md): Get started using Auth0. Implement authentication for any kind of application in minutes.
