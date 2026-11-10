@@ -341,27 +341,34 @@
 - [English / Dev Tools / SDKs (202 pages)](https://auth0.com/_llms/en/dev-tools/sdks.txt): Documentation for English / Dev Tools / SDKs.
 - [English / Dev Tools / SDKs / auth0-acul-js (93 pages)](https://auth0.com/_llms/en/dev-tools/sdks/auth0-acul-js.txt): Documentation for English / Dev Tools / SDKs / auth0-acul-js.
 - [English / Dev Tools / SDKs / auth0-acul-react (99 pages)](https://auth0.com/_llms/en/dev-tools/sdks/auth0-acul-react.txt): Documentation for English / Dev Tools / SDKs / auth0-acul-react.
-- [Canadian French (2343 pages)](https://auth0.com/_llms/fr-ca.txt): Documentation for Canadian French.
-- [Canadian French / Pour commencer (298 pages)](https://auth0.com/_llms/fr-ca/pour-commencer.txt): Documentation for Canadian French / Pour commencer.
+- [Canadian French (2352 pages)](https://auth0.com/_llms/fr-ca.txt): Documentation for Canadian French.
+- [Canadian French / Pour commencer (312 pages)](https://auth0.com/_llms/fr-ca/pour-commencer.txt): Documentation for Canadian French / Pour commencer.
 - [Canadian French / Authentifier (219 pages)](https://auth0.com/_llms/fr-ca/authentifier.txt): Documentation for Canadian French / Authentifier.
 - [Canadian French / Gérer les utilisateurs (123 pages)](https://auth0.com/_llms/fr-ca/gerer-les-utilisateurs.txt): Documentation for Canadian French / Gérer les utilisateurs.
-- [Canadian French / Personnaliser (292 pages)](https://auth0.com/_llms/fr-ca/personnaliser.txt): Documentation for Canadian French / Personnaliser.
-- [Canadian French / Sécuriser (155 pages)](https://auth0.com/_llms/fr-ca/securiser.txt): Documentation for Canadian French / Sécuriser.
-- [Canadian French / Agents d’IA et MCP (85 pages)](https://auth0.com/_llms/fr-ca/agents-d-ia-et-mcp.txt): Documentation for Canadian French / Agents d’IA et MCP.
+- [Canadian French / Marque (108 pages)](https://auth0.com/_llms/fr-ca/marque.txt): Documentation for Canadian French / Marque.
+- [Canadian French / Étendre (225 pages)](https://auth0.com/_llms/fr-ca/etendre.txt): Documentation for Canadian French / Étendre.
+- [Canadian French / Sécuriser (156 pages)](https://auth0.com/_llms/fr-ca/securiser.txt): Documentation for Canadian French / Sécuriser.
+- [Canadian French / Surveiller (195 pages)](https://auth0.com/_llms/fr-ca/surveiller.txt): Documentation for Canadian French / Surveiller.
+- [Canadian French / Agents d’IA et MCP (86 pages)](https://auth0.com/_llms/fr-ca/agents-d-ia-et-mcp.txt): Documentation for Canadian French / Agents d’IA et MCP.
 - [Canadian French / Plateforme (85 pages)](https://auth0.com/_llms/fr-ca/plateforme.txt): Documentation for Canadian French / Plateforme.
-- [Canadian French / Outils de développement (1044 pages)](https://auth0.com/_llms/fr-ca/outils-de-developpement.txt): Documentation for Canadian French / Outils de développement.
-- [Canadian French / Outils de développement / API (598 pages)](https://auth0.com/_llms/fr-ca/outils-de-developpement/api.txt): Documentation for Canadian French / Outils de développement / API.
-- [Canadian French / Outils de développement / API / Management API (485 pages)](https://auth0.com/_llms/fr-ca/outils-de-developpement/api/management-api.txt): Documentation for Canadian French / Outils de développement / API / Management API.
-- [Canadian French / Outils de développement / API / Management API / Guardian (42 pages)](https://auth0.com/_llms/fr-ca/outils-de-developpement/api/management-api/guardian.txt): Documentation for Canadian French / Outils de développement / API / Management API / Guardian.
-- [Canadian French / Outils de développement / API / Management API / Organisations (49 pages)](https://auth0.com/_llms/fr-ca/outils-de-developpement/api/management-api/organisations.txt): Documentation for Canadian French / Outils de développement / API / Management API / Organisations.
+- [Canadian French / Outils de développement (843 pages)](https://auth0.com/_llms/fr-ca/outils-de-developpement.txt): Documentation for Canadian French / Outils de développement.
+- [Canadian French / Outils de développement / API (604 pages)](https://auth0.com/_llms/fr-ca/outils-de-developpement/api.txt): Documentation for Canadian French / Outils de développement / API.
+- [Canadian French / Outils de développement / API / API Management (491 pages)](https://auth0.com/_llms/fr-ca/outils-de-developpement/api/api-management.txt): Documentation for Canadian French / Outils de développement / API / API Management.
+- [Canadian French / Outils de développement / API / API Management / Guardian (42 pages)](https://auth0.com/_llms/fr-ca/outils-de-developpement/api/api-management/guardian.txt): Documentation for Canadian French / Outils de développement / API / API Management / Guardian.
+- [Canadian French / Outils de développement / API / API Management / Organisations (49 pages)](https://auth0.com/_llms/fr-ca/outils-de-developpement/api/api-management/organisations.txt): Documentation for Canadian French / Outils de développement / API / API Management / Organisations.
 - [Canadian French / Outils de développement / SDK (202 pages)](https://auth0.com/_llms/fr-ca/outils-de-developpement/sdk.txt): Documentation for Canadian French / Outils de développement / SDK.
-- [Japanese (2343 pages)](https://auth0.com/_llms/ja-jp.txt): Documentation for Japanese.
-- [Japanese / はじめに (298 pages)](https://auth0.com/_llms/ja-jp/tab.txt): Documentation for Japanese / はじめに.
+- [Canadian French / Outils de développement / SDK / auth0-acul-js (93 pages)](https://auth0.com/_llms/fr-ca/outils-de-developpement/sdk/auth0-acul-js.txt): Documentation for Canadian French / Outils de développement / SDK / auth0-acul-js.
+- [Canadian French / Outils de développement / SDK / auth0-acul-react (99 pages)](https://auth0.com/_llms/fr-ca/outils-de-developpement/sdk/auth0-acul-react.txt): Documentation for Canadian French / Outils de développement / SDK / auth0-acul-react.
+- [Japanese (2352 pages)](https://auth0.com/_llms/ja-jp.txt): Documentation for Japanese.
+- [Japanese / はじめに (312 pages)](https://auth0.com/_llms/ja-jp/tab.txt): Documentation for Japanese / はじめに.
 - [Japanese / 認証 (219 pages)](https://auth0.com/_llms/ja-jp/tab-e7325d8b.txt): Documentation for Japanese / 認証.
 - [Japanese / ユーザーを管理 (123 pages)](https://auth0.com/_llms/ja-jp/tab-b619e176.txt): Documentation for Japanese / ユーザーを管理.
-- [Japanese / カスタマイズ (292 pages)](https://auth0.com/_llms/ja-jp/tab-4480a033.txt): Documentation for Japanese / カスタマイズ.
-- [Japanese / セキュリティ (155 pages)](https://auth0.com/_llms/ja-jp/tab-7305b6a2.txt): Documentation for Japanese / セキュリティ.
-- [Japanese / 開発ツール (1044 pages)](https://auth0.com/_llms/ja-jp/tab-ad395c98.txt): Documentation for Japanese / 開発ツール.
-- [Japanese / 開発ツール / API (598 pages)](https://auth0.com/_llms/ja-jp/tab-ad395c98/api.txt): Documentation for Japanese / 開発ツール / API.
-- [Japanese / 開発ツール / API / Management API (485 pages)](https://auth0.com/_llms/ja-jp/tab-ad395c98/api/management-api.txt): Documentation for Japanese / 開発ツール / API / Management API.
-- [Japanese / 開発ツール / SDK (202 pages)](https://auth0.com/_llms/ja-jp/tab-ad395c98/sdk.txt): Documentation for Japanese / 開発ツール / SDK.
+- [Japanese / ブランド (108 pages)](https://auth0.com/_llms/ja-jp/tab-4480a033.txt): Documentation for Japanese / ブランド.
+- [Japanese / 拡張 (225 pages)](https://auth0.com/_llms/ja-jp/tab-7305b6a2.txt): Documentation for Japanese / 拡張.
+- [Japanese / セキュリティ (156 pages)](https://auth0.com/_llms/ja-jp/tab-61faf415.txt): Documentation for Japanese / セキュリティ.
+- [Japanese / 監視 (195 pages)](https://auth0.com/_llms/ja-jp/tab-a05c2010.txt): Documentation for Japanese / 監視.
+- [Japanese / 開発者ツール (843 pages)](https://auth0.com/_llms/ja-jp/tab-bf27fc15.txt): Documentation for Japanese / 開発者ツール.
+- [Japanese / 開発者ツール / API (604 pages)](https://auth0.com/_llms/ja-jp/tab-bf27fc15/api.txt): Documentation for Japanese / 開発者ツール / API.
+- [Japanese / 開発者ツール / API / Management API (491 pages)](https://auth0.com/_llms/ja-jp/tab-bf27fc15/api/management-api.txt): Documentation for Japanese / 開発者ツール / API / Management API.
+- [Japanese / 開発者ツール / SDK (202 pages)](https://auth0.com/_llms/ja-jp/tab-bf27fc15/sdk.txt): Documentation for Japanese / 開発者ツール / SDK.
+- [Japanese / 開発者ツール / SDK / auth0-acul-react (99 pages)](https://auth0.com/_llms/ja-jp/tab-bf27fc15/sdk/auth0-acul-react.txt): Documentation for Japanese / 開発者ツール / SDK / auth0-acul-react.

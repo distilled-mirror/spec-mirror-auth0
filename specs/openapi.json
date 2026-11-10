@@ -9214,8 +9214,7 @@
             "x-description-1": "The account is not allowed to perform this operation.",
             "x-description-2": "Please upgrade your subscription to use identity_assertion_authorization_grant.",
             "x-description-3": "You reached the limit of entities of this type for this tenant.",
-            "x-description-4": "You can only create N B2B integration(s) for this tenant.",
-            "x-description-5": "Organizations are only available to first party clients on user-based flows. Properties organization_usage and organization_require_behavior must be unset for third party clients."
+            "x-description-4": "You can only create N B2B integration(s) for this tenant."
           },
           "404": {
             "description": "The Client ID for Invitations could not be found."
@@ -10588,8 +10587,7 @@
             "description": "Insufficient scope; expected any of: update:clients, update:client_keys.",
             "x-description-1": "Some fields cannot be updated with the permissions granted by the bearer token scopes. The message will vary depending on the fields and the scopes.",
             "x-description-2": "The account is not allowed to perform this operation.",
-            "x-description-3": "Please upgrade your subscription to use identity_assertion_authorization_grant.",
-            "x-description-4": "Organizations are only available to first party clients on user-based flows. Properties organization_usage and organization_require_behavior must be unset for third party clients."
+            "x-description-3": "Please upgrade your subscription to use identity_assertion_authorization_grant."
           },
           "404": {
             "description": "Client not found.",
@@ -63872,17 +63870,20 @@
       },
       "ClientOidcSupport": {
         "type": "object",
-        "description": "OIDC support configuration for this client.",
+        "description": "Controls whether the client can receive ID tokens and use the UserInfo endpoint, and which user profile information it can request through OIDC scopes.",
         "additionalProperties": true,
         "properties": {
           "is_allowed": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Allows the client to use OIDC, including receiving ID tokens and calling the UserInfo endpoint."
           },
           "allow_all_scopes": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Allows the client to request all supported OIDC scopes. Mutually exclusive with allowed_scopes."
           },
           "allowed_scopes": {
             "type": "array",
+            "description": "OIDC scopes the client may request (`profile`, `email`, `address`, and `phone`), which determine the user profile information it can access. Mutually exclusive with allow_all_scopes.",
             "items": {
               "$ref": "#/components/schemas/ClientOidcSupportAllowedScopesEnum"
             }
@@ -63903,20 +63904,23 @@
           "object",
           "null"
         ],
-        "description": "OIDC support configuration for a client. Replaces the stored object entirely; send null to unset it.",
+        "description": "Controls whether the client can receive ID tokens and use the UserInfo endpoint, and which user profile information it can request through OIDC scopes.",
         "additionalProperties": false,
         "required": [
           "is_allowed"
         ],
         "properties": {
           "is_allowed": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Allows the client to use OIDC, including receiving ID tokens and calling the UserInfo endpoint."
           },
           "allow_all_scopes": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Allows the client to request all supported OIDC scopes. Mutually exclusive with allowed_scopes."
           },
           "allowed_scopes": {
             "type": "array",
+            "description": "OIDC scopes the client may request (`profile`, `email`, `address`, and `phone`), which determine the user profile information it can access. Mutually exclusive with allow_all_scopes.",
             "items": {
               "$ref": "#/components/schemas/ClientOidcSupportAllowedScopesEnum"
             }
@@ -63925,20 +63929,23 @@
       },
       "ClientOidcSupportPost": {
         "type": "object",
-        "description": "OIDC support configuration for a client. Controls whether OIDC flows are allowed and which scopes the client may request.",
+        "description": "Controls whether the client can receive ID tokens and use the UserInfo endpoint, and which user profile information it can request through OIDC scopes.",
         "additionalProperties": false,
         "required": [
           "is_allowed"
         ],
         "properties": {
           "is_allowed": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Allows the client to use OIDC, including receiving ID tokens and calling the UserInfo endpoint."
           },
           "allow_all_scopes": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Allows the client to request all supported OIDC scopes. Mutually exclusive with allowed_scopes."
           },
           "allowed_scopes": {
             "type": "array",
+            "description": "OIDC scopes the client may request (`profile`, `email`, `address`, and `phone`), which determine the user profile information it can access. Mutually exclusive with allow_all_scopes.",
             "items": {
               "$ref": "#/components/schemas/ClientOidcSupportAllowedScopesEnum"
             }
@@ -64096,7 +64103,7 @@
       },
       "ClientProfileClientConfigurationOidcSupport": {
         "type": "object",
-        "description": "Default OIDC support applied to matched clients.",
+        "description": "Default OIDC support configuration applied to matched clients.",
         "additionalProperties": false,
         "required": [
           "default_value"
@@ -64119,7 +64126,7 @@
       },
       "ClientProfileClientConfigurationOidcSupportDefaultValue": {
         "type": "object",
-        "description": "OIDC support settings applied to matched clients.",
+        "description": "Controls whether matched clients can receive ID tokens and use the UserInfo endpoint, and which user profile information they can request through OIDC scopes.",
         "additionalProperties": false,
         "required": [
           "is_allowed"
@@ -64127,15 +64134,15 @@
         "properties": {
           "is_allowed": {
             "type": "boolean",
-            "description": "Whether matched clients may use OIDC."
+            "description": "Allows matched clients to use OIDC, including receiving ID tokens and calling the UserInfo endpoint."
           },
           "allow_all_scopes": {
             "type": "boolean",
-            "description": "Whether matched clients may request all optional OIDC scopes. Cannot be combined with allowed_scopes."
+            "description": "Allows matched clients to request all supported OIDC scopes. Mutually exclusive with allowed_scopes."
           },
           "allowed_scopes": {
             "type": "array",
-            "description": "Optional OIDC scopes that matched clients may request.",
+            "description": "OIDC scopes matched clients may request (`profile`, `email`, `address`, and `phone`), which determine the user profile information they can access. Mutually exclusive with allow_all_scopes.",
             "uniqueItems": true,
             "items": {
               "$ref": "#/components/schemas/ClientProfileClientConfigurationOidcSupportAllowedScopesEnum"
@@ -70330,6 +70337,11 @@
           "enabled": {
             "type": "boolean",
             "description": "Determines whether passkeys are enabled"
+          },
+          "signup_behavior": {
+            "$ref": "#/components/schemas/ConnectionSignupBehaviorEnum",
+            "x-release-lifecycle": "EA",
+            "description": "Specifies the signup behavior for passkey authentication"
           }
         }
       },
