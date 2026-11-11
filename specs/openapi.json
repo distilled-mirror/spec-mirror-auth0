@@ -9126,17 +9126,17 @@
           {
             "lang": "typescript",
             "label": "Get clients",
-            "source": "import { ManagementClient } from \"auth0\";\n\nasync function main() {\n    const client = new ManagementClient({\n        domain: \"{YOUR_DOMAIN}\",\n        token: \"<token>\",\n    });\n    await client.clients.list({\n        fields: \"fields\",\n        include_fields: true,\n        page: 1,\n        per_page: 1,\n        include_totals: true,\n        is_global: true,\n        is_first_party: true,\n        app_type: \"app_type\",\n        external_client_id: \"external_client_id\",\n        q: \"q\",\n    });\n}\nmain();\n"
+            "source": "import { ManagementClient } from \"auth0\";\n\nasync function main() {\n    const client = new ManagementClient({\n        domain: \"{YOUR_DOMAIN}\",\n        token: \"<token>\",\n    });\n    await client.clients.list({\n        fields: \"fields\",\n        include_fields: true,\n        page: 1,\n        per_page: 1,\n        include_totals: true,\n        is_global: true,\n        is_first_party: true,\n        app_type: \"app_type\",\n        external_client_id: \"external_client_id\",\n        agent_id: \"agent_id\",\n        q: \"q\",\n    });\n}\nmain();\n"
           },
           {
             "lang": "javascript",
             "label": "Get clients",
-            "source": "import { ManagementClient } from \"auth0\";\n\nasync function main() {\n    const client = new ManagementClient({\n        domain: \"{YOUR_DOMAIN}\",\n        token: \"<token>\",\n    });\n    await client.clients.list({\n        fields: \"fields\",\n        include_fields: true,\n        page: 1,\n        per_page: 1,\n        include_totals: true,\n        is_global: true,\n        is_first_party: true,\n        app_type: \"app_type\",\n        external_client_id: \"external_client_id\",\n        q: \"q\",\n    });\n}\nmain();\n"
+            "source": "import { ManagementClient } from \"auth0\";\n\nasync function main() {\n    const client = new ManagementClient({\n        domain: \"{YOUR_DOMAIN}\",\n        token: \"<token>\",\n    });\n    await client.clients.list({\n        fields: \"fields\",\n        include_fields: true,\n        page: 1,\n        per_page: 1,\n        include_totals: true,\n        is_global: true,\n        is_first_party: true,\n        app_type: \"app_type\",\n        external_client_id: \"external_client_id\",\n        agent_id: \"agent_id\",\n        q: \"q\",\n    });\n}\nmain();\n"
           },
           {
             "lang": "go",
             "label": "Get clients",
-            "source": "package example\n\nimport (\n    context \"context\"\n\n    management \"github.com/auth0/go-auth0/v3/management\"\n    client \"github.com/auth0/go-auth0/v3/management/client\"\n    option \"github.com/auth0/go-auth0/v3/management/option\"\n)\n\nfunc do() {\n    mgmt, err := client.New(\n        \"{YOUR_DOMAIN}\",\n        option.WithToken(\n            \"<token>\",\n        ),\n    )\n    if err != nil {\n        return\n    }\n    request := &management.ListClientsRequestParameters{\n        Fields: management.String(\n            \"fields\",\n        ),\n        IncludeFields: management.Bool(\n            true,\n        ),\n        Page: management.Int(\n            1,\n        ),\n        PerPage: management.Int(\n            1,\n        ),\n        IncludeTotals: management.Bool(\n            true,\n        ),\n        IsGlobal: management.Bool(\n            true,\n        ),\n        IsFirstParty: management.Bool(\n            true,\n        ),\n        AppType: management.String(\n            \"app_type\",\n        ),\n        ExternalClientID: management.String(\n            \"external_client_id\",\n        ),\n        Q: management.String(\n            \"q\",\n        ),\n    }\n    mgmt.Clients.List(\n        context.TODO(),\n        request,\n    )\n}\n"
+            "source": "package example\n\nimport (\n    context \"context\"\n\n    management \"github.com/auth0/go-auth0/v3/management\"\n    client \"github.com/auth0/go-auth0/v3/management/client\"\n    option \"github.com/auth0/go-auth0/v3/management/option\"\n)\n\nfunc do() {\n    mgmt, err := client.New(\n        \"{YOUR_DOMAIN}\",\n        option.WithToken(\n            \"<token>\",\n        ),\n    )\n    if err != nil {\n        return\n    }\n    request := &management.ListClientsRequestParameters{\n        Fields: management.String(\n            \"fields\",\n        ),\n        IncludeFields: management.Bool(\n            true,\n        ),\n        Page: management.Int(\n            1,\n        ),\n        PerPage: management.Int(\n            1,\n        ),\n        IncludeTotals: management.Bool(\n            true,\n        ),\n        IsGlobal: management.Bool(\n            true,\n        ),\n        IsFirstParty: management.Bool(\n            true,\n        ),\n        AppType: management.String(\n            \"app_type\",\n        ),\n        ExternalClientID: management.String(\n            \"external_client_id\",\n        ),\n        AgentID: management.String(\n            \"agent_id\",\n        ),\n        Q: management.String(\n            \"q\",\n        ),\n    }\n    mgmt.Clients.List(\n        context.TODO(),\n        request,\n    )\n}\n"
           },
           {
             "lang": "zsh",
@@ -9146,27 +9146,27 @@
           {
             "lang": "csharp",
             "label": "Get clients",
-            "source": "using Auth0.ManagementApi;\nusing System.Threading.Tasks;\n\npublic partial class Examples\n{\n    public async Task Example() {\n        var client = new ManagementApiClient(\n            token: \"<token>\",\n            clientOptions: new ClientOptions { BaseUrl = \"https://{YOUR_DOMAIN}/api/v2\" }\n        );\n\n        await client.Clients.ListAsync(\n            new ListClientsRequestParameters {\n                Fields = \"fields\",\n                IncludeFields = true,\n                Page = 1,\n                PerPage = 1,\n                IncludeTotals = true,\n                IsGlobal = true,\n                IsFirstParty = true,\n                AppType = \"app_type\",\n                ExternalClientId = \"external_client_id\",\n                Q = \"q\"\n            }\n        );\n    }\n\n}\n"
+            "source": "using Auth0.ManagementApi;\nusing System.Threading.Tasks;\n\npublic partial class Examples\n{\n    public async Task Example() {\n        var client = new ManagementApiClient(\n            token: \"<token>\",\n            clientOptions: new ClientOptions { BaseUrl = \"https://{YOUR_DOMAIN}/api/v2\" }\n        );\n\n        await client.Clients.ListAsync(\n            new ListClientsRequestParameters {\n                Fields = \"fields\",\n                IncludeFields = true,\n                Page = 1,\n                PerPage = 1,\n                IncludeTotals = true,\n                IsGlobal = true,\n                IsFirstParty = true,\n                AppType = \"app_type\",\n                ExternalClientId = \"external_client_id\",\n                AgentId = \"agent_id\",\n                Q = \"q\"\n            }\n        );\n    }\n\n}\n"
           },
           {
             "lang": "java",
             "label": "Get clients",
-            "source": "package com.example.usage;\n\nimport com.auth0.client.mgmt.ManagementApi;\nimport com.auth0.client.mgmt.types.ListClientsRequestParameters;\n\npublic class Example {\n    public static void main(String[] args) {\n        ManagementApi client = ManagementApi\n            .builder()\n            .domain(\"{YOUR_DOMAIN}\")\n            .token(\"<token>\")\n            .build();\n\n        client.clients().list(\n            ListClientsRequestParameters\n                .builder()\n                .fields(\"fields\")\n                .includeFields(true)\n                .page(1)\n                .perPage(1)\n                .includeTotals(true)\n                .isGlobal(true)\n                .isFirstParty(true)\n                .appType(\"app_type\")\n                .externalClientId(\"external_client_id\")\n                .q(\"q\")\n                .build()\n        );\n    }\n}"
+            "source": "package com.example.usage;\n\nimport com.auth0.client.mgmt.ManagementApi;\nimport com.auth0.client.mgmt.types.ListClientsRequestParameters;\n\npublic class Example {\n    public static void main(String[] args) {\n        ManagementApi client = ManagementApi\n            .builder()\n            .domain(\"{YOUR_DOMAIN}\")\n            .token(\"<token>\")\n            .build();\n\n        client.clients().list(\n            ListClientsRequestParameters\n                .builder()\n                .fields(\"fields\")\n                .includeFields(true)\n                .page(1)\n                .perPage(1)\n                .includeTotals(true)\n                .isGlobal(true)\n                .isFirstParty(true)\n                .appType(\"app_type\")\n                .externalClientId(\"external_client_id\")\n                .agentId(\"agent_id\")\n                .q(\"q\")\n                .build()\n        );\n    }\n}"
           },
           {
             "lang": "php",
             "label": "Get clients",
-            "source": "<?php\n\nnamespace Example;\n\nuse Auth0\\SDK\\API\\Management\\Wrapper\\ManagementClient;\nuse Auth0\\SDK\\API\\Management\\Wrapper\\ManagementClientOptions;\nuse Auth0\\SDK\\API\\Management\\Clients\\Requests\\ListClientsRequestParameters;\n\n$client = new ManagementClient(new ManagementClientOptions(\n    domain: '{YOUR_DOMAIN}',\n    token: '<token>',\n));\n$client->clients->list(\n    new ListClientsRequestParameters([\n        'fields' => 'fields',\n        'includeFields' => true,\n        'page' => 1,\n        'perPage' => 1,\n        'includeTotals' => true,\n        'isGlobal' => true,\n        'isFirstParty' => true,\n        'appType' => 'app_type',\n        'externalClientId' => 'external_client_id',\n        'q' => 'q',\n    ]),\n);\n"
+            "source": "<?php\n\nnamespace Example;\n\nuse Auth0\\SDK\\API\\Management\\Wrapper\\ManagementClient;\nuse Auth0\\SDK\\API\\Management\\Wrapper\\ManagementClientOptions;\nuse Auth0\\SDK\\API\\Management\\Clients\\Requests\\ListClientsRequestParameters;\n\n$client = new ManagementClient(new ManagementClientOptions(\n    domain: '{YOUR_DOMAIN}',\n    token: '<token>',\n));\n$client->clients->list(\n    new ListClientsRequestParameters([\n        'fields' => 'fields',\n        'includeFields' => true,\n        'page' => 1,\n        'perPage' => 1,\n        'includeTotals' => true,\n        'isGlobal' => true,\n        'isFirstParty' => true,\n        'appType' => 'app_type',\n        'externalClientId' => 'external_client_id',\n        'agentId' => 'agent_id',\n        'q' => 'q',\n    ]),\n);\n"
           },
           {
             "lang": "python",
             "label": "Get clients",
-            "source": "from auth0.management import ManagementClient\n\nclient = ManagementClient(\n    domain=\"{YOUR_DOMAIN}\",\n    token=\"<token>\",\n)\n\nclient.clients.list(\n    fields=\"fields\",\n    include_fields=True,\n    page=1,\n    per_page=1,\n    include_totals=True,\n    is_global=True,\n    is_first_party=True,\n    app_type=\"app_type\",\n    external_client_id=\"external_client_id\",\n    q=\"q\",\n)\n"
+            "source": "from auth0.management import ManagementClient\n\nclient = ManagementClient(\n    domain=\"{YOUR_DOMAIN}\",\n    token=\"<token>\",\n)\n\nclient.clients.list(\n    fields=\"fields\",\n    include_fields=True,\n    page=1,\n    per_page=1,\n    include_totals=True,\n    is_global=True,\n    is_first_party=True,\n    app_type=\"app_type\",\n    external_client_id=\"external_client_id\",\n    agent_id=\"agent_id\",\n    q=\"q\",\n)\n"
           },
           {
             "lang": "ruby",
             "label": "Get clients",
-            "source": "require \"auth0\"\n\nclient = Auth0::Management.new(token: \"<token>\", base_url: \"https://{YOUR_DOMAIN}/api/v2\")\n\nclient.clients.list(\n  fields: \"fields\",\n  include_fields: true,\n  page: 1,\n  per_page: 1,\n  include_totals: true,\n  is_global: true,\n  is_first_party: true,\n  app_type: \"app_type\",\n  external_client_id: \"external_client_id\",\n  q: \"q\"\n)\n"
+            "source": "require \"auth0\"\n\nclient = Auth0::Management.new(token: \"<token>\", base_url: \"https://{YOUR_DOMAIN}/api/v2\")\n\nclient.clients.list(\n  fields: \"fields\",\n  include_fields: true,\n  page: 1,\n  per_page: 1,\n  include_totals: true,\n  is_global: true,\n  is_first_party: true,\n  app_type: \"app_type\",\n  external_client_id: \"external_client_id\",\n  agent_id: \"agent_id\",\n  q: \"q\"\n)\n"
           }
         ]
       },
@@ -55200,29 +55200,35 @@
           {
             "name": "page",
             "in": "query",
-            "description": "Page index of the results to return. First page is 0.",
+            "description": "Page index of the results to return. First page is 0. Offset-based pagination is limited to a maximum of 1,000 results; use checkpoint pagination (`from` and `take`) instead.",
             "schema": {
               "type": "integer",
-              "minimum": 0
-            }
+              "minimum": 0,
+              "x-release-lifecycle": "deprecated"
+            },
+            "x-release-lifecycle": "deprecated"
           },
           {
             "name": "per_page",
             "in": "query",
-            "description": "Number of results per page. Defaults to 50.",
+            "description": "Number of results per page. Defaults to 50. Offset-based pagination is limited to a maximum of 1,000 results; use checkpoint pagination (`from` and `take`) instead.",
             "schema": {
               "type": "integer",
               "minimum": 1,
-              "maximum": 100
-            }
+              "maximum": 100,
+              "x-release-lifecycle": "deprecated"
+            },
+            "x-release-lifecycle": "deprecated"
           },
           {
             "name": "include_totals",
             "in": "query",
-            "description": "Return results inside an object that contains the total result count (true) or as a direct array of results (false, default).",
+            "description": "Return results inside an object that contains the total result count (true) or as a direct array of results (false, default). The returned total reflects at most 1,000 results.",
             "schema": {
-              "type": "boolean"
-            }
+              "type": "boolean",
+              "x-release-lifecycle": "deprecated"
+            },
+            "x-release-lifecycle": "deprecated"
           },
           {
             "name": "from",
