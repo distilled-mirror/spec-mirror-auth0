@@ -14124,7 +14124,7 @@
     "/connections/{id}/keys": {
       "get": {
         "summary": "Get connection keys",
-        "description": "Gets the connection keys for the Okta, OIDC, or SAML (samlp) connection strategy.\n",
+        "description": "Gets the connection keys for the Okta, OIDC, or SAML (samlp) connection strategy. The response includes both signing keys and encryption keys, told apart by `key_use`. Encryption keys apply only to OIDC and Okta connections.\n",
         "tags": [
           "connections"
         ],
@@ -14239,7 +14239,7 @@
       },
       "post": {
         "summary": "Create connection keys",
-        "description": "Provision initial connection keys for Okta, OIDC, or SAML (samlp) connection strategies. This endpoint allows you to create keys before configuring the connection to use Private Key JWT authentication, enabling zero-downtime transitions.\n",
+        "description": "Provision initial connection keys for Okta, OIDC, or SAML (samlp) connection strategies. This endpoint allows you to create keys before configuring the connection to use Private Key JWT authentication or encrypted ID tokens, enabling zero-downtime transitions.\n\nSet `key_use` to `signing` (default) to provision signing keys, optionally choosing `signing_alg`, or to `encryption` to provision encryption keys, optionally choosing `encryption_alg`. `signing_alg` and `encryption_alg` each apply only to their own key use. Encryption keys and encrypted ID tokens apply only to OIDC and Okta connections. The response lists all of the connection's keys.\n",
         "tags": [
           "connections"
         ],
@@ -14370,7 +14370,7 @@
     "/connections/{id}/keys/rotate": {
       "post": {
         "summary": "Rotate connection keys",
-        "description": "Rotates the connection keys for the Okta, OIDC, or SAML (samlp) connection strategies.\n",
+        "description": "Rotates the connection keys for the Okta, OIDC, or SAML (samlp) connection strategies.\n\nSet `key_use` to `signing` (default) to rotate the signing key, optionally choosing `signing_alg`, or to `encryption` to rotate the encryption key, optionally choosing `encryption_alg`. Rotating signing keys requires the connection to be configured to use JWT Client Authentication. Rotating encryption keys requires the connection to be configured to use encrypted ID tokens (`id_token_encrypted_response_alg` set), which applies only to OIDC and Okta connections. When `encryption_alg` is omitted, the new encryption key uses `id_token_encrypted_response_alg`.\n",
         "tags": [
           "connections"
         ],
@@ -14412,8 +14412,11 @@
           },
           "400": {
             "description": "Invalid request URI. The message will vary depending on the cause.",
-            "x-description-1": "Key rotation is not supported on this connection",
-            "x-description-2": "Connection is not configured to use JWT Client Authentication"
+            "x-description-1": "Invalid request body. The message will vary depending on the cause.",
+            "x-description-2": "Key rotation is not supported on this connection",
+            "x-description-3": "Connection is not configured to use JWT Client Authentication",
+            "x-description-4": "Connection is not configured to use encrypted ID tokens",
+            "x-description-5": "Connection has no keys to rotate. Update the connection to provision them."
           },
           "401": {
             "description": "Invalid token.",
@@ -63293,7 +63296,9 @@
         "enum": [
           "RS256",
           "RS384",
-          "PS256"
+          "PS256",
+          "ES256",
+          "PS384"
         ]
       },
       "ClientCredentialTypeEnum": {
@@ -66693,6 +66698,41 @@
         "description": "The connection's identifier",
         "default": "con_0000000000000001"
       },
+      "ConnectionIdTokenEncryptedResponseAlgEnum": {
+        "type": "string",
+        "description": "Key-management algorithm the upstream IdP uses to encrypt the ID token. Also the algorithm of the encryption keys Auth0 creates or rotates when no algorithm is selected.",
+        "enum": [
+          "RSA-OAEP-256",
+          "RSA-OAEP-384",
+          "RSA-OAEP-512",
+          "ECDH-ES",
+          "ECDH-ES+A128KW",
+          "ECDH-ES+A192KW",
+          "ECDH-ES+A256KW"
+        ],
+        "x-merge-priority": -5
+      },
+      "ConnectionIdTokenEncryptedResponseEncEnum": {
+        "type": "string",
+        "description": "Content-encryption algorithm accepted from the upstream IdP.",
+        "enum": [
+          "A128CBC-HS256",
+          "A192CBC-HS384",
+          "A256CBC-HS512",
+          "A128GCM",
+          "A192GCM",
+          "A256GCM"
+        ],
+        "x-merge-priority": -5
+      },
+      "ConnectionIdTokenEncryptedResponseEncs": {
+        "description": "Allowlist of content-encryption algorithms accepted from the upstream IdP. If unset or empty, any supported content-encryption algorithm sent by the upstream IdP is accepted. Applicable when strategy=oidc or okta.",
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/ConnectionIdTokenEncryptedResponseEncEnum"
+        },
+        "x-merge-priority": -5
+      },
       "ConnectionIdTokenEncryptionAlgValuesSupported": {
         "type": "array",
         "description": "JSON array containing a list of the JWE encryption algorithms (alg values) supported by the OP for the ID Token to encode the Claims in a JWT",
@@ -66918,18 +66958,18 @@
         "properties": {
           "kid": {
             "type": "string",
-            "description": "The key id of the signing key",
+            "description": "The key id of the signing or encryption key",
             "maxLength": 255
           },
           "cert": {
             "type": "string",
-            "description": "The public certificate of the signing key",
+            "description": "The public certificate of the signing or encryption key",
             "default": "-----BEGIN CERTIFICATE-----\r\nMIIDDTCCA...YiA0TQhAt8=\r\n-----END CERTIFICATE-----",
             "maxLength": 4096
           },
           "pkcs": {
             "type": "string",
-            "description": "The public certificate of the signing key in pkcs7 format",
+            "description": "The public certificate of the signing or encryption key in pkcs7 format",
             "default": "-----BEGIN PKCS7-----\r\nMIIDPA....t8xAA==\r\n-----END PKCS7-----",
             "maxLength": 4096
           },
@@ -66963,7 +67003,7 @@
           },
           "algorithm": {
             "type": "string",
-            "description": "Signing key algorithm"
+            "description": "Key algorithm: a signing algorithm for signing keys, or a key-management algorithm for encryption keys"
           },
           "key_use": {
             "$ref": "#/components/schemas/ConnectionKeyUseEnum"
@@ -66976,7 +67016,7 @@
       },
       "ConnectionKeyUseEnum": {
         "type": "string",
-        "description": "Signing key use, whether for encryption or signing",
+        "description": "Key use, whether for encryption or signing",
         "enum": [
           "encryption",
           "signing"
@@ -67870,6 +67910,12 @@
           },
           "icon_url": {
             "$ref": "#/components/schemas/ConnectionIconUrl"
+          },
+          "id_token_encrypted_response_alg": {
+            "$ref": "#/components/schemas/ConnectionIdTokenEncryptedResponseAlgEnum"
+          },
+          "id_token_encrypted_response_encs": {
+            "$ref": "#/components/schemas/ConnectionIdTokenEncryptedResponseEncs"
           },
           "id_token_session_expiry_supported": {
             "$ref": "#/components/schemas/ConnectionIdTokenSessionExpirySupported"
@@ -71133,6 +71179,12 @@
           },
           "dpop_signing_alg": {
             "$ref": "#/components/schemas/ConnectionDpopSigningAlgEnum"
+          },
+          "id_token_encrypted_response_alg": {
+            "$ref": "#/components/schemas/ConnectionIdTokenEncryptedResponseAlgEnum"
+          },
+          "id_token_encrypted_response_encs": {
+            "$ref": "#/components/schemas/ConnectionIdTokenEncryptedResponseEncs"
           },
           "enable_pushed_authorization_requests": {
             "$ref": "#/components/schemas/ConnectionEnablePushedAuthorizationRequests"
@@ -136196,6 +136248,9 @@
           "user.notification",
           "user.success",
           "actions",
+          "agent_gateway.authentication.fail",
+          "agent_gateway.operation.fail",
+          "agent_gateway.operation.success",
           "other"
         ]
       },
@@ -139324,7 +139379,7 @@
       },
       "PostConnectionKeysAlgEnum": {
         "type": "string",
-        "description": "Selected Signing Algorithm",
+        "description": "Selected Signing Algorithm. Only applicable when key_use is \"signing\".",
         "enum": [
           "RS256",
           "RS384",
@@ -139342,8 +139397,16 @@
         ],
         "additionalProperties": false,
         "properties": {
+          "key_use": {
+            "$ref": "#/components/schemas/ConnectionKeyUseEnum",
+            "description": "Whether to provision a signing key (default) or an encryption key for the connection."
+          },
           "signing_alg": {
             "$ref": "#/components/schemas/PostConnectionKeysAlgEnum"
+          },
+          "encryption_alg": {
+            "$ref": "#/components/schemas/ConnectionIdTokenEncryptedResponseAlgEnum",
+            "description": "Selected key-management algorithm for the encryption key. Only applicable when key_use is \"encryption\"."
           }
         }
       },
@@ -139361,18 +139424,18 @@
           "properties": {
             "kid": {
               "type": "string",
-              "description": "The key id of the signing key",
+              "description": "The key id of the signing or encryption key",
               "maxLength": 255
             },
             "cert": {
               "type": "string",
-              "description": "The public certificate of the signing key",
+              "description": "The public certificate of the signing or encryption key",
               "default": "-----BEGIN CERTIFICATE-----\r\nMIIDDTCCA...YiA0TQhAt8=\r\n-----END CERTIFICATE-----",
               "maxLength": 4096
             },
             "pkcs": {
               "type": "string",
-              "description": "The public certificate of the signing key in pkcs7 format",
+              "description": "The public certificate of the signing or encryption key in pkcs7 format",
               "default": "-----BEGIN PKCS7-----\r\nMIIDPA....t8xAA==\r\n-----END PKCS7-----",
               "maxLength": 4096
             },
@@ -139402,7 +139465,7 @@
             },
             "algorithm": {
               "type": "string",
-              "description": "Signing key algorithm"
+              "description": "Key algorithm: a signing algorithm for signing keys, or a key-management algorithm for encryption keys"
             },
             "key_use": {
               "$ref": "#/components/schemas/ConnectionKeyUseEnum"
@@ -141296,14 +141359,22 @@
         ],
         "additionalProperties": false,
         "properties": {
+          "key_use": {
+            "$ref": "#/components/schemas/ConnectionKeyUseEnum",
+            "description": "Whether to rotate the signing key (default) or the encryption key for the connection."
+          },
           "signing_alg": {
             "$ref": "#/components/schemas/RotateConnectionKeysSigningAlgEnum"
+          },
+          "encryption_alg": {
+            "$ref": "#/components/schemas/ConnectionIdTokenEncryptedResponseAlgEnum",
+            "description": "Selected key-management algorithm for the encryption key. Only applicable when key_use is \"encryption\"."
           }
         }
       },
       "RotateConnectionKeysSigningAlgEnum": {
         "type": "string",
-        "description": "Selected Signing Algorithm",
+        "description": "Selected Signing Algorithm. Only applicable when key_use is \"signing\".",
         "enum": [
           "RS256",
           "RS384",
@@ -141326,18 +141397,18 @@
         "properties": {
           "kid": {
             "type": "string",
-            "description": "The key id of the signing key",
+            "description": "The key id of the signing or encryption key",
             "maxLength": 255
           },
           "cert": {
             "type": "string",
-            "description": "The public certificate of the signing key",
+            "description": "The public certificate of the signing or encryption key",
             "default": "-----BEGIN CERTIFICATE-----\r\nMIIDDTCCA...YiA0TQhAt8=\r\n-----END CERTIFICATE-----",
             "maxLength": 4096
           },
           "pkcs": {
             "type": "string",
-            "description": "The public certificate of the signing key in pkcs7 format",
+            "description": "The public certificate of the signing or encryption key in pkcs7 format",
             "default": "-----BEGIN PKCS7-----\r\nMIIDPA....t8xAA==\r\n-----END PKCS7-----",
             "maxLength": 4096
           },
@@ -141358,7 +141429,7 @@
           },
           "algorithm": {
             "type": "string",
-            "description": "Signing key algorithm"
+            "description": "Key algorithm: a signing algorithm for signing keys, or a key-management algorithm for encryption keys"
           },
           "key_use": {
             "$ref": "#/components/schemas/ConnectionKeyUseEnum"
@@ -144752,10 +144823,6 @@
             "type": "boolean",
             "description": "Improves bot detection during signup in classic universal login"
           },
-          "genai_trial": {
-            "type": "boolean",
-            "description": "This tenant signed up for the Auth4GenAI trail"
-          },
           "local_resource_discovery": {
             "type": "boolean",
             "description": "Whether the Local Resource Discovery endpoint is enabled (true) or disabled (false).",
@@ -147118,6 +147185,12 @@
           },
           "dpop_signing_alg": {
             "$ref": "#/components/schemas/ConnectionDpopSigningAlgEnum"
+          },
+          "id_token_encrypted_response_alg": {
+            "$ref": "#/components/schemas/ConnectionIdTokenEncryptedResponseAlgEnum"
+          },
+          "id_token_encrypted_response_encs": {
+            "$ref": "#/components/schemas/ConnectionIdTokenEncryptedResponseEncs"
           },
           "enable_pushed_authorization_requests": {
             "$ref": "#/components/schemas/ConnectionEnablePushedAuthorizationRequests"
