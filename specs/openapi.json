@@ -11899,20 +11899,21 @@
           "400": {
             "description": "Invalid request body. The message will vary depending on the cause.",
             "x-description-1": "options.set_user_root_attributes can be set only for enterprise connections, social connections or custom database connections (using external users store)",
-            "x-description-2": "No phone provider configured for the tenant",
-            "x-description-3": "Passwordless connection cannot be made as delivery method (sms/text) is not supported by the configured Tenant phone provider",
-            "x-description-4": "custom_password_hash option cannot be set because the universal password hash feature is not enabled for this tenant",
-            "x-description-5": "The custom_password_hash option is only available for database connections",
-            "x-description-6": "The action_id field value cannot be empty, null or undefined",
-            "x-description-7": "The provided custom password hash action id does not exist",
-            "x-description-8": "The provided action does not support the password hash migration trigger",
-            "x-description-9": "The provided action must be deployed to be used for password hash migration",
-            "x-description-10": "MCP connections are not enabled for this tenant",
-            "x-description-11": "This strategy requires an api_strategy field specifying the MCP API to connect to",
-            "x-description-12": "The provided api_strategy does not match any known API",
-            "x-description-13": "The provided api_strategy requires a different strategy",
-            "x-description-14": "MCP connections require options.client_id",
-            "x-description-15": "MCP connections require options.client_secret"
+            "x-description-2": "Encrypted ID Token support not available for this strategy",
+            "x-description-3": "No phone provider configured for the tenant",
+            "x-description-4": "Passwordless connection cannot be made as delivery method (sms/text) is not supported by the configured Tenant phone provider",
+            "x-description-5": "custom_password_hash option cannot be set because the universal password hash feature is not enabled for this tenant",
+            "x-description-6": "The custom_password_hash option is only available for database connections",
+            "x-description-7": "The action_id field value cannot be empty, null or undefined",
+            "x-description-8": "The provided custom password hash action id does not exist",
+            "x-description-9": "The provided action does not support the password hash migration trigger",
+            "x-description-10": "The provided action must be deployed to be used for password hash migration",
+            "x-description-11": "MCP connections are not enabled for this tenant",
+            "x-description-12": "This strategy requires an api_strategy field specifying the MCP API to connect to",
+            "x-description-13": "The provided api_strategy does not match any known API",
+            "x-description-14": "The provided api_strategy requires a different strategy",
+            "x-description-15": "MCP connections require options.client_id",
+            "x-description-16": "MCP connections require options.client_secret"
           },
           "401": {
             "description": "Invalid token.",
@@ -12520,17 +12521,18 @@
           "400": {
             "description": "Invalid request URI. The message will vary depending on the cause.",
             "x-description-1": "Invalid request body. The message will vary depending on the cause.",
-            "x-description-2": "This database contains users. You cannot change \"options.enabledDatabaseCustomization\" setting.",
-            "x-description-3": "The Azure AD common endpoint cannot be enabled for this connection when SCIM is enabled.",
-            "x-description-4": "The Google Workspace Users API (options.api_enable_users) cannot be disabled for this connection when inbound directory provisioning is enabled.",
-            "x-description-5": "options.set_user_root_attributes can be set only for enterprise connections, social connections or custom database connections (using external users store)",
-            "x-description-6": "custom_password_hash option cannot be set because the universal password hash feature is not enabled for this tenant",
-            "x-description-7": "The custom_password_hash option is only available for database connections",
-            "x-description-8": "The action_id field value cannot be empty, null or undefined",
-            "x-description-9": "The provided custom password hash action id does not exist",
-            "x-description-10": "The provided action does not support the password hash migration trigger",
-            "x-description-11": "The provided action must be deployed to be used for password hash migration",
-            "x-description-12": "MCP connections cannot clear options.client_id or options.client_secret"
+            "x-description-2": "Encrypted ID Token support not available for this strategy",
+            "x-description-3": "This database contains users. You cannot change \"options.enabledDatabaseCustomization\" setting.",
+            "x-description-4": "The Azure AD common endpoint cannot be enabled for this connection when SCIM is enabled.",
+            "x-description-5": "The Google Workspace Users API (options.api_enable_users) cannot be disabled for this connection when inbound directory provisioning is enabled.",
+            "x-description-6": "options.set_user_root_attributes can be set only for enterprise connections, social connections or custom database connections (using external users store)",
+            "x-description-7": "custom_password_hash option cannot be set because the universal password hash feature is not enabled for this tenant",
+            "x-description-8": "The custom_password_hash option is only available for database connections",
+            "x-description-9": "The action_id field value cannot be empty, null or undefined",
+            "x-description-10": "The provided custom password hash action id does not exist",
+            "x-description-11": "The provided action does not support the password hash migration trigger",
+            "x-description-12": "The provided action must be deployed to be used for password hash migration",
+            "x-description-13": "MCP connections cannot clear options.client_id or options.client_secret"
           },
           "401": {
             "description": "Invalid token.",
@@ -62272,6 +62274,10 @@
             "description": "Makes the use of Proof-of-Possession mandatory for this client",
             "default": false
           },
+          "allow_personal_agent_browser_join": {
+            "$ref": "#/components/schemas/ClientAllowPersonalAgentBrowserJoin",
+            "x-release-lifecycle": "beta"
+          },
           "signed_request_object": {
             "$ref": "#/components/schemas/ClientSignedRequestObjectWithCredentialId"
           },
@@ -63019,6 +63025,19 @@
             "$ref": "#/components/schemas/ClientAddonOAG"
           }
         }
+      },
+      "ClientAllowPersonalAgentBrowserJoin": {
+        "type": "boolean",
+        "description": "Whether the client can be used as the target application of a Personal Agent Protocol browser join.",
+        "x-release-lifecycle": "beta"
+      },
+      "ClientAllowPersonalAgentBrowserJoinOrNull": {
+        "type": [
+          "boolean",
+          "null"
+        ],
+        "description": "Whether the client can be used as the target application of a Personal Agent Protocol browser join.",
+        "x-release-lifecycle": "beta"
       },
       "ClientAnonymousSessionTransferNetworkBindingEnum": {
         "type": "string",
@@ -64606,6 +64625,10 @@
             "type": "boolean",
             "description": "Makes the use of Proof-of-Possession mandatory for this client",
             "default": false
+          },
+          "allow_personal_agent_browser_join": {
+            "$ref": "#/components/schemas/ClientAllowPersonalAgentBrowserJoin",
+            "x-release-lifecycle": "beta"
           },
           "signed_request_object": {
             "$ref": "#/components/schemas/ClientSignedRequestObjectWithCredentialId"
@@ -66710,6 +66733,7 @@
           "ECDH-ES+A192KW",
           "ECDH-ES+A256KW"
         ],
+        "x-release-lifecycle": "beta",
         "x-merge-priority": -5
       },
       "ConnectionIdTokenEncryptedResponseEncEnum": {
@@ -66731,6 +66755,7 @@
         "items": {
           "$ref": "#/components/schemas/ConnectionIdTokenEncryptedResponseEncEnum"
         },
+        "x-release-lifecycle": "beta",
         "x-merge-priority": -5
       },
       "ConnectionIdTokenEncryptionAlgValuesSupported": {
@@ -71181,10 +71206,12 @@
             "$ref": "#/components/schemas/ConnectionDpopSigningAlgEnum"
           },
           "id_token_encrypted_response_alg": {
-            "$ref": "#/components/schemas/ConnectionIdTokenEncryptedResponseAlgEnum"
+            "$ref": "#/components/schemas/ConnectionIdTokenEncryptedResponseAlgEnum",
+            "x-release-lifecycle": "beta"
           },
           "id_token_encrypted_response_encs": {
-            "$ref": "#/components/schemas/ConnectionIdTokenEncryptedResponseEncs"
+            "$ref": "#/components/schemas/ConnectionIdTokenEncryptedResponseEncs",
+            "x-release-lifecycle": "beta"
           },
           "enable_pushed_authorization_requests": {
             "$ref": "#/components/schemas/ConnectionEnablePushedAuthorizationRequests"
@@ -75120,6 +75147,10 @@
             "description": "Makes the use of Proof-of-Possession mandatory for this client",
             "default": false
           },
+          "allow_personal_agent_browser_join": {
+            "$ref": "#/components/schemas/ClientAllowPersonalAgentBrowserJoin",
+            "x-release-lifecycle": "beta"
+          },
           "signed_request_object": {
             "$ref": "#/components/schemas/ClientSignedRequestObjectWithPublicKey"
           },
@@ -75430,6 +75461,10 @@
             "type": "boolean",
             "description": "Makes the use of Proof-of-Possession mandatory for this client",
             "default": false
+          },
+          "allow_personal_agent_browser_join": {
+            "$ref": "#/components/schemas/ClientAllowPersonalAgentBrowserJoin",
+            "x-release-lifecycle": "beta"
           },
           "signed_request_object": {
             "$ref": "#/components/schemas/ClientSignedRequestObjectWithCredentialId"
@@ -81279,6 +81314,10 @@
             "$ref": "#/components/schemas/ResourceServerAgentSubjectClaimsSchemaEnum",
             "x-release-lifecycle": "EA"
           },
+          "use_for_personal_agent_protocol": {
+            "$ref": "#/components/schemas/ResourceServerUseForPersonalAgentProtocol",
+            "x-release-lifecycle": "beta"
+          },
           "type": {
             "$ref": "#/components/schemas/ResourceServerTypeEnum",
             "x-release-lifecycle": "EA"
@@ -81396,6 +81435,10 @@
           "agent_subject_claims": {
             "$ref": "#/components/schemas/ResourceServerAgentSubjectClaimsResponseEnum",
             "x-release-lifecycle": "EA"
+          },
+          "use_for_personal_agent_protocol": {
+            "$ref": "#/components/schemas/ResourceServerUseForPersonalAgentProtocol",
+            "x-release-lifecycle": "beta"
           },
           "type": {
             "$ref": "#/components/schemas/ResourceServerTypeEnum",
@@ -82967,7 +83010,8 @@
             "$ref": "#/components/schemas/CustomDomainCustomClientIpHeaderEnum"
           },
           {
-            "type": "null"
+            "type": "null",
+            "description": "The HTTP header to fetch the client's IP address"
           }
         ]
       },
@@ -120480,13 +120524,13 @@
         "additionalProperties": {
           "oneOf": [
             {
+              "type": "null"
+            },
+            {
               "type": "number"
             },
             {
               "type": "string"
-            },
-            {
-              "type": "null"
             }
           ]
         }
@@ -121263,6 +121307,9 @@
       "FlowActionFlowMapValueParamsFallback": {
         "oneOf": [
           {
+            "type": "null"
+          },
+          {
             "type": "string"
           },
           {
@@ -121274,9 +121321,6 @@
           {
             "type": "array",
             "items": {}
-          },
-          {
-            "type": "null"
           }
         ]
       },
@@ -121652,13 +121696,13 @@
         "additionalProperties": {
           "oneOf": [
             {
+              "type": "null"
+            },
+            {
               "type": "number"
             },
             {
               "type": "string"
-            },
-            {
-              "type": "null"
             }
           ]
         }
@@ -125846,10 +125890,10 @@
       "FormEndingNodeNullable": {
         "oneOf": [
           {
-            "$ref": "#/components/schemas/FormEndingNode"
+            "type": "null"
           },
           {
-            "type": "null"
+            "$ref": "#/components/schemas/FormEndingNode"
           }
         ]
       },
@@ -127411,10 +127455,10 @@
       "FormLanguagesNullable": {
         "oneOf": [
           {
-            "$ref": "#/components/schemas/FormLanguages"
+            "type": "null"
           },
           {
-            "type": "null"
+            "$ref": "#/components/schemas/FormLanguages"
           }
         ]
       },
@@ -127449,10 +127493,10 @@
       "FormMessagesNullable": {
         "oneOf": [
           {
-            "$ref": "#/components/schemas/FormMessages"
+            "type": "null"
           },
           {
-            "type": "null"
+            "$ref": "#/components/schemas/FormMessages"
           }
         ]
       },
@@ -127500,10 +127544,10 @@
       "FormNodeListNullable": {
         "oneOf": [
           {
-            "$ref": "#/components/schemas/FormNodeList"
+            "type": "null"
           },
           {
-            "type": "null"
+            "$ref": "#/components/schemas/FormNodeList"
           }
         ]
       },
@@ -127624,10 +127668,10 @@
       "FormStartNodeNullable": {
         "oneOf": [
           {
-            "$ref": "#/components/schemas/FormStartNode"
+            "type": "null"
           },
           {
-            "type": "null"
+            "$ref": "#/components/schemas/FormStartNode"
           }
         ]
       },
@@ -127691,10 +127735,10 @@
       "FormStyleNullable": {
         "oneOf": [
           {
-            "$ref": "#/components/schemas/FormStyle"
+            "type": "null"
           },
           {
-            "type": "null"
+            "$ref": "#/components/schemas/FormStyle"
           }
         ]
       },
@@ -127746,10 +127790,10 @@
       "FormTranslationsNullable": {
         "oneOf": [
           {
-            "$ref": "#/components/schemas/FormTranslations"
+            "type": "null"
           },
           {
-            "type": "null"
+            "$ref": "#/components/schemas/FormTranslations"
           }
         ]
       },
@@ -129113,6 +129157,10 @@
             "type": "boolean",
             "description": "Makes the use of Proof-of-Possession mandatory for this client",
             "default": false
+          },
+          "allow_personal_agent_browser_join": {
+            "$ref": "#/components/schemas/ClientAllowPersonalAgentBrowserJoin",
+            "x-release-lifecycle": "beta"
           },
           "signed_request_object": {
             "$ref": "#/components/schemas/ClientSignedRequestObjectWithCredentialId"
@@ -131658,6 +131706,10 @@
             "$ref": "#/components/schemas/ResourceServerAgentSubjectClaimsResponseEnum",
             "x-release-lifecycle": "EA"
           },
+          "use_for_personal_agent_protocol": {
+            "$ref": "#/components/schemas/ResourceServerUseForPersonalAgentProtocol",
+            "x-release-lifecycle": "beta"
+          },
           "type": {
             "$ref": "#/components/schemas/ResourceServerTypeEnum",
             "x-release-lifecycle": "EA"
@@ -132314,6 +132366,10 @@
           },
           "country_codes": {
             "$ref": "#/components/schemas/TenantSettingsCountryCodesResponse"
+          },
+          "personal_agent_protocol_company_domains": {
+            "$ref": "#/components/schemas/TenantSettingsPersonalAgentProtocolCompanyDomainsResponse",
+            "x-release-lifecycle": "beta"
           }
         }
       },
@@ -140218,6 +140274,10 @@
             "$ref": "#/components/schemas/ResourceServerAgentSubjectClaimsResponseEnum",
             "x-release-lifecycle": "EA"
           },
+          "use_for_personal_agent_protocol": {
+            "$ref": "#/components/schemas/ResourceServerUseForPersonalAgentProtocol",
+            "x-release-lifecycle": "beta"
+          },
           "type": {
             "$ref": "#/components/schemas/ResourceServerTypeEnum",
             "x-release-lifecycle": "EA"
@@ -140497,6 +140557,10 @@
             "$ref": "#/components/schemas/ResourceServerAgentSubjectClaimsResponseEnum",
             "x-release-lifecycle": "EA"
           },
+          "use_for_personal_agent_protocol": {
+            "$ref": "#/components/schemas/ResourceServerUseForPersonalAgentProtocol",
+            "x-release-lifecycle": "beta"
+          },
           "type": {
             "$ref": "#/components/schemas/ResourceServerTypeEnum",
             "x-release-lifecycle": "EA"
@@ -140682,6 +140746,11 @@
           null
         ],
         "x-release-lifecycle": "EA"
+      },
+      "ResourceServerUseForPersonalAgentProtocol": {
+        "type": "boolean",
+        "description": "Whether this resource server is used for the Personal Agent Protocol.",
+        "x-release-lifecycle": "beta"
       },
       "ResourceServerVerificationKeyPemCertificate": {
         "type": "string",
@@ -141252,6 +141321,10 @@
             "type": "boolean",
             "description": "Makes the use of Proof-of-Possession mandatory for this client",
             "default": false
+          },
+          "allow_personal_agent_browser_join": {
+            "$ref": "#/components/schemas/ClientAllowPersonalAgentBrowserJoin",
+            "x-release-lifecycle": "beta"
           },
           "signed_request_object": {
             "$ref": "#/components/schemas/ClientSignedRequestObjectWithCredentialId"
@@ -144921,6 +144994,27 @@
           }
         }
       },
+      "TenantSettingsPersonalAgentProtocolCompanyDomains": {
+        "type": [
+          "array",
+          "null"
+        ],
+        "description": "Company domains associated with the Personal Agent Protocol. Each entry must be a bare, lowercase hostname (no scheme, port, path, or trailing slash). The array must contain at most 5 unique entries.",
+        "x-release-lifecycle": "beta",
+        "items": {
+          "type": "string"
+        }
+      },
+      "TenantSettingsPersonalAgentProtocolCompanyDomainsResponse": {
+        "type": "array",
+        "description": "Company domains associated with the Personal Agent Protocol.",
+        "x-release-lifecycle": "beta",
+        "items": {
+          "type": "string",
+          "maxLength": 253,
+          "pattern": "^([a-z0-9]([a-z0-9-]{0,61}[a-z0-9])?\\.)+[a-z]{2,63}$"
+        }
+      },
       "TenantSettingsResourceParameterProfile": {
         "type": "string",
         "description": "Profile that determines how the identity of the protected resource (i.e., API) can be specified in the OAuth endpoints when access is being requested. When set to audience (default), the audience parameter is used to specify the resource server. When set to compatibility, the audience parameter is still checked first, but if it not provided, then the resource parameter can be used to specify the resource server.",
@@ -146657,6 +146751,10 @@
             "description": "Makes the use of Proof-of-Possession mandatory for this client",
             "default": false
           },
+          "allow_personal_agent_browser_join": {
+            "$ref": "#/components/schemas/ClientAllowPersonalAgentBrowserJoinOrNull",
+            "x-release-lifecycle": "beta"
+          },
           "signed_request_object": {
             "$ref": "#/components/schemas/ClientSignedRequestObjectWithCredentialId"
           },
@@ -146950,6 +147048,10 @@
             "description": "Makes the use of Proof-of-Possession mandatory for this client",
             "default": false
           },
+          "allow_personal_agent_browser_join": {
+            "$ref": "#/components/schemas/ClientAllowPersonalAgentBrowserJoin",
+            "x-release-lifecycle": "beta"
+          },
           "signed_request_object": {
             "$ref": "#/components/schemas/ClientSignedRequestObjectWithCredentialId"
           },
@@ -147187,10 +147289,12 @@
             "$ref": "#/components/schemas/ConnectionDpopSigningAlgEnum"
           },
           "id_token_encrypted_response_alg": {
-            "$ref": "#/components/schemas/ConnectionIdTokenEncryptedResponseAlgEnum"
+            "$ref": "#/components/schemas/ConnectionIdTokenEncryptedResponseAlgEnum",
+            "x-release-lifecycle": "beta"
           },
           "id_token_encrypted_response_encs": {
-            "$ref": "#/components/schemas/ConnectionIdTokenEncryptedResponseEncs"
+            "$ref": "#/components/schemas/ConnectionIdTokenEncryptedResponseEncs",
+            "x-release-lifecycle": "beta"
           },
           "enable_pushed_authorization_requests": {
             "$ref": "#/components/schemas/ConnectionEnablePushedAuthorizationRequests"
@@ -150457,6 +150561,10 @@
             "$ref": "#/components/schemas/ResourceServerAgentSubjectClaimsSchemaEnum",
             "x-release-lifecycle": "EA"
           },
+          "use_for_personal_agent_protocol": {
+            "$ref": "#/components/schemas/ResourceServerUseForPersonalAgentProtocol",
+            "x-release-lifecycle": "beta"
+          },
           "type": {
             "$ref": "#/components/schemas/ResourceServerTypeEnum",
             "x-release-lifecycle": "EA"
@@ -150574,6 +150682,10 @@
           "agent_subject_claims": {
             "$ref": "#/components/schemas/ResourceServerAgentSubjectClaimsResponseEnum",
             "x-release-lifecycle": "EA"
+          },
+          "use_for_personal_agent_protocol": {
+            "$ref": "#/components/schemas/ResourceServerUseForPersonalAgentProtocol",
+            "x-release-lifecycle": "beta"
           },
           "type": {
             "$ref": "#/components/schemas/ResourceServerTypeEnum",
@@ -151408,6 +151520,10 @@
           },
           "country_codes": {
             "$ref": "#/components/schemas/TenantSettingsCountryCodes"
+          },
+          "personal_agent_protocol_company_domains": {
+            "$ref": "#/components/schemas/TenantSettingsPersonalAgentProtocolCompanyDomains",
+            "x-release-lifecycle": "beta"
           }
         }
       },
@@ -151630,6 +151746,10 @@
           },
           "country_codes": {
             "$ref": "#/components/schemas/TenantSettingsCountryCodesResponse"
+          },
+          "personal_agent_protocol_company_domains": {
+            "$ref": "#/components/schemas/TenantSettingsPersonalAgentProtocolCompanyDomainsResponse",
+            "x-release-lifecycle": "beta"
           }
         }
       },
