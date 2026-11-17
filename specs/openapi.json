@@ -70611,11 +70611,15 @@
           },
           "custom": {
             "type": "array",
-            "description": "Array of custom words to block in passwords. Maximum 200 items, each up to 50 characters",
+            "description": "Array of custom words to block in passwords",
             "items": {
               "type": "string",
               "maxLength": 50
             }
+          },
+          "match_type": {
+            "$ref": "#/components/schemas/PasswordDictionaryMatchTypeEnum",
+            "x-release-lifecycle": "EA"
           },
           "default": {
             "$ref": "#/components/schemas/PasswordDefaultDictionariesEnum"
@@ -77327,8 +77331,7 @@
         "type": "object",
         "additionalProperties": false,
         "required": [
-          "name",
-          "credentials"
+          "name"
         ],
         "properties": {
           "name": {
@@ -138627,6 +138630,15 @@
           "en_10k",
           "en_100k"
         ]
+      },
+      "PasswordDictionaryMatchTypeEnum": {
+        "type": "string",
+        "description": "How custom entries are compared against a password. \"exact\": a password is rejected if it equals an entry. \"substring\": a password is rejected if it contains an entry (every entry must then be at least 3 characters).",
+        "enum": [
+          "exact",
+          "substring"
+        ],
+        "x-release-lifecycle": "EA"
       },
       "PasswordIdenticalCharactersPolicyEnum": {
         "type": "string",
