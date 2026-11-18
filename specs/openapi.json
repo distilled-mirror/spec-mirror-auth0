@@ -52715,6 +52715,15 @@
             "schema": {
               "type": "boolean"
             }
+          },
+          {
+            "name": "Auth0-Include-User-Profile-Size",
+            "in": "header",
+            "description": "Optional. When set to the exact string `true`, the server computes the stored BSON size of the full user profile and returns it in the `Auth0-User-Profile-Size` response header. When omitted, no size computation occurs and the response header is not emitted. Any present value other than `true` (including `false`, `1`, or an empty string) is rejected with `400 validation_error`.",
+            "schema": {
+              "$ref": "#/components/schemas/IncludeUserProfileSizeHeaderEnum"
+            },
+            "x-sdk-ignore": true
           }
         ],
         "responses": {
@@ -52726,11 +52735,23 @@
                   "$ref": "#/components/schemas/GetUserResponseContent"
                 }
               }
+            },
+            "headers": {
+              "Auth0-User-Profile-Size": {
+                "description": "The stored BSON size of the full user profile document, in bytes, computed at the MongoDB boundary before any field projection. Value is a non-negative integer. Only present when `Auth0-Include-User-Profile-Size: true` was sent in the request.",
+                "schema": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "example": 8192,
+                "x-sdk-ignore": true
+              }
             }
           },
           "400": {
             "description": "Invalid request URI. The message will vary depending on the cause.",
-            "x-description-1": "Invalid request query string. The message will vary depending on the cause."
+            "x-description-1": "Invalid request query string. The message will vary depending on the cause.",
+            "x-description-2": "The Auth0-Include-User-Profile-Size header must be omitted or set to the exact string 'true'."
           },
           "401": {
             "description": "Invalid token.",
@@ -133277,6 +133298,13 @@
             "description": "Public key in PEM format"
           }
         }
+      },
+      "IncludeUserProfileSizeHeaderEnum": {
+        "type": "string",
+        "enum": [
+          "true"
+        ],
+        "description": "Optional. When set to the exact string `true`, the server computes the stored BSON size of the full user profile and returns it in the `Auth0-User-Profile-Size` response header. When omitted, no size computation occurs and the response header is not emitted. Any present value other than `true` (including `false`, `1`, or an empty string) is rejected with `400 validation_error`."
       },
       "Integration": {
         "type": "object",
