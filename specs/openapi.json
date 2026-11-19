@@ -9042,7 +9042,7 @@
             "schema": {
               "type": "string",
               "minLength": 1,
-              "maxLength": 120
+              "maxLength": 200
             }
           },
           {
@@ -44457,7 +44457,8 @@
           "403": {
             "description": "Insufficient scope; expected any of: create:resource_servers.",
             "x-description-1": "You reached the limit of entities of this type for this tenant.",
-            "x-description-2": "The resource server type cannot be set because this tenant is not enabled for Universal Commerce Protocol."
+            "x-description-2": "The resource server type cannot be set because this tenant is not enabled for Universal Commerce Protocol.",
+            "x-description-3": "The resource server type or mcp_endpoint cannot be set because this tenant is not enabled for MCP resource servers."
           },
           "409": {
             "description": "A resource server with the same identifier already exists.",
@@ -44972,7 +44973,8 @@
           },
           "403": {
             "description": "Insufficient scope; expected any of: update:resource_servers.",
-            "x-description-1": "The resource server type cannot be set because this tenant is not enabled for Universal Commerce Protocol."
+            "x-description-1": "The resource server type cannot be set because this tenant is not enabled for Universal Commerce Protocol.",
+            "x-description-2": "The resource server type or mcp_endpoint cannot be set because this tenant is not enabled for MCP resource servers."
           },
           "409": {
             "description": "A resource server with the same identifier already exists.",
@@ -61724,8 +61726,7 @@
         "enum": [
           "auto",
           "manual"
-        ],
-        "x-release-lifecycle": "EA"
+        ]
       },
       "BruteForceProtectionModeEnum": {
         "type": "string",
@@ -65193,13 +65194,13 @@
         "maxLength": 12
       },
       "ConnectionAllowedAudiencesGoogleOAuth2": {
-        "description": "List of allowed audiences in the ID token for Google Native Social Login",
+        "description": "Additional Google client IDs accepted as the `aud` (audience) of Google ID tokens, used by Google native login and Google Streamlined Linking.",
         "type": "array",
         "minItems": 1,
         "maxItems": 64,
         "items": {
           "type": "string",
-          "description": "An allowed client id",
+          "description": "An allowed Google client ID",
           "minLength": 1,
           "maxLength": 255
         }
@@ -71258,6 +71259,25 @@
           },
           "useOauthSpecScope": {
             "$ref": "#/components/schemas/ConnectionUseOauthSpecScope"
+          },
+          "client_id": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "The client ID registered with the identity provider"
+          },
+          "allowed_audiences": {
+            "type": [
+              "array",
+              "null"
+            ],
+            "description": "Additional Google client IDs accepted as the `aud` (audience) of Google ID tokens, used by Google native login and Google Streamlined Linking.",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 255
+            }
           },
           "discovery_url": {
             "$ref": "#/components/schemas/ConnectionsDiscoveryUrl"
@@ -128835,8 +128855,7 @@
             "$ref": "#/components/schemas/BruteForceProtectionModeEnum"
           },
           "form_submission_mode": {
-            "$ref": "#/components/schemas/BruteForceProtectionFormSubmissionModeEnum",
-            "x-release-lifecycle": "EA"
+            "$ref": "#/components/schemas/BruteForceProtectionFormSubmissionModeEnum"
           },
           "max_attempts": {
             "type": "integer",
@@ -139592,7 +139611,7 @@
             "type": "string",
             "description": "URL to the Client ID Metadata Document",
             "minLength": 1,
-            "maxLength": 120,
+            "maxLength": 200,
             "format": "absolute-https-uri-or-empty"
           }
         }
@@ -140120,7 +140139,7 @@
             "type": "string",
             "description": "URL to the Client ID Metadata Document. Acts as the unique identifier for upsert operations.",
             "minLength": 1,
-            "maxLength": 120,
+            "maxLength": 200,
             "format": "absolute-https-uri-or-empty"
           }
         }
@@ -140783,6 +140802,7 @@
         "description": "The type of the resource server.",
         "enum": [
           "universal_commerce_protocol_server",
+          "model_context_protocol_server",
           null
         ],
         "x-release-lifecycle": "EA"
@@ -146371,8 +146391,7 @@
             "$ref": "#/components/schemas/BruteForceProtectionModeEnum"
           },
           "form_submission_mode": {
-            "$ref": "#/components/schemas/BruteForceProtectionFormSubmissionModeEnum",
-            "x-release-lifecycle": "EA"
+            "$ref": "#/components/schemas/BruteForceProtectionFormSubmissionModeEnum"
           },
           "max_attempts": {
             "type": "integer",
@@ -146427,8 +146446,7 @@
             "$ref": "#/components/schemas/BruteForceProtectionModeEnum"
           },
           "form_submission_mode": {
-            "$ref": "#/components/schemas/BruteForceProtectionFormSubmissionModeEnum",
-            "x-release-lifecycle": "EA"
+            "$ref": "#/components/schemas/BruteForceProtectionFormSubmissionModeEnum"
           },
           "max_attempts": {
             "type": "integer",
@@ -147356,6 +147374,25 @@
           },
           "useOauthSpecScope": {
             "$ref": "#/components/schemas/ConnectionUseOauthSpecScope"
+          },
+          "client_id": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "The client ID registered with the identity provider"
+          },
+          "allowed_audiences": {
+            "type": [
+              "array",
+              "null"
+            ],
+            "description": "Additional Google client IDs accepted as the `aud` (audience) of Google ID tokens, used by Google native login and Google Streamlined Linking.",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 255
+            }
           },
           "discovery_url": {
             "$ref": "#/components/schemas/ConnectionsDiscoveryUrl"
