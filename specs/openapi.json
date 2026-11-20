@@ -81968,6 +81968,10 @@
             "$ref": "#/components/schemas/ThirdPartyClientAccessConfig",
             "x-release-lifecycle": "GA"
           },
+          "universal_logout_config": {
+            "$ref": "#/components/schemas/SelfServiceProfileSsoTicketUniversalLogoutConfig",
+            "x-release-lifecycle": "GA"
+          },
           "enabled_features": {
             "$ref": "#/components/schemas/SelfServiceProfileSsoTicketEnabledFeatures",
             "x-release-lifecycle": "GA"
@@ -119440,6 +119444,13 @@
             "description": "The identifier of the published application in the OKTA OIN.",
             "minLength": 1,
             "maxLength": 200
+          },
+          "okta_oin_listing_url": {
+            "type": "string",
+            "description": "URL of the application's listing in the Okta Integration Network (OIN) catalog, used to redirect customers into OIN Express Configuration. Must be an https URL on an okta.com domain with no query string or fragment.",
+            "maxLength": 255,
+            "format": "okta-oin-listing-url",
+            "x-release-lifecycle": "GA"
           }
         }
       },
@@ -119505,6 +119516,13 @@
             "description": "The identifier of the published application in the OKTA OIN.",
             "minLength": 1,
             "maxLength": 200
+          },
+          "okta_oin_listing_url": {
+            "type": "string",
+            "description": "URL of the application's listing in the Okta Integration Network (OIN) catalog, used to redirect customers into OIN Express Configuration. Must be an https URL on an okta.com domain with no query string or fragment.",
+            "maxLength": 255,
+            "format": "okta-oin-listing-url",
+            "x-release-lifecycle": "GA"
           }
         }
       },
@@ -142604,6 +142622,21 @@
           "patch:groups",
           "delete:groups"
         ]
+      },
+      "SelfServiceProfileSsoTicketUniversalLogoutConfig": {
+        "type": "object",
+        "description": "Configuration for the setup of Universal Logout in the Self-Service Enterprise Configuration flow.",
+        "additionalProperties": false,
+        "required": [
+          "allow_configuration"
+        ],
+        "x-release-lifecycle": "GA",
+        "properties": {
+          "allow_configuration": {
+            "type": "boolean",
+            "description": "Whether the end user can set up Universal Logout during the Self-Service Enterprise Configuration flow."
+          }
+        }
       },
       "SelfServiceProfileUserAttribute": {
         "type": "object",

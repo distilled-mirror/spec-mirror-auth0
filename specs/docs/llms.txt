@@ -7,7 +7,7 @@
 - [Manage Users (123 pages)](https://auth0.com/_llms/en/manage-users.txt): Overview, User Profiles, Organizations, RBAC, Sessions & Cookies.
 - [Brand (108 pages)](https://auth0.com/_llms/en/brand.txt): Customize Login Pages, Customize Portals, Custom Domains, Customize Emails, Customize Phone Messages, Optimize Conversions, Internationalization and Localization.
 - [Extend (225 pages)](https://auth0.com/_llms/en/extend.txt): Overview, Actions, Events, Extensions, Forms, Integrations, Rules & Hooks.
-- [Secure (156 pages)](https://auth0.com/_llms/en/secure.txt): Protect Your Application, Call APIs On User's Behalf, Protect Your Tenant.
+- [Secure (158 pages)](https://auth0.com/_llms/en/secure.txt): Protect Your Application, Call APIs On User's Behalf, Protect Your Tenant.
 - [Monitor (195 pages)](https://auth0.com/_llms/en/monitor.txt): Concepts, How To, Reference.
 - [Dev Tools (853 pages)](https://auth0.com/_llms/en/dev-tools.txt): APIs, CLIs, SDKs, Universal Components.
 
@@ -332,7 +332,7 @@
 - [English / Manage Users (123 pages)](https://auth0.com/_llms/en/manage-users.txt): Overview, User Profiles, Organizations, RBAC, Sessions & Cookies.
 - [English / Brand (108 pages)](https://auth0.com/_llms/en/brand.txt): Customize Login Pages, Customize Portals, Custom Domains, Customize Emails, Customize Phone Messages, Optimize Conversions, Internationalization and Localization.
 - [English / Extend (225 pages)](https://auth0.com/_llms/en/extend.txt): Overview, Actions, Events, Extensions, Forms, Integrations, Rules & Hooks.
-- [English / Secure (156 pages)](https://auth0.com/_llms/en/secure.txt): Protect Your Application, Call APIs On User's Behalf, Protect Your Tenant.
+- [English / Secure (158 pages)](https://auth0.com/_llms/en/secure.txt): Protect Your Application, Call APIs On User's Behalf, Protect Your Tenant.
 - [English / Monitor (195 pages)](https://auth0.com/_llms/en/monitor.txt): Concepts, How To, Reference.
 - [English / Dev Tools (853 pages)](https://auth0.com/_llms/en/dev-tools.txt): APIs, CLIs, SDKs, Universal Components.
 - [English / Dev Tools / APIs (612 pages)](https://auth0.com/_llms/en/dev-tools/apis.txt):  , My Account API, My Organization API, Management API, Authentication API.
