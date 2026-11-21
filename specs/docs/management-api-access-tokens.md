@@ -37,8 +37,8 @@ Token quotas are determined by subscription tier. You can [review your current q
 
 ## Learn more
 
-* [Get Management API Access Tokens for Testing](https://auth0.com/docs/secure/tokens/access-tokens/management-api-access-tokens/get-management-api-access-tokens-for-testing)
-* [Get Management API Access Tokens for Production](https://auth0.com/docs/secure/tokens/access-tokens/management-api-access-tokens/get-management-api-access-tokens-for-production)
-* [Get Management API Access Tokens for Single-Page Applications](https://auth0.com/docs/secure/tokens/access-tokens/management-api-access-tokens/get-management-api-tokens-for-single-page-applications)
+* [Get Management API Access Tokens for Testing](https://auth0.com/docs/secure/tokens/access-tokens/management-api-access-tokens/get-management-api-access-tokens-for-testing.md)
+* [Get Management API Access Tokens for Production](https://auth0.com/docs/secure/tokens/access-tokens/management-api-access-tokens/get-management-api-access-tokens-for-production.md)
+* [Get Management API Access Tokens for Single-Page Applications](https://auth0.com/docs/secure/tokens/access-tokens/management-api-access-tokens/get-management-api-tokens-for-single-page-applications.md)
 * [Changes in Auth0 Management APIv2 Tokens](https://auth0.com/docs/secure/tokens/access-tokens/management-api-access-tokens/changes-in-auth0-management-apiv2-tokens)
 * [Migrate to Management API Endpoints with Access Tokens](https://auth0.com/docs/troubleshoot/product-lifecycle/past-migrations/migrate-to-calling-api-with-access-tokens.md)

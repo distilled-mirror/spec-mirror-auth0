@@ -7,7 +7,7 @@
 - [Manage Users (123 pages)](https://auth0.com/_llms/en/manage-users.txt): Overview, User Profiles, Organizations, RBAC, Sessions & Cookies.
 - [Brand (108 pages)](https://auth0.com/_llms/en/brand.txt): Customize Login Pages, Customize Portals, Custom Domains, Customize Emails, Customize Phone Messages, Optimize Conversions, Internationalization and Localization.
 - [Extend (225 pages)](https://auth0.com/_llms/en/extend.txt): Overview, Actions, Events, Extensions, Forms, Integrations, Rules & Hooks.
-- [Secure (158 pages)](https://auth0.com/_llms/en/secure.txt): Protect Your Application, Call APIs On User's Behalf, Protect Your Tenant.
+- [Secure (161 pages)](https://auth0.com/_llms/en/secure.txt): Protect Your Application, Call APIs On User's Behalf, Protect Your Tenant.
 - [Monitor (195 pages)](https://auth0.com/_llms/en/monitor.txt): Concepts, How To, Reference.
 - [Dev Tools (853 pages)](https://auth0.com/_llms/en/dev-tools.txt): APIs, CLIs, SDKs, Universal Components.
 
@@ -149,6 +149,7 @@
 ###### IdP Integration
 
 - [Okta as OIDC IdP](https://auth0.com/docs/ai-agents-mcp/cross-app-access/requesting-app/idp/okta-as-oidc-idp.md): Configure Okta as the OIDC enterprise identity provider for the XAA Requesting App.
+- [Okta as SAML IdP](https://auth0.com/docs/ai-agents-mcp/cross-app-access/requesting-app/idp/okta-as-saml-idp.md): Configure Okta as the SAML enterprise identity provider for the XAA Requesting App.
 
 ### Auth for MCP
 
@@ -332,7 +333,7 @@
 - [English / Manage Users (123 pages)](https://auth0.com/_llms/en/manage-users.txt): Overview, User Profiles, Organizations, RBAC, Sessions & Cookies.
 - [English / Brand (108 pages)](https://auth0.com/_llms/en/brand.txt): Customize Login Pages, Customize Portals, Custom Domains, Customize Emails, Customize Phone Messages, Optimize Conversions, Internationalization and Localization.
 - [English / Extend (225 pages)](https://auth0.com/_llms/en/extend.txt): Overview, Actions, Events, Extensions, Forms, Integrations, Rules & Hooks.
-- [English / Secure (158 pages)](https://auth0.com/_llms/en/secure.txt): Protect Your Application, Call APIs On User's Behalf, Protect Your Tenant.
+- [English / Secure (161 pages)](https://auth0.com/_llms/en/secure.txt): Protect Your Application, Call APIs On User's Behalf, Protect Your Tenant.
 - [English / Monitor (195 pages)](https://auth0.com/_llms/en/monitor.txt): Concepts, How To, Reference.
 - [English / Dev Tools (853 pages)](https://auth0.com/_llms/en/dev-tools.txt): APIs, CLIs, SDKs, Universal Components.
 - [English / Dev Tools / APIs (612 pages)](https://auth0.com/_llms/en/dev-tools/apis.txt):  , My Account API, My Organization API, Management API, Authentication API.

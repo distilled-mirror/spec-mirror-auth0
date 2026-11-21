@@ -18,7 +18,7 @@ The Auth0 Management API documentation follows the [Auth0 Management API OpenAPI
 
 ## Authentication
 
-Use of the Auth0 Management API requires a Management API access token. To learn how to request this token, read [Management API Access Tokens](https://auth0.com/docs/secure/tokens/access-tokens/management-api-access-tokens.md).
+Use of the Auth0 Management API requires a Management API access token. To learn how to request this token, read [Management API Access Tokens](https://auth0.com/docs/secure/tokens/access-tokens/management-api-access-tokens).
 
 The Auth0 Management API uses JSON Web Tokens (JWTs) to authenticate requests. The Management API access token’s scopes claim indicates which request methods can be performed when calling this API. The deserialized example token on this page grants read-only access to users and read/write access to connections. Trying to perform any request method not permitted within the set scopes will result in a **403 Forbidden** response.
 
@@ -172,4 +172,4 @@ This approach provides efficient and stable data retrieval for large datasets, a
 
 ### Test with an Access Token
 
-You can get an Access Token for testing purposes. To learn more, read [Get Management API Access Tokens for testing](https://auth0.com/docs/secure/tokens/access-tokens/management-api-access-tokens/get-management-api-access-tokens-for-testing).
+You can get an Access Token for testing purposes. To learn more, read [Get Management API Access Tokens for testing](https://auth0.com/docs/secure/tokens/access-tokens/management-api-access-tokens/get-management-api-access-tokens-for-testing.md).
