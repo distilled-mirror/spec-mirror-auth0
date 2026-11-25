@@ -137783,6 +137783,9 @@
       "OrganizationClientGrant": {
         "type": "object",
         "additionalProperties": false,
+        "required": [
+          "subject_type"
+        ],
         "properties": {
           "id": {
             "type": "string",
@@ -137811,6 +137814,13 @@
           "allow_any_organization": {
             "type": "boolean",
             "description": "If enabled, any organization can be used with this grant. If disabled (default), the grant must be explicitly assigned to the desired organizations."
+          },
+          "subject_type": {
+            "$ref": "#/components/schemas/ClientGrantSubjectTypeEnum"
+          },
+          "allow_all_scopes": {
+            "type": "boolean",
+            "description": "If enabled, all scopes configured on the resource server are allowed for this grant."
           }
         }
       },
@@ -138237,6 +138247,7 @@
             "page:component:auth0:my_organization:domain_table": "#/components/schemas/PageComponentAuth0MyOrganizationDomainTable",
             "page:component:auth0:my_organization:member_management": "#/components/schemas/PageComponentAuth0MyOrganizationMemberManagement",
             "page:component:auth0:my_organization:details_edit": "#/components/schemas/PageComponentAuth0MyOrganizationDetailsEdit",
+            "page:component:auth0:my_organization:sso_provider_management": "#/components/schemas/PageComponentAuth0MyOrganizationSsoProviderManagement",
             "page:component:auth0:my_account:passkey_management": "#/components/schemas/PageComponentAuth0MyAccountPasskeyManagement",
             "page:component:auth0:my_account:mfa_management": "#/components/schemas/PageComponentAuth0MyAccountMfaManagement"
           }
@@ -138268,6 +138279,9 @@
           },
           {
             "$ref": "#/components/schemas/PageComponentAuth0MyOrganizationDetailsEdit"
+          },
+          {
+            "$ref": "#/components/schemas/PageComponentAuth0MyOrganizationSsoProviderManagement"
           },
           {
             "$ref": "#/components/schemas/PageComponentAuth0MyAccountPasskeyManagement"
@@ -138485,6 +138499,28 @@
         "additionalProperties": false,
         "required": []
       },
+      "PageComponentAuth0MyOrganizationSsoProviderManagement": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "const": "page:component:auth0:my_organization:sso_provider_management"
+          },
+          "config": {
+            "$ref": "#/components/schemas/PageComponentAuth0MyOrganizationSsoProviderManagementConfig"
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "type"
+        ]
+      },
+      "PageComponentAuth0MyOrganizationSsoProviderManagementConfig": {
+        "type": "object",
+        "properties": {},
+        "additionalProperties": false,
+        "required": []
+      },
       "PageComponentAuth0StructureSection": {
         "type": "object",
         "properties": {
@@ -138677,6 +138713,7 @@
             "page:component:auth0:my_organization:domain_table": "#/components/schemas/PageComponentAuth0MyOrganizationDomainTable",
             "page:component:auth0:my_organization:member_management": "#/components/schemas/PageComponentAuth0MyOrganizationMemberManagement",
             "page:component:auth0:my_organization:details_edit": "#/components/schemas/PageComponentAuth0MyOrganizationDetailsEdit",
+            "page:component:auth0:my_organization:sso_provider_management": "#/components/schemas/PageComponentAuth0MyOrganizationSsoProviderManagement",
             "page:component:auth0:my_account:passkey_management": "#/components/schemas/PageComponentAuth0MyAccountPasskeyManagement",
             "page:component:auth0:my_account:mfa_management": "#/components/schemas/PageComponentAuth0MyAccountMfaManagement"
           }
@@ -138705,6 +138742,9 @@
           },
           {
             "$ref": "#/components/schemas/PageComponentAuth0MyOrganizationDetailsEdit"
+          },
+          {
+            "$ref": "#/components/schemas/PageComponentAuth0MyOrganizationSsoProviderManagement"
           },
           {
             "$ref": "#/components/schemas/PageComponentAuth0MyAccountPasskeyManagement"
