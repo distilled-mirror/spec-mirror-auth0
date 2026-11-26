@@ -12052,8 +12052,7 @@
             "x-description-2": "Client is not global."
           },
           "403": {
-            "description": "The inbound directory provisioning feature is not enabled for this tenant",
-            "x-description-1": "Insufficient scope; expected any of: read:directory_provisionings."
+            "description": "Insufficient scope; expected any of: read:directory_provisionings."
           },
           "429": {
             "description": "Too many requests. Check the X-RateLimit-Limit, X-RateLimit-Remaining and X-RateLimit-Reset headers."
@@ -12912,8 +12911,7 @@
             "x-description-2": "Client is not global."
           },
           "403": {
-            "description": "The inbound directory provisioning feature is not enabled for this tenant",
-            "x-description-1": "Insufficient scope; expected any of: read:directory_provisionings."
+            "description": "Insufficient scope; expected any of: read:directory_provisionings."
           },
           "404": {
             "description": "The connection does not exist",
@@ -13018,8 +13016,7 @@
             "x-description-2": "Client is not global."
           },
           "403": {
-            "description": "The inbound directory provisioning feature is not enabled for this tenant",
-            "x-description-1": "Insufficient scope; expected any of: delete:directory_provisionings."
+            "description": "Insufficient scope; expected any of: delete:directory_provisionings."
           },
           "404": {
             "description": "The connection does not exist"
@@ -13149,9 +13146,8 @@
             "x-description-2": "Client is not global."
           },
           "403": {
-            "description": "The inbound directory provisioning feature is not enabled for this tenant",
-            "x-description-1": "Group synchronization is not enabled for this tenant",
-            "x-description-2": "Insufficient scope; expected any of: update:directory_provisionings."
+            "description": "Group synchronization is not enabled for this tenant",
+            "x-description-1": "Insufficient scope; expected any of: update:directory_provisionings."
           },
           "404": {
             "description": "The connection does not exist",
@@ -13283,9 +13279,8 @@
             "x-description-2": "Client is not global."
           },
           "403": {
-            "description": "The inbound directory provisioning feature is not enabled for this tenant",
-            "x-description-1": "Group synchronization is not enabled for this tenant",
-            "x-description-2": "Insufficient scope; expected any of: create:directory_provisionings."
+            "description": "Group synchronization is not enabled for this tenant",
+            "x-description-1": "Insufficient scope; expected any of: create:directory_provisionings."
           },
           "404": {
             "description": "The connection does not exist"
@@ -13402,8 +13397,7 @@
             "x-description-2": "Client is not global."
           },
           "403": {
-            "description": "The inbound directory provisioning feature is not enabled for this tenant",
-            "x-description-1": "Insufficient scope; expected any of: read:directory_provisionings."
+            "description": "Insufficient scope; expected any of: read:directory_provisionings."
           },
           "404": {
             "description": "The connection does not exist",
@@ -13670,8 +13664,7 @@
           },
           "403": {
             "description": "Group synchronization is not enabled for this tenant",
-            "x-description-1": "The inbound directory provisioning feature is not enabled for this tenant",
-            "x-description-2": "Insufficient scope; expected any of: read:directory_provisionings."
+            "x-description-1": "Insufficient scope; expected any of: read:directory_provisionings."
           },
           "404": {
             "description": "The connection does not exist",
@@ -13795,8 +13788,7 @@
           },
           "403": {
             "description": "Group synchronization is not enabled for this tenant",
-            "x-description-1": "The inbound directory provisioning feature is not enabled for this tenant",
-            "x-description-2": "Insufficient scope; expected any of: update:directory_provisionings."
+            "x-description-1": "Insufficient scope; expected any of: update:directory_provisionings."
           },
           "404": {
             "description": "The connection does not exist",
@@ -13919,8 +13911,7 @@
           },
           "403": {
             "description": "Group synchronization is not enabled for this tenant",
-            "x-description-1": "The inbound directory provisioning feature is not enabled for this tenant",
-            "x-description-2": "Insufficient scope; expected any of: update:directory_provisionings."
+            "x-description-1": "Insufficient scope; expected any of: update:directory_provisionings."
           },
           "404": {
             "description": "The connection does not exist",
@@ -14043,8 +14034,7 @@
           },
           "403": {
             "description": "Group synchronization is not enabled for this tenant",
-            "x-description-1": "The inbound directory provisioning feature is not enabled for this tenant",
-            "x-description-2": "Insufficient scope; expected any of: update:directory_provisionings."
+            "x-description-1": "Insufficient scope; expected any of: update:directory_provisionings."
           },
           "404": {
             "description": "The connection does not exist",
@@ -81054,7 +81044,9 @@
         "required": [
           "content",
           "disabled",
-          "type"
+          "type",
+          "created_at",
+          "updated_at"
         ],
         "properties": {
           "id": {
@@ -81083,6 +81075,18 @@
             "type": "boolean",
             "description": "Whether the template is enabled (false) or disabled (true).",
             "default": false
+          },
+          "created_at": {
+            "type": "string",
+            "description": "The date and time the template was created, in ISO 8601 format. For a default template (one without an id), this is the time of the request.",
+            "maxLength": 27,
+            "format": "date-time"
+          },
+          "updated_at": {
+            "type": "string",
+            "description": "The date and time the template was last updated, in ISO 8601 format. For a default template (one without an id), this is the time of the request.",
+            "maxLength": 27,
+            "format": "date-time"
           }
         }
       },
@@ -131533,7 +131537,9 @@
         "required": [
           "content",
           "disabled",
-          "type"
+          "type",
+          "created_at",
+          "updated_at"
         ],
         "properties": {
           "id": {
@@ -131562,6 +131568,18 @@
             "type": "boolean",
             "description": "Whether the template is enabled (false) or disabled (true).",
             "default": false
+          },
+          "created_at": {
+            "type": "string",
+            "description": "The date and time the template was created, in ISO 8601 format. For a default template (one without an id), this is the time of the request.",
+            "maxLength": 27,
+            "format": "date-time"
+          },
+          "updated_at": {
+            "type": "string",
+            "description": "The date and time the template was last updated, in ISO 8601 format. For a default template (one without an id), this is the time of the request.",
+            "maxLength": 27,
+            "format": "date-time"
           }
         }
       },
@@ -139218,7 +139236,9 @@
         "required": [
           "content",
           "disabled",
-          "type"
+          "type",
+          "created_at",
+          "updated_at"
         ],
         "properties": {
           "id": {
@@ -139247,6 +139267,18 @@
             "type": "boolean",
             "description": "Whether the template is enabled (false) or disabled (true).",
             "default": false
+          },
+          "created_at": {
+            "type": "string",
+            "description": "The date and time the template was created, in ISO 8601 format. For a default template (one without an id), this is the time of the request.",
+            "maxLength": 27,
+            "format": "date-time"
+          },
+          "updated_at": {
+            "type": "string",
+            "description": "The date and time the template was last updated, in ISO 8601 format. For a default template (one without an id), this is the time of the request.",
+            "maxLength": 27,
+            "format": "date-time"
           }
         }
       },
@@ -140329,7 +140361,9 @@
         "required": [
           "content",
           "disabled",
-          "type"
+          "type",
+          "created_at",
+          "updated_at"
         ],
         "properties": {
           "id": {
@@ -140358,6 +140392,18 @@
             "type": "boolean",
             "description": "Whether the template is enabled (false) or disabled (true).",
             "default": false
+          },
+          "created_at": {
+            "type": "string",
+            "description": "The date and time the template was created, in ISO 8601 format. For a default template (one without an id), this is the time of the request.",
+            "maxLength": 27,
+            "format": "date-time"
+          },
+          "updated_at": {
+            "type": "string",
+            "description": "The date and time the template was last updated, in ISO 8601 format. For a default template (one without an id), this is the time of the request.",
+            "maxLength": 27,
+            "format": "date-time"
           }
         }
       },
@@ -150544,7 +150590,9 @@
         "required": [
           "content",
           "disabled",
-          "type"
+          "type",
+          "created_at",
+          "updated_at"
         ],
         "properties": {
           "id": {
@@ -150573,6 +150621,18 @@
             "type": "boolean",
             "description": "Whether the template is enabled (false) or disabled (true).",
             "default": false
+          },
+          "created_at": {
+            "type": "string",
+            "description": "The date and time the template was created, in ISO 8601 format. For a default template (one without an id), this is the time of the request.",
+            "maxLength": 27,
+            "format": "date-time"
+          },
+          "updated_at": {
+            "type": "string",
+            "description": "The date and time the template was last updated, in ISO 8601 format. For a default template (one without an id), this is the time of the request.",
+            "maxLength": 27,
+            "format": "date-time"
           }
         }
       },
